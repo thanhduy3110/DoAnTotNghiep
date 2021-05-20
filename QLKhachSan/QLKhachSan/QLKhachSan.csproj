@@ -56,11 +56,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmDatPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDatPhong.Designer.cs">
+      <DependentUpon>frmDatPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMainMenu.Designer.cs">
       <DependentUpon>frmMainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQLLoaiPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLLoaiPhong.Designer.cs">
+      <DependentUpon>frmQLLoaiPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQLPhieuThue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLPhieuThue.Designer.cs">
+      <DependentUpon>frmQLPhieuThue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQLPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLPhong.Designer.cs">
+      <DependentUpon>frmQLPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="frmQLNgDung.cs">
       <SubType>Form</SubType>
@@ -76,8 +100,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmDatPhong.resx">
+      <DependentUpon>frmDatPhong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMainMenu.resx">
       <DependentUpon>frmMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLLoaiPhong.resx">
+      <DependentUpon>frmQLLoaiPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLPhieuThue.resx">
+      <DependentUpon>frmQLPhieuThue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLPhong.resx">
+      <DependentUpon>frmQLPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQLNgDung.resx">
       <DependentUpon>frmQLNgDung.cs</DependentUpon>
@@ -145,6 +181,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Thoát.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Đặt Phòng.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VIP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KOVip.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vip %282%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

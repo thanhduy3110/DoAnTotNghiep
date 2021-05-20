@@ -63,6 +63,16 @@ namespace QLKhachSan.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Đặt_Phòng {
+            get {
+                object obj = ResourceManager.GetObject("Đặt Phòng", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Dịch_Vụ {
             get {
                 object obj = ResourceManager.GetObject("Dịch Vụ", resourceCulture);
@@ -106,6 +116,16 @@ namespace QLKhachSan.Properties {
         internal static System.Drawing.Bitmap Kho {
             get {
                 object obj = ResourceManager.GetObject("Kho", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap KOVip {
+            get {
+                object obj = ResourceManager.GetObject("KOVip", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -186,6 +206,26 @@ namespace QLKhachSan.Properties {
         internal static System.Drawing.Bitmap unnamed {
             get {
                 object obj = ResourceManager.GetObject("unnamed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap VIP {
+            get {
+                object obj = ResourceManager.GetObject("VIP", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Vip__2_ {
+            get {
+                object obj = ResourceManager.GetObject("Vip (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

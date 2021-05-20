@@ -32,22 +32,23 @@ namespace QLKhachSan
             this.panelMid = new DevComponents.DotNetBar.PanelEx();
             this.panelRight = new DevComponents.DotNetBar.PanelEx();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnThongKe = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelLeft = new DevComponents.DotNetBar.PanelEx();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.btnThongKe = new System.Windows.Forms.Button();
+            this.btnDatPhong = new System.Windows.Forms.Button();
             this.btnPhieuThu = new System.Windows.Forms.Button();
             this.btnNhapKho = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btnDichVu = new System.Windows.Forms.Button();
             this.btnLoaiPhong = new System.Windows.Forms.Button();
             this.btnPhong = new System.Windows.Forms.Button();
-            this.panelLeft = new DevComponents.DotNetBar.PanelEx();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnQLNCC = new System.Windows.Forms.Button();
             this.btnQLHoaDon = new System.Windows.Forms.Button();
             this.btnQLKhachHang = new System.Windows.Forms.Button();
             this.btnQLNguoiDung = new System.Windows.Forms.Button();
             this.btnQLNhanVien = new System.Windows.Forms.Button();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.panelMid.SuspendLayout();
             this.panelRight.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -110,57 +111,19 @@ namespace QLKhachSan
             this.panel3.Size = new System.Drawing.Size(1122, 190);
             this.panel3.TabIndex = 2;
             // 
-            // btnThongKe
-            // 
-            this.btnThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnThongKe.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnThongKe.Image = global::QLKhachSan.Properties.Resources.Thống_Kê;
-            this.btnThongKe.Location = new System.Drawing.Point(440, 30);
-            this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(240, 130);
-            this.btnThongKe.TabIndex = 0;
-            this.btnThongKe.Text = "Thống Kê";
-            this.btnThongKe.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnThongKe.UseVisualStyleBackColor = false;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel2.Controls.Add(this.btnDatPhong);
             this.panel2.Controls.Add(this.btnPhieuThu);
             this.panel2.Controls.Add(this.btnNhapKho);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(0, 230);
             this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(320, 30, 30, 30);
+            this.panel2.Padding = new System.Windows.Forms.Padding(210, 30, 30, 30);
             this.panel2.Size = new System.Drawing.Size(1122, 230);
             this.panel2.TabIndex = 1;
-            // 
-            // btnPhieuThu
-            // 
-            this.btnPhieuThu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnPhieuThu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnPhieuThu.Image = global::QLKhachSan.Properties.Resources.Phiếu_Thu;
-            this.btnPhieuThu.Location = new System.Drawing.Point(560, 30);
-            this.btnPhieuThu.Name = "btnPhieuThu";
-            this.btnPhieuThu.Size = new System.Drawing.Size(240, 170);
-            this.btnPhieuThu.TabIndex = 0;
-            this.btnPhieuThu.Text = "Phiếu Thu";
-            this.btnPhieuThu.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPhieuThu.UseVisualStyleBackColor = false;
-            // 
-            // btnNhapKho
-            // 
-            this.btnNhapKho.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnNhapKho.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnNhapKho.Image = global::QLKhachSan.Properties.Resources.Kho;
-            this.btnNhapKho.Location = new System.Drawing.Point(320, 30);
-            this.btnNhapKho.Name = "btnNhapKho";
-            this.btnNhapKho.Size = new System.Drawing.Size(240, 170);
-            this.btnNhapKho.TabIndex = 0;
-            this.btnNhapKho.Text = "Nhập Kho";
-            this.btnNhapKho.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnNhapKho.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
@@ -175,6 +138,100 @@ namespace QLKhachSan
             this.panel1.Padding = new System.Windows.Forms.Padding(210, 30, 30, 30);
             this.panel1.Size = new System.Drawing.Size(1122, 230);
             this.panel1.TabIndex = 0;
+            // 
+            // panelLeft
+            // 
+            this.panelLeft.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelLeft.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelLeft.Controls.Add(this.btnThoat);
+            this.panelLeft.Controls.Add(this.btnQLNCC);
+            this.panelLeft.Controls.Add(this.btnQLHoaDon);
+            this.panelLeft.Controls.Add(this.btnQLKhachHang);
+            this.panelLeft.Controls.Add(this.btnQLNguoiDung);
+            this.panelLeft.Controls.Add(this.btnQLNhanVien);
+            this.panelLeft.DisabledBackColor = System.Drawing.Color.Empty;
+            this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelLeft.Location = new System.Drawing.Point(0, 100);
+            this.panelLeft.Name = "panelLeft";
+            this.panelLeft.Size = new System.Drawing.Size(242, 650);
+            this.panelLeft.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.panelLeft.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.panelLeft.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.panelLeft.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.panelLeft.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.panelLeft.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.panelLeft.Style.GradientAngle = 90;
+            this.panelLeft.TabIndex = 1;
+            // 
+            // labelX1
+            // 
+            // 
+            // 
+            // 
+            this.labelX1.BackgroundStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(132)))));
+            this.labelX1.BackgroundStyle.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(255)))), ((int)(((byte)(132)))));
+            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelX1.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX1.Location = new System.Drawing.Point(0, 0);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(1364, 100);
+            this.labelX1.TabIndex = 0;
+            this.labelX1.Text = "Phần Mềm Quản Lý Khách Sạn";
+            this.labelX1.TextAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // btnThongKe
+            // 
+            this.btnThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnThongKe.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnThongKe.Image = global::QLKhachSan.Properties.Resources.Thống_Kê;
+            this.btnThongKe.Location = new System.Drawing.Point(440, 30);
+            this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.Size = new System.Drawing.Size(240, 130);
+            this.btnThongKe.TabIndex = 0;
+            this.btnThongKe.Text = "Thống Kê";
+            this.btnThongKe.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnThongKe.UseVisualStyleBackColor = false;
+            // 
+            // btnDatPhong
+            // 
+            this.btnDatPhong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnDatPhong.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnDatPhong.Image = global::QLKhachSan.Properties.Resources.Đặt_Phòng;
+            this.btnDatPhong.Location = new System.Drawing.Point(690, 30);
+            this.btnDatPhong.Name = "btnDatPhong";
+            this.btnDatPhong.Size = new System.Drawing.Size(240, 170);
+            this.btnDatPhong.TabIndex = 1;
+            this.btnDatPhong.Text = "Đặt Phòng";
+            this.btnDatPhong.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDatPhong.UseVisualStyleBackColor = false;
+            this.btnDatPhong.Click += new System.EventHandler(this.btnDatPhong_Click);
+            // 
+            // btnPhieuThu
+            // 
+            this.btnPhieuThu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnPhieuThu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnPhieuThu.Image = global::QLKhachSan.Properties.Resources.Phiếu_Thu;
+            this.btnPhieuThu.Location = new System.Drawing.Point(450, 30);
+            this.btnPhieuThu.Name = "btnPhieuThu";
+            this.btnPhieuThu.Size = new System.Drawing.Size(240, 170);
+            this.btnPhieuThu.TabIndex = 0;
+            this.btnPhieuThu.Text = "Phiếu Thu";
+            this.btnPhieuThu.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPhieuThu.UseVisualStyleBackColor = false;
+            // 
+            // btnNhapKho
+            // 
+            this.btnNhapKho.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnNhapKho.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnNhapKho.Image = global::QLKhachSan.Properties.Resources.Kho;
+            this.btnNhapKho.Location = new System.Drawing.Point(210, 30);
+            this.btnNhapKho.Name = "btnNhapKho";
+            this.btnNhapKho.Size = new System.Drawing.Size(240, 170);
+            this.btnNhapKho.TabIndex = 0;
+            this.btnNhapKho.Text = "Nhập Kho";
+            this.btnNhapKho.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnNhapKho.UseVisualStyleBackColor = false;
             // 
             // btnDichVu
             // 
@@ -214,30 +271,6 @@ namespace QLKhachSan
             this.btnPhong.Text = "Phòng";
             this.btnPhong.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnPhong.UseVisualStyleBackColor = false;
-            // 
-            // panelLeft
-            // 
-            this.panelLeft.CanvasColor = System.Drawing.SystemColors.Control;
-            this.panelLeft.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.panelLeft.Controls.Add(this.btnThoat);
-            this.panelLeft.Controls.Add(this.btnQLNCC);
-            this.panelLeft.Controls.Add(this.btnQLHoaDon);
-            this.panelLeft.Controls.Add(this.btnQLKhachHang);
-            this.panelLeft.Controls.Add(this.btnQLNguoiDung);
-            this.panelLeft.Controls.Add(this.btnQLNhanVien);
-            this.panelLeft.DisabledBackColor = System.Drawing.Color.Empty;
-            this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelLeft.Location = new System.Drawing.Point(0, 100);
-            this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(242, 650);
-            this.panelLeft.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.panelLeft.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.panelLeft.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.panelLeft.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.panelLeft.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.panelLeft.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.panelLeft.Style.GradientAngle = 90;
-            this.panelLeft.TabIndex = 1;
             // 
             // btnThoat
             // 
@@ -314,6 +347,7 @@ namespace QLKhachSan
             this.btnQLNguoiDung.Text = "Quản Lý Người Dùng";
             this.btnQLNguoiDung.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.btnQLNguoiDung.UseVisualStyleBackColor = false;
+            this.btnQLNguoiDung.Click += new System.EventHandler(this.btnQLNguoiDung_Click);
             // 
             // btnQLNhanVien
             // 
@@ -329,24 +363,7 @@ namespace QLKhachSan
             this.btnQLNhanVien.Text = "Quản Lý Nhân Viên";
             this.btnQLNhanVien.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.btnQLNhanVien.UseVisualStyleBackColor = false;
-            this.btnQLNhanVien.Click += new System.EventHandler(this.btnQLNhanVien_Click_1);
-            // 
-            // labelX1
-            // 
-            // 
-            // 
-            // 
-            this.labelX1.BackgroundStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(132)))));
-            this.labelX1.BackgroundStyle.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(255)))), ((int)(((byte)(132)))));
-            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelX1.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX1.Location = new System.Drawing.Point(0, 0);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(1364, 100);
-            this.labelX1.TabIndex = 0;
-            this.labelX1.Text = "Phần Mềm Quản Lý Khách Sạn";
-            this.labelX1.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnQLNhanVien.Click += new System.EventHandler(this.btnQLNhanVien_Click);
             // 
             // frmMainMenu
             // 
@@ -394,6 +411,7 @@ namespace QLKhachSan
         private System.Windows.Forms.Button btnQLNguoiDung;
         private System.Windows.Forms.Button btnQLNhanVien;
         private DevComponents.DotNetBar.LabelX labelX1;
+        private System.Windows.Forms.Button btnDatPhong;
     }
 }
 

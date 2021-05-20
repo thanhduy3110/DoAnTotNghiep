@@ -11,18 +11,11 @@ using System.Windows.Forms;
 
 namespace QLKhachSan
 {
-    public partial class frmQLNhanVien : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class frmQLPhieuThue : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public frmQLNhanVien()
+        public frmQLPhieuThue()
         {
             InitializeComponent();
-        }
-
-        private void btnHome_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            frmMainMenu frm = new frmMainMenu();
-            this.Close();
-            frm.Show();
         }
     }
 }

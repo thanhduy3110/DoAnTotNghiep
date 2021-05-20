@@ -31,14 +31,36 @@ namespace QLKhachSan
         }
 
       
-        private void btnQLNhanVien_Click_1(object sender, EventArgs e)
+       
+
+        private void btnQLNguoiDung_Click(object sender, EventArgs e)
         {
-            frmQLNguoiDung frmNV = new frmQLNhanVien();
+            frmQLNgDung frmND = new frmQLNgDung();
+            anPanel();
+            frmND.TopLevel = false;
+            panelMid.Controls.Add(frmND);
+            frmND.Dock = DockStyle.Fill;
+            frmND.Show();
+        }
+
+        private void btnQLNhanVien_Click(object sender, EventArgs e)
+        {
+            frmQLNhanVien frmNV = new frmQLNhanVien();
             anPanel();
             frmNV.TopLevel = false;
             panelMid.Controls.Add(frmNV);
             frmNV.Dock = DockStyle.Fill;
             frmNV.Show();
+        }
+
+        private void btnDatPhong_Click(object sender, EventArgs e)
+        {
+            frmDatPhong frmDP = new frmDatPhong();
+            anPanel();
+            frmDP.TopLevel = false;
+            panelMid.Controls.Add(frmDP);
+            frmDP.Dock = DockStyle.Fill;
+            frmDP.Show();
         }
     }
 }
