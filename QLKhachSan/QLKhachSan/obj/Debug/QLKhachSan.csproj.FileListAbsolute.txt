@@ -256,3 +256,4 @@ D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.frmDat
 D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.frmQLLoaiPhong.resources
 D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.frmQLPhieuThue.resources
 D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.frmQLPhong.resources
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.csprojAssemblyReference.cache

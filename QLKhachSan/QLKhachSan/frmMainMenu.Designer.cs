@@ -32,23 +32,23 @@ namespace QLKhachSan
             this.panelMid = new DevComponents.DotNetBar.PanelEx();
             this.panelRight = new DevComponents.DotNetBar.PanelEx();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panelLeft = new DevComponents.DotNetBar.PanelEx();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.btnThongKe = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.btnDatPhong = new System.Windows.Forms.Button();
             this.btnPhieuThu = new System.Windows.Forms.Button();
             this.btnNhapKho = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btnDichVu = new System.Windows.Forms.Button();
             this.btnLoaiPhong = new System.Windows.Forms.Button();
             this.btnPhong = new System.Windows.Forms.Button();
+            this.panelLeft = new DevComponents.DotNetBar.PanelEx();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnQLNCC = new System.Windows.Forms.Button();
             this.btnQLHoaDon = new System.Windows.Forms.Button();
             this.btnQLKhachHang = new System.Windows.Forms.Button();
             this.btnQLNguoiDung = new System.Windows.Forms.Button();
             this.btnQLNhanVien = new System.Windows.Forms.Button();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.panelMid.SuspendLayout();
             this.panelRight.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -111,6 +111,19 @@ namespace QLKhachSan
             this.panel3.Size = new System.Drawing.Size(1122, 190);
             this.panel3.TabIndex = 2;
             // 
+            // btnThongKe
+            // 
+            this.btnThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnThongKe.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnThongKe.Image = global::QLKhachSan.Properties.Resources.Thống_Kê;
+            this.btnThongKe.Location = new System.Drawing.Point(440, 30);
+            this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.Size = new System.Drawing.Size(240, 130);
+            this.btnThongKe.TabIndex = 0;
+            this.btnThongKe.Text = "Thống Kê";
+            this.btnThongKe.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnThongKe.UseVisualStyleBackColor = false;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -124,74 +137,6 @@ namespace QLKhachSan
             this.panel2.Padding = new System.Windows.Forms.Padding(210, 30, 30, 30);
             this.panel2.Size = new System.Drawing.Size(1122, 230);
             this.panel2.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.panel1.Controls.Add(this.btnDichVu);
-            this.panel1.Controls.Add(this.btnLoaiPhong);
-            this.panel1.Controls.Add(this.btnPhong);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(210, 30, 30, 30);
-            this.panel1.Size = new System.Drawing.Size(1122, 230);
-            this.panel1.TabIndex = 0;
-            // 
-            // panelLeft
-            // 
-            this.panelLeft.CanvasColor = System.Drawing.SystemColors.Control;
-            this.panelLeft.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.panelLeft.Controls.Add(this.btnThoat);
-            this.panelLeft.Controls.Add(this.btnQLNCC);
-            this.panelLeft.Controls.Add(this.btnQLHoaDon);
-            this.panelLeft.Controls.Add(this.btnQLKhachHang);
-            this.panelLeft.Controls.Add(this.btnQLNguoiDung);
-            this.panelLeft.Controls.Add(this.btnQLNhanVien);
-            this.panelLeft.DisabledBackColor = System.Drawing.Color.Empty;
-            this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelLeft.Location = new System.Drawing.Point(0, 100);
-            this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(242, 650);
-            this.panelLeft.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.panelLeft.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.panelLeft.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.panelLeft.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.panelLeft.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.panelLeft.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.panelLeft.Style.GradientAngle = 90;
-            this.panelLeft.TabIndex = 1;
-            // 
-            // labelX1
-            // 
-            // 
-            // 
-            // 
-            this.labelX1.BackgroundStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(132)))));
-            this.labelX1.BackgroundStyle.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(255)))), ((int)(((byte)(132)))));
-            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelX1.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX1.Location = new System.Drawing.Point(0, 0);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(1364, 100);
-            this.labelX1.TabIndex = 0;
-            this.labelX1.Text = "Phần Mềm Quản Lý Khách Sạn";
-            this.labelX1.TextAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // btnThongKe
-            // 
-            this.btnThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnThongKe.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnThongKe.Image = global::QLKhachSan.Properties.Resources.Thống_Kê;
-            this.btnThongKe.Location = new System.Drawing.Point(440, 30);
-            this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(240, 130);
-            this.btnThongKe.TabIndex = 0;
-            this.btnThongKe.Text = "Thống Kê";
-            this.btnThongKe.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnThongKe.UseVisualStyleBackColor = false;
             // 
             // btnDatPhong
             // 
@@ -233,6 +178,20 @@ namespace QLKhachSan
             this.btnNhapKho.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnNhapKho.UseVisualStyleBackColor = false;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel1.Controls.Add(this.btnDichVu);
+            this.panel1.Controls.Add(this.btnLoaiPhong);
+            this.panel1.Controls.Add(this.btnPhong);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(210, 30, 30, 30);
+            this.panel1.Size = new System.Drawing.Size(1122, 230);
+            this.panel1.TabIndex = 0;
+            // 
             // btnDichVu
             // 
             this.btnDichVu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -271,6 +230,30 @@ namespace QLKhachSan
             this.btnPhong.Text = "Phòng";
             this.btnPhong.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnPhong.UseVisualStyleBackColor = false;
+            // 
+            // panelLeft
+            // 
+            this.panelLeft.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelLeft.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelLeft.Controls.Add(this.btnThoat);
+            this.panelLeft.Controls.Add(this.btnQLNCC);
+            this.panelLeft.Controls.Add(this.btnQLHoaDon);
+            this.panelLeft.Controls.Add(this.btnQLKhachHang);
+            this.panelLeft.Controls.Add(this.btnQLNguoiDung);
+            this.panelLeft.Controls.Add(this.btnQLNhanVien);
+            this.panelLeft.DisabledBackColor = System.Drawing.Color.Empty;
+            this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelLeft.Location = new System.Drawing.Point(0, 100);
+            this.panelLeft.Name = "panelLeft";
+            this.panelLeft.Size = new System.Drawing.Size(242, 650);
+            this.panelLeft.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.panelLeft.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.panelLeft.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.panelLeft.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.panelLeft.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.panelLeft.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.panelLeft.Style.GradientAngle = 90;
+            this.panelLeft.TabIndex = 1;
             // 
             // btnThoat
             // 
@@ -365,6 +348,23 @@ namespace QLKhachSan
             this.btnQLNhanVien.UseVisualStyleBackColor = false;
             this.btnQLNhanVien.Click += new System.EventHandler(this.btnQLNhanVien_Click);
             // 
+            // labelX1
+            // 
+            // 
+            // 
+            // 
+            this.labelX1.BackgroundStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(132)))));
+            this.labelX1.BackgroundStyle.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(255)))), ((int)(((byte)(132)))));
+            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelX1.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX1.Location = new System.Drawing.Point(0, 0);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(1364, 100);
+            this.labelX1.TabIndex = 0;
+            this.labelX1.Text = "Phần Mềm Quản Lý Khách Sạn";
+            this.labelX1.TextAlignment = System.Drawing.StringAlignment.Center;
+            // 
             // frmMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -372,7 +372,6 @@ namespace QLKhachSan
             this.ClientSize = new System.Drawing.Size(1364, 750);
             this.ControlBox = false;
             this.Controls.Add(this.panelMid);
-            this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1382, 768);
