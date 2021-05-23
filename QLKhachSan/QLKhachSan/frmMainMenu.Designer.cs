@@ -68,7 +68,7 @@ namespace QLKhachSan
             this.panelMid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMid.Location = new System.Drawing.Point(0, 0);
             this.panelMid.Name = "panelMid";
-            this.panelMid.Size = new System.Drawing.Size(1364, 750);
+            this.panelMid.Size = new System.Drawing.Size(1350, 750);
             this.panelMid.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelMid.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelMid.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -89,7 +89,7 @@ namespace QLKhachSan
             this.panelRight.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelRight.Location = new System.Drawing.Point(242, 100);
             this.panelRight.Name = "panelRight";
-            this.panelRight.Size = new System.Drawing.Size(1122, 650);
+            this.panelRight.Size = new System.Drawing.Size(1108, 650);
             this.panelRight.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelRight.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelRight.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -108,7 +108,7 @@ namespace QLKhachSan
             this.panel3.Location = new System.Drawing.Point(0, 460);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(440, 30, 30, 30);
-            this.panel3.Size = new System.Drawing.Size(1122, 190);
+            this.panel3.Size = new System.Drawing.Size(1108, 190);
             this.panel3.TabIndex = 2;
             // 
             // btnThongKe
@@ -135,7 +135,7 @@ namespace QLKhachSan
             this.panel2.Location = new System.Drawing.Point(0, 230);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(210, 30, 30, 30);
-            this.panel2.Size = new System.Drawing.Size(1122, 230);
+            this.panel2.Size = new System.Drawing.Size(1108, 230);
             this.panel2.TabIndex = 1;
             // 
             // btnDatPhong
@@ -189,7 +189,7 @@ namespace QLKhachSan
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(210, 30, 30, 30);
-            this.panel1.Size = new System.Drawing.Size(1122, 230);
+            this.panel1.Size = new System.Drawing.Size(1108, 230);
             this.panel1.TabIndex = 0;
             // 
             // btnDichVu
@@ -360,7 +360,7 @@ namespace QLKhachSan
             this.labelX1.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX1.Location = new System.Drawing.Point(0, 0);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(1364, 100);
+            this.labelX1.Size = new System.Drawing.Size(1350, 100);
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "Phần Mềm Quản Lý Khách Sạn";
             this.labelX1.TextAlignment = System.Drawing.StringAlignment.Center;
@@ -369,14 +369,14 @@ namespace QLKhachSan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1364, 750);
+            this.ClientSize = new System.Drawing.Size(1350, 750);
             this.ControlBox = false;
             this.Controls.Add(this.panelMid);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1382, 768);
+            this.MaximumSize = new System.Drawing.Size(1368, 768);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1382, 746);
+            this.MinimumSize = new System.Drawing.Size(1368, 768);
             this.Name = "frmMainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panelMid.ResumeLayout(false);

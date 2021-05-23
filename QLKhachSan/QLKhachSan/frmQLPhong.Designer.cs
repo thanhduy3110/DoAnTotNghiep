@@ -232,9 +232,9 @@ namespace QLKhachSan
             // groupControl3
             // 
             this.groupControl3.Controls.Add(this.dataGridViewX1);
-            this.groupControl3.Location = new System.Drawing.Point(12, 175);
+            this.groupControl3.Location = new System.Drawing.Point(12, 151);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(1332, 279);
+            this.groupControl3.Size = new System.Drawing.Size(1332, 303);
             this.groupControl3.TabIndex = 15;
             this.groupControl3.Text = "Danh sách phòng";
             // 
@@ -261,7 +261,7 @@ namespace QLKhachSan
             this.dataGridViewX1.Name = "dataGridViewX1";
             this.dataGridViewX1.RowHeadersWidth = 51;
             this.dataGridViewX1.RowTemplate.Height = 24;
-            this.dataGridViewX1.Size = new System.Drawing.Size(1328, 249);
+            this.dataGridViewX1.Size = new System.Drawing.Size(1328, 273);
             this.dataGridViewX1.TabIndex = 0;
             // 
             // MaPhong
@@ -305,7 +305,7 @@ namespace QLKhachSan
             this.textEdit5.MenuManager = this.ribbon;
             this.textEdit5.Name = "textEdit5";
             this.textEdit5.Properties.AutoHeight = false;
-            this.textEdit5.Size = new System.Drawing.Size(805, 98);
+            this.textEdit5.Size = new System.Drawing.Size(805, 74);
             this.textEdit5.StyleController = this.layoutControl1;
             this.textEdit5.TabIndex = 8;
             // 
@@ -343,13 +343,13 @@ namespace QLKhachSan
             // 
             // textEdit6
             // 
-            this.textEdit6.Location = new System.Drawing.Point(1019, 84);
+            this.textEdit6.Location = new System.Drawing.Point(1019, 76);
             this.textEdit6.MenuManager = this.ribbon;
             this.textEdit6.Name = "textEdit6";
             this.textEdit6.Properties.AutoHeight = false;
             this.textEdit6.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.textEdit6.Size = new System.Drawing.Size(325, 60);
+            this.textEdit6.Size = new System.Drawing.Size(325, 48);
             this.textEdit6.StyleController = this.layoutControl1;
             this.textEdit6.TabIndex = 9;
             // 
@@ -378,7 +378,7 @@ namespace QLKhachSan
             this.layoutControlItem5.Control = this.textEdit5;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 51);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(908, 102);
+            this.layoutControlItem5.Size = new System.Drawing.Size(908, 78);
             this.layoutControlItem5.Text = "Ghi chú";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(96, 21);
             // 
@@ -387,16 +387,16 @@ namespace QLKhachSan
             this.layoutControlItem6.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem6.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem6.Control = this.textEdit6;
-            this.layoutControlItem6.Location = new System.Drawing.Point(908, 72);
+            this.layoutControlItem6.Location = new System.Drawing.Point(908, 64);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(428, 64);
+            this.layoutControlItem6.Size = new System.Drawing.Size(428, 52);
             this.layoutControlItem6.Text = "Trạng thái";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(96, 21);
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 153);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 129);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
             this.emptySpaceItem2.Size = new System.Drawing.Size(1336, 10);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
@@ -404,9 +404,9 @@ namespace QLKhachSan
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.groupControl3;
-            this.layoutControlItem12.Location = new System.Drawing.Point(0, 163);
+            this.layoutControlItem12.Location = new System.Drawing.Point(0, 139);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(1336, 283);
+            this.layoutControlItem12.Size = new System.Drawing.Size(1336, 307);
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem12.TextVisible = false;
             // 
@@ -448,15 +448,15 @@ namespace QLKhachSan
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(908, 51);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(428, 21);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(428, 13);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(908, 136);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(908, 116);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(428, 17);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(428, 13);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // frmQLPhong
