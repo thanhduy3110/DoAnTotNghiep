@@ -104,6 +104,12 @@
     <Compile Include="frmQLNhanVien.Designer.cs">
       <DependentUpon>frmQLNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmQLTimKiemNguoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLTimKiemNguoi.Designer.cs">
+      <DependentUpon>frmQLTimKiemNguoi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmDatPhong.resx">
@@ -129,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmQLNhanVien.resx">
       <DependentUpon>frmQLNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLTimKiemNguoi.resx">
+      <DependentUpon>frmQLTimKiemNguoi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
