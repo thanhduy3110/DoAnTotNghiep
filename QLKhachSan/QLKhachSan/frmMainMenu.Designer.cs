@@ -46,7 +46,6 @@ namespace QLKhachSan
             this.btnQLNCC = new System.Windows.Forms.Button();
             this.btnQLHoaDon = new System.Windows.Forms.Button();
             this.btnQLKhachHang = new System.Windows.Forms.Button();
-            this.btnQLNguoiDung = new System.Windows.Forms.Button();
             this.btnQLNhanVien = new System.Windows.Forms.Button();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.panelMid.SuspendLayout();
@@ -204,6 +203,7 @@ namespace QLKhachSan
             this.btnDichVu.Text = "Dịch Vụ";
             this.btnDichVu.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDichVu.UseVisualStyleBackColor = false;
+            this.btnDichVu.Click += new System.EventHandler(this.btnDichVu_Click);
             // 
             // btnLoaiPhong
             // 
@@ -239,7 +239,6 @@ namespace QLKhachSan
             this.panelLeft.Controls.Add(this.btnQLNCC);
             this.panelLeft.Controls.Add(this.btnQLHoaDon);
             this.panelLeft.Controls.Add(this.btnQLKhachHang);
-            this.panelLeft.Controls.Add(this.btnQLNguoiDung);
             this.panelLeft.Controls.Add(this.btnQLNhanVien);
             this.panelLeft.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
@@ -278,9 +277,9 @@ namespace QLKhachSan
             this.btnQLNCC.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLNCC.Image = global::QLKhachSan.Properties.Resources.NCC;
             this.btnQLNCC.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnQLNCC.Location = new System.Drawing.Point(0, 480);
+            this.btnQLNCC.Location = new System.Drawing.Point(0, 450);
             this.btnQLNCC.Name = "btnQLNCC";
-            this.btnQLNCC.Size = new System.Drawing.Size(242, 120);
+            this.btnQLNCC.Size = new System.Drawing.Size(242, 150);
             this.btnQLNCC.TabIndex = 0;
             this.btnQLNCC.Text = "Quản Lý Nhà Cung Cấp";
             this.btnQLNCC.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -293,9 +292,9 @@ namespace QLKhachSan
             this.btnQLHoaDon.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLHoaDon.Image = global::QLKhachSan.Properties.Resources.Hoad_đơn;
             this.btnQLHoaDon.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnQLHoaDon.Location = new System.Drawing.Point(0, 360);
+            this.btnQLHoaDon.Location = new System.Drawing.Point(0, 300);
             this.btnQLHoaDon.Name = "btnQLHoaDon";
-            this.btnQLHoaDon.Size = new System.Drawing.Size(242, 120);
+            this.btnQLHoaDon.Size = new System.Drawing.Size(242, 150);
             this.btnQLHoaDon.TabIndex = 0;
             this.btnQLHoaDon.Text = "Quản Lý Hóa Đơn";
             this.btnQLHoaDon.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -308,29 +307,13 @@ namespace QLKhachSan
             this.btnQLKhachHang.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLKhachHang.Image = global::QLKhachSan.Properties.Resources.Khách_Hàng;
             this.btnQLKhachHang.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnQLKhachHang.Location = new System.Drawing.Point(0, 240);
+            this.btnQLKhachHang.Location = new System.Drawing.Point(0, 150);
             this.btnQLKhachHang.Name = "btnQLKhachHang";
-            this.btnQLKhachHang.Size = new System.Drawing.Size(242, 120);
+            this.btnQLKhachHang.Size = new System.Drawing.Size(242, 150);
             this.btnQLKhachHang.TabIndex = 0;
             this.btnQLKhachHang.Text = "Quản Lý Khách Hàng";
             this.btnQLKhachHang.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.btnQLKhachHang.UseVisualStyleBackColor = false;
-            // 
-            // btnQLNguoiDung
-            // 
-            this.btnQLNguoiDung.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnQLNguoiDung.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnQLNguoiDung.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQLNguoiDung.Image = global::QLKhachSan.Properties.Resources.Hình_người_dùng;
-            this.btnQLNguoiDung.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnQLNguoiDung.Location = new System.Drawing.Point(0, 120);
-            this.btnQLNguoiDung.Name = "btnQLNguoiDung";
-            this.btnQLNguoiDung.Size = new System.Drawing.Size(242, 120);
-            this.btnQLNguoiDung.TabIndex = 0;
-            this.btnQLNguoiDung.Text = "Quản Lý Người Dùng";
-            this.btnQLNguoiDung.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnQLNguoiDung.UseVisualStyleBackColor = false;
-            this.btnQLNguoiDung.Click += new System.EventHandler(this.btnQLNguoiDung_Click);
             // 
             // btnQLNhanVien
             // 
@@ -341,7 +324,7 @@ namespace QLKhachSan
             this.btnQLNhanVien.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnQLNhanVien.Location = new System.Drawing.Point(0, 0);
             this.btnQLNhanVien.Name = "btnQLNhanVien";
-            this.btnQLNhanVien.Size = new System.Drawing.Size(242, 120);
+            this.btnQLNhanVien.Size = new System.Drawing.Size(242, 150);
             this.btnQLNhanVien.TabIndex = 0;
             this.btnQLNhanVien.Text = "Quản Lý Nhân Viên";
             this.btnQLNhanVien.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -407,7 +390,6 @@ namespace QLKhachSan
         private System.Windows.Forms.Button btnQLNCC;
         private System.Windows.Forms.Button btnQLHoaDon;
         private System.Windows.Forms.Button btnQLKhachHang;
-        private System.Windows.Forms.Button btnQLNguoiDung;
         private System.Windows.Forms.Button btnQLNhanVien;
         private DevComponents.DotNetBar.LabelX labelX1;
         private System.Windows.Forms.Button btnDatPhong;

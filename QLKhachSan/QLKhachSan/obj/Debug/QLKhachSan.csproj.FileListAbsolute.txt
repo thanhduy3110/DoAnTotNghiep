@@ -126,7 +126,6 @@ C:\Users\PC\OneDrive\Desktop\QLKhachSan\QLKhachSan\bin\Debug\es\DevExpress.Offic
 C:\Users\PC\OneDrive\Desktop\QLKhachSan\QLKhachSan\bin\Debug\ja\DevExpress.Office.v19.2.Core.resources.dll
 C:\Users\PC\OneDrive\Desktop\QLKhachSan\QLKhachSan\bin\Debug\ru\DevExpress.Office.v19.2.Core.resources.dll
 D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.frmMainMenu.resources
-D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.frmQLNgDung.resources
 D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.Properties.Resources.resources
 D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.csproj.GenerateResource.cache
 D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.exe.licenses
@@ -257,3 +256,4 @@ D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.frmQLL
 D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.frmQLPhieuThue.resources
 D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.frmQLPhong.resources
 D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.csprojAssemblyReference.cache
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.frmQLHoaDon.resources

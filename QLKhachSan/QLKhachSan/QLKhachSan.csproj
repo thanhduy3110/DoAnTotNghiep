@@ -68,6 +68,18 @@
     <Compile Include="frmMainMenu.Designer.cs">
       <DependentUpon>frmMainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmQLDichVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLDichVu.Designer.cs">
+      <DependentUpon>frmQLDichVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQLHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLHoaDon.Designer.cs">
+      <DependentUpon>frmQLHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmQLLoaiPhong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,12 +98,6 @@
     <Compile Include="frmQLPhong.Designer.cs">
       <DependentUpon>frmQLPhong.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmQLNgDung.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmQLNgDung.Designer.cs">
-      <DependentUpon>frmQLNgDung.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmQLNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,12 @@
     <EmbeddedResource Include="frmMainMenu.resx">
       <DependentUpon>frmMainMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmQLDichVu.resx">
+      <DependentUpon>frmQLDichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLHoaDon.resx">
+      <DependentUpon>frmQLHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmQLLoaiPhong.resx">
       <DependentUpon>frmQLLoaiPhong.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,9 +126,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmQLPhong.resx">
       <DependentUpon>frmQLPhong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmQLNgDung.resx">
-      <DependentUpon>frmQLNgDung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQLNhanVien.resx">
       <DependentUpon>frmQLNhanVien.cs</DependentUpon>

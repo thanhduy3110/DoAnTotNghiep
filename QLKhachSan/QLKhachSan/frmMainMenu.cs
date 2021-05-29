@@ -32,15 +32,7 @@ namespace QLKhachSan
       
        
 
-        private void btnQLNguoiDung_Click(object sender, EventArgs e)
-        {
-            frmQLNgDung frmND = new frmQLNgDung();
-            anPanel();
-            frmND.TopLevel = false;
-            panelMid.Controls.Add(frmND);
-            frmND.Dock = DockStyle.Fill;
-            frmND.Show();
-        }
+       
 
         private void btnQLNhanVien_Click(object sender, EventArgs e)
         {
@@ -60,6 +52,11 @@ namespace QLKhachSan
             panelMid.Controls.Add(frmDP);
             frmDP.Dock = DockStyle.Fill;
             frmDP.Show();
+        }
+
+        private void btnDichVu_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

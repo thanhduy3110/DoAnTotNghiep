@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace QLKhachSan
 {
-    public partial class frmQLNgDung : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class frmQLHoaDon : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public frmQLNgDung()
+        public frmQLHoaDon()
         {
             InitializeComponent();
         }
