@@ -17,23 +17,23 @@ namespace QLKhachSan
         {
             InitializeComponent();
         }
-        int n = 0;
+
         private void btn_Thoat_Click(object sender, EventArgs e)
         {
-           
-                this.Close();
-              
+            if (System.Windows.Forms.Application.MessageLoop)
+            {
+                // WinForms app
+                System.Windows.Forms.Application.Exit();
+            }
+            else
+            {
+                // Console app
+                System.Environment.Exit(1);
+            }
         }
 
         private void btn_HoaDon_Click(object sender, EventArgs e)
         {
-            //this.panelMid.Controls.Clear();
-            //frmQLHoaDon frHD = new frmQLHoaDon();
-            //frHD.TopLevel = false;
-            //this.panelMid.Controls.Add(frHD);
-            //frHD.Dock = DockStyle.Fill;
-            //frHD.Show();
-            n++;
             this.panelMid.Visible = false;
             frmQLHoaDon frm = new frmQLHoaDon();
             frm.MdiParent = this;
@@ -44,6 +44,13 @@ namespace QLKhachSan
         public Panel panelMenu()
         {
             return panelMid;
+        }
+
+        private void frmMenu_FormClosing_1(object sender, FormClosingEventArgs e)
+        {
+            DialogResult request = MessageBox.Show("Bạn có muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (request == DialogResult.Yes)
+                e.Cancel = false;
         }
     }
 }

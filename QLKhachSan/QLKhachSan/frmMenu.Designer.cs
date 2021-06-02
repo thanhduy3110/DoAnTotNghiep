@@ -50,11 +50,10 @@ namespace QLKhachSan
             // lbl_QLKS
             // 
             this.lbl_QLKS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.lbl_QLKS.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbl_QLKS.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_QLKS.Location = new System.Drawing.Point(0, 0);
             this.lbl_QLKS.Name = "lbl_QLKS";
-            this.lbl_QLKS.Size = new System.Drawing.Size(1466, 79);
+            this.lbl_QLKS.Size = new System.Drawing.Size(1466, 64);
             this.lbl_QLKS.TabIndex = 6;
             this.lbl_QLKS.Text = "PHẦN MỀM QUẢN LÝ KHÁCH SẠN CKC";
             this.lbl_QLKS.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -75,10 +74,9 @@ namespace QLKhachSan
             this.panelMid.Controls.Add(this.btn_DichVu);
             this.panelMid.Controls.Add(this.btn_PhieuDatPhong);
             this.panelMid.Controls.Add(this.btn_QuanLyNhanVien);
-            this.panelMid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMid.Location = new System.Drawing.Point(0, 79);
+            this.panelMid.Location = new System.Drawing.Point(0, 82);
             this.panelMid.Name = "panelMid";
-            this.panelMid.Size = new System.Drawing.Size(1466, 899);
+            this.panelMid.Size = new System.Drawing.Size(1466, 896);
             this.panelMid.TabIndex = 7;
             // 
             // btn_HoaDon
@@ -97,7 +95,7 @@ namespace QLKhachSan
             this.btn_HoaDon.Location = new System.Drawing.Point(51, 624);
             this.btn_HoaDon.MinimumSize = new System.Drawing.Size(299, 198);
             this.btn_HoaDon.Name = "btn_HoaDon";
-            this.btn_HoaDon.Size = new System.Drawing.Size(339, 266);
+            this.btn_HoaDon.Size = new System.Drawing.Size(339, 263);
             this.btn_HoaDon.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_HoaDon.TabIndex = 82;
             this.btn_HoaDon.Text = "QUẢN LÝ HÓA ĐƠN";
@@ -119,7 +117,7 @@ namespace QLKhachSan
             this.btn_KhachHang.Location = new System.Drawing.Point(51, 340);
             this.btn_KhachHang.MinimumSize = new System.Drawing.Size(299, 198);
             this.btn_KhachHang.Name = "btn_KhachHang";
-            this.btn_KhachHang.Size = new System.Drawing.Size(339, 266);
+            this.btn_KhachHang.Size = new System.Drawing.Size(339, 263);
             this.btn_KhachHang.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_KhachHang.TabIndex = 83;
             this.btn_KhachHang.Text = "QUẢN LÝ KHÁCH HÀNG";
@@ -140,7 +138,7 @@ namespace QLKhachSan
             this.btn_LoaiPhong.Location = new System.Drawing.Point(1086, 340);
             this.btn_LoaiPhong.MinimumSize = new System.Drawing.Size(299, 198);
             this.btn_LoaiPhong.Name = "btn_LoaiPhong";
-            this.btn_LoaiPhong.Size = new System.Drawing.Size(339, 266);
+            this.btn_LoaiPhong.Size = new System.Drawing.Size(339, 263);
             this.btn_LoaiPhong.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_LoaiPhong.TabIndex = 84;
             this.btn_LoaiPhong.Text = "LOẠI PHÒNG";
@@ -161,7 +159,7 @@ namespace QLKhachSan
             this.btn_LoaiNhanVien.Location = new System.Drawing.Point(741, 624);
             this.btn_LoaiNhanVien.MinimumSize = new System.Drawing.Size(299, 198);
             this.btn_LoaiNhanVien.Name = "btn_LoaiNhanVien";
-            this.btn_LoaiNhanVien.Size = new System.Drawing.Size(339, 266);
+            this.btn_LoaiNhanVien.Size = new System.Drawing.Size(339, 263);
             this.btn_LoaiNhanVien.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_LoaiNhanVien.TabIndex = 85;
             this.btn_LoaiNhanVien.Text = "LOẠI NHÂN VIÊN";
@@ -182,7 +180,7 @@ namespace QLKhachSan
             this.btn_LoaiDichVu.Location = new System.Drawing.Point(741, 340);
             this.btn_LoaiDichVu.MinimumSize = new System.Drawing.Size(299, 198);
             this.btn_LoaiDichVu.Name = "btn_LoaiDichVu";
-            this.btn_LoaiDichVu.Size = new System.Drawing.Size(339, 266);
+            this.btn_LoaiDichVu.Size = new System.Drawing.Size(339, 263);
             this.btn_LoaiDichVu.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_LoaiDichVu.TabIndex = 86;
             this.btn_LoaiDichVu.Text = "LOẠI DỊCH VỤ";
@@ -203,7 +201,7 @@ namespace QLKhachSan
             this.btn_Phong.Location = new System.Drawing.Point(1086, 56);
             this.btn_Phong.MinimumSize = new System.Drawing.Size(299, 198);
             this.btn_Phong.Name = "btn_Phong";
-            this.btn_Phong.Size = new System.Drawing.Size(339, 266);
+            this.btn_Phong.Size = new System.Drawing.Size(339, 263);
             this.btn_Phong.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_Phong.TabIndex = 87;
             this.btn_Phong.Text = "PHÒNG";
@@ -224,7 +222,7 @@ namespace QLKhachSan
             this.btn_Thoat.Location = new System.Drawing.Point(1086, 772);
             this.btn_Thoat.MinimumSize = new System.Drawing.Size(299, 97);
             this.btn_Thoat.Name = "btn_Thoat";
-            this.btn_Thoat.Size = new System.Drawing.Size(339, 118);
+            this.btn_Thoat.Size = new System.Drawing.Size(339, 115);
             this.btn_Thoat.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_Thoat.TabIndex = 88;
             this.btn_Thoat.Text = "THOÁT PHẦN MỀM";
@@ -246,7 +244,7 @@ namespace QLKhachSan
             this.btn_DoiMatKhau.Location = new System.Drawing.Point(1086, 625);
             this.btn_DoiMatKhau.MinimumSize = new System.Drawing.Size(299, 97);
             this.btn_DoiMatKhau.Name = "btn_DoiMatKhau";
-            this.btn_DoiMatKhau.Size = new System.Drawing.Size(339, 129);
+            this.btn_DoiMatKhau.Size = new System.Drawing.Size(339, 126);
             this.btn_DoiMatKhau.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_DoiMatKhau.TabIndex = 89;
             this.btn_DoiMatKhau.Text = "ĐỔI MẬT KHẨU";
@@ -267,7 +265,7 @@ namespace QLKhachSan
             this.buttonX8.Location = new System.Drawing.Point(396, 624);
             this.buttonX8.MinimumSize = new System.Drawing.Size(299, 198);
             this.buttonX8.Name = "buttonX8";
-            this.buttonX8.Size = new System.Drawing.Size(339, 266);
+            this.buttonX8.Size = new System.Drawing.Size(339, 263);
             this.buttonX8.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonX8.TabIndex = 90;
             this.buttonX8.Text = "THỐNG KÊ";
@@ -288,7 +286,7 @@ namespace QLKhachSan
             this.btn_PhongDaDat.Location = new System.Drawing.Point(741, 56);
             this.btn_PhongDaDat.MinimumSize = new System.Drawing.Size(299, 198);
             this.btn_PhongDaDat.Name = "btn_PhongDaDat";
-            this.btn_PhongDaDat.Size = new System.Drawing.Size(339, 266);
+            this.btn_PhongDaDat.Size = new System.Drawing.Size(339, 263);
             this.btn_PhongDaDat.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_PhongDaDat.TabIndex = 91;
             this.btn_PhongDaDat.Text = "PHÒNG ĐÃ ĐẶT";
@@ -309,7 +307,7 @@ namespace QLKhachSan
             this.btn_DichVu.Location = new System.Drawing.Point(396, 340);
             this.btn_DichVu.MinimumSize = new System.Drawing.Size(299, 198);
             this.btn_DichVu.Name = "btn_DichVu";
-            this.btn_DichVu.Size = new System.Drawing.Size(339, 266);
+            this.btn_DichVu.Size = new System.Drawing.Size(339, 263);
             this.btn_DichVu.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_DichVu.TabIndex = 92;
             this.btn_DichVu.Text = "DỊCH VỤ";
@@ -330,7 +328,7 @@ namespace QLKhachSan
             this.btn_PhieuDatPhong.Location = new System.Drawing.Point(396, 56);
             this.btn_PhieuDatPhong.MinimumSize = new System.Drawing.Size(299, 198);
             this.btn_PhieuDatPhong.Name = "btn_PhieuDatPhong";
-            this.btn_PhieuDatPhong.Size = new System.Drawing.Size(339, 266);
+            this.btn_PhieuDatPhong.Size = new System.Drawing.Size(339, 263);
             this.btn_PhieuDatPhong.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_PhieuDatPhong.TabIndex = 93;
             this.btn_PhieuDatPhong.Text = "PHIẾU ĐẶT PHÒNG";
@@ -351,7 +349,7 @@ namespace QLKhachSan
             this.btn_QuanLyNhanVien.Location = new System.Drawing.Point(51, 56);
             this.btn_QuanLyNhanVien.MinimumSize = new System.Drawing.Size(299, 198);
             this.btn_QuanLyNhanVien.Name = "btn_QuanLyNhanVien";
-            this.btn_QuanLyNhanVien.Size = new System.Drawing.Size(339, 266);
+            this.btn_QuanLyNhanVien.Size = new System.Drawing.Size(339, 263);
             this.btn_QuanLyNhanVien.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_QuanLyNhanVien.TabIndex = 94;
             this.btn_QuanLyNhanVien.Text = "QUẢN LÝ NHÂN VIÊN";
@@ -370,6 +368,7 @@ namespace QLKhachSan
             this.MinimumSize = new System.Drawing.Size(1466, 978);
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMenu_FormClosing_1);
             this.panelMid.ResumeLayout(false);
             this.ResumeLayout(false);
 
