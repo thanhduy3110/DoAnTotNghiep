@@ -98,7 +98,6 @@ namespace QLKhachSan
             this.btnHome.Id = 1;
             this.btnHome.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnHome.ImageOptions.SvgImage")));
             this.btnHome.Name = "btnHome";
-            this.btnHome.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHome_ItemClick);
             // 
             // barButtonItem2
             // 

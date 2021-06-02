@@ -18,14 +18,6 @@ namespace QLKhachSan
             InitializeComponent();
         }
 
-        private void btnHome_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            this.Controls.Clear();
-            frmDatPhong frmDP = new frmDatPhong();
-            frmDP.TopLevel = false;
-            this.Controls.Add(frmDP);
-            frmDP.Dock = DockStyle.Fill;
-            frmDP.Show();
-        }
+       
     }
 }
