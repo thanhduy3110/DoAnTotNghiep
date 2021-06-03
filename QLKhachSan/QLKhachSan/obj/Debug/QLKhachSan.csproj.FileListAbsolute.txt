@@ -251,9 +251,13 @@ D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\bin\Debug\ru\DevExpress.Off
 D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.frmQLNhanVien.resources
 D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.csproj.CopyComplete
 D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.frmQLLoaiPhong.resources
-D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.frmQLPhieuThue.resources
 D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.frmQLPhong.resources
 D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.frmQLHoaDon.resources
 D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.frmQLDichVu.resources
-D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.frmQLTimKiemNguoi.resources
 D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.frmMenu.resources
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.csprojAssemblyReference.cache
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.frmQLKhachHang.resources
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.frmQLLoaiDV.resources
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.frmQLLoaiNV.resources
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.frmQLPhieuDatPhong.resources
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.frmQLPhongDaDat.resources

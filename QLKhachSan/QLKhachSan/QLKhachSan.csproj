@@ -82,17 +82,35 @@
     <Compile Include="frmQLHoaDon.Designer.cs">
       <DependentUpon>frmQLHoaDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmQLKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLKhachHang.Designer.cs">
+      <DependentUpon>frmQLKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQLLoaiDV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLLoaiDV.Designer.cs">
+      <DependentUpon>frmQLLoaiDV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQLLoaiNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLLoaiNV.Designer.cs">
+      <DependentUpon>frmQLLoaiNV.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmQLLoaiPhong.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmQLLoaiPhong.Designer.cs">
       <DependentUpon>frmQLLoaiPhong.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmQLPhieuThue.cs">
+    <Compile Include="frmQLPhieuDatPhong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmQLPhieuThue.Designer.cs">
-      <DependentUpon>frmQLPhieuThue.cs</DependentUpon>
+    <Compile Include="frmQLPhieuDatPhong.Designer.cs">
+      <DependentUpon>frmQLPhieuDatPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="frmQLPhong.cs">
       <SubType>Form</SubType>
@@ -106,11 +124,11 @@
     <Compile Include="frmQLNhanVien.Designer.cs">
       <DependentUpon>frmQLNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmQLTimKiemNguoi.cs">
+    <Compile Include="frmQLPhongDaDat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmQLTimKiemNguoi.Designer.cs">
-      <DependentUpon>frmQLTimKiemNguoi.cs</DependentUpon>
+    <Compile Include="frmQLPhongDaDat.Designer.cs">
+      <DependentUpon>frmQLPhongDaDat.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -123,11 +141,20 @@
     <EmbeddedResource Include="frmQLHoaDon.resx">
       <DependentUpon>frmQLHoaDon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmQLKhachHang.resx">
+      <DependentUpon>frmQLKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLLoaiDV.resx">
+      <DependentUpon>frmQLLoaiDV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLLoaiNV.resx">
+      <DependentUpon>frmQLLoaiNV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmQLLoaiPhong.resx">
       <DependentUpon>frmQLLoaiPhong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmQLPhieuThue.resx">
-      <DependentUpon>frmQLPhieuThue.cs</DependentUpon>
+    <EmbeddedResource Include="frmQLPhieuDatPhong.resx">
+      <DependentUpon>frmQLPhieuDatPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQLPhong.resx">
       <DependentUpon>frmQLPhong.cs</DependentUpon>
@@ -135,8 +162,8 @@
     <EmbeddedResource Include="frmQLNhanVien.resx">
       <DependentUpon>frmQLNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmQLTimKiemNguoi.resx">
-      <DependentUpon>frmQLTimKiemNguoi.cs</DependentUpon>
+    <EmbeddedResource Include="frmQLPhongDaDat.resx">
+      <DependentUpon>frmQLPhongDaDat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -114,6 +114,7 @@ namespace QLKhachSan
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
             this.dataGridViewX2 = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -209,9 +210,10 @@ namespace QLKhachSan
             this.barButtonItem5,
             this.barButtonItem6,
             this.barButtonItem7,
-            this.barButtonItem8});
+            this.barButtonItem8,
+            this.barButtonItem1});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 9;
+            this.ribbon.MaxItemId = 10;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -221,7 +223,7 @@ namespace QLKhachSan
             // 
             this.btnHome.Caption = "Trở về Menu";
             this.btnHome.Id = 1;
-            this.btnHome.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
+            this.btnHome.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnHome.ImageOptions.SvgImage")));
             this.btnHome.Name = "btnHome";
             this.btnHome.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHome_ItemClick);
             // 
@@ -240,21 +242,21 @@ namespace QLKhachSan
             // 
             // barButtonItem4
             // 
-            this.barButtonItem4.Caption = "Sữa Chữa";
+            this.barButtonItem4.Caption = "Thêm Mới";
             this.barButtonItem4.Id = 4;
             this.barButtonItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem4.ImageOptions.SvgImage")));
             this.barButtonItem4.Name = "barButtonItem4";
             // 
             // barButtonItem5
             // 
-            this.barButtonItem5.Caption = "Lưu Trữ";
+            this.barButtonItem5.Caption = "Sữa Chữa";
             this.barButtonItem5.Id = 5;
             this.barButtonItem5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem5.ImageOptions.SvgImage")));
             this.barButtonItem5.Name = "barButtonItem5";
             // 
             // barButtonItem6
             // 
-            this.barButtonItem6.Caption = "Xóa";
+            this.barButtonItem6.Caption = "Lưu Trữ";
             this.barButtonItem6.Id = 6;
             this.barButtonItem6.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem6.ImageOptions.SvgImage")));
             this.barButtonItem6.Name = "barButtonItem6";
@@ -292,6 +294,7 @@ namespace QLKhachSan
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem4);
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem5);
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem6);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem1);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "Chức Năng";
             // 
@@ -1092,6 +1095,13 @@ namespace QLKhachSan
             this.dataGridViewX2.Size = new System.Drawing.Size(410, 175);
             this.dataGridViewX2.TabIndex = 0;
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Xóa";
+            this.barButtonItem1.Id = 9;
+            this.barButtonItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
             // frmQLHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -1101,7 +1111,6 @@ namespace QLKhachSan
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.ribbon);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmQLHoaDon";
             this.Ribbon = this.ribbon;
             this.Text = "Quản lý hóa đơn";
@@ -1274,5 +1283,6 @@ namespace QLKhachSan
         private DevExpress.XtraEditors.ComboBoxEdit textEdit19;
         private DevExpress.XtraEditors.DateEdit textEdit11;
         private DevExpress.XtraEditors.DateEdit textEdit15;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }

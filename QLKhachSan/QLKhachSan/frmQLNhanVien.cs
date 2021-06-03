@@ -20,11 +20,9 @@ namespace QLKhachSan
 
         private void btnHome_ItemClick(object sender, ItemClickEventArgs e)
         {
-            this.Controls.Clear();
+            this.Close();
             frmMenu frm = new frmMenu();
-            frm.TopLevel = false;
-            this.Controls.Add(frm);
-            frm.Dock = DockStyle.Fill;
+            frm.panelMenu().Visible = true;
             frm.Show();
         }
     }
