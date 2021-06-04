@@ -50,11 +50,10 @@ namespace QLKhachSan
             // lbl_QLKS
             // 
             this.lbl_QLKS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.lbl_QLKS.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbl_QLKS.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_QLKS.Location = new System.Drawing.Point(0, 0);
             this.lbl_QLKS.Name = "lbl_QLKS";
-            this.lbl_QLKS.Size = new System.Drawing.Size(1466, 79);
+            this.lbl_QLKS.Size = new System.Drawing.Size(1466, 76);
             this.lbl_QLKS.TabIndex = 6;
             this.lbl_QLKS.Text = "PHẦN MỀM QUẢN LÝ KHÁCH SẠN CKC";
             this.lbl_QLKS.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -75,7 +74,6 @@ namespace QLKhachSan
             this.panelMid.Controls.Add(this.btnDichVu);
             this.panelMid.Controls.Add(this.btnPhieuDatPhong);
             this.panelMid.Controls.Add(this.btnQuanLyNhanVien);
-            this.panelMid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMid.Location = new System.Drawing.Point(0, 79);
             this.panelMid.Name = "panelMid";
             this.panelMid.Size = new System.Drawing.Size(1466, 899);
@@ -375,7 +373,6 @@ namespace QLKhachSan
             this.Controls.Add(this.panelMid);
             this.Controls.Add(this.lbl_QLKS);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.IsMdiContainer = true;
             this.MaximumSize = new System.Drawing.Size(1466, 978);
             this.MinimumSize = new System.Drawing.Size(1466, 978);
             this.Name = "frmMenu";

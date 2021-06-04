@@ -21,9 +21,7 @@ namespace QLKhachSan
         private void btnHome_ItemClick(object sender, ItemClickEventArgs e)
         {
             this.Close();
-            frmMenu frm = new frmMenu();
-            frm.panelMenu().Visible = true;
-            frm.Show();
+          
         }
     }
 }
