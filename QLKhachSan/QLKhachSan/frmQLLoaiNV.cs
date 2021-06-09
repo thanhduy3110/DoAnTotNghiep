@@ -34,30 +34,7 @@ namespace QLKhachSan
             
         }
 
-        private void dgvDSLoaiNV_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                DataGridViewRow row = new DataGridViewRow();
-                row = dgvDSLoaiNV.Rows[e.RowIndex];
-                iTong = dgvDSLoaiNV.Rows.Count;
-                txtID.Text = row.Cells[0].Value.ToString();
-                txtTenLoaiNV.Text = row.Cells[1].Value.ToString();
-                string t = row.Cells[2].Value.ToString();
-                if (t == "False")
-                {
-                    cboHieuLuc.SelectedIndex = 1;
-                }
-                else
-                {
-                    cboHieuLuc.SelectedIndex = 0;
-                }
-            }
-            catch
-            {
-
-            }
-        }
+       
 
 
         private void btnThem_ItemClick(object sender, ItemClickEventArgs e)
@@ -113,6 +90,31 @@ namespace QLKhachSan
             catch (Exception ex)
             {
                 MessageBox.Show("Sữa thất bại");
+            }
+        }
+
+        private void dgvDSLoaiNV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row = dgvDSLoaiNV.Rows[e.RowIndex];
+                iTong = dgvDSLoaiNV.Rows.Count;
+                txtID.Text = row.Cells[0].Value.ToString();
+                txtTenLoaiNV.Text = row.Cells[1].Value.ToString();
+                string t = row.Cells[2].Value.ToString();
+                if (t == "False")
+                {
+                    cboHieuLuc.SelectedIndex = 1;
+                }
+                else
+                {
+                    cboHieuLuc.SelectedIndex = 0;
+                }
+            }
+            catch
+            {
+
             }
         }
     }

@@ -6,3 +6,4 @@ D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\DTO\obj\Debug\DTO.csproj.GenerateResou
 D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\DTO\obj\Debug\DTO.exe
 D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\DTO\obj\Debug\DTO.pdb
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\DTO\obj\Debug\DTO.csprojAssemblyReference.cache

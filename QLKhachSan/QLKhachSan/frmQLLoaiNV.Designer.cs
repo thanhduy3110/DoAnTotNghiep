@@ -30,7 +30,7 @@ namespace QLKhachSan
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQLLoaiNV));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnHome = new DevExpress.XtraBars.BarButtonItem();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
@@ -186,14 +186,14 @@ namespace QLKhachSan
             this.Column1,
             this.Column2,
             this.Column3});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(70)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(70)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDSLoaiNV.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(70)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(70)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDSLoaiNV.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDSLoaiNV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDSLoaiNV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgvDSLoaiNV.Location = new System.Drawing.Point(3, 22);
@@ -202,6 +202,7 @@ namespace QLKhachSan
             this.dgvDSLoaiNV.RowTemplate.Height = 24;
             this.dgvDSLoaiNV.Size = new System.Drawing.Size(1450, 405);
             this.dgvDSLoaiNV.TabIndex = 0;
+            this.dgvDSLoaiNV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSLoaiNV_CellClick);
             // 
             // Column1
             // 
@@ -293,6 +294,9 @@ namespace QLKhachSan
             // cboHieuLuc
             // 
             this.cboHieuLuc.FormattingEnabled = true;
+            this.cboHieuLuc.Items.AddRange(new object[] {
+            "Còn Vị Trí",
+            "Hết Vị Trí"});
             this.cboHieuLuc.Location = new System.Drawing.Point(1183, 118);
             this.cboHieuLuc.MaximumSize = new System.Drawing.Size(250, 0);
             this.cboHieuLuc.MinimumSize = new System.Drawing.Size(250, 0);
