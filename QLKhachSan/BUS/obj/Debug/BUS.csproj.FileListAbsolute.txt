@@ -1,0 +1,16 @@
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\BUS\bin\Debug\BUS.exe.config
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\BUS\bin\Debug\BUS.exe
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\BUS\bin\Debug\BUS.pdb
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\BUS\bin\Debug\DAO.exe
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\BUS\bin\Debug\DTO.exe
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\BUS\bin\Debug\DAO.pdb
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\BUS\bin\Debug\DAO.exe.config
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\BUS\bin\Debug\DTO.pdb
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\BUS\bin\Debug\DTO.exe.config
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\BUS\obj\Debug\BUS.csprojAssemblyReference.cache
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\BUS\obj\Debug\BUS.Properties.Resources.resources
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\BUS\obj\Debug\BUS.csproj.GenerateResource.cache
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\BUS\obj\Debug\BUS.csproj.CopyComplete
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\BUS\obj\Debug\BUS.exe
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\BUS\obj\Debug\BUS.pdb

@@ -1,0 +1,13 @@
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\DAO\bin\Debug\DAO.exe.config
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\DAO\bin\Debug\DAO.exe
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\DAO\bin\Debug\DAO.pdb
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\DAO\obj\Debug\DAO.csprojAssemblyReference.cache
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\DAO\obj\Debug\DAO.Properties.Resources.resources
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\DAO\obj\Debug\DAO.csproj.GenerateResource.cache
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\DAO\obj\Debug\DAO.exe
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\DAO\obj\Debug\DAO.pdb
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\DAO\bin\Debug\DTO.exe
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\DAO\bin\Debug\DTO.pdb
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\DAO\bin\Debug\DTO.exe.config
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\DAO\obj\Debug\DAO.csproj.CopyComplete
