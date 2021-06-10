@@ -1,9 +1,0 @@
-D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\DTO\bin\Debug\DTO.exe.config
-D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\DTO\bin\Debug\DTO.exe
-D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\DTO\bin\Debug\DTO.pdb
-D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\DTO\obj\Debug\DTO.Properties.Resources.resources
-D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\DTO\obj\Debug\DTO.csproj.GenerateResource.cache
-D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
-D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\DTO\obj\Debug\DTO.exe
-D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\DTO\obj\Debug\DTO.pdb
-D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
