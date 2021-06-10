@@ -1,0 +1,17 @@
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\DTO\bin\Debug\DTO.exe.config
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\DTO\bin\Debug\DTO.exe
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\DTO\bin\Debug\DTO.pdb
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\DTO\obj\Debug\DTO.Properties.Resources.resources
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\DTO\obj\Debug\DTO.csproj.GenerateResource.cache
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\DTO\obj\Debug\DTO.exe
+D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\DTO\obj\Debug\DTO.pdb
+C:\Users\USER\source\repos\DoAnTotNghiep\QLKhachSan\DTO\bin\Debug\DTO.exe.config
+C:\Users\USER\source\repos\DoAnTotNghiep\QLKhachSan\DTO\bin\Debug\DTO.exe
+C:\Users\USER\source\repos\DoAnTotNghiep\QLKhachSan\DTO\bin\Debug\DTO.pdb
+C:\Users\USER\source\repos\DoAnTotNghiep\QLKhachSan\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+C:\Users\USER\source\repos\DoAnTotNghiep\QLKhachSan\DTO\obj\Debug\DTO.Properties.Resources.resources
+C:\Users\USER\source\repos\DoAnTotNghiep\QLKhachSan\DTO\obj\Debug\DTO.csproj.GenerateResource.cache
+C:\Users\USER\source\repos\DoAnTotNghiep\QLKhachSan\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\USER\source\repos\DoAnTotNghiep\QLKhachSan\DTO\obj\Debug\DTO.exe
+C:\Users\USER\source\repos\DoAnTotNghiep\QLKhachSan\DTO\obj\Debug\DTO.pdb
