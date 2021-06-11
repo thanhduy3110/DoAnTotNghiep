@@ -11,11 +11,11 @@ namespace DAO
 {
     public class dbConnectionData
     {
-        SqlConnection con = new SqlConnection();
+        SqlConnection con;
         public void ketnoiCSDL()
         {
-            con.ConnectionString = @"data source =DESKTOP-MGN3IP8\SQLEXPRESS; initial catalog=QLKhachSan; integrated security=true";
-            if (con.State == ConnectionState.Closed)
+            con= new SqlConnection(@"data source =DESKTOP-MGN3IP8\SQLEXPRESS; initial catalog=QLKhachSan; integrated security=true");
+           
                 con.Open();
         }
         private void NgatKetNoi()

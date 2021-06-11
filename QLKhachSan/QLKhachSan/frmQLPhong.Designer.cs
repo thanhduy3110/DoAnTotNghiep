@@ -44,12 +44,20 @@ namespace QLKhachSan
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dgvDSLoaiNV = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.dgvDSPhong = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rtxtGhiChu = new System.Windows.Forms.RichTextBox();
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
@@ -58,28 +66,28 @@ namespace QLKhachSan
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cboGocNhin = new System.Windows.Forms.ComboBox();
+            this.cboTenLP = new System.Windows.Forms.ComboBox();
+            this.cboBonTam = new System.Windows.Forms.ComboBox();
+            this.cboHieuLuc = new System.Windows.Forms.ComboBox();
+            this.cboConTrong = new System.Windows.Forms.ComboBox();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX2 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtGiaThueGio = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtGiaThueNgay = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.checkBoxX3 = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.checkBoxX2 = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.checkBoxX1 = new DevComponents.DotNetBar.Controls.CheckBoxX();
-            this.textBoxX3 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtTenLoaiNV = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtSoPhong = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtTang = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtID = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtTimKiem = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxX4 = new DevComponents.DotNetBar.Controls.TextBoxX();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDSLoaiNV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSPhong)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -190,7 +198,7 @@ namespace QLKhachSan
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dgvDSLoaiNV);
+            this.groupBox3.Controls.Add(this.dgvDSPhong);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(3, 421);
@@ -200,13 +208,21 @@ namespace QLKhachSan
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh Sách Phòng";
             // 
-            // dgvDSLoaiNV
+            // dgvDSPhong
             // 
-            this.dgvDSLoaiNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDSLoaiNV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvDSPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDSPhong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
-            this.Column3});
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8,
+            this.Column9,
+            this.Column10,
+            this.Column11});
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -214,44 +230,109 @@ namespace QLKhachSan
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(70)))), ((int)(((byte)(68)))));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDSLoaiNV.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvDSLoaiNV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDSLoaiNV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.dgvDSLoaiNV.Location = new System.Drawing.Point(3, 22);
-            this.dgvDSLoaiNV.Name = "dgvDSLoaiNV";
-            this.dgvDSLoaiNV.RowHeadersWidth = 51;
-            this.dgvDSLoaiNV.RowTemplate.Height = 24;
-            this.dgvDSLoaiNV.Size = new System.Drawing.Size(1450, 204);
-            this.dgvDSLoaiNV.TabIndex = 0;
+            this.dgvDSPhong.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDSPhong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDSPhong.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            this.dgvDSPhong.Location = new System.Drawing.Point(3, 22);
+            this.dgvDSPhong.Name = "dgvDSPhong";
+            this.dgvDSPhong.RowHeadersWidth = 51;
+            this.dgvDSPhong.RowTemplate.Height = 24;
+            this.dgvDSPhong.Size = new System.Drawing.Size(1450, 204);
+            this.dgvDSPhong.TabIndex = 0;
+            this.dgvDSPhong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSPhong_CellClick);
             // 
             // Column1
             // 
             this.Column1.DataPropertyName = "ID";
-            this.Column1.HeaderText = "ID Loại Nhân Viên";
+            this.Column1.HeaderText = "ID Phòng";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
-            this.Column1.Width = 200;
+            this.Column1.Width = 125;
             // 
             // Column2
             // 
-            this.Column2.DataPropertyName = "TenLoaiNV";
-            this.Column2.HeaderText = "Tên Loại Nhân Viên";
+            this.Column2.DataPropertyName = "ID_LoaiPhong";
+            this.Column2.HeaderText = "ID Loại Phòng";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
-            this.Column2.Width = 300;
+            this.Column2.Width = 125;
             // 
             // Column3
             // 
-            this.Column3.DataPropertyName = "HieuLuc";
-            this.Column3.HeaderText = "Hiệu Lực";
+            this.Column3.DataPropertyName = "SoPhong";
+            this.Column3.HeaderText = "Số Phòng";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
-            this.Column3.Width = 200;
+            this.Column3.Width = 125;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Tang";
+            this.Column4.HeaderText = "Tầng";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 125;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "GiaThueNgay";
+            this.Column5.HeaderText = "Giá Thuê Ngày";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 125;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "GiaThueGio";
+            this.Column6.HeaderText = "Giá Thuê Giờ";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 125;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "GhiChu";
+            this.Column7.HeaderText = "Ghi Chú";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 125;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "GocNhin";
+            this.Column8.HeaderText = "Góc Nhìn";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 125;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "BonTam";
+            this.Column9.HeaderText = "Bồn Tắm";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 125;
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "ConTrong";
+            this.Column10.HeaderText = "Còn Trống";
+            this.Column10.MinimumWidth = 6;
+            this.Column10.Name = "Column10";
+            this.Column10.Width = 125;
+            // 
+            // Column11
+            // 
+            this.Column11.DataPropertyName = "HieuLuc";
+            this.Column11.HeaderText = "Hiệu Lực";
+            this.Column11.MinimumWidth = 6;
+            this.Column11.Name = "Column11";
+            this.Column11.Width = 125;
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.groupBox2.Controls.Add(this.richTextBox1);
+            this.groupBox2.Controls.Add(this.rtxtGhiChu);
             this.groupBox2.Controls.Add(this.labelX12);
             this.groupBox2.Controls.Add(this.labelX6);
             this.groupBox2.Controls.Add(this.labelX11);
@@ -260,21 +341,21 @@ namespace QLKhachSan
             this.groupBox2.Controls.Add(this.labelX3);
             this.groupBox2.Controls.Add(this.labelX8);
             this.groupBox2.Controls.Add(this.labelX4);
-            this.groupBox2.Controls.Add(this.comboBox4);
-            this.groupBox2.Controls.Add(this.comboBox3);
-            this.groupBox2.Controls.Add(this.comboBox5);
-            this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Controls.Add(this.cboGocNhin);
+            this.groupBox2.Controls.Add(this.cboTenLP);
+            this.groupBox2.Controls.Add(this.cboBonTam);
+            this.groupBox2.Controls.Add(this.cboHieuLuc);
+            this.groupBox2.Controls.Add(this.cboConTrong);
             this.groupBox2.Controls.Add(this.labelX2);
             this.groupBox2.Controls.Add(this.labelX7);
             this.groupBox2.Controls.Add(this.labelX1);
-            this.groupBox2.Controls.Add(this.textBoxX4);
-            this.groupBox2.Controls.Add(this.textBoxX2);
+            this.groupBox2.Controls.Add(this.txtGiaThueGio);
+            this.groupBox2.Controls.Add(this.txtGiaThueNgay);
             this.groupBox2.Controls.Add(this.checkBoxX3);
             this.groupBox2.Controls.Add(this.checkBoxX2);
             this.groupBox2.Controls.Add(this.checkBoxX1);
-            this.groupBox2.Controls.Add(this.textBoxX3);
-            this.groupBox2.Controls.Add(this.textBoxX1);
-            this.groupBox2.Controls.Add(this.txtTenLoaiNV);
+            this.groupBox2.Controls.Add(this.txtSoPhong);
+            this.groupBox2.Controls.Add(this.txtTang);
             this.groupBox2.Controls.Add(this.txtID);
             this.groupBox2.Controls.Add(this.txtTimKiem);
             this.groupBox2.Controls.Add(this.label1);
@@ -287,13 +368,13 @@ namespace QLKhachSan
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Loại Phòng";
             // 
-            // richTextBox1
+            // rtxtGhiChu
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(225, 246);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(250, 145);
-            this.richTextBox1.TabIndex = 15;
-            this.richTextBox1.Text = "";
+            this.rtxtGhiChu.Location = new System.Drawing.Point(225, 246);
+            this.rtxtGhiChu.Name = "rtxtGhiChu";
+            this.rtxtGhiChu.Size = new System.Drawing.Size(250, 145);
+            this.rtxtGhiChu.TabIndex = 15;
+            this.rtxtGhiChu.Text = "";
             // 
             // labelX12
             // 
@@ -407,45 +488,55 @@ namespace QLKhachSan
             this.labelX4.TabIndex = 14;
             this.labelX4.Text = "Giá thuê ngày";
             // 
-            // comboBox4
+            // cboGocNhin
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(225, 198);
-            this.comboBox4.MaximumSize = new System.Drawing.Size(250, 0);
-            this.comboBox4.MinimumSize = new System.Drawing.Size(250, 0);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(250, 26);
-            this.comboBox4.TabIndex = 11;
+            this.cboGocNhin.FormattingEnabled = true;
+            this.cboGocNhin.Location = new System.Drawing.Point(225, 198);
+            this.cboGocNhin.MaximumSize = new System.Drawing.Size(250, 0);
+            this.cboGocNhin.MinimumSize = new System.Drawing.Size(250, 0);
+            this.cboGocNhin.Name = "cboGocNhin";
+            this.cboGocNhin.Size = new System.Drawing.Size(250, 26);
+            this.cboGocNhin.TabIndex = 11;
             // 
-            // comboBox3
+            // cboTenLP
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(736, 198);
-            this.comboBox3.MaximumSize = new System.Drawing.Size(250, 0);
-            this.comboBox3.MinimumSize = new System.Drawing.Size(250, 0);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(250, 26);
-            this.comboBox3.TabIndex = 11;
+            this.cboTenLP.FormattingEnabled = true;
+            this.cboTenLP.Location = new System.Drawing.Point(736, 64);
+            this.cboTenLP.MaximumSize = new System.Drawing.Size(250, 0);
+            this.cboTenLP.MinimumSize = new System.Drawing.Size(250, 0);
+            this.cboTenLP.Name = "cboTenLP";
+            this.cboTenLP.Size = new System.Drawing.Size(250, 26);
+            this.cboTenLP.TabIndex = 11;
             // 
-            // comboBox5
+            // cboBonTam
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(736, 290);
-            this.comboBox5.MaximumSize = new System.Drawing.Size(250, 0);
-            this.comboBox5.MinimumSize = new System.Drawing.Size(250, 0);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(250, 26);
-            this.comboBox5.TabIndex = 11;
+            this.cboBonTam.FormattingEnabled = true;
+            this.cboBonTam.Location = new System.Drawing.Point(736, 198);
+            this.cboBonTam.MaximumSize = new System.Drawing.Size(250, 0);
+            this.cboBonTam.MinimumSize = new System.Drawing.Size(250, 0);
+            this.cboBonTam.Name = "cboBonTam";
+            this.cboBonTam.Size = new System.Drawing.Size(250, 26);
+            this.cboBonTam.TabIndex = 11;
             // 
-            // comboBox2
+            // cboHieuLuc
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(1182, 198);
-            this.comboBox2.MaximumSize = new System.Drawing.Size(250, 0);
-            this.comboBox2.MinimumSize = new System.Drawing.Size(250, 0);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(250, 26);
-            this.comboBox2.TabIndex = 11;
+            this.cboHieuLuc.FormattingEnabled = true;
+            this.cboHieuLuc.Location = new System.Drawing.Point(736, 290);
+            this.cboHieuLuc.MaximumSize = new System.Drawing.Size(250, 0);
+            this.cboHieuLuc.MinimumSize = new System.Drawing.Size(250, 0);
+            this.cboHieuLuc.Name = "cboHieuLuc";
+            this.cboHieuLuc.Size = new System.Drawing.Size(250, 26);
+            this.cboHieuLuc.TabIndex = 11;
+            // 
+            // cboConTrong
+            // 
+            this.cboConTrong.FormattingEnabled = true;
+            this.cboConTrong.Location = new System.Drawing.Point(1182, 198);
+            this.cboConTrong.MaximumSize = new System.Drawing.Size(250, 0);
+            this.cboConTrong.MinimumSize = new System.Drawing.Size(250, 0);
+            this.cboConTrong.Name = "cboConTrong";
+            this.cboConTrong.Size = new System.Drawing.Size(250, 26);
+            this.cboConTrong.TabIndex = 11;
             // 
             // labelX2
             // 
@@ -489,20 +580,35 @@ namespace QLKhachSan
             this.labelX1.TabIndex = 14;
             this.labelX1.Text = "ID Phòng";
             // 
-            // textBoxX2
+            // txtGiaThueGio
             // 
             // 
             // 
             // 
-            this.textBoxX2.Border.Class = "TextBoxBorder";
-            this.textBoxX2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX2.Location = new System.Drawing.Point(736, 133);
-            this.textBoxX2.MaximumSize = new System.Drawing.Size(100, 26);
-            this.textBoxX2.MinimumSize = new System.Drawing.Size(250, 26);
-            this.textBoxX2.Name = "textBoxX2";
-            this.textBoxX2.PreventEnterBeep = true;
-            this.textBoxX2.Size = new System.Drawing.Size(250, 26);
-            this.textBoxX2.TabIndex = 7;
+            this.txtGiaThueGio.Border.Class = "TextBoxBorder";
+            this.txtGiaThueGio.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtGiaThueGio.Location = new System.Drawing.Point(1182, 133);
+            this.txtGiaThueGio.MaximumSize = new System.Drawing.Size(100, 26);
+            this.txtGiaThueGio.MinimumSize = new System.Drawing.Size(250, 26);
+            this.txtGiaThueGio.Name = "txtGiaThueGio";
+            this.txtGiaThueGio.PreventEnterBeep = true;
+            this.txtGiaThueGio.Size = new System.Drawing.Size(250, 26);
+            this.txtGiaThueGio.TabIndex = 7;
+            // 
+            // txtGiaThueNgay
+            // 
+            // 
+            // 
+            // 
+            this.txtGiaThueNgay.Border.Class = "TextBoxBorder";
+            this.txtGiaThueNgay.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtGiaThueNgay.Location = new System.Drawing.Point(736, 133);
+            this.txtGiaThueNgay.MaximumSize = new System.Drawing.Size(100, 26);
+            this.txtGiaThueNgay.MinimumSize = new System.Drawing.Size(250, 26);
+            this.txtGiaThueNgay.Name = "txtGiaThueNgay";
+            this.txtGiaThueNgay.PreventEnterBeep = true;
+            this.txtGiaThueNgay.Size = new System.Drawing.Size(250, 26);
+            this.txtGiaThueNgay.TabIndex = 7;
             // 
             // checkBoxX3
             // 
@@ -549,50 +655,35 @@ namespace QLKhachSan
             this.checkBoxX1.Text = "Tìm theo số phòng";
             this.checkBoxX1.TextColor = System.Drawing.Color.Black;
             // 
-            // textBoxX3
+            // txtSoPhong
             // 
             // 
             // 
             // 
-            this.textBoxX3.Border.Class = "TextBoxBorder";
-            this.textBoxX3.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX3.Location = new System.Drawing.Point(1182, 69);
-            this.textBoxX3.MaximumSize = new System.Drawing.Size(100, 26);
-            this.textBoxX3.MinimumSize = new System.Drawing.Size(250, 26);
-            this.textBoxX3.Name = "textBoxX3";
-            this.textBoxX3.PreventEnterBeep = true;
-            this.textBoxX3.Size = new System.Drawing.Size(250, 26);
-            this.textBoxX3.TabIndex = 7;
+            this.txtSoPhong.Border.Class = "TextBoxBorder";
+            this.txtSoPhong.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtSoPhong.Location = new System.Drawing.Point(1182, 69);
+            this.txtSoPhong.MaximumSize = new System.Drawing.Size(100, 26);
+            this.txtSoPhong.MinimumSize = new System.Drawing.Size(250, 26);
+            this.txtSoPhong.Name = "txtSoPhong";
+            this.txtSoPhong.PreventEnterBeep = true;
+            this.txtSoPhong.Size = new System.Drawing.Size(250, 26);
+            this.txtSoPhong.TabIndex = 7;
             // 
-            // textBoxX1
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX1.Location = new System.Drawing.Point(225, 133);
-            this.textBoxX1.MaximumSize = new System.Drawing.Size(100, 26);
-            this.textBoxX1.MinimumSize = new System.Drawing.Size(250, 26);
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.PreventEnterBeep = true;
-            this.textBoxX1.Size = new System.Drawing.Size(250, 26);
-            this.textBoxX1.TabIndex = 8;
-            // 
-            // txtTenLoaiNV
+            // txtTang
             // 
             // 
             // 
             // 
-            this.txtTenLoaiNV.Border.Class = "TextBoxBorder";
-            this.txtTenLoaiNV.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtTenLoaiNV.Location = new System.Drawing.Point(736, 67);
-            this.txtTenLoaiNV.MaximumSize = new System.Drawing.Size(100, 26);
-            this.txtTenLoaiNV.MinimumSize = new System.Drawing.Size(250, 26);
-            this.txtTenLoaiNV.Name = "txtTenLoaiNV";
-            this.txtTenLoaiNV.PreventEnterBeep = true;
-            this.txtTenLoaiNV.Size = new System.Drawing.Size(250, 26);
-            this.txtTenLoaiNV.TabIndex = 7;
+            this.txtTang.Border.Class = "TextBoxBorder";
+            this.txtTang.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtTang.Location = new System.Drawing.Point(225, 133);
+            this.txtTang.MaximumSize = new System.Drawing.Size(100, 26);
+            this.txtTang.MinimumSize = new System.Drawing.Size(250, 26);
+            this.txtTang.Name = "txtTang";
+            this.txtTang.PreventEnterBeep = true;
+            this.txtTang.Size = new System.Drawing.Size(250, 26);
+            this.txtTang.TabIndex = 8;
             // 
             // txtID
             // 
@@ -636,21 +727,6 @@ namespace QLKhachSan
             this.label1.TabIndex = 6;
             this.label1.Text = "Tìm kiếm phòng";
             // 
-            // textBoxX4
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX4.Border.Class = "TextBoxBorder";
-            this.textBoxX4.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX4.Location = new System.Drawing.Point(1182, 133);
-            this.textBoxX4.MaximumSize = new System.Drawing.Size(100, 26);
-            this.textBoxX4.MinimumSize = new System.Drawing.Size(250, 26);
-            this.textBoxX4.Name = "textBoxX4";
-            this.textBoxX4.PreventEnterBeep = true;
-            this.textBoxX4.Size = new System.Drawing.Size(250, 26);
-            this.textBoxX4.TabIndex = 7;
-            // 
             // frmQLPhong
             // 
             this.Appearance.Options.UseFont = true;
@@ -666,10 +742,11 @@ namespace QLKhachSan
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "Quản Lý Phòng";
+            this.Load += new System.EventHandler(this.frmQLPhong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDSLoaiNV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSPhong)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -692,12 +769,9 @@ namespace QLKhachSan
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private DevComponents.DotNetBar.Controls.DataGridViewX dgvDSLoaiNV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private DevComponents.DotNetBar.Controls.DataGridViewX dgvDSPhong;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rtxtGhiChu;
         private DevComponents.DotNetBar.LabelX labelX12;
         private DevComponents.DotNetBar.LabelX labelX6;
         private DevComponents.DotNetBar.LabelX labelX11;
@@ -706,23 +780,34 @@ namespace QLKhachSan
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.LabelX labelX8;
         private DevComponents.DotNetBar.LabelX labelX4;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cboGocNhin;
+        private System.Windows.Forms.ComboBox cboBonTam;
+        private System.Windows.Forms.ComboBox cboHieuLuc;
+        private System.Windows.Forms.ComboBox cboConTrong;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.LabelX labelX7;
         private DevComponents.DotNetBar.LabelX labelX1;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX2;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtGiaThueNgay;
         private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxX3;
         private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxX2;
         private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxX1;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX3;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtTenLoaiNV;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtSoPhong;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtTang;
         private DevComponents.DotNetBar.Controls.TextBoxX txtID;
         private DevComponents.DotNetBar.Controls.TextBoxX txtTimKiem;
         private System.Windows.Forms.Label label1;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX4;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtGiaThueGio;
+        private System.Windows.Forms.ComboBox cboTenLP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
     }
 }
