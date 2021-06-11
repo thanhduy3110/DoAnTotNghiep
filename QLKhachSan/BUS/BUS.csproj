@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="BUSLoaiNV.cs" />
     <Compile Include="BUSLoaiPhong.cs" />
+    <Compile Include="BUSNhanVien.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

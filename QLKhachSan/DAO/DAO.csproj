@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="DAOLoaiNV.cs" />
     <Compile Include="DAOLoaiPhong.cs" />
+    <Compile Include="DAONhanVien.cs" />
     <Compile Include="dbConnectionData.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

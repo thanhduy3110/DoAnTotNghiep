@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BUS;
 
 namespace QLKhachSan
 {
@@ -18,10 +19,17 @@ namespace QLKhachSan
             InitializeComponent();
         }
 
+        BUSNhanVien bNV = new BUSNhanVien();
+
         private void btnHome_ItemClick(object sender, ItemClickEventArgs e)
         {
             this.Close();
             
+        }
+
+        private void frmQLNhanVien_Load(object sender, EventArgs e)
+        {
+            bNV.HienThiTenLoaiNV(cboTenLoaiNV);
         }
     }
 }

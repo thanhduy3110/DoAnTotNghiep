@@ -11,7 +11,7 @@ namespace DAO
 {
     public class DAOLoaiPhong
     {
-        dataKhachSan dtks = new dataKhachSan();
+        dbConnectionData dtks = new dbConnectionData();
 
         //khai báo 2 mảng để truyền tên tham số và giá trị tham số vào stored procedures
         string[] name = { };

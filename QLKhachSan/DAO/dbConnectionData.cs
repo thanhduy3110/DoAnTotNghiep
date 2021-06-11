@@ -9,19 +9,25 @@ using System.Configuration;
 
 namespace DAO
 {
-    public class dataKhachSan
+    public class dbConnectionData
     {
-        SqlConnection cn;
+        SqlConnection con = new SqlConnection();
         public void ketnoiCSDL()
         {
-            cn = new SqlConnection(@"Data Source=DESKTOP-DDKM1BA\SQLEXPRESS;Initial Catalog=QLKhachSan;Integrated Security=True");
-            cn.Open();
+            con.ConnectionString = @"data source =DESKTOP-MGN3IP8\SQLEXPRESS; initial catalog=QLKhachSan; integrated security=true";
+            if (con.State == ConnectionState.Closed)
+                con.Open();
         }
         private void NgatKetNoi()
         {
-            cn.Close();
-            cn.Dispose();
+            con.Close();
+            con.Dispose();
         }
+
+        //public dbConnectionData()
+        //{
+        //    ketnoiCSDL();
+        //}
 
         //select dữ liệu
         public DataTable Laydulieu(string ID)
@@ -29,7 +35,7 @@ namespace DAO
             ketnoiCSDL();
 
             //thực thi lấy dữ liệu
-            SqlCommand cmd = new SqlCommand(ID, cn);
+            SqlCommand cmd = new SqlCommand(ID, con);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -47,7 +53,7 @@ namespace DAO
         public int ThucHien(string data, string[] name, object[] value, int n)
         {
             ketnoiCSDL();
-            SqlCommand cmd = new SqlCommand(data, cn);
+            SqlCommand cmd = new SqlCommand(data, con);
             cmd.CommandType = CommandType.StoredProcedure;
             for (int i = 0; i < n; i++)
             {
@@ -59,7 +65,7 @@ namespace DAO
         public DataTable LayCSDL(string data, string[] name, object[] value, int n)
         {
             ketnoiCSDL();
-            SqlCommand cmd = new SqlCommand(data, cn);
+            SqlCommand cmd = new SqlCommand(data, con);
             cmd.CommandType = CommandType.StoredProcedure;
             for (int i = 0; i < n; i++)
             {
@@ -70,6 +76,16 @@ namespace DAO
             da.Fill(dt);
             return dt;
 
+        }
+
+        public DataSet LayDanhSach(string sql)
+        {
+            ketnoiCSDL();
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(sql, con);
+            da.Fill(ds);
+            NgatKetNoi();
+            return ds;
         }
 
     }
