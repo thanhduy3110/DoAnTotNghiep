@@ -61,5 +61,78 @@ namespace QLKhachSan
             int vt = dgvDSPhong.CurrentCell.RowIndex;
             hienthi_textbox(vt);
         }
+        int flag;
+        void Tang_ID()
+        {
+            int count = 0;
+            count = dgvDSPhong.Rows.Count;
+            string chuoi = "";
+            int chuoi2 = 0;
+            if (count <= 1)
+            {
+                txtID.Text = "0";
+            }
+            else
+            {
+                chuoi = Convert.ToString(dgvDSPhong.Rows[count - 2].Cells[0].Value);
+                chuoi2 = Convert.ToInt32((chuoi.Remove(0, 0)));
+                if (chuoi2 + 1 < 10)
+                    txtID.Text = "" + (chuoi2 + 1).ToString();
+                else if (chuoi2 + 1 < 100)
+                    txtID.Text = "" + (chuoi2 + 1).ToString();
+            }
+        }
+        void clear_textbox()
+        {
+            cboTenLP.Text = "";
+            txtSoPhong.Text = "";
+            txtTang.Text = "";
+            txtGiaThueNgay.Text = "";
+            txtGiaThueGio.Text = "";
+            rtxtGhiChu.Text = "";
+            cboGocNhin.Text = "";
+            cboGocNhin.Text = "";
+            cboConTrong.Text = "";
+            cboHieuLuc.Text = "";
+        }
+        private void btnThem_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Tang_ID();
+            clear_textbox();
+            flag = 1;
+        }
+
+        private void btnSua_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            flag = 2;
+        }
+
+        private void btnLuu_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (flag == 1)
+            {
+                if (cboTenLP.Text == "" || txtSoPhong.Text == "" || txtTang.Text == "" || txtGiaThueNgay.Text == "" || txtGiaThueGio.Text == "" || rtxtGhiChu.Text == "" || cboGocNhin.Text == "" || cboBonTam.Text == "" || cboConTrong.Text == "" || cboHieuLuc.Text == "")
+                {
+                    MessageBox.Show("Lỗi");
+                }
+                else
+                {
+                    Bphong.P_Them(txtID.Text, cboTenLP.SelectedValue.ToString(), txtSoPhong.Text, txtTang.Text, txtGiaThueNgay.Text, txtGiaThueGio.Text, rtxtGhiChu.Text, cboGocNhin.Text, cboBonTam.Text, cboConTrong.Text, cboHieuLuc.Text);
+                    MessageBox.Show("thêm thành công rồi nè");
+                    dgvDSPhong.DataSource = Bphong.Phong_Select();
+                }
+            }
+            if (flag == 2)
+            {
+                Bphong.P_CapNhat(txtID.Text, cboTenLP.SelectedValue.ToString(), txtSoPhong.Text, txtTang.Text, txtGiaThueNgay.Text, txtGiaThueGio.Text, rtxtGhiChu.Text, cboGocNhin.Text, cboBonTam.Text, cboConTrong.Text, cboHieuLuc.Text);
+                MessageBox.Show("sửa thành công rồi nè");
+                dgvDSPhong.DataSource = Bphong.Phong_Select();
+            }
+        }
+
+        private void btnXoa_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
     }
 }

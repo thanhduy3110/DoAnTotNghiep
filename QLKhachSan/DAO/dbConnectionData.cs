@@ -14,7 +14,7 @@ namespace DAO
         SqlConnection con;
         public void ketnoiCSDL()
         {
-            con= new SqlConnection(@"data source =DESKTOP-MGN3IP8\SQLEXPRESS; initial catalog=QLKhachSan; integrated security=true");
+            con= new SqlConnection(@"data source =DESKTOP-DDKM1BA\SQLEXPRESS; initial catalog=QLKhachSan; integrated security=true");
            
                 con.Open();
         }
