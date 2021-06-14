@@ -17,14 +17,14 @@ namespace DAO
         string[] name = { };
         object[] value = { };
 
-        //phương thức này gọi đến phương thức LayduLieu ở dataKhachSan để lấy dữ liệu
+        //phương thức này gọi đến phương thức LayduLieu ở dbConnectionData để lấy dữ liệu
         public DataTable loaiphong_select()
         {
             return dtks.Laydulieu("loaiphong_select");
         }
 
 
-        //phương thức này gọi đến phương thức ThucHien ở dataKhachSan để thêm dữ liệu
+        //phương thức này gọi đến phương thức ThucHien ở dbConnectionData để thêm dữ liệu
         public int loaiphong_them(string ID,string TenLoaiPhong, string SoGiuongDoi, string SoGiuongDon, string SoKhach, string HieuLuc)
         {
             name = new string[6];
@@ -64,6 +64,8 @@ namespace DAO
         {
             return dtks.Laydulieu("id_max_select");
         }
+
+       
 
     }
 }

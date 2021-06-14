@@ -44,7 +44,6 @@ namespace QLKhachSan
             cboBonTam.Text = dgvDSPhong.Rows[numrow].Cells[8].Value.ToString();
             cboConTrong.Text = dgvDSPhong.Rows[numrow].Cells[9].Value.ToString();
             cboHieuLuc.Text = dgvDSPhong.Rows[numrow].Cells[10].Value.ToString();
-        
         }
 
         private void dgvDSPhong_CellClick(object sender, DataGridViewCellEventArgs e)

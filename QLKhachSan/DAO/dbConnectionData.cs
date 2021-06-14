@@ -14,7 +14,7 @@ namespace DAO
         SqlConnection con;
         public void ketnoiCSDL()
         {
-            con= new SqlConnection(@"data source =DESKTOP-DDKM1BA\SQLEXPRESS; initial catalog=QLKhachSan; integrated security=true");
+            con= new SqlConnection(@"data source =DESKTOP-MGN3IP8\SQLEXPRESS; initial catalog=QLKhachSan; integrated security=true");
            
                 con.Open();
         }
@@ -62,21 +62,21 @@ namespace DAO
             return cmd.ExecuteNonQuery();
         }
 
-        public DataTable LayCSDL(string data, string[] name, object[] value, int n)
-        {
-            ketnoiCSDL();
-            SqlCommand cmd = new SqlCommand(data, con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            for (int i = 0; i < n; i++)
-            {
-                cmd.Parameters.AddWithValue(name[i], value[i]);
-            }
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            return dt;
+        //public DataTable LayCSDL(string data, string[] name, object[] value, int n)
+        //{
+        //    ketnoiCSDL();
+        //    SqlCommand cmd = new SqlCommand(data, con);
+        //    cmd.CommandType = CommandType.StoredProcedure;
+        //    for (int i = 0; i < n; i++)
+        //    {
+        //        cmd.Parameters.AddWithValue(name[i], value[i]);
+        //    }
+        //    SqlDataAdapter da = new SqlDataAdapter(cmd);
+        //    DataTable dt = new DataTable();
+        //    da.Fill(dt);
+        //    return dt;
 
-        }
+        //}
 
         public DataSet LayDanhSach(string sql)
         {

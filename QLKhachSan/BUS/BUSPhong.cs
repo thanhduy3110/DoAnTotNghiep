@@ -13,6 +13,7 @@ namespace BUS
     {
 
         DAOPhong p = new DAOPhong();
+
         public void HienThiLP(ComboBox cboTenLP)
         {
             p.HienThiLoaiPhong(cboTenLP);

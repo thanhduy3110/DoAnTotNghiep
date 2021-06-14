@@ -35,8 +35,8 @@ namespace QLKhachSan
             this.btnHome = new DevExpress.XtraBars.BarButtonItem();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
             this.btnSua = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnLuu = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -77,8 +77,8 @@ namespace QLKhachSan
             this.btnHome,
             this.btnThem,
             this.btnSua,
-            this.barButtonItem4,
-            this.barButtonItem5});
+            this.btnLuu,
+            this.btnXoa});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.MaxItemId = 6;
             this.ribbon.Name = "ribbon";
@@ -111,19 +111,21 @@ namespace QLKhachSan
             this.btnSua.Name = "btnSua";
             this.btnSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSua_ItemClick);
             // 
-            // barButtonItem4
+            // btnLuu
             // 
-            this.barButtonItem4.Caption = "Lưu Trữ";
-            this.barButtonItem4.Id = 4;
-            this.barButtonItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem4.ImageOptions.SvgImage")));
-            this.barButtonItem4.Name = "barButtonItem4";
+            this.btnLuu.Caption = "Lưu Trữ";
+            this.btnLuu.Id = 4;
+            this.btnLuu.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnLuu.ImageOptions.SvgImage")));
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLuu_ItemClick);
             // 
-            // barButtonItem5
+            // btnXoa
             // 
-            this.barButtonItem5.Caption = "Xóa";
-            this.barButtonItem5.Id = 5;
-            this.barButtonItem5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem5.ImageOptions.SvgImage")));
-            this.barButtonItem5.Name = "barButtonItem5";
+            this.btnXoa.Caption = "Xóa";
+            this.btnXoa.Id = 5;
+            this.btnXoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXoa.ImageOptions.SvgImage")));
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -143,8 +145,8 @@ namespace QLKhachSan
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.btnThem);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnSua);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem4);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem5);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnLuu);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnXoa);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Chức Năng";
             // 
@@ -202,6 +204,7 @@ namespace QLKhachSan
             this.dgvDSLoaiNV.RowTemplate.Height = 24;
             this.dgvDSLoaiNV.Size = new System.Drawing.Size(1450, 405);
             this.dgvDSLoaiNV.TabIndex = 0;
+            this.dgvDSLoaiNV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSLoaiNV_CellClick);
             // 
             // Column1
             // 
@@ -292,7 +295,11 @@ namespace QLKhachSan
             // 
             // cboHieuLuc
             // 
+            this.cboHieuLuc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboHieuLuc.FormattingEnabled = true;
+            this.cboHieuLuc.Items.AddRange(new object[] {
+            "Hết Vị Trí",
+            "Còn Vị Trí"});
             this.cboHieuLuc.Location = new System.Drawing.Point(1183, 118);
             this.cboHieuLuc.MaximumSize = new System.Drawing.Size(250, 0);
             this.cboHieuLuc.MinimumSize = new System.Drawing.Size(250, 0);
@@ -407,8 +414,8 @@ namespace QLKhachSan
         private DevExpress.XtraBars.BarButtonItem btnHome;
         private DevExpress.XtraBars.BarButtonItem btnThem;
         private DevExpress.XtraBars.BarButtonItem btnSua;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem btnLuu;
+        private DevExpress.XtraBars.BarButtonItem btnXoa;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox3;
         private DevComponents.DotNetBar.Controls.DataGridViewX dgvDSLoaiNV;
