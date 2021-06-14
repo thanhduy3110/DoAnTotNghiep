@@ -30,7 +30,7 @@ namespace QLKhachSan
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQLNhanVien));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnHome = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
@@ -81,6 +81,7 @@ namespace QLKhachSan
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.txtHoTen = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.checkBoxX3 = new DevComponents.DotNetBar.Controls.CheckBoxX();
+            this.txtNgaySinh = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtMatKhau = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtHinh = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.checkBoxX2 = new DevComponents.DotNetBar.Controls.CheckBoxX();
@@ -92,7 +93,6 @@ namespace QLKhachSan
             this.txtID = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtTimKiem = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtNgaySinh = new DevComponents.DotNetBar.Controls.TextBoxX();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -122,6 +122,7 @@ namespace QLKhachSan
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
             this.ribbon.Size = new System.Drawing.Size(1462, 213);
+            this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
             // 
             // btnHome
             // 
@@ -242,14 +243,14 @@ namespace QLKhachSan
             this.Column11,
             this.Column12,
             this.Column13});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(70)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(70)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDSNhanVien.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(70)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(70)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDSNhanVien.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDSNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDSNhanVien.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgvDSNhanVien.Location = new System.Drawing.Point(3, 22);
@@ -698,6 +699,21 @@ namespace QLKhachSan
             this.checkBoxX3.Text = "Tìm theo CMND";
             this.checkBoxX3.TextColor = System.Drawing.Color.Black;
             // 
+            // txtNgaySinh
+            // 
+            // 
+            // 
+            // 
+            this.txtNgaySinh.Border.Class = "TextBoxBorder";
+            this.txtNgaySinh.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtNgaySinh.Location = new System.Drawing.Point(735, 298);
+            this.txtNgaySinh.MaximumSize = new System.Drawing.Size(100, 26);
+            this.txtNgaySinh.MinimumSize = new System.Drawing.Size(250, 26);
+            this.txtNgaySinh.Name = "txtNgaySinh";
+            this.txtNgaySinh.PreventEnterBeep = true;
+            this.txtNgaySinh.Size = new System.Drawing.Size(250, 26);
+            this.txtNgaySinh.TabIndex = 7;
+            // 
             // txtMatKhau
             // 
             // 
@@ -859,21 +875,6 @@ namespace QLKhachSan
             this.label1.Size = new System.Drawing.Size(176, 21);
             this.label1.TabIndex = 6;
             this.label1.Text = "Tìm kiếm nhân viên";
-            // 
-            // txtNgaySinh
-            // 
-            // 
-            // 
-            // 
-            this.txtNgaySinh.Border.Class = "TextBoxBorder";
-            this.txtNgaySinh.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtNgaySinh.Location = new System.Drawing.Point(735, 298);
-            this.txtNgaySinh.MaximumSize = new System.Drawing.Size(100, 26);
-            this.txtNgaySinh.MinimumSize = new System.Drawing.Size(250, 26);
-            this.txtNgaySinh.Name = "txtNgaySinh";
-            this.txtNgaySinh.PreventEnterBeep = true;
-            this.txtNgaySinh.Size = new System.Drawing.Size(250, 26);
-            this.txtNgaySinh.TabIndex = 7;
             // 
             // frmQLNhanVien
             // 

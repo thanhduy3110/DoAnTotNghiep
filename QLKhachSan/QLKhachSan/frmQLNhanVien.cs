@@ -93,6 +93,7 @@ namespace QLKhachSan
             btnXoa.Enabled = t;
             btnSua.Enabled = t;
             btnLuu.Enabled = !t;
+            btnHinh.Enabled = !t;
         }
 
         void xulytextbox(Boolean t)
@@ -130,6 +131,17 @@ namespace QLKhachSan
             txtEmail.Text = dgvDSNhanVien.Rows[numrow].Cells[8].Value.ToString();
             txtCMND.Text = dgvDSNhanVien.Rows[numrow].Cells[9].Value.ToString();
             txtHinh.Text = dgvDSNhanVien.Rows[numrow].Cells[11].Value.ToString();
+            try
+            {
+                string duongdanhinh = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\QLKhachSan\\QLKhachSan\\Images\\" + txtHinh.Text;
+                Bitmap a = new Bitmap(duongdanhinh);
+                picHinhAnh.Image = a;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Không có hình");
+            }
+           
 
             string GT = dgvDSNhanVien.Rows[numrow].Cells[10].Value.ToString();
             if (GT == "False")
@@ -158,6 +170,7 @@ namespace QLKhachSan
             hienthi_textbox(vt);
         }
 
+        string DuongDan = "";
         private void btnHinh_Click(object sender, EventArgs e)
         {
             //OpenFileDialog open = new OpenFileDialog();
@@ -178,7 +191,8 @@ namespace QLKhachSan
             else
             {
                 Bitmap a = new Bitmap(o.FileName);
-                txtHinh.Text = o.FileName;
+                txtHinh.Text = txtID.Text+".jpg";
+                DuongDan = o.FileName;
                 picHinhAnh.Image = a;
             }
         }
@@ -213,6 +227,7 @@ namespace QLKhachSan
                 {
                     xulychucnang(true);
                     bNV.NhanVien_Them(Int32.Parse(txtID.Text), cboTenLoaiNV.SelectedIndex+1, txtMaNV.Text,txtMatKhau.Text,txtHoTen.Text,Convert.ToDateTime(txtNgaySinh.Text).ToString("yyyy-MM-dd"),txtSDT.Text,rtxtDiaChi.Text,txtEmail.Text,Int32.Parse(txtCMND.Text),cboGioiTinh.SelectedIndex,txtHinh.Text, cboHieuLuc.SelectedIndex);
+                    File.Copy(DuongDan, Path.Combine(@"D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\Images\", Path.GetFileName(txtHinh.Text)), true);
                     MessageBox.Show("Thêm thành công ");
                     dgvDSNhanVien.DataSource = bNV.NhanVien_Select();
                 }
@@ -227,6 +242,7 @@ namespace QLKhachSan
                 {
                     xulychucnang(true);
                     bNV.NhanVien_CapNhat(Int32.Parse(txtID.Text), cboTenLoaiNV.SelectedIndex + 1, txtMaNV.Text, txtMatKhau.Text, txtHoTen.Text, Convert.ToDateTime(txtNgaySinh.Text).ToString("yyyy-MM-dd"), txtSDT.Text, rtxtDiaChi.Text, txtEmail.Text, Int32.Parse(txtCMND.Text), cboGioiTinh.SelectedIndex, txtHinh.Text, cboHieuLuc.SelectedIndex);
+                    File.Copy(DuongDan, Path.Combine(@"D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\Images\", Path.GetFileName(txtHinh.Text)), true);
                     MessageBox.Show("Sữa thành công ");
                     dgvDSNhanVien.DataSource = bNV.NhanVien_Select();
                 }
@@ -239,6 +255,11 @@ namespace QLKhachSan
             bNV.NhanVien_Xoa(Int32.Parse(txtID.Text),0);
             MessageBox.Show("Xóa thành công ");
             dgvDSNhanVien.DataSource = bNV.NhanVien_Select();
+        }
+
+        private void ribbon_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
