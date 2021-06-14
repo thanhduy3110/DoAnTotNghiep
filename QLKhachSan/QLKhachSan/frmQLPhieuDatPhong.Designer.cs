@@ -50,6 +50,8 @@ namespace QLKhachSan
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
@@ -69,8 +71,6 @@ namespace QLKhachSan
             this.txtID = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtTimKiem = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -95,7 +95,7 @@ namespace QLKhachSan
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbon.Size = new System.Drawing.Size(1462, 213);
+            this.ribbon.Size = new System.Drawing.Size(1463, 213);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // btnHome
@@ -175,7 +175,7 @@ namespace QLKhachSan
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 866);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1462, 28);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1463, 28);
             // 
             // groupBox1
             // 
@@ -185,7 +185,7 @@ namespace QLKhachSan
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 213);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1462, 653);
+            this.groupBox1.Size = new System.Drawing.Size(1463, 653);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             // 
@@ -196,7 +196,7 @@ namespace QLKhachSan
             this.groupBox3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(3, 398);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1456, 252);
+            this.groupBox3.Size = new System.Drawing.Size(1457, 252);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh Sách Phiếu Đặt Phòng";
@@ -222,7 +222,7 @@ namespace QLKhachSan
             this.dgvDSLoaiNV.Name = "dgvDSLoaiNV";
             this.dgvDSLoaiNV.RowHeadersWidth = 51;
             this.dgvDSLoaiNV.RowTemplate.Height = 24;
-            this.dgvDSLoaiNV.Size = new System.Drawing.Size(1450, 227);
+            this.dgvDSLoaiNV.Size = new System.Drawing.Size(1451, 227);
             this.dgvDSLoaiNV.TabIndex = 0;
             // 
             // Column1
@@ -277,10 +277,24 @@ namespace QLKhachSan
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(3, 19);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1456, 379);
+            this.groupBox2.Size = new System.Drawing.Size(1457, 379);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Phiếu Đặt Phòng";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(735, 158);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(249, 26);
+            this.dateTimePicker2.TabIndex = 16;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(225, 153);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(249, 26);
+            this.dateTimePicker1.TabIndex = 16;
             // 
             // richTextBox1
             // 
@@ -533,25 +547,11 @@ namespace QLKhachSan
             this.label1.TabIndex = 6;
             this.label1.Text = "Tìm kiếm phòng";
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(225, 153);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(249, 26);
-            this.dateTimePicker1.TabIndex = 16;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(735, 158);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(249, 26);
-            this.dateTimePicker2.TabIndex = 16;
-            // 
             // frmQLPhieuDatPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1462, 894);
+            this.ClientSize = new System.Drawing.Size(1463, 894);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ribbonStatusBar);
