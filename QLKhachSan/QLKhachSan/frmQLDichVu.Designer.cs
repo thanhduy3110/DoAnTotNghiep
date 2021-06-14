@@ -30,28 +30,35 @@ namespace QLKhachSan
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQLDichVu));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnHome = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThem = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSua = new DevExpress.XtraBars.BarButtonItem();
+            this.btnLuu = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dgvDSLoaiNV = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.dgvDichVu = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.rtxtGhiChu = new System.Windows.Forms.RichTextBox();
+            this.rtxtMoTa = new System.Windows.Forms.RichTextBox();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
@@ -60,25 +67,26 @@ namespace QLKhachSan
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cboLoaiDV = new System.Windows.Forms.ComboBox();
+            this.cboHieuLuc = new System.Windows.Forms.ComboBox();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX6 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtDVT = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.checkBoxX2 = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.checkBoxX1 = new DevComponents.DotNetBar.Controls.CheckBoxX();
-            this.textBoxX3 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX5 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX4 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtTenDV = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtSLTon = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtGiaTien = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtID = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtTimKiem = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtHinhAnh = new DevComponents.DotNetBar.Controls.TextBoxX();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDSLoaiNV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDichVu)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -89,10 +97,10 @@ namespace QLKhachSan
             this.ribbon.SearchEditItem,
             this.btnHome,
             this.barButtonItem2,
-            this.barButtonItem3,
-            this.barButtonItem4,
-            this.barButtonItem5,
-            this.barButtonItem6,
+            this.btnThem,
+            this.btnSua,
+            this.btnLuu,
+            this.btnXoa,
             this.barSubItem1});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.MaxItemId = 8;
@@ -116,33 +124,37 @@ namespace QLKhachSan
             this.barButtonItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
             this.barButtonItem2.Name = "barButtonItem2";
             // 
-            // barButtonItem3
+            // btnThem
             // 
-            this.barButtonItem3.Caption = "Thêm Mới";
-            this.barButtonItem3.Id = 3;
-            this.barButtonItem3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem3.ImageOptions.SvgImage")));
-            this.barButtonItem3.Name = "barButtonItem3";
+            this.btnThem.Caption = "Thêm Mới";
+            this.btnThem.Id = 3;
+            this.btnThem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThem.ImageOptions.SvgImage")));
+            this.btnThem.Name = "btnThem";
+            this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThem_ItemClick);
             // 
-            // barButtonItem4
+            // btnSua
             // 
-            this.barButtonItem4.Caption = "Sữa Chữa";
-            this.barButtonItem4.Id = 4;
-            this.barButtonItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem4.ImageOptions.SvgImage")));
-            this.barButtonItem4.Name = "barButtonItem4";
+            this.btnSua.Caption = "Sữa Chữa";
+            this.btnSua.Id = 4;
+            this.btnSua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSua.ImageOptions.SvgImage")));
+            this.btnSua.Name = "btnSua";
+            this.btnSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSua_ItemClick);
             // 
-            // barButtonItem5
+            // btnLuu
             // 
-            this.barButtonItem5.Caption = "Lưu Trữ";
-            this.barButtonItem5.Id = 5;
-            this.barButtonItem5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem5.ImageOptions.SvgImage")));
-            this.barButtonItem5.Name = "barButtonItem5";
+            this.btnLuu.Caption = "Lưu Trữ";
+            this.btnLuu.Id = 5;
+            this.btnLuu.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnLuu.ImageOptions.SvgImage")));
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLuu_ItemClick);
             // 
-            // barButtonItem6
+            // btnXoa
             // 
-            this.barButtonItem6.Caption = "Xóa";
-            this.barButtonItem6.Id = 6;
-            this.barButtonItem6.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem6.ImageOptions.SvgImage")));
-            this.barButtonItem6.Name = "barButtonItem6";
+            this.btnXoa.Caption = "Xóa";
+            this.btnXoa.Id = 6;
+            this.btnXoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXoa.ImageOptions.SvgImage")));
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
             // 
             // barSubItem1
             // 
@@ -167,10 +179,10 @@ namespace QLKhachSan
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ribbonPageGroup3.ImageOptions.SvgImage")));
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem3);
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem4);
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem5);
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem6);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnThem);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnSua);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnLuu);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnXoa);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "Chức Năng";
             // 
@@ -188,7 +200,7 @@ namespace QLKhachSan
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dgvDSLoaiNV);
+            this.groupBox3.Controls.Add(this.dgvDichVu);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(3, 458);
@@ -198,60 +210,125 @@ namespace QLKhachSan
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh Sách Dịch Vụ";
             // 
-            // dgvDSLoaiNV
+            // dgvDichVu
             // 
-            this.dgvDSLoaiNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDSLoaiNV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvDichVu.BackgroundColor = System.Drawing.Color.White;
+            this.dgvDichVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDichVu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
-            this.Column3});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(70)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(70)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDSLoaiNV.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvDSLoaiNV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDSLoaiNV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.dgvDSLoaiNV.Location = new System.Drawing.Point(3, 22);
-            this.dgvDSLoaiNV.Name = "dgvDSLoaiNV";
-            this.dgvDSLoaiNV.RowHeadersWidth = 51;
-            this.dgvDSLoaiNV.RowTemplate.Height = 24;
-            this.dgvDSLoaiNV.Size = new System.Drawing.Size(1452, 196);
-            this.dgvDSLoaiNV.TabIndex = 0;
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8,
+            this.Column9,
+            this.Column10});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(70)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(70)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDichVu.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDichVu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDichVu.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            this.dgvDichVu.Location = new System.Drawing.Point(3, 22);
+            this.dgvDichVu.Name = "dgvDichVu";
+            this.dgvDichVu.RowHeadersWidth = 51;
+            this.dgvDichVu.RowTemplate.Height = 24;
+            this.dgvDichVu.Size = new System.Drawing.Size(1452, 196);
+            this.dgvDichVu.TabIndex = 0;
+            this.dgvDichVu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDichVu_CellClick);
             // 
             // Column1
             // 
-            this.Column1.DataPropertyName = "ID";
-            this.Column1.HeaderText = "ID Loại Nhân Viên";
+            this.Column1.DataPropertyName = "id";
+            this.Column1.HeaderText = "ID";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
-            this.Column1.Width = 200;
+            this.Column1.Width = 125;
             // 
             // Column2
             // 
-            this.Column2.DataPropertyName = "TenLoaiNV";
-            this.Column2.HeaderText = "Tên Loại Nhân Viên";
+            this.Column2.DataPropertyName = "id_loaidv";
+            this.Column2.HeaderText = "ID Loại DV";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
-            this.Column2.Width = 300;
+            this.Column2.Width = 125;
             // 
             // Column3
             // 
-            this.Column3.DataPropertyName = "HieuLuc";
-            this.Column3.HeaderText = "Hiệu Lực";
+            this.Column3.DataPropertyName = "tendv";
+            this.Column3.HeaderText = "Tên DV";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
-            this.Column3.Width = 200;
+            this.Column3.Width = 125;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "mota";
+            this.Column4.HeaderText = "Mô tả";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 125;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "hinhanh";
+            this.Column5.HeaderText = "Hình ảnh";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 125;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "giatien";
+            this.Column6.HeaderText = "Giá Tiền";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 125;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "slton";
+            this.Column7.HeaderText = "SL Tồn";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 125;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "dvt";
+            this.Column8.HeaderText = "DVT";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 125;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "ghichu";
+            this.Column9.HeaderText = "Ghi Chú";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 125;
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "hieuluc";
+            this.Column10.HeaderText = "Hiệu Lực";
+            this.Column10.MinimumWidth = 6;
+            this.Column10.Name = "Column10";
+            this.Column10.Width = 125;
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.groupBox2.Controls.Add(this.richTextBox2);
-            this.groupBox2.Controls.Add(this.richTextBox1);
-            this.groupBox2.Controls.Add(this.pictureBox1);
+            this.groupBox2.Controls.Add(this.rtxtGhiChu);
+            this.groupBox2.Controls.Add(this.rtxtMoTa);
+            this.groupBox2.Controls.Add(this.pictureBox);
             this.groupBox2.Controls.Add(this.labelX6);
             this.groupBox2.Controls.Add(this.labelX10);
             this.groupBox2.Controls.Add(this.labelX9);
@@ -260,16 +337,17 @@ namespace QLKhachSan
             this.groupBox2.Controls.Add(this.labelX8);
             this.groupBox2.Controls.Add(this.labelX4);
             this.groupBox2.Controls.Add(this.labelX2);
-            this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Controls.Add(this.cboLoaiDV);
+            this.groupBox2.Controls.Add(this.cboHieuLuc);
             this.groupBox2.Controls.Add(this.labelX7);
             this.groupBox2.Controls.Add(this.labelX1);
-            this.groupBox2.Controls.Add(this.textBoxX6);
+            this.groupBox2.Controls.Add(this.txtDVT);
             this.groupBox2.Controls.Add(this.checkBoxX2);
             this.groupBox2.Controls.Add(this.checkBoxX1);
-            this.groupBox2.Controls.Add(this.textBoxX3);
-            this.groupBox2.Controls.Add(this.textBoxX5);
-            this.groupBox2.Controls.Add(this.textBoxX4);
+            this.groupBox2.Controls.Add(this.txtHinhAnh);
+            this.groupBox2.Controls.Add(this.txtTenDV);
+            this.groupBox2.Controls.Add(this.txtSLTon);
+            this.groupBox2.Controls.Add(this.txtGiaTien);
             this.groupBox2.Controls.Add(this.txtID);
             this.groupBox2.Controls.Add(this.txtTimKiem);
             this.groupBox2.Controls.Add(this.label1);
@@ -282,29 +360,32 @@ namespace QLKhachSan
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dịch Vụ";
             // 
-            // richTextBox2
+            // rtxtGhiChu
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(699, 213);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(250, 140);
-            this.richTextBox2.TabIndex = 17;
-            this.richTextBox2.Text = "";
+            this.rtxtGhiChu.Location = new System.Drawing.Point(699, 213);
+            this.rtxtGhiChu.Name = "rtxtGhiChu";
+            this.rtxtGhiChu.Size = new System.Drawing.Size(250, 140);
+            this.rtxtGhiChu.TabIndex = 17;
+            this.rtxtGhiChu.Text = "";
             // 
-            // richTextBox1
+            // rtxtMoTa
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(221, 213);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(250, 140);
-            this.richTextBox1.TabIndex = 17;
-            this.richTextBox1.Text = "";
+            this.rtxtMoTa.Location = new System.Drawing.Point(221, 213);
+            this.rtxtMoTa.Name = "rtxtMoTa";
+            this.rtxtMoTa.Size = new System.Drawing.Size(250, 140);
+            this.rtxtMoTa.TabIndex = 17;
+            this.rtxtMoTa.Text = "";
             // 
-            // pictureBox1
+            // pictureBox
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(1186, 213);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(247, 140);
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
+            this.pictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.pictureBox.Location = new System.Drawing.Point(1186, 213);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(250, 140);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox.TabIndex = 15;
+            this.pictureBox.TabStop = false;
+            this.pictureBox.Click += new System.EventHandler(this.pictureBox_Click);
             // 
             // labelX6
             // 
@@ -418,25 +499,25 @@ namespace QLKhachSan
             this.labelX2.TabIndex = 13;
             this.labelX2.Text = "Tên dịch vụ";
             // 
-            // comboBox1
+            // cboLoaiDV
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(699, 78);
-            this.comboBox1.MaximumSize = new System.Drawing.Size(250, 0);
-            this.comboBox1.MinimumSize = new System.Drawing.Size(250, 0);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(250, 26);
-            this.comboBox1.TabIndex = 11;
+            this.cboLoaiDV.FormattingEnabled = true;
+            this.cboLoaiDV.Location = new System.Drawing.Point(699, 78);
+            this.cboLoaiDV.MaximumSize = new System.Drawing.Size(250, 0);
+            this.cboLoaiDV.MinimumSize = new System.Drawing.Size(250, 0);
+            this.cboLoaiDV.Name = "cboLoaiDV";
+            this.cboLoaiDV.Size = new System.Drawing.Size(250, 26);
+            this.cboLoaiDV.TabIndex = 11;
             // 
-            // comboBox2
+            // cboHieuLuc
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(221, 390);
-            this.comboBox2.MaximumSize = new System.Drawing.Size(250, 0);
-            this.comboBox2.MinimumSize = new System.Drawing.Size(250, 0);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(250, 26);
-            this.comboBox2.TabIndex = 11;
+            this.cboHieuLuc.FormattingEnabled = true;
+            this.cboHieuLuc.Location = new System.Drawing.Point(221, 390);
+            this.cboHieuLuc.MaximumSize = new System.Drawing.Size(250, 0);
+            this.cboHieuLuc.MinimumSize = new System.Drawing.Size(250, 0);
+            this.cboHieuLuc.Name = "cboHieuLuc";
+            this.cboHieuLuc.Size = new System.Drawing.Size(250, 26);
+            this.cboHieuLuc.TabIndex = 11;
             // 
             // labelX7
             // 
@@ -466,20 +547,20 @@ namespace QLKhachSan
             this.labelX1.TabIndex = 14;
             this.labelX1.Text = "Loại dịch vụ";
             // 
-            // textBoxX6
+            // txtDVT
             // 
             // 
             // 
             // 
-            this.textBoxX6.Border.Class = "TextBoxBorder";
-            this.textBoxX6.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX6.Location = new System.Drawing.Point(1186, 162);
-            this.textBoxX6.MaximumSize = new System.Drawing.Size(100, 26);
-            this.textBoxX6.MinimumSize = new System.Drawing.Size(250, 26);
-            this.textBoxX6.Name = "textBoxX6";
-            this.textBoxX6.PreventEnterBeep = true;
-            this.textBoxX6.Size = new System.Drawing.Size(250, 26);
-            this.textBoxX6.TabIndex = 7;
+            this.txtDVT.Border.Class = "TextBoxBorder";
+            this.txtDVT.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtDVT.Location = new System.Drawing.Point(1186, 162);
+            this.txtDVT.MaximumSize = new System.Drawing.Size(100, 26);
+            this.txtDVT.MinimumSize = new System.Drawing.Size(250, 26);
+            this.txtDVT.Name = "txtDVT";
+            this.txtDVT.PreventEnterBeep = true;
+            this.txtDVT.Size = new System.Drawing.Size(250, 26);
+            this.txtDVT.TabIndex = 7;
             // 
             // checkBoxX2
             // 
@@ -511,50 +592,50 @@ namespace QLKhachSan
             this.checkBoxX1.Text = "Tìm theo tên dịch vụ";
             this.checkBoxX1.TextColor = System.Drawing.Color.Black;
             // 
-            // textBoxX3
+            // txtTenDV
             // 
             // 
             // 
             // 
-            this.textBoxX3.Border.Class = "TextBoxBorder";
-            this.textBoxX3.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX3.Location = new System.Drawing.Point(1186, 78);
-            this.textBoxX3.MaximumSize = new System.Drawing.Size(100, 26);
-            this.textBoxX3.MinimumSize = new System.Drawing.Size(250, 26);
-            this.textBoxX3.Name = "textBoxX3";
-            this.textBoxX3.PreventEnterBeep = true;
-            this.textBoxX3.Size = new System.Drawing.Size(250, 26);
-            this.textBoxX3.TabIndex = 7;
+            this.txtTenDV.Border.Class = "TextBoxBorder";
+            this.txtTenDV.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtTenDV.Location = new System.Drawing.Point(1186, 78);
+            this.txtTenDV.MaximumSize = new System.Drawing.Size(100, 26);
+            this.txtTenDV.MinimumSize = new System.Drawing.Size(250, 26);
+            this.txtTenDV.Name = "txtTenDV";
+            this.txtTenDV.PreventEnterBeep = true;
+            this.txtTenDV.Size = new System.Drawing.Size(250, 26);
+            this.txtTenDV.TabIndex = 7;
             // 
-            // textBoxX5
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX5.Border.Class = "TextBoxBorder";
-            this.textBoxX5.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX5.Location = new System.Drawing.Point(699, 162);
-            this.textBoxX5.MaximumSize = new System.Drawing.Size(100, 26);
-            this.textBoxX5.MinimumSize = new System.Drawing.Size(250, 26);
-            this.textBoxX5.Name = "textBoxX5";
-            this.textBoxX5.PreventEnterBeep = true;
-            this.textBoxX5.Size = new System.Drawing.Size(250, 26);
-            this.textBoxX5.TabIndex = 7;
-            // 
-            // textBoxX4
+            // txtSLTon
             // 
             // 
             // 
             // 
-            this.textBoxX4.Border.Class = "TextBoxBorder";
-            this.textBoxX4.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX4.Location = new System.Drawing.Point(221, 162);
-            this.textBoxX4.MaximumSize = new System.Drawing.Size(100, 26);
-            this.textBoxX4.MinimumSize = new System.Drawing.Size(250, 26);
-            this.textBoxX4.Name = "textBoxX4";
-            this.textBoxX4.PreventEnterBeep = true;
-            this.textBoxX4.Size = new System.Drawing.Size(250, 26);
-            this.textBoxX4.TabIndex = 8;
+            this.txtSLTon.Border.Class = "TextBoxBorder";
+            this.txtSLTon.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtSLTon.Location = new System.Drawing.Point(699, 162);
+            this.txtSLTon.MaximumSize = new System.Drawing.Size(100, 26);
+            this.txtSLTon.MinimumSize = new System.Drawing.Size(250, 26);
+            this.txtSLTon.Name = "txtSLTon";
+            this.txtSLTon.PreventEnterBeep = true;
+            this.txtSLTon.Size = new System.Drawing.Size(250, 26);
+            this.txtSLTon.TabIndex = 7;
+            // 
+            // txtGiaTien
+            // 
+            // 
+            // 
+            // 
+            this.txtGiaTien.Border.Class = "TextBoxBorder";
+            this.txtGiaTien.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtGiaTien.Location = new System.Drawing.Point(221, 162);
+            this.txtGiaTien.MaximumSize = new System.Drawing.Size(100, 26);
+            this.txtGiaTien.MinimumSize = new System.Drawing.Size(250, 26);
+            this.txtGiaTien.Name = "txtGiaTien";
+            this.txtGiaTien.PreventEnterBeep = true;
+            this.txtGiaTien.Size = new System.Drawing.Size(250, 26);
+            this.txtGiaTien.TabIndex = 8;
             // 
             // txtID
             // 
@@ -599,6 +680,21 @@ namespace QLKhachSan
             this.label1.TabIndex = 6;
             this.label1.Text = "Tìm kiếm dịch vụ";
             // 
+            // txtHinhAnh
+            // 
+            // 
+            // 
+            // 
+            this.txtHinhAnh.Border.Class = "TextBoxBorder";
+            this.txtHinhAnh.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtHinhAnh.Location = new System.Drawing.Point(1186, 359);
+            this.txtHinhAnh.MaximumSize = new System.Drawing.Size(100, 26);
+            this.txtHinhAnh.MinimumSize = new System.Drawing.Size(250, 26);
+            this.txtHinhAnh.Name = "txtHinhAnh";
+            this.txtHinhAnh.PreventEnterBeep = true;
+            this.txtHinhAnh.Size = new System.Drawing.Size(250, 26);
+            this.txtHinhAnh.TabIndex = 7;
+            // 
             // frmQLDichVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -610,13 +706,14 @@ namespace QLKhachSan
             this.Name = "frmQLDichVu";
             this.Ribbon = this.ribbon;
             this.Text = "Quản Lý Dịch Vụ";
+            this.Load += new System.EventHandler(this.frmQLDichVu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDSLoaiNV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDichVu)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -629,22 +726,19 @@ namespace QLKhachSan
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem btnHome;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        private DevExpress.XtraBars.BarButtonItem btnThem;
+        private DevExpress.XtraBars.BarButtonItem btnSua;
+        private DevExpress.XtraBars.BarButtonItem btnLuu;
+        private DevExpress.XtraBars.BarButtonItem btnXoa;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.BarSubItem barSubItem1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private DevComponents.DotNetBar.Controls.DataGridViewX dgvDSLoaiNV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private DevComponents.DotNetBar.Controls.DataGridViewX dgvDichVu;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.RichTextBox rtxtGhiChu;
+        private System.Windows.Forms.RichTextBox rtxtMoTa;
+        private System.Windows.Forms.PictureBox pictureBox;
         private DevComponents.DotNetBar.LabelX labelX6;
         private DevComponents.DotNetBar.LabelX labelX10;
         private DevComponents.DotNetBar.LabelX labelX9;
@@ -653,18 +747,29 @@ namespace QLKhachSan
         private DevComponents.DotNetBar.LabelX labelX8;
         private DevComponents.DotNetBar.LabelX labelX4;
         private DevComponents.DotNetBar.LabelX labelX2;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cboHieuLuc;
         private DevComponents.DotNetBar.LabelX labelX7;
         private DevComponents.DotNetBar.LabelX labelX1;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX6;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtDVT;
         private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxX1;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX3;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX5;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX4;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtTenDV;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtSLTon;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtGiaTien;
         private DevComponents.DotNetBar.Controls.TextBoxX txtID;
         private DevComponents.DotNetBar.Controls.TextBoxX txtTimKiem;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboLoaiDV;
         private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxX2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtHinhAnh;
     }
 }
