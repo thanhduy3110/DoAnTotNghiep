@@ -87,14 +87,14 @@ namespace QLKhachSan
                 else
                 {
                     blp.LP_Them(txtID.Text, txtTenLoaiPhong.Text, txtSoGiuongDoi.Text, txtSoGiuongDon.Text, txtSoKhach.Text, cbHieuLuc.Text);
-                    MessageBox.Show("thêm thành công rồi nè");
+                    MessageBox.Show("Thêm thành công ");
                     dgvLoaiPhong.DataSource = blp.LP_Select();
                 }
             }
             if (flag == 2)
             {
                 blp.LP_CapNhat(txtID.Text, txtTenLoaiPhong.Text, txtSoGiuongDoi.Text, txtSoGiuongDon.Text, txtSoKhach.Text, cbHieuLuc.Text);
-                MessageBox.Show("sửa thành công rồi nè");
+                MessageBox.Show("Sữa thành công ");
                 dgvLoaiPhong.DataSource = blp.LP_Select();
             }
         }
@@ -102,7 +102,7 @@ namespace QLKhachSan
         private void btnXoa_ItemClick(object sender, ItemClickEventArgs e)
         {
             blp.LP_Xoa(txtID.Text);
-            MessageBox.Show("Xóa thành công rồi nè");
+            MessageBox.Show("Xóa thành công ");
             dgvLoaiPhong.DataSource = blp.LP_Select();
         }
 

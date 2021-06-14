@@ -24,6 +24,7 @@ namespace DAO
             cboTenLP.ValueMember = "id";
         }
 
+
         public DataTable phong_select()
         {
             return db.Laydulieu("phong_select");

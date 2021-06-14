@@ -20,100 +20,136 @@ namespace QLKhachSan
             InitializeComponent();
         }
 
+        BUSLoaiNV bLNV = new BUSLoaiNV();
+        int flag;
+
         private void btnHome_ItemClick(object sender, ItemClickEventArgs e)
         {
             this.Close();
           
         }
 
-        int iTong = 0;
+
+        void Tang_ID()
+        {
+            int count = 0;
+            count = dgvDSLoaiNV.Rows.Count;
+            string chuoi = "";
+            int chuoi2 = 0;
+            if (count <= 1)
+            {
+                txtID.Text = "0";
+            }
+            else
+            {
+                chuoi = Convert.ToString(dgvDSLoaiNV.Rows[count - 2].Cells[0].Value);
+                chuoi2 = Convert.ToInt32((chuoi.Remove(0, 0)));
+                if (chuoi2 + 1 < 10)
+                    txtID.Text = "" + (chuoi2 + 1).ToString();
+                else if (chuoi2 + 1 < 100)
+                    txtID.Text = "" + (chuoi2 + 1).ToString();
+            }
+        }
+
+        void clear_textbox()
+        {
+            Tang_ID();
+            txtTenLoaiNV.Text = "";
+            cboHieuLuc.Text = "";
+        }
+        void xulychucnang(Boolean t)
+        {
+            btnThem.Enabled = t;
+            btnXoa.Enabled = t;
+            btnSua.Enabled = t;
+            btnLuu.Enabled = !t;
+        }
+
+        void xulytextbox(Boolean t)
+        {
+            txtTenLoaiNV.ReadOnly = t;
+        }
+
 
         private void frmQLLoaiNV_Load(object sender, EventArgs e)
         {
-            //dgvDSLoaiNV.DataSource = BUSLoaiNV.GetAllLoaiNV();
-            
+            dgvDSLoaiNV.DataSource = bLNV.LoaiNV_selecl();
+            xulychucnang(true);
+            xulytextbox(true);
+            txtID.ReadOnly =true;
+
         }
 
-        private void dgvDSLoaiNV_CellClick(object sender, DataGridViewCellEventArgs e)
+        void hienthi_textbox(int numrow)
         {
-            try
+            txtID.Text = dgvDSLoaiNV.Rows[numrow].Cells[0].Value.ToString();
+            txtTenLoaiNV.Text = dgvDSLoaiNV.Rows[numrow].Cells[1].Value.ToString();
+            string t = dgvDSLoaiNV.Rows[numrow].Cells[2].Value.ToString();
+            if (t == "False")
             {
-                DataGridViewRow row = new DataGridViewRow();
-                row = dgvDSLoaiNV.Rows[e.RowIndex];
-                iTong = dgvDSLoaiNV.Rows.Count;
-                txtID.Text = row.Cells[0].Value.ToString();
-                txtTenLoaiNV.Text = row.Cells[1].Value.ToString();
-                string t = row.Cells[2].Value.ToString();
-                if (t == "False")
-                {
-                    cboHieuLuc.SelectedIndex = 1;
-                }
-                else
-                {
-                    cboHieuLuc.SelectedIndex = 0;
-                }
+                cboHieuLuc.SelectedIndex = 0;
             }
-            catch
+            else
             {
-
+                cboHieuLuc.SelectedIndex = 1;
             }
         }
+
+       
 
 
         private void btnThem_ItemClick(object sender, ItemClickEventArgs e)
         {
-            try
-            {
-                int ID = iTong;
-                //ID = Int32.Parse(txtID.Text);
-                string TenLoaiNV = txtTenLoaiNV.Text;
-                bool HieuLuc;
-                if (cboHieuLuc.Text == "Còn Vị Trí")
-                {
-                    HieuLuc = true;
-                }
-                else
-                {
-                    HieuLuc = false;
-                }
-
-                //DTOLoaiNV LoaiNV = new DTOLoaiNV(ID, TenLoaiNV, HieuLuc);
-                //BUSLoaiNV.InsertLoaiNV(LoaiNV);
-                //MessageBox.Show("Bạn đã thêm thành công");
-                //dgvDSLoaiNV.DataSource = BUSLoaiNV.GetAllLoaiNV();
-            }catch(Exception ex)
-            {
-                MessageBox.Show("Thêm thất bại");
-            }
-            
+            clear_textbox();
+            xulychucnang(false);
+            xulytextbox(false);
+            flag = 1;
 
         }
      
         private void btnSua_ItemClick(object sender, ItemClickEventArgs e)
         {
-            try
+            xulychucnang(false);
+            xulytextbox(false);
+            flag = 2;
+        }
+
+        private void btnLuu_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (flag == 1)
             {
-                int ID = Int32.Parse(txtID.Text);
-                string TenLoaiNV = txtTenLoaiNV.Text;
-                bool HieuLuc;
-                if (cboHieuLuc.Text == "Còn Vị Trí")
+                xulychucnang(true);
+                if (txtTenLoaiNV.Text == "" || cboHieuLuc.Text == "")
                 {
-                    HieuLuc = true;
+                    MessageBox.Show("Lỗi");
                 }
                 else
                 {
-                    HieuLuc = false;
+                    bLNV.LoaiNV_Them(Int32.Parse(txtID.Text), txtTenLoaiNV.Text,cboHieuLuc.SelectedIndex);
+                    MessageBox.Show("Thêm thành công ");
+                    dgvDSLoaiNV.DataSource = bLNV.LoaiNV_selecl();
                 }
-
-                //DTOLoaiNV LoaiNV = new DTOLoaiNV(ID, TenLoaiNV, HieuLuc);
-                //BUSLoaiNV.UpdateLoaiNV(LoaiNV);
-                //MessageBox.Show("Bạn đã sữa thành công");
-                //dgvDSLoaiNV.DataSource = BUSLoaiNV.GetAllLoaiNV();
             }
-            catch (Exception ex)
+            if (flag == 2)
             {
-                MessageBox.Show("Sữa thất bại");
+                xulychucnang(true);
+                bLNV.LoaiNV_CapNhat(Int32.Parse(txtID.Text), txtTenLoaiNV.Text, cboHieuLuc.SelectedIndex);
+                MessageBox.Show("Sữa thành công ");
+                dgvDSLoaiNV.DataSource = bLNV.LoaiNV_selecl();
             }
+        }
+
+        private void dgvDSLoaiNV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int vt = dgvDSLoaiNV.CurrentCell.RowIndex;
+            hienthi_textbox(vt);
+        }
+
+        private void btnXoa_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            bLNV.LoaiNV_Xoa(Int32.Parse(txtID.Text),0);
+            MessageBox.Show("Xóa thành công ");
+            dgvDSLoaiNV.DataSource = bLNV.LoaiNV_selecl();
         }
     }
 }
