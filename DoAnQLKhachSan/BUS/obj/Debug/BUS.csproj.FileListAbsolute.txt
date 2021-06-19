@@ -1,0 +1,13 @@
+C:\Users\PC\Downloads\Compressed\DoAnTotNghiep_5\DoAnTotNghiep\DoAnQLKhachSan\BUS\bin\Debug\BUS.exe.config
+C:\Users\PC\Downloads\Compressed\DoAnTotNghiep_5\DoAnTotNghiep\DoAnQLKhachSan\BUS\bin\Debug\BUS.exe
+C:\Users\PC\Downloads\Compressed\DoAnTotNghiep_5\DoAnTotNghiep\DoAnQLKhachSan\BUS\bin\Debug\BUS.pdb
+C:\Users\PC\Downloads\Compressed\DoAnTotNghiep_5\DoAnTotNghiep\DoAnQLKhachSan\BUS\bin\Debug\DAO.exe
+C:\Users\PC\Downloads\Compressed\DoAnTotNghiep_5\DoAnTotNghiep\DoAnQLKhachSan\BUS\bin\Debug\DAO.pdb
+C:\Users\PC\Downloads\Compressed\DoAnTotNghiep_5\DoAnTotNghiep\DoAnQLKhachSan\BUS\bin\Debug\DAO.exe.config
+C:\Users\PC\Downloads\Compressed\DoAnTotNghiep_5\DoAnTotNghiep\DoAnQLKhachSan\BUS\obj\Debug\BUS.csprojAssemblyReference.cache
+C:\Users\PC\Downloads\Compressed\DoAnTotNghiep_5\DoAnTotNghiep\DoAnQLKhachSan\BUS\obj\Debug\BUS.Properties.Resources.resources
+C:\Users\PC\Downloads\Compressed\DoAnTotNghiep_5\DoAnTotNghiep\DoAnQLKhachSan\BUS\obj\Debug\BUS.csproj.GenerateResource.cache
+C:\Users\PC\Downloads\Compressed\DoAnTotNghiep_5\DoAnTotNghiep\DoAnQLKhachSan\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+C:\Users\PC\Downloads\Compressed\DoAnTotNghiep_5\DoAnTotNghiep\DoAnQLKhachSan\BUS\obj\Debug\BUS.csproj.CopyComplete
+C:\Users\PC\Downloads\Compressed\DoAnTotNghiep_5\DoAnTotNghiep\DoAnQLKhachSan\BUS\obj\Debug\BUS.exe
+C:\Users\PC\Downloads\Compressed\DoAnTotNghiep_5\DoAnTotNghiep\DoAnQLKhachSan\BUS\obj\Debug\BUS.pdb
