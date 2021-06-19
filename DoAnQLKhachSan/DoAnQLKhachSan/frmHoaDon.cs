@@ -97,6 +97,7 @@ namespace DoAnQLKhachSan
         }
         public void hienthi_textbox(int numrow)
         {
+            txtID.Text = dgvDSHD.Rows[numrow].Cells[0].Value.ToString();
             txtID_HD.Text = dgvDSHD.Rows[numrow].Cells[0].Value.ToString();
             txtMaHD.Text = dgvDSHD.Rows[numrow].Cells[1].Value.ToString();
             cboTenNV.SelectedValue = dgvDSHD.Rows[numrow].Cells[2].Value.ToString();
@@ -235,7 +236,8 @@ namespace DoAnQLKhachSan
             dgvDSHD.DataSource = bHD.HoaDon_Select();
         }
 
-        private void dgvDSHD_CellClick(object sender, DataGridViewCellEventArgs e)
+
+        private void dgvDSHD_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             int vt = dgvDSHD.CurrentCell.RowIndex;
             int ID_HD = Int32.Parse(dgvDSHD.Rows[vt].Cells[0].Value.ToString());

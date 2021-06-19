@@ -35,6 +35,7 @@ namespace DAO
         public void TongID(TextBox txtID)
         {
             dsCTHD = db.LayDanhSach("select count(ID) as TongID from CTHD ");// truy vấn lên sql
+            txtID.DataBindings.Clear();
             txtID.DataBindings.Add("Text", dsCTHD.Tables[0], "TongID");
         }
 
