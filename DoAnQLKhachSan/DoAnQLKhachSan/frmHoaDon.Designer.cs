@@ -64,6 +64,7 @@
             this.cboTenNV = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.cboMaPhong = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.cboTenKH = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.txtMaHD = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtID = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.cboHinhThucThue = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.cboHieuLuc = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -84,6 +85,7 @@
             this.labelX15 = new DevComponents.DotNetBar.LabelX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblDonGia = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvDSCTHD = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -99,9 +101,7 @@
             this.labelX18 = new DevComponents.DotNetBar.LabelX();
             this.labelX17 = new DevComponents.DotNetBar.LabelX();
             this.labelX16 = new DevComponents.DotNetBar.LabelX();
-            this.lblDonGia = new System.Windows.Forms.Label();
             this.cboTenDV = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.txtMaHD = new DevComponents.DotNetBar.Controls.TextBoxX();
             btnTim = new ePOSOne.btnProduct.Button_WOC();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -113,6 +113,31 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSCTHD)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btnTim
+            // 
+            btnTim.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            btnTim.BorderColor = System.Drawing.Color.Black;
+            btnTim.ButtonColor = System.Drawing.Color.Blue;
+            btnTim.CausesValidation = false;
+            btnTim.Cursor = System.Windows.Forms.Cursors.Default;
+            btnTim.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            btnTim.FlatAppearance.BorderSize = 0;
+            btnTim.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            btnTim.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            btnTim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnTim.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnTim.ForeColor = System.Drawing.Color.White;
+            btnTim.Location = new System.Drawing.Point(355, 565);
+            btnTim.Name = "btnTim";
+            btnTim.OnHoverBorderColor = System.Drawing.Color.Red;
+            btnTim.OnHoverButtonColor = System.Drawing.Color.Yellow;
+            btnTim.OnHoverTextColor = System.Drawing.Color.Black;
+            btnTim.Size = new System.Drawing.Size(130, 48);
+            btnTim.TabIndex = 182;
+            btnTim.Text = "Tìm";
+            btnTim.TextColor = System.Drawing.Color.White;
+            btnTim.UseVisualStyleBackColor = true;
             // 
             // btnLuu
             // 
@@ -166,31 +191,6 @@
             this.btnThem.TextColor = System.Drawing.Color.White;
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // btnTim
-            // 
-            btnTim.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            btnTim.BorderColor = System.Drawing.Color.Black;
-            btnTim.ButtonColor = System.Drawing.Color.Blue;
-            btnTim.CausesValidation = false;
-            btnTim.Cursor = System.Windows.Forms.Cursors.Default;
-            btnTim.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            btnTim.FlatAppearance.BorderSize = 0;
-            btnTim.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            btnTim.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            btnTim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnTim.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            btnTim.ForeColor = System.Drawing.Color.White;
-            btnTim.Location = new System.Drawing.Point(355, 565);
-            btnTim.Name = "btnTim";
-            btnTim.OnHoverBorderColor = System.Drawing.Color.Red;
-            btnTim.OnHoverButtonColor = System.Drawing.Color.Yellow;
-            btnTim.OnHoverTextColor = System.Drawing.Color.Black;
-            btnTim.Size = new System.Drawing.Size(130, 48);
-            btnTim.TabIndex = 182;
-            btnTim.Text = "Tìm";
-            btnTim.TextColor = System.Drawing.Color.White;
-            btnTim.UseVisualStyleBackColor = true;
             // 
             // btnSuaCTHD
             // 
@@ -384,7 +384,7 @@
             this.rtxtGhiChu.Location = new System.Drawing.Point(196, 391);
             this.rtxtGhiChu.Name = "rtxtGhiChu";
             this.rtxtGhiChu.Rtf = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 " +
-    "Tahoma;}}\r\n{\\*\\generator Riched20 10.0.19041}\\viewkind4\\uc1 \r\n\\pard\\b\\f0\\fs24\\pa" +
+    "Tahoma;}}\r\n{\\*\\generator Riched20 10.0.18362}\\viewkind4\\uc1 \r\n\\pard\\b\\f0\\fs24\\pa" +
     "r\r\n}\r\n";
             this.rtxtGhiChu.Size = new System.Drawing.Size(274, 170);
             this.rtxtGhiChu.TabIndex = 185;
@@ -420,7 +420,7 @@
             this.Column12,
             this.Column13});
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -725,6 +725,20 @@
             this.cboTenKH.Size = new System.Drawing.Size(274, 36);
             this.cboTenKH.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cboTenKH.TabIndex = 164;
+            // 
+            // txtMaHD
+            // 
+            // 
+            // 
+            // 
+            this.txtMaHD.Border.Class = "TextBoxBorder";
+            this.txtMaHD.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtMaHD.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaHD.Location = new System.Drawing.Point(196, 87);
+            this.txtMaHD.Name = "txtMaHD";
+            this.txtMaHD.PreventEnterBeep = true;
+            this.txtMaHD.Size = new System.Drawing.Size(274, 35);
+            this.txtMaHD.TabIndex = 166;
             // 
             // txtID
             // 
@@ -1033,6 +1047,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chi Tiết Hóa Đơn";
             // 
+            // lblDonGia
+            // 
+            this.lblDonGia.BackColor = System.Drawing.Color.Yellow;
+            this.lblDonGia.ForeColor = System.Drawing.Color.Black;
+            this.lblDonGia.Location = new System.Drawing.Point(156, 429);
+            this.lblDonGia.Name = "lblDonGia";
+            this.lblDonGia.Size = new System.Drawing.Size(274, 36);
+            this.lblDonGia.TabIndex = 186;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgvDSCTHD);
@@ -1056,7 +1079,7 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -1224,15 +1247,6 @@
             this.labelX16.TabIndex = 142;
             this.labelX16.Text = "ID:";
             // 
-            // lblDonGia
-            // 
-            this.lblDonGia.BackColor = System.Drawing.Color.Yellow;
-            this.lblDonGia.ForeColor = System.Drawing.Color.Black;
-            this.lblDonGia.Location = new System.Drawing.Point(156, 429);
-            this.lblDonGia.Name = "lblDonGia";
-            this.lblDonGia.Size = new System.Drawing.Size(274, 36);
-            this.lblDonGia.TabIndex = 186;
-            // 
             // cboTenDV
             // 
             this.cboTenDV.DisplayMember = "Text";
@@ -1246,20 +1260,6 @@
             this.cboTenDV.Size = new System.Drawing.Size(274, 36);
             this.cboTenDV.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cboTenDV.TabIndex = 164;
-            // 
-            // txtMaHD
-            // 
-            // 
-            // 
-            // 
-            this.txtMaHD.Border.Class = "TextBoxBorder";
-            this.txtMaHD.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtMaHD.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaHD.Location = new System.Drawing.Point(196, 87);
-            this.txtMaHD.Name = "txtMaHD";
-            this.txtMaHD.PreventEnterBeep = true;
-            this.txtMaHD.Size = new System.Drawing.Size(274, 35);
-            this.txtMaHD.TabIndex = 166;
             // 
             // frmHoaDon
             // 

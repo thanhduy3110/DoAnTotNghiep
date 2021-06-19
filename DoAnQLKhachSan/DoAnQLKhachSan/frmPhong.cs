@@ -36,7 +36,7 @@ namespace DoAnQLKhachSan
             txtID.Text = dgvDSPhong.Rows[numrow].Cells[0].Value.ToString();
             cboTenLP.SelectedValue = dgvDSPhong.Rows[numrow].Cells[1].Value.ToString();
             txtTang.Text = dgvDSPhong.Rows[numrow].Cells[2].Value.ToString();
-            txtTang.Text = dgvDSPhong.Rows[numrow].Cells[3].Value.ToString();
+            txtSoPhong.Text = dgvDSPhong.Rows[numrow].Cells[3].Value.ToString();
             txtGiaThueTheoNgay.Text = dgvDSPhong.Rows[numrow].Cells[4].Value.ToString();
             txtGiaThueTheoGio.Text = dgvDSPhong.Rows[numrow].Cells[5].Value.ToString();
             rtxtGhiChu.Text = dgvDSPhong.Rows[numrow].Cells[6].Value.ToString();
@@ -126,6 +126,16 @@ namespace DoAnQLKhachSan
         {
             int vt = dgvDSPhong.CurrentCell.RowIndex;
             hienthi_textbox(vt);
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

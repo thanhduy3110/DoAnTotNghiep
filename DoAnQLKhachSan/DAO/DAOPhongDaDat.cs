@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevComponents.Editors.DateTimeAdv;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -22,7 +23,7 @@ namespace DAO
             cboMaPhong.ValueMember = "id";
         }
 
-        public void HienThiID_PDD(ComboBox cboID_PDD, DateTimePicker dtpNgayDen, DateTimePicker dtpNgayDi)
+        public void HienThiID_PDD(ComboBox cboID_PDD, DateTimeInput dtpNgayDen, DateTimeInput dtpNgayDi)
         {
             ds = db.LayDanhSach("select * from PhieuDatPhong");// truy vấn lên sql
             cboID_PDD.DataSource = ds.Tables[0];

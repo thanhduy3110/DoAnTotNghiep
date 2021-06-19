@@ -54,8 +54,7 @@ namespace DoAnQLKhachSan
 
         private void btnLoaiNV_Click(object sender, EventArgs e)
         {
-            frmLoaiNhanVien lnv = new frmLoaiNhanVien();
-            lnv.Show();
+            openChildForm(new frmLoaiNhanVien());
         }
 
         private void btnNhanVien_Click(object sender, EventArgs e)
@@ -84,8 +83,7 @@ namespace DoAnQLKhachSan
 
         private void btnLoaiDV_Click(object sender, EventArgs e)
         {
-            frmLoaiDichVu ldv = new frmLoaiDichVu();
-            ldv.Show();
+            openChildForm(new frmLoaiDichVu());
         }
 
         private void btnDichVu_Click(object sender, EventArgs e)
@@ -95,8 +93,7 @@ namespace DoAnQLKhachSan
 
         private void btnLoaiPhong_Click(object sender, EventArgs e)
         {
-            frmLoaiPhong lp = new frmLoaiPhong();
-            lp.Show();
+            openChildForm(new frmLoaiPhong());
         }
 
         private void btnPhieuDatPhong_Click(object sender, EventArgs e)
@@ -106,8 +103,7 @@ namespace DoAnQLKhachSan
 
         private void btnPhongDaDat_Click(object sender, EventArgs e)
         {
-            frmPhongDaDat pdd = new frmPhongDaDat();
-            pdd.Show();
+            openChildForm(new frmPhongDaDat());
         }
 
         private void btnThongKe_Click(object sender, EventArgs e)
@@ -119,6 +115,10 @@ namespace DoAnQLKhachSan
             frmDoiMatKhau dmk = new frmDoiMatKhau();
             dmk.Show();
         }
-      
+
+        private void panelMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

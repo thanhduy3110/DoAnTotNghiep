@@ -6,3 +6,15 @@ C:\Users\PC\Downloads\Compressed\DoAnTotNghiep_5\DoAnTotNghiep\DoAnQLKhachSan\DA
 C:\Users\PC\Downloads\Compressed\DoAnTotNghiep_5\DoAnTotNghiep\DoAnQLKhachSan\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
 C:\Users\PC\Downloads\Compressed\DoAnTotNghiep_5\DoAnTotNghiep\DoAnQLKhachSan\DAO\obj\Debug\DAO.exe
 C:\Users\PC\Downloads\Compressed\DoAnTotNghiep_5\DoAnTotNghiep\DoAnQLKhachSan\DAO\obj\Debug\DAO.pdb
+C:\Users\USER\source\repos\DoAnTotNghiep\DoAnQLKhachSan\DAO\bin\Debug\DAO.exe.config
+C:\Users\USER\source\repos\DoAnTotNghiep\DoAnQLKhachSan\DAO\bin\Debug\DAO.exe
+C:\Users\USER\source\repos\DoAnTotNghiep\DoAnQLKhachSan\DAO\bin\Debug\DAO.pdb
+C:\Users\USER\source\repos\DoAnTotNghiep\DoAnQLKhachSan\DAO\obj\Debug\DAO.csprojAssemblyReference.cache
+C:\Users\USER\source\repos\DoAnTotNghiep\DoAnQLKhachSan\DAO\obj\Debug\DAO.Properties.Resources.resources
+C:\Users\USER\source\repos\DoAnTotNghiep\DoAnQLKhachSan\DAO\obj\Debug\DAO.csproj.GenerateResource.cache
+C:\Users\USER\source\repos\DoAnTotNghiep\DoAnQLKhachSan\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+C:\Users\USER\source\repos\DoAnTotNghiep\DoAnQLKhachSan\DAO\obj\Debug\DAO.exe
+C:\Users\USER\source\repos\DoAnTotNghiep\DoAnQLKhachSan\DAO\obj\Debug\DAO.pdb
+C:\Users\USER\source\repos\DoAnTotNghiep\DoAnQLKhachSan\DAO\bin\Debug\DevComponents.DotNetBar2.dll
+C:\Users\USER\source\repos\DoAnTotNghiep\DoAnQLKhachSan\DAO\bin\Debug\DevComponents.DotNetBar2.xml
+C:\Users\USER\source\repos\DoAnTotNghiep\DoAnQLKhachSan\DAO\obj\Debug\DAO.csproj.CopyComplete

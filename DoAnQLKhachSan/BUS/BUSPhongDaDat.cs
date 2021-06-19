@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAO;
+using DevComponents.Editors.DateTimeAdv;
 
 namespace BUS
 {
@@ -18,7 +19,7 @@ namespace BUS
             PDD.HienThiMaPhong(cboMaPhong);
         }
 
-        public void HienThiID_PDD(ComboBox cboID_PDD, DateTimePicker dtpNgayDen, DateTimePicker dtpNgayDi)
+        public void HienThiID_PDD(ComboBox cboID_PDD, DateTimeInput dtpNgayDen, DateTimeInput dtpNgayDi)
         {
             PDD.HienThiID_PDD(cboID_PDD, dtpNgayDen, dtpNgayDi);
         }
