@@ -27,9 +27,9 @@ namespace BUS
         {
             CTHD.TongID(txtID);
         }
-        public int CTHD_Them(string ID, string ID_HD, string MaHD, string ID_DV, string SoLuong, string DonGia)
+        public int CTHD_Them(string ID, string ID_HD, string ID_DV, string SoLuong, string DonGia)
         {
-            return CTHD.CTHD_Them(ID, ID_HD, MaHD, ID_DV, SoLuong, DonGia);
+            return CTHD.CTHD_Them(ID, ID_HD,ID_DV, SoLuong, DonGia);
         }
 
         public int CTHD_CongDonSL(string ID, string SoLuong)

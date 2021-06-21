@@ -30,23 +30,36 @@ namespace DAO
             cboTenKH.ValueMember = "ID";
         }
 
-        public void HienThiMaPhong(ComboBox cboMaPhong, ComboBox cboHinhThucThue, Label lblTongTienPhong)
+
+
+        public void HienThiMaPhong(ComboBox cboMaPhong)
         {
 
-            dsHoaDon = db.LayDanhSach("select * from Phong where HieuLuc=1");// truy vấn lên sql
+            dsHoaDon = db.LayDanhSach("select ID,SoPhong from Phong");// truy vấn lên sql
             cboMaPhong.DataSource = dsHoaDon.Tables[0];
             cboMaPhong.DisplayMember = "SoPhong";
             cboMaPhong.ValueMember = "ID";
-            if (cboHinhThucThue.SelectedIndex == 0)
-            {
-                lblTongTienPhong.DataBindings.Add("Text", cboMaPhong.DataSource, "GiaThueGio");
-            }
-            else
-            {
-                lblTongTienPhong.DataBindings.Add("Text", cboMaPhong.DataSource, "GiaThueNgay");
-            }
-
         }
+
+        public void HienThiTienPhong(ComboBox cboMaPhong,ComboBox cboHTT,Label lblTongTienPhong, int i)
+        {
+            DataSet dsPhong = new DataSet();
+            dsPhong = db.LayDanhSach("select * from Phong");
+            cboMaPhong.DataSource = dsPhong.Tables[0];
+            if (i==0)
+            {
+                lblTongTienPhong.DataBindings.Clear();
+                lblTongTienPhong.DataBindings.Add("Text", cboMaPhong.DataSource, "GiaThueNgay");
+            }    
+            else if(i==1)
+            {
+                lblTongTienPhong.DataBindings.Clear();
+                lblTongTienPhong.DataBindings.Add("Text", cboMaPhong.DataSource, "GiaThueGio");
+            }    
+           
+            
+        }
+           
 
 
         //khai báo 2 mảng để truyền tên tham số và giá trị tham số vào stored procedures

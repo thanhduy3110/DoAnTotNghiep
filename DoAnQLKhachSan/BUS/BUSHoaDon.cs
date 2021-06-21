@@ -23,13 +23,18 @@ namespace BUS
             HD.HienThiTenKH(cboTenKH);
         }
 
-        public void HienThiMaPhong(ComboBox cboMaPhong, ComboBox cboHinhThucThue, Label lblTongTienPhong)
+
+        public void HienThiMaPhong(ComboBox cboMaPhong)
         {
-            HD.HienThiMaPhong(cboMaPhong, cboHinhThucThue, lblTongTienPhong);
+            HD.HienThiMaPhong(cboMaPhong);
+        }
+        public void HienThiTienPhong(ComboBox cboMaPhong, ComboBox cboHTT, Label lblTTPhong,int i)
+        {
+            HD.HienThiTienPhong(cboMaPhong, cboHTT, lblTTPhong,i);
         }
 
 
-        public DataTable HoaDon_Select()
+            public DataTable HoaDon_Select()
         {
             return HD.HoaDon_Select();
         }
