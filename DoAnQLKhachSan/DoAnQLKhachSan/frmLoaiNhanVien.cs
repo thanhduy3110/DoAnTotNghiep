@@ -13,9 +13,17 @@ namespace DoAnQLKhachSan
 {
     public partial class frmLoaiNhanVien : Form
     {
+        public string MaNV = "", LoaiNV = "";
         public frmLoaiNhanVien()
         {
             InitializeComponent();
+        }
+
+        public frmLoaiNhanVien(string MaNV, string LoaiNV)
+        {
+            InitializeComponent();
+            this.MaNV = MaNV;
+            this.LoaiNV = LoaiNV;
         }
         BUSLoaiNV bLNV = new BUSLoaiNV();
         int flag;
@@ -83,10 +91,18 @@ namespace DoAnQLKhachSan
 
         private void btnThem_Click_1(object sender, EventArgs e)
         {
-            clear_textbox();
-            xulychucnang(false);
-            xulytextbox(false);
-            flag = 1;
+            if(LoaiNV=="1")
+            {
+                clear_textbox();
+                xulychucnang(false);
+                xulytextbox(false);
+                flag = 1;
+            } 
+            else
+            {
+                MessageBox.Show("Bạn không có quyền thêm loại nhân viên");
+            }    
+           
         }
 
         private void btnXoa_Click(object sender, EventArgs e)

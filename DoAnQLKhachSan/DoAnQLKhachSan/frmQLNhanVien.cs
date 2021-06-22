@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -110,6 +111,8 @@ namespace DoAnQLKhachSan
             txtID.ReadOnly = true;
             bNV.HienThiTenLoaiNV(cboLoaiNV);
             dgvDSNhanVien.DataSource = bNV.NhanVien_Select();
+
+
         }
 
         void hienthi_textbox(int numrow)
@@ -237,5 +240,9 @@ namespace DoAnQLKhachSan
                 pichHinh.Image = a;
             }
         }
+
+     
+        
+
     }
 }

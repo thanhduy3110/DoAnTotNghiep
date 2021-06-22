@@ -54,6 +54,7 @@
     <Compile Include="DAOLoaiDV.cs" />
     <Compile Include="DAOLoaiNV.cs" />
     <Compile Include="DAOLoaiPhong.cs" />
+    <Compile Include="DAOLogin.cs" />
     <Compile Include="DAONhanVien.cs" />
     <Compile Include="DAOPhieuDatPhong.cs" />
     <Compile Include="DAOPhong.cs" />

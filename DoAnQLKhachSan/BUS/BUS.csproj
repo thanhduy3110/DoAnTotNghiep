@@ -54,6 +54,7 @@
     <Compile Include="BUSLoaiDV.cs" />
     <Compile Include="BUSLoaiNV.cs" />
     <Compile Include="BUSLoaiPhong.cs" />
+    <Compile Include="BUSLogin.cs" />
     <Compile Include="BUSNhanVien.cs" />
     <Compile Include="BUSPhieuDatPhong.cs" />
     <Compile Include="BUSPhong.cs" />

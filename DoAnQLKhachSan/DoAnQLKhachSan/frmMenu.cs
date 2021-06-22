@@ -12,12 +12,19 @@ namespace DoAnQLKhachSan
 {
     public partial class frmMenu : Form
     {
+        public string MaNV="", LoaiNV="";
         public frmMenu()
         {
             InitializeComponent();
         }
 
-        
+        public frmMenu(string MaNV,string LoaiNV)
+        {
+            InitializeComponent();
+            this.MaNV = MaNV;
+            this.LoaiNV = LoaiNV;
+        }
+
         public Form activeForm = null;
         public void openChildForm(Form childForm)
         {
@@ -54,7 +61,7 @@ namespace DoAnQLKhachSan
 
         private void btnLoaiNV_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmLoaiNhanVien());
+            openChildForm(new frmLoaiNhanVien(MaNV,LoaiNV));
         }
 
         private void btnNhanVien_Click(object sender, EventArgs e)
