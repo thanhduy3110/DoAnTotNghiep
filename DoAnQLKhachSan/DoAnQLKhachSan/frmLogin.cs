@@ -89,7 +89,9 @@ namespace DoAnQLKhachSan
                 {
                     MessageBox.Show("Đăng nhập thành công");
                     this.Hide();
-                    frmMenu Menu = new frmMenu();
+                    string LoaiNV = bLG.DangNhap_Select(txtTaiKhoan.TextName, txtMatKhau.TextName).Rows[0][0].ToString();
+                    string MaNV = bLG.DangNhap_Select(txtTaiKhoan.TextName, txtMatKhau.TextName).Rows[0][1].ToString();
+                    frmMenu Menu = new frmMenu(MaNV,LoaiNV);
                     Menu.Show();
                 }
             }

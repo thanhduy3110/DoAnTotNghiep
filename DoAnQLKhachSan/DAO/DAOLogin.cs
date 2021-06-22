@@ -20,8 +20,10 @@ namespace DAO
         {
             name = new string[2];
             value = new object[2];
+
             name[0] = "@MaNV"; value[0] = MaNV;
             name[1] = "@MatKhau"; value[1] = MatKhau;
+
             return db.LayDuLieuCoDK("DangNhap_Select", name, value, 2);
         }
     }
