@@ -181,8 +181,40 @@ namespace DoAnQLKhachSan
 
         }
 
-        private void btnLuu_Click(object sender, EventArgs e)
+        public string Encrypt(string toEncrypt, bool useHashing)
         {
+            byte[] keyArray;
+            byte[] toEncryptArray = Encoding.UTF8.GetBytes(toEncrypt);
+            if (useHashing)
+            {
+                var hashmd5 = new MD5CryptoServiceProvider();
+                keyArray = hashmd5.ComputeHash(Encoding.UTF8.GetBytes("iloveit1208"));
+            }
+            else keyArray = Encoding.UTF8.GetBytes("iloveit1208");
+            var tdes = new TripleDESCryptoServiceProvider
+            {
+                Key = keyArray,
+                Mode = CipherMode.ECB,
+                Padding = PaddingMode.PKCS7
+            };
+            ICryptoTransform cTransform = tdes.CreateEncryptor();
+            byte[] resultArray = cTransform.TransformFinalBlock(toEncryptArray, 0, toEncryptArray.Length);
+            return Convert.ToBase64String(resultArray, 0, resultArray.Length);
+        }
+        private String GetMD5(string txt)
+        {
+            String str = "";
+            Byte[] buffer = System.Text.Encoding.UTF8.GetBytes(txt);
+            System.Security.Cryptography.MD5CryptoServiceProvider md5 = new System.Security.Cryptography.MD5CryptoServiceProvider();
+            buffer = md5.ComputeHash(buffer);
+            foreach (Byte b in buffer)
+            {
+                str += b.ToString("X2");
+            }
+            return str;
+        }
+        private void btnLuu_Click(object sender, EventArgs e)
+        {           
             if (flag == 1)
             {
 
@@ -193,7 +225,7 @@ namespace DoAnQLKhachSan
                 else
                 {
                     xulychucnang(true);
-                    bNV.NhanVien_Them(Int32.Parse(txtID.Text), cboLoaiNV.SelectedIndex + 1, txtMaNV.Text, txtMatKhau.Text, txtHoTen.Text, Convert.ToDateTime(dtpNgaySinh.Text).ToString("yyyy-MM-dd"), txtSDT.Text, rtxtDiaChi.Text, txtEmail.Text, Int32.Parse(txtCMND.Text), cboGioiTinh.SelectedIndex, txtHinhAnh.Text, cboHieuLuc.SelectedIndex);
+                    bNV.NhanVien_Them(Int32.Parse(txtID.Text), cboLoaiNV.SelectedIndex + 1, txtMaNV.Text, GetMD5(txtMatKhau.Text), txtHoTen.Text, Convert.ToDateTime(dtpNgaySinh.Text).ToString("yyyy-MM-dd"), txtSDT.Text, rtxtDiaChi.Text, txtEmail.Text, Int32.Parse(txtCMND.Text), cboGioiTinh.SelectedIndex, txtHinhAnh.Text, cboHieuLuc.SelectedIndex);
                     File.Copy(DuongDan, Path.Combine(@"D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\Images\", Path.GetFileName(txtHinhAnh.Text)), true);
                     MessageBox.Show("Thêm thành công ");
                     dgvDSNhanVien.DataSource = bNV.NhanVien_Select();
