@@ -26,7 +26,7 @@ namespace BUS
         {
             return ldv.dichvu_select();
         }
-        public int DV_Them(string ID, string ID_LoaiDV, string TenDV, string MoTa, string HinhAnh, string GiaTien, string SLTon, string DVT, string GhiChu, string HieuLuc)
+        public int DV_Them(string ID, string ID_LoaiDV, string TenDV, string MoTa, string HinhAnh, string GiaTien, string SLTon, string DVT, string GhiChu, int HieuLuc)
         {
             return ldv.dichvu_them(ID, ID_LoaiDV, TenDV, MoTa, HinhAnh, GiaTien, SLTon, DVT, GhiChu, HieuLuc);
         }

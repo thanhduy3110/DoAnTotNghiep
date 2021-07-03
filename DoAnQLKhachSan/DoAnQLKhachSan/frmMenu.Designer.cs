@@ -319,7 +319,7 @@
             this.btnDoiMatKhau.Name = "btnDoiMatKhau";
             this.btnDoiMatKhau.Size = new System.Drawing.Size(341, 133);
             this.btnDoiMatKhau.TabIndex = 1;
-            this.btnDoiMatKhau.Text = "     Đổi mật khẩu";
+            this.btnDoiMatKhau.Text = "     Thông tin đăng nhập";
             this.btnDoiMatKhau.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDoiMatKhau.UseVisualStyleBackColor = false;
             this.btnDoiMatKhau.Click += new System.EventHandler(this.btnDoiMatKhau_Click);

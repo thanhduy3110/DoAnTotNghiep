@@ -119,8 +119,8 @@ namespace DoAnQLKhachSan
 
         private void btnDoiMatKhau_Click(object sender, EventArgs e)
         {
-            frmDoiMatKhau dmk = new frmDoiMatKhau();
-            dmk.Show();
+            openChildForm(new frmThonhTinDangNhap());
+            
         }
 
         private void panelMenu_Paint(object sender, PaintEventArgs e)

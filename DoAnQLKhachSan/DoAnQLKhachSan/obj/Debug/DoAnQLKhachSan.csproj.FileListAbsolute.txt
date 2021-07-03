@@ -725,3 +725,4 @@ D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\obj\Debug\DoAnQLKha
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\obj\Debug\DoAnQLKhachSan.csproj.CopyComplete
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\obj\Debug\DoAnQLKhachSan.exe
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\obj\Debug\DoAnQLKhachSan.pdb
+C:\Users\USER\source\repos\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\obj\Debug\DoAnQLKhachSan.frmThonhTinDangNhap.resources

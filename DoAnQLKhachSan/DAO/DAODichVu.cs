@@ -33,7 +33,7 @@ namespace DAO
             return db.Laydulieu("dichvu_select");
         }
 
-        public int dichvu_them(string ID, string ID_LoaiDV, string TenDV, string MoTa, string HinhAnh, string GiaTien, string SLTon, string DVT, string GhiChu, string HieuLuc)
+        public int dichvu_them(string ID, string ID_LoaiDV, string TenDV, string MoTa, string HinhAnh, string GiaTien, string SLTon, string DVT, string GhiChu, int HieuLuc)
         {
             name = new string[10];
             value = new object[10];

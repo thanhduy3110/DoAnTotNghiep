@@ -75,7 +75,7 @@ namespace DoAnQLKhachSan
         private void btnLuu_Click(object sender, EventArgs e)
         {
             string fname = txtID.Text + ".jpg"; // tên ảnh theo id
-            string floder = "C:\\Users\\USER\\source\\repos\\DoAnTotNghiep\\QLKhachSan\\image";//đường dẫn lưu ảnh
+            string floder = "C:\\Users\\USER\\source\\repos\\DoAnTotNghiep\\DoAnQLKhachSan\\image";//đường dẫn lưu ảnh
             string path = System.IO.Path.Combine(floder, fname);//lưu tên ảnh xuống csdl
             Image a = pictureBox.Image;
             a.Save(path);
@@ -87,7 +87,7 @@ namespace DoAnQLKhachSan
                 }
                 else
                 {
-                    bdv.DV_Them(txtID.Text, cboLoaiDV.SelectedValue.ToString(), txtTenDV.Text, rtxtMoTa.Text, fname, txtGiaTien.Text, txtSLTon.Text, txtDVT.Text, rtxtGhiChu.Text, cboHieuLuc.Text);
+                    bdv.DV_Them(txtID.Text, cboLoaiDV.SelectedValue.ToString(), txtTenDV.Text, rtxtMoTa.Text, fname, txtGiaTien.Text, txtSLTon.Text, txtDVT.Text, rtxtGhiChu.Text, cboHieuLuc.SelectedIndex);
                     MessageBox.Show("thêm thành công rồi nè");
                     dgvDichVu.DataSource = bdv.DV_Select();
                 }
@@ -117,10 +117,20 @@ namespace DoAnQLKhachSan
             txtSLTon.Text = dgvDichVu.Rows[numrow].Cells[6].Value.ToString();
             txtDVT.Text = dgvDichVu.Rows[numrow].Cells[7].Value.ToString();
             rtxtGhiChu.Text = dgvDichVu.Rows[numrow].Cells[8].Value.ToString();
-            cboHieuLuc.Text = dgvDichVu.Rows[numrow].Cells[9].Value.ToString();
-            string floder = "C:\\Users\\USER\\source\\repos\\DoAnTotNghiep\\QLKhachSan\\image\\" + txtHinhAnh.Text;
+            
+            string floder = "C:\\Users\\USER\\source\\repos\\DoAnTotNghiep\\DoAnQLKhachSan\\image\\" + txtHinhAnh.Text;
             Bitmap a = new Bitmap(floder);
             pictureBox.Image = a;
+
+            string HL = dgvDichVu.Rows[numrow].Cells[9].Value.ToString();
+            if (HL == "False")
+            {
+                cboHieuLuc.SelectedIndex = 0;
+            }
+            else
+            {
+                cboHieuLuc.SelectedIndex = 1;
+            }
         }
         private void dgvDichVu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
