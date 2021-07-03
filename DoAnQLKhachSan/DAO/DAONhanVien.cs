@@ -21,6 +21,12 @@ namespace DAO
             cboTenLoaiNV.DisplayMember = "tenloainv";
             cboTenLoaiNV.ValueMember = "id";
         }
+
+        public void HienThiDanhSach(string sTimKiem,DataGridView d)
+        {
+            dsNhanVien = db.LayDanhSach("select * from NhanVien where MaNV like '%" + sTimKiem + "%' or HoTen like N'%" + sTimKiem + "%' or SDT like '%" + sTimKiem + "%' or CMND like '%"+sTimKiem+"%'");
+            d.DataSource = dsNhanVien.Tables[0];
+        }
         //khai báo 2 mảng để truyền tên tham số và giá trị tham số vào stored procedures
         string[] name = { };
         object[] value = { };

@@ -74,9 +74,7 @@ namespace DoAnQLKhachSan
             openChildForm(new frmKhachHang());
         }
 
-        private void btnCTHD_Click(object sender, EventArgs e)
-        {
-        }
+       
 
         private void btnHoaDon_Click(object sender, EventArgs e)
         {

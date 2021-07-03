@@ -31,14 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.btnThoat = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.btnHome = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnKhachHang = new System.Windows.Forms.Button();
             this.btnLoaiNV = new System.Windows.Forms.Button();
-            this.btnCTHD = new System.Windows.Forms.Button();
             this.btnNhanVien = new System.Windows.Forms.Button();
             this.btnLoaiDV = new System.Windows.Forms.Button();
             this.btnPhieuDatPhong = new System.Windows.Forms.Button();
@@ -52,9 +48,6 @@
             this.panelMenu = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.btnThoat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             this.panel1.SuspendLayout();
             this.panelMenu.SuspendLayout();
@@ -83,39 +76,6 @@
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(0, 76);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(76, 76);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(0, 152);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(76, 76);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(0, 228);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(76, 76);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox5.TabIndex = 4;
-            this.pictureBox5.TabStop = false;
-            // 
             // btnHome
             // 
             this.btnHome.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -133,9 +93,6 @@
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.DarkBlue;
             this.panel1.Controls.Add(this.btnHome);
-            this.panel1.Controls.Add(this.pictureBox5);
-            this.panel1.Controls.Add(this.pictureBox4);
-            this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.btnThoat);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
@@ -152,13 +109,13 @@
             this.btnKhachHang.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKhachHang.ForeColor = System.Drawing.Color.White;
             this.btnKhachHang.Image = ((System.Drawing.Image)(resources.GetObject("btnKhachHang.Image")));
-            this.btnKhachHang.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnKhachHang.Location = new System.Drawing.Point(530, 418);
+            this.btnKhachHang.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnKhachHang.Location = new System.Drawing.Point(109, 357);
             this.btnKhachHang.Name = "btnKhachHang";
-            this.btnKhachHang.Size = new System.Drawing.Size(154, 260);
+            this.btnKhachHang.Size = new System.Drawing.Size(293, 161);
             this.btnKhachHang.TabIndex = 1;
-            this.btnKhachHang.Text = "     \r\n\r\nKhách hàng";
-            this.btnKhachHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnKhachHang.Text = "      Khách hàng";
+            this.btnKhachHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnKhachHang.UseVisualStyleBackColor = false;
             this.btnKhachHang.Click += new System.EventHandler(this.btnKhachHang_Click);
             // 
@@ -171,32 +128,14 @@
             this.btnLoaiNV.ForeColor = System.Drawing.Color.White;
             this.btnLoaiNV.Image = ((System.Drawing.Image)(resources.GetObject("btnLoaiNV.Image")));
             this.btnLoaiNV.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLoaiNV.Location = new System.Drawing.Point(690, 418);
+            this.btnLoaiNV.Location = new System.Drawing.Point(424, 152);
             this.btnLoaiNV.Name = "btnLoaiNV";
-            this.btnLoaiNV.Size = new System.Drawing.Size(246, 121);
+            this.btnLoaiNV.Size = new System.Drawing.Size(293, 161);
             this.btnLoaiNV.TabIndex = 1;
             this.btnLoaiNV.Text = "     Loại nhân viên";
             this.btnLoaiNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLoaiNV.UseVisualStyleBackColor = false;
             this.btnLoaiNV.Click += new System.EventHandler(this.btnLoaiNV_Click);
-            // 
-            // btnCTHD
-            // 
-            this.btnCTHD.BackColor = System.Drawing.Color.DarkBlue;
-            this.btnCTHD.FlatAppearance.BorderSize = 0;
-            this.btnCTHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCTHD.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCTHD.ForeColor = System.Drawing.Color.White;
-            this.btnCTHD.Image = ((System.Drawing.Image)(resources.GetObject("btnCTHD.Image")));
-            this.btnCTHD.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCTHD.Location = new System.Drawing.Point(197, 545);
-            this.btnCTHD.Name = "btnCTHD";
-            this.btnCTHD.Size = new System.Drawing.Size(327, 133);
-            this.btnCTHD.TabIndex = 1;
-            this.btnCTHD.Text = "     Chi tiết hóa đơn";
-            this.btnCTHD.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCTHD.UseVisualStyleBackColor = false;
-            this.btnCTHD.Click += new System.EventHandler(this.btnCTHD_Click);
             // 
             // btnNhanVien
             // 
@@ -207,11 +146,11 @@
             this.btnNhanVien.ForeColor = System.Drawing.Color.White;
             this.btnNhanVien.Image = ((System.Drawing.Image)(resources.GetObject("btnNhanVien.Image")));
             this.btnNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNhanVien.Location = new System.Drawing.Point(690, 545);
+            this.btnNhanVien.Location = new System.Drawing.Point(109, 152);
             this.btnNhanVien.Name = "btnNhanVien";
-            this.btnNhanVien.Size = new System.Drawing.Size(246, 133);
+            this.btnNhanVien.Size = new System.Drawing.Size(293, 161);
             this.btnNhanVien.TabIndex = 1;
-            this.btnNhanVien.Text = "     Quản lý nhân viên";
+            this.btnNhanVien.Text = "Quản lý nhân viên";
             this.btnNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNhanVien.UseVisualStyleBackColor = false;
             this.btnNhanVien.Click += new System.EventHandler(this.btnNhanVien_Click);
@@ -225,11 +164,11 @@
             this.btnLoaiDV.ForeColor = System.Drawing.Color.White;
             this.btnLoaiDV.Image = ((System.Drawing.Image)(resources.GetObject("btnLoaiDV.Image")));
             this.btnLoaiDV.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLoaiDV.Location = new System.Drawing.Point(370, 290);
+            this.btnLoaiDV.Location = new System.Drawing.Point(747, 357);
             this.btnLoaiDV.Name = "btnLoaiDV";
-            this.btnLoaiDV.Size = new System.Drawing.Size(274, 122);
+            this.btnLoaiDV.Size = new System.Drawing.Size(293, 161);
             this.btnLoaiDV.TabIndex = 1;
-            this.btnLoaiDV.Text = "     Loại dịch vụ";
+            this.btnLoaiDV.Text = "   Loại dịch vụ";
             this.btnLoaiDV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLoaiDV.UseVisualStyleBackColor = false;
             this.btnLoaiDV.Click += new System.EventHandler(this.btnLoaiDV_Click);
@@ -243,11 +182,11 @@
             this.btnPhieuDatPhong.ForeColor = System.Drawing.Color.White;
             this.btnPhieuDatPhong.Image = ((System.Drawing.Image)(resources.GetObject("btnPhieuDatPhong.Image")));
             this.btnPhieuDatPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPhieuDatPhong.Location = new System.Drawing.Point(747, 152);
+            this.btnPhieuDatPhong.Location = new System.Drawing.Point(109, 560);
             this.btnPhieuDatPhong.Name = "btnPhieuDatPhong";
-            this.btnPhieuDatPhong.Size = new System.Drawing.Size(361, 132);
+            this.btnPhieuDatPhong.Size = new System.Drawing.Size(293, 161);
             this.btnPhieuDatPhong.TabIndex = 1;
-            this.btnPhieuDatPhong.Text = "     Phiếu đặt phòng";
+            this.btnPhieuDatPhong.Text = "Phiếu đặt phòng";
             this.btnPhieuDatPhong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPhieuDatPhong.UseVisualStyleBackColor = false;
             this.btnPhieuDatPhong.Click += new System.EventHandler(this.btnPhieuDatPhong_Click);
@@ -261,9 +200,9 @@
             this.btnDichVu.ForeColor = System.Drawing.Color.White;
             this.btnDichVu.Image = ((System.Drawing.Image)(resources.GetObject("btnDichVu.Image")));
             this.btnDichVu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDichVu.Location = new System.Drawing.Point(650, 290);
+            this.btnDichVu.Location = new System.Drawing.Point(424, 357);
             this.btnDichVu.Name = "btnDichVu";
-            this.btnDichVu.Size = new System.Drawing.Size(286, 122);
+            this.btnDichVu.Size = new System.Drawing.Size(293, 161);
             this.btnDichVu.TabIndex = 1;
             this.btnDichVu.Text = "     Dịch vụ";
             this.btnDichVu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -278,13 +217,13 @@
             this.btnThongKe.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThongKe.ForeColor = System.Drawing.Color.White;
             this.btnThongKe.Image = ((System.Drawing.Image)(resources.GetObject("btnThongKe.Image")));
-            this.btnThongKe.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnThongKe.Location = new System.Drawing.Point(942, 290);
+            this.btnThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThongKe.Location = new System.Drawing.Point(747, 560);
             this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(166, 249);
+            this.btnThongKe.Size = new System.Drawing.Size(293, 161);
             this.btnThongKe.TabIndex = 1;
-            this.btnThongKe.Text = "     \r\n\r\nThống kê";
-            this.btnThongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnThongKe.Text = "    Thống kê";
+            this.btnThongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThongKe.UseVisualStyleBackColor = false;
             this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
@@ -296,12 +235,12 @@
             this.btnLoaiPhong.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoaiPhong.ForeColor = System.Drawing.Color.White;
             this.btnLoaiPhong.Image = ((System.Drawing.Image)(resources.GetObject("btnLoaiPhong.Image")));
-            this.btnLoaiPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLoaiPhong.Location = new System.Drawing.Point(370, 152);
+            this.btnLoaiPhong.Location = new System.Drawing.Point(1071, 152);
             this.btnLoaiPhong.Name = "btnLoaiPhong";
-            this.btnLoaiPhong.Size = new System.Drawing.Size(371, 132);
+            this.btnLoaiPhong.Size = new System.Drawing.Size(293, 161);
             this.btnLoaiPhong.TabIndex = 1;
             this.btnLoaiPhong.Text = "     Loại Phòng";
+            this.btnLoaiPhong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLoaiPhong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLoaiPhong.UseVisualStyleBackColor = false;
             this.btnLoaiPhong.Click += new System.EventHandler(this.btnLoaiPhong_Click);
@@ -315,9 +254,9 @@
             this.btnDoiMatKhau.ForeColor = System.Drawing.Color.White;
             this.btnDoiMatKhau.Image = ((System.Drawing.Image)(resources.GetObject("btnDoiMatKhau.Image")));
             this.btnDoiMatKhau.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDoiMatKhau.Location = new System.Drawing.Point(942, 545);
+            this.btnDoiMatKhau.Location = new System.Drawing.Point(1071, 560);
             this.btnDoiMatKhau.Name = "btnDoiMatKhau";
-            this.btnDoiMatKhau.Size = new System.Drawing.Size(341, 133);
+            this.btnDoiMatKhau.Size = new System.Drawing.Size(293, 161);
             this.btnDoiMatKhau.TabIndex = 1;
             this.btnDoiMatKhau.Text = "     Đổi mật khẩu";
             this.btnDoiMatKhau.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -333,9 +272,9 @@
             this.btnHoaDon.ForeColor = System.Drawing.Color.White;
             this.btnHoaDon.Image = ((System.Drawing.Image)(resources.GetObject("btnHoaDon.Image")));
             this.btnHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnHoaDon.Location = new System.Drawing.Point(197, 422);
+            this.btnHoaDon.Location = new System.Drawing.Point(1071, 357);
             this.btnHoaDon.Name = "btnHoaDon";
-            this.btnHoaDon.Size = new System.Drawing.Size(327, 117);
+            this.btnHoaDon.Size = new System.Drawing.Size(293, 161);
             this.btnHoaDon.TabIndex = 1;
             this.btnHoaDon.Text = "     Quản lý hóa đơn";
             this.btnHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -350,13 +289,13 @@
             this.btnPhongDaDat.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPhongDaDat.ForeColor = System.Drawing.Color.White;
             this.btnPhongDaDat.Image = ((System.Drawing.Image)(resources.GetObject("btnPhongDaDat.Image")));
-            this.btnPhongDaDat.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPhongDaDat.Location = new System.Drawing.Point(1114, 152);
+            this.btnPhongDaDat.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPhongDaDat.Location = new System.Drawing.Point(424, 560);
             this.btnPhongDaDat.Name = "btnPhongDaDat";
-            this.btnPhongDaDat.Size = new System.Drawing.Size(169, 387);
+            this.btnPhongDaDat.Size = new System.Drawing.Size(293, 161);
             this.btnPhongDaDat.TabIndex = 1;
-            this.btnPhongDaDat.Text = "     \r\n\r\n\r\nPhòng đã đặt";
-            this.btnPhongDaDat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnPhongDaDat.Text = "     Phòng đã đặt";
+            this.btnPhongDaDat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPhongDaDat.UseVisualStyleBackColor = false;
             this.btnPhongDaDat.Click += new System.EventHandler(this.btnPhongDaDat_Click);
             // 
@@ -368,13 +307,13 @@
             this.btnPhong.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPhong.ForeColor = System.Drawing.Color.White;
             this.btnPhong.Image = ((System.Drawing.Image)(resources.GetObject("btnPhong.Image")));
-            this.btnPhong.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPhong.Location = new System.Drawing.Point(197, 152);
+            this.btnPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPhong.Location = new System.Drawing.Point(747, 152);
             this.btnPhong.Name = "btnPhong";
-            this.btnPhong.Size = new System.Drawing.Size(167, 264);
+            this.btnPhong.Size = new System.Drawing.Size(293, 161);
             this.btnPhong.TabIndex = 1;
-            this.btnPhong.Text = "     \r\nPhòng";
-            this.btnPhong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnPhong.Text = "\r\n      Phòng";
+            this.btnPhong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPhong.UseVisualStyleBackColor = false;
             this.btnPhong.Click += new System.EventHandler(this.btnPhong_Click);
             // 
@@ -392,7 +331,6 @@
             this.panelMenu.Controls.Add(this.btnPhieuDatPhong);
             this.panelMenu.Controls.Add(this.btnLoaiDV);
             this.panelMenu.Controls.Add(this.btnNhanVien);
-            this.panelMenu.Controls.Add(this.btnCTHD);
             this.panelMenu.Controls.Add(this.btnLoaiNV);
             this.panelMenu.Controls.Add(this.btnKhachHang);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -420,9 +358,6 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.btnThoat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
@@ -434,14 +369,10 @@
 
         private System.Windows.Forms.PictureBox btnThoat;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox btnHome;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnKhachHang;
         private System.Windows.Forms.Button btnLoaiNV;
-        private System.Windows.Forms.Button btnCTHD;
         private System.Windows.Forms.Button btnNhanVien;
         private System.Windows.Forms.Button btnLoaiDV;
         private System.Windows.Forms.Button btnPhieuDatPhong;

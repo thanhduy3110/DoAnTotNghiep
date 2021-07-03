@@ -117,6 +117,7 @@ namespace DoAnQLKhachSan
 
         void hienthi_textbox(int numrow)
         {
+
             txtID.Text = dgvDSNhanVien.Rows[numrow].Cells[0].Value.ToString();
             cboLoaiNV.SelectedValue = dgvDSNhanVien.Rows[numrow].Cells[1].Value.ToString();
             txtMaNV.Text = dgvDSNhanVien.Rows[numrow].Cells[2].Value.ToString();
@@ -250,8 +251,16 @@ namespace DoAnQLKhachSan
 
         private void dgvDSNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int vt = dgvDSNhanVien.CurrentCell.RowIndex;
-            hienthi_textbox(vt);
+            try
+            {
+                int vt = dgvDSNhanVien.CurrentCell.RowIndex;
+                hienthi_textbox(vt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không có dữ liệu");
+            }
+           
         }
         string DuongDan = "";
 
@@ -273,8 +282,11 @@ namespace DoAnQLKhachSan
             }
         }
 
-     
-        
+        private void txtTim_TextChangeEvent(object sender, EventArgs e)
+        {
+            bNV.HienThiDanhSach(txtTim.TextValue, dgvDSNhanVien);
+        }
 
+       
     }
 }

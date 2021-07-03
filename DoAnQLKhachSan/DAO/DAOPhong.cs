@@ -11,6 +11,7 @@ namespace DAO
     public class DAOPhong
     {
         DataSet dsLoaiPhong = new DataSet();
+        DataSet dsPhong = new DataSet();
         dbConnectionData db = new dbConnectionData();
 
         string[] name = { };
@@ -24,7 +25,11 @@ namespace DAO
             cboTenLP.ValueMember = "id";
         }
 
-
+        public void HienThiDanhSach(string sTimKiem, DataGridView d)
+        {
+            dsPhong = db.LayDanhSach("select * from Phong where SoPhong like N'%" + sTimKiem + "%'");
+            d.DataSource = dsPhong.Tables[0];
+        }
         public DataTable phong_select()
         {
             return db.Laydulieu("phong_select");

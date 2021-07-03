@@ -14,6 +14,10 @@ namespace BUS
     {
         DAOPhieuDatPhong pdp = new DAOPhieuDatPhong();
 
+        public void HienThiDanhSach(string sTimKiem, DataGridView d)
+        {
+            pdp.HienThiDanhSach(sTimKiem, d);
+        }
         public void HienThiID_KH(ComboBox cboID_KH)
         {
             pdp.HienThiID_KH(cboID_KH);

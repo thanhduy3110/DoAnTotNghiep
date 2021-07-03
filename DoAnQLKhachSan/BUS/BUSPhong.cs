@@ -14,6 +14,10 @@ namespace BUS
 
         DAOPhong p = new DAOPhong();
 
+        public void HienThiDanhSach(string sTimKiem, DataGridView d)
+        {
+            p.HienThiDanhSach(sTimKiem, d);
+        }
         public void HienThiLP(ComboBox cboTenLP)
         {
             p.HienThiLoaiPhong(cboTenLP);

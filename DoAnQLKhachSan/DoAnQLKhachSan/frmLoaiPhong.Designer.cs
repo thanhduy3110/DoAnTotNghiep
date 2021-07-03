@@ -33,12 +33,20 @@
             ePOSOne.btnProduct.Button_WOC btnSua;
             ePOSOne.btnProduct.Button_WOC btnLuu;
             ePOSOne.btnProduct.Button_WOC btnThem;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            ePOSOne.btnProduct.Button_WOC btnTim;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvDSLoaiPhong = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtTim = new JTextBox.JTextBox();
             this.cboHieuLuc = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.comboItem1 = new DevComponents.Editors.ComboItem();
+            this.comboItem2 = new DevComponents.Editors.ComboItem();
             this.txtSoGiuongDoi = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtSoKhach = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtSoGiuongDon = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -50,21 +58,11 @@
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.comboItem1 = new DevComponents.Editors.ComboItem();
-            this.comboItem2 = new DevComponents.Editors.ComboItem();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtTim = new JTextBox.JTextBox();
             btnXoaTatCa = new ePOSOne.btnProduct.Button_WOC();
             btnXoa = new ePOSOne.btnProduct.Button_WOC();
             btnSua = new ePOSOne.btnProduct.Button_WOC();
             btnLuu = new ePOSOne.btnProduct.Button_WOC();
             btnThem = new ePOSOne.btnProduct.Button_WOC();
-            btnTim = new ePOSOne.btnProduct.Button_WOC();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSLoaiPhong)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -85,7 +83,7 @@
             btnXoaTatCa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnXoaTatCa.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             btnXoaTatCa.ForeColor = System.Drawing.Color.White;
-            btnXoaTatCa.Location = new System.Drawing.Point(1005, 322);
+            btnXoaTatCa.Location = new System.Drawing.Point(1137, 322);
             btnXoaTatCa.Name = "btnXoaTatCa";
             btnXoaTatCa.OnHoverBorderColor = System.Drawing.Color.Red;
             btnXoaTatCa.OnHoverButtonColor = System.Drawing.Color.Yellow;
@@ -111,7 +109,7 @@
             btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnXoa.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             btnXoa.ForeColor = System.Drawing.Color.White;
-            btnXoa.Location = new System.Drawing.Point(636, 322);
+            btnXoa.Location = new System.Drawing.Point(657, 322);
             btnXoa.Name = "btnXoa";
             btnXoa.OnHoverBorderColor = System.Drawing.Color.Red;
             btnXoa.OnHoverButtonColor = System.Drawing.Color.Yellow;
@@ -138,7 +136,7 @@
             btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnSua.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             btnSua.ForeColor = System.Drawing.Color.White;
-            btnSua.Location = new System.Drawing.Point(759, 322);
+            btnSua.Location = new System.Drawing.Point(820, 322);
             btnSua.Name = "btnSua";
             btnSua.OnHoverBorderColor = System.Drawing.Color.Red;
             btnSua.OnHoverButtonColor = System.Drawing.Color.Yellow;
@@ -165,7 +163,7 @@
             btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnLuu.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             btnLuu.ForeColor = System.Drawing.Color.White;
-            btnLuu.Location = new System.Drawing.Point(882, 322);
+            btnLuu.Location = new System.Drawing.Point(983, 322);
             btnLuu.Name = "btnLuu";
             btnLuu.OnHoverBorderColor = System.Drawing.Color.Red;
             btnLuu.OnHoverButtonColor = System.Drawing.Color.Yellow;
@@ -191,7 +189,7 @@
             btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnThem.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             btnThem.ForeColor = System.Drawing.Color.White;
-            btnThem.Location = new System.Drawing.Point(513, 322);
+            btnThem.Location = new System.Drawing.Point(484, 322);
             btnThem.Name = "btnThem";
             btnThem.OnHoverBorderColor = System.Drawing.Color.Red;
             btnThem.OnHoverButtonColor = System.Drawing.Color.Yellow;
@@ -226,14 +224,14 @@
             this.Column3,
             this.Column5,
             this.Column6});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDSLoaiPhong.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDSLoaiPhong.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDSLoaiPhong.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgvDSLoaiPhong.Location = new System.Drawing.Point(3, 24);
             this.dgvDSLoaiPhong.Name = "dgvDSLoaiPhong";
@@ -243,10 +241,57 @@
             this.dgvDSLoaiPhong.TabIndex = 18;
             this.dgvDSLoaiPhong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSLoaiPhong_CellClick);
             // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "id";
+            this.Column7.HeaderText = "ID";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 75;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "tenloaiphong";
+            this.Column2.HeaderText = "Tên Loại Phòng";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 200;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "sogiuongdoi";
+            this.Column1.HeaderText = "Số giường đôi";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 200;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "sogiuongdon";
+            this.Column3.HeaderText = "Số giường đơn";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 200;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "sokhach";
+            this.Column5.HeaderText = "Số khách";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 125;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "hieuluc";
+            this.Column6.HeaderText = "Hiệu lực";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 120;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtTim);
-            this.groupBox2.Controls.Add(btnTim);
             this.groupBox2.Controls.Add(btnXoaTatCa);
             this.groupBox2.Controls.Add(btnXoa);
             this.groupBox2.Controls.Add(btnSua);
@@ -272,6 +317,25 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Loại Phòng";
             // 
+            // txtTim
+            // 
+            this.txtTim.AutoSize = true;
+            this.txtTim.BorderColor = System.Drawing.Color.Black;
+            this.txtTim.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtTim.Hint = "";
+            this.txtTim.IsPassword = false;
+            this.txtTim.Length = 0;
+            this.txtTim.Location = new System.Drawing.Point(26, 322);
+            this.txtTim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTim.Name = "txtTim";
+            this.txtTim.OnFocus = System.Drawing.Color.DarkGray;
+            this.txtTim.OnlyChar = false;
+            this.txtTim.OnlyNumber = false;
+            this.txtTim.Size = new System.Drawing.Size(418, 48);
+            this.txtTim.TabIndex = 177;
+            this.txtTim.TextValue = "";
+            this.txtTim.TextChangeEvent += new System.EventHandler(this.txtTim_TextChangeEvent);
+            // 
             // cboHieuLuc
             // 
             this.cboHieuLuc.DisplayMember = "Text";
@@ -287,6 +351,16 @@
             this.cboHieuLuc.Size = new System.Drawing.Size(255, 36);
             this.cboHieuLuc.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cboHieuLuc.TabIndex = 170;
+            // 
+            // comboItem1
+            // 
+            this.comboItem1.FontName = "0";
+            this.comboItem1.Text = "comboItem1";
+            // 
+            // comboItem2
+            // 
+            this.comboItem2.FontName = "1";
+            this.comboItem2.Text = "comboItem2";
             // 
             // txtSoGiuongDoi
             // 
@@ -447,107 +521,6 @@
             this.labelX3.Size = new System.Drawing.Size(166, 24);
             this.labelX3.TabIndex = 163;
             this.labelX3.Text = "Tên loại phòng:";
-            // 
-            // comboItem1
-            // 
-            this.comboItem1.FontName = "0";
-            this.comboItem1.Text = "comboItem1";
-            // 
-            // comboItem2
-            // 
-            this.comboItem2.FontName = "1";
-            this.comboItem2.Text = "comboItem2";
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "id";
-            this.Column7.HeaderText = "ID";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 75;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "tenloaiphong";
-            this.Column2.HeaderText = "Tên Loại Phòng";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 200;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "sogiuongdoi";
-            this.Column1.HeaderText = "Số giường đôi";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 200;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "sogiuongdon";
-            this.Column3.HeaderText = "Số giường đơn";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 200;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "sokhach";
-            this.Column5.HeaderText = "Số khách";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "hieuluc";
-            this.Column6.HeaderText = "Hiệu lực";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 120;
-            // 
-            // txtTim
-            // 
-            this.txtTim.AutoSize = true;
-            this.txtTim.BorderColor = System.Drawing.Color.Black;
-            this.txtTim.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtTim.Hint = "";
-            this.txtTim.IsPassword = false;
-            this.txtTim.Length = 0;
-            this.txtTim.Location = new System.Drawing.Point(26, 322);
-            this.txtTim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtTim.Name = "txtTim";
-            this.txtTim.OnFocus = System.Drawing.Color.DarkGray;
-            this.txtTim.OnlyChar = false;
-            this.txtTim.OnlyNumber = false;
-            this.txtTim.Size = new System.Drawing.Size(278, 48);
-            this.txtTim.TabIndex = 177;
-            this.txtTim.TextValue = "";
-            // 
-            // btnTim
-            // 
-            btnTim.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            btnTim.BorderColor = System.Drawing.Color.Black;
-            btnTim.ButtonColor = System.Drawing.Color.Blue;
-            btnTim.CausesValidation = false;
-            btnTim.Cursor = System.Windows.Forms.Cursors.Default;
-            btnTim.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            btnTim.FlatAppearance.BorderSize = 0;
-            btnTim.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            btnTim.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            btnTim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnTim.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            btnTim.ForeColor = System.Drawing.Color.White;
-            btnTim.Location = new System.Drawing.Point(311, 322);
-            btnTim.Name = "btnTim";
-            btnTim.OnHoverBorderColor = System.Drawing.Color.Red;
-            btnTim.OnHoverButtonColor = System.Drawing.Color.Yellow;
-            btnTim.OnHoverTextColor = System.Drawing.Color.Black;
-            btnTim.Size = new System.Drawing.Size(117, 48);
-            btnTim.TabIndex = 176;
-            btnTim.Text = "TÌM";
-            btnTim.TextColor = System.Drawing.Color.White;
-            btnTim.UseVisualStyleBackColor = true;
             // 
             // frmLoaiPhong
             // 

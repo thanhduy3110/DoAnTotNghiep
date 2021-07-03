@@ -115,8 +115,20 @@ namespace DoAnQLKhachSan
 
         private void dgvPhieuDatPhong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int vt = dgvPhieuDatPhong.CurrentCell.RowIndex;
-            hienthi_textbox(vt);
+            try
+            {
+                int vt = dgvPhieuDatPhong.CurrentCell.RowIndex;
+                hienthi_textbox(vt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không có dữ liệu");
+            }
+        }
+
+        private void txtTim_TextChangeEvent(object sender, EventArgs e)
+        {
+            bpdp.HienThiDanhSach(txtTim.TextValue, dgvPhieuDatPhong);
         }
     }
 }

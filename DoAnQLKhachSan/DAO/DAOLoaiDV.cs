@@ -4,12 +4,20 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DAO
 {
     public class DAOLoaiDV
     {
         dbConnectionData db = new dbConnectionData();
+        DataSet dsLoaiDV = new DataSet();
+
+        public void HienThiDanhSach(string sTimKiem, DataGridView d)
+        {
+            dsLoaiDV = db.LayDanhSach("select * from LoaiDV where TenLoaiDV like N'%" + sTimKiem + "%'");
+            d.DataSource = dsLoaiDV.Tables[0];
+        }
 
         string[] name = { };
         object[] value = { };

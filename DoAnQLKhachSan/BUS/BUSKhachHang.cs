@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DAO;
 using System.Data;
+using System.Windows.Forms;
 
 namespace BUS
 {
@@ -12,6 +13,10 @@ namespace BUS
     {
         DAOKhachHang kh = new DAOKhachHang();
 
+        public void HienThiDanhSach(string sTimKiem, DataGridView d)
+        {
+            kh.HienThiDanhSach(sTimKiem, d);
+        }
         public DataTable KH_Select()
         {
             return kh.khachhang_select();

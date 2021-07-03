@@ -29,3 +29,4 @@ D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DAO\obj\Debug\DAO.csproj.CoreCompi
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DAO\obj\Debug\DAO.csproj.CopyComplete
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DAO\obj\Debug\DAO.exe
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DAO\obj\Debug\DAO.pdb
+D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DAO\obj\Debug\DAO.csprojAssemblyReference.cache

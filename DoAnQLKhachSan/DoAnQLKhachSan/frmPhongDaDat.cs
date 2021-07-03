@@ -133,7 +133,15 @@ namespace DoAnQLKhachSan
 
         private void dgvPhongDaDat_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            try
+            {
+                int vt = dgvPhongDaDat.CurrentCell.RowIndex;
+                hienthi_textbox(vt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không có dữ liệu");
+            }
         }
 
         private void frmPhongDaDat_Load(object sender, EventArgs e)
@@ -143,6 +151,11 @@ namespace DoAnQLKhachSan
             bPDD.HienThiID_PDD(cboID_PDP, dtpNgayDen, dtpNgayDi);
             bPDD.HienThiMaPhong(cboMaPhong);
             dgvPhongDaDat.DataSource = bPDD.PhongDaDat_Select();
+        }
+
+        private void txtTim_TextChangeEvent(object sender, EventArgs e)
+        {
+            bPDD.HienThiDanhSach(txtTim.TextValue, dgvPhongDaDat);
         }
     }
 }

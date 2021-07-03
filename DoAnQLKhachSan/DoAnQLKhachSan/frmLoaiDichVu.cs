@@ -99,13 +99,25 @@ namespace DoAnQLKhachSan
 
         private void dgvLoaiDV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int vt = dgvLoaiDV.CurrentCell.RowIndex;
-            hienthi_textbox(vt);
+            try
+            {
+                int vt = dgvLoaiDV.CurrentCell.RowIndex;
+                hienthi_textbox(vt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không có dữ liệu");
+            }
         }
 
         private void frmLoaiDichVu_Load(object sender, EventArgs e)
         {
             dgvLoaiDV.DataSource = ldv.LDV_Select();
+        }
+
+        private void txtTim_TextChangeEvent(object sender, EventArgs e)
+        {
+            ldv.HienThiDanhSach(txtTim.TextValue, dgvLoaiDV);
         }
     }
 }

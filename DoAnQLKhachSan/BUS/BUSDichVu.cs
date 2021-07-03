@@ -17,6 +17,11 @@ namespace BUS
         {
             ldv.HienThiLoaiDV(cboTenLoaiDV);
         }
+
+        public void HienThiDanhSach(string sTimKiem, DataGridView d)
+        {
+            ldv.HienThiDanhSach(sTimKiem, d);
+        }
         public void PICTURE(PictureBox pic)
         {
             ldv.HienThiAnh(pic);

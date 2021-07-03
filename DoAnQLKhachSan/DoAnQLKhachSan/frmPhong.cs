@@ -124,8 +124,15 @@ namespace DoAnQLKhachSan
 
         private void dgvDSPhong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int vt = dgvDSPhong.CurrentCell.RowIndex;
-            hienthi_textbox(vt);
+            try
+            {
+                int vt = dgvDSPhong.CurrentCell.RowIndex;
+                hienthi_textbox(vt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không có dữ liệu");
+            }
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -136,6 +143,11 @@ namespace DoAnQLKhachSan
         private void groupBox2_Enter_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtTim_TextChangeEvent(object sender, EventArgs e)
+        {
+            Bphong.HienThiDanhSach(txtTim.TextValue, dgvDSPhong);
         }
     }
 }

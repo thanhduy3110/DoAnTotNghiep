@@ -132,9 +132,6 @@
   <metadata name="btnThem.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
-  <metadata name="btnTim.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
   <metadata name="Column4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -168,7 +165,7 @@
   <data name="rtxtGhiChu.Rtf" xml:space="preserve">
     <value>{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Tahoma;}}
 {\colortbl ;\red0\green0\blue128;}
-{\*\generator Riched20 10.0.18362}\viewkind4\uc1 
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
 \pard\cf1\b\f0\fs24\par
 }
 </value>
@@ -176,7 +173,7 @@
   <data name="rtxtMoTa.Rtf" xml:space="preserve">
     <value>{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Tahoma;}}
 {\colortbl ;\red0\green0\blue128;}
-{\*\generator Riched20 10.0.18362}\viewkind4\uc1 
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
 \pard\cf1\b\f0\fs24\par
 }
 </value>

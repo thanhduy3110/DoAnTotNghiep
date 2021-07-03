@@ -12,6 +12,7 @@ namespace DAO
     {
         DataSet dsLoaiDV = new DataSet();
         DataSet dsHinhAnh = new DataSet();
+        DataSet dsDichVu = new DataSet();
         dbConnectionData db = new dbConnectionData();
 
         string[] name = { };
@@ -23,6 +24,11 @@ namespace DAO
             cboTenLoaiDV.DataSource = dsLoaiDV.Tables[0];
             cboTenLoaiDV.DisplayMember = "tenloaidv";
             cboTenLoaiDV.ValueMember = "id";
+        }
+        public void HienThiDanhSach(string sTimKiem, DataGridView d)
+        {
+            dsDichVu = db.LayDanhSach("select * from DichVu where TenDV like '%" + sTimKiem + "%'");
+            d.DataSource = dsDichVu.Tables[0];
         }
         public void HienThiAnh(PictureBox pic)
         {

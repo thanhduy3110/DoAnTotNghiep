@@ -4,13 +4,20 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DAO
 {
     public class DAOLoaiPhong
     {
         dbConnectionData dtks = new dbConnectionData();
+        DataSet dsLoaiP = new DataSet();
 
+        public void HienThiDanhSach(string sTimKiem, DataGridView d)
+        {
+            dsLoaiP = dtks.LayDanhSach("select * from LoaiPhong where TenLoaiPhong like N'%" + sTimKiem + "%'");
+            d.DataSource = dsLoaiP.Tables[0];
+        }
         //khai báo 2 mảng để truyền tên tham số và giá trị tham số vào stored procedures
         string[] name = { };
         object[] value = { };

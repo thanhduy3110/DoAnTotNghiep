@@ -17,7 +17,11 @@ namespace BUS
             NV.HienThiTenLoaiNV(cboTenLoaiNV);
         }
 
-        public DataTable NhanVien_Select()
+        public void HienThiDanhSach(string sTimKiem, DataGridView d)
+        {
+            NV.HienThiDanhSach(sTimKiem, d);
+        }
+            public DataTable NhanVien_Select()
         {
             return NV.NhanVien_Select();
         }

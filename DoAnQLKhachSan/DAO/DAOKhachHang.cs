@@ -4,12 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Windows.Forms;
 
 namespace DAO
 {
     public class DAOKhachHang
     {
         dbConnectionData db = new dbConnectionData();
+        DataSet dsKhachHang = new DataSet();
+
+        public void HienThiDanhSach(string sTimKiem, DataGridView d)
+        {
+            dsKhachHang = db.LayDanhSach("select * from KhachHang where HoTen like N'%" + sTimKiem + "%' or SDT like '%" + sTimKiem + "%' or CMND like '%" +sTimKiem+ "%'");
+            d.DataSource = dsKhachHang.Tables[0];
+        }
 
         string[] name = { };
         object[] value = { };

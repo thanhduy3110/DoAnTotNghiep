@@ -33,10 +33,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.btnThoat = new ePOSOne.btnProduct.Button_WOC();
-            this.btnDangNhap = new ePOSOne.btnProduct.Button_WOC();
             this.txtMatKhau = new JMaterialTextbox.JMaterialTextbox();
             this.txtTaiKhoan = new JMaterialTextbox.JMaterialTextbox();
+            this.btnThoat = new ePOSOne.btnProduct.Button_WOC();
+            this.btnDangNhap = new ePOSOne.btnProduct.Button_WOC();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -84,6 +84,50 @@
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
+            // txtMatKhau
+            // 
+            this.txtMatKhau.BackColor = System.Drawing.Color.Transparent;
+            this.txtMatKhau.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMatKhau.Font_Size = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMatKhau.ForeColors = System.Drawing.Color.White;
+            this.txtMatKhau.HintText = "Mật khẩu";
+            this.txtMatKhau.IsPassword = true;
+            this.txtMatKhau.LineBackColor = System.Drawing.Color.White;
+            this.txtMatKhau.LineThickness = 3;
+            this.txtMatKhau.Location = new System.Drawing.Point(121, 318);
+            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtMatKhau.MaxLength = 32767;
+            this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.OnFocusedColor = System.Drawing.Color.Black;
+            this.txtMatKhau.OnFocusedTextColor = System.Drawing.Color.Black;
+            this.txtMatKhau.ReadOnly = false;
+            this.txtMatKhau.Size = new System.Drawing.Size(409, 36);
+            this.txtMatKhau.TabIndex = 1;
+            this.txtMatKhau.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtMatKhau.TextName = "Mật khẩu";
+            // 
+            // txtTaiKhoan
+            // 
+            this.txtTaiKhoan.BackColor = System.Drawing.Color.Transparent;
+            this.txtTaiKhoan.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTaiKhoan.Font_Size = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTaiKhoan.ForeColors = System.Drawing.Color.White;
+            this.txtTaiKhoan.HintText = "Tài khoản";
+            this.txtTaiKhoan.IsPassword = false;
+            this.txtTaiKhoan.LineBackColor = System.Drawing.Color.White;
+            this.txtTaiKhoan.LineThickness = 3;
+            this.txtTaiKhoan.Location = new System.Drawing.Point(121, 224);
+            this.txtTaiKhoan.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtTaiKhoan.MaxLength = 32767;
+            this.txtTaiKhoan.Name = "txtTaiKhoan";
+            this.txtTaiKhoan.OnFocusedColor = System.Drawing.Color.Black;
+            this.txtTaiKhoan.OnFocusedTextColor = System.Drawing.Color.Black;
+            this.txtTaiKhoan.ReadOnly = false;
+            this.txtTaiKhoan.Size = new System.Drawing.Size(409, 36);
+            this.txtTaiKhoan.TabIndex = 0;
+            this.txtTaiKhoan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtTaiKhoan.TextName = "Tài khoản";
+            // 
             // btnThoat
             // 
             this.btnThoat.BorderColor = System.Drawing.Color.Silver;
@@ -113,55 +157,11 @@
             this.btnDangNhap.OnHoverButtonColor = System.Drawing.Color.Yellow;
             this.btnDangNhap.OnHoverTextColor = System.Drawing.Color.Gray;
             this.btnDangNhap.Size = new System.Drawing.Size(182, 49);
-            this.btnDangNhap.TabIndex = 3;
+            this.btnDangNhap.TabIndex = 2;
             this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.TextColor = System.Drawing.Color.White;
             this.btnDangNhap.UseVisualStyleBackColor = true;
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
-            // 
-            // txtMatKhau
-            // 
-            this.txtMatKhau.BackColor = System.Drawing.Color.Transparent;
-            this.txtMatKhau.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMatKhau.Font_Size = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMatKhau.ForeColors = System.Drawing.Color.White;
-            this.txtMatKhau.HintText = "Mật khẩu";
-            this.txtMatKhau.IsPassword = true;
-            this.txtMatKhau.LineBackColor = System.Drawing.Color.White;
-            this.txtMatKhau.LineThickness = 3;
-            this.txtMatKhau.Location = new System.Drawing.Point(121, 318);
-            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.txtMatKhau.MaxLength = 32767;
-            this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.OnFocusedColor = System.Drawing.Color.Black;
-            this.txtMatKhau.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.txtMatKhau.ReadOnly = false;
-            this.txtMatKhau.Size = new System.Drawing.Size(409, 36);
-            this.txtMatKhau.TabIndex = 0;
-            this.txtMatKhau.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtMatKhau.TextName = "Mật khẩu";
-            // 
-            // txtTaiKhoan
-            // 
-            this.txtTaiKhoan.BackColor = System.Drawing.Color.Transparent;
-            this.txtTaiKhoan.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTaiKhoan.Font_Size = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTaiKhoan.ForeColors = System.Drawing.Color.White;
-            this.txtTaiKhoan.HintText = "Tài khoản";
-            this.txtTaiKhoan.IsPassword = false;
-            this.txtTaiKhoan.LineBackColor = System.Drawing.Color.White;
-            this.txtTaiKhoan.LineThickness = 3;
-            this.txtTaiKhoan.Location = new System.Drawing.Point(121, 224);
-            this.txtTaiKhoan.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.txtTaiKhoan.MaxLength = 32767;
-            this.txtTaiKhoan.Name = "txtTaiKhoan";
-            this.txtTaiKhoan.OnFocusedColor = System.Drawing.Color.Black;
-            this.txtTaiKhoan.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.txtTaiKhoan.ReadOnly = false;
-            this.txtTaiKhoan.Size = new System.Drawing.Size(409, 36);
-            this.txtTaiKhoan.TabIndex = 0;
-            this.txtTaiKhoan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtTaiKhoan.TextName = "Tài khoản";
             // 
             // frmLogin
             // 

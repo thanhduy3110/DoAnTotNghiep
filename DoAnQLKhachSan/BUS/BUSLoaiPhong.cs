@@ -14,6 +14,10 @@ namespace BUS
         //loại phòng
         DAOLoaiPhong lpd = new DAOLoaiPhong();
 
+        public void HienThiDanhSach(string sTimKiem, DataGridView d)
+        {
+            lpd.HienThiDanhSach(sTimKiem, d);
+        }
         //loai phong ở DAO
         public DataTable LP_Select()
         {

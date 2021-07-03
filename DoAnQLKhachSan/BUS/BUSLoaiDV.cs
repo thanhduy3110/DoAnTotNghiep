@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DAO;
 using System.Data;
+using System.Windows.Forms;
 
 namespace BUS
 {
@@ -12,6 +13,10 @@ namespace BUS
     {
         DAOLoaiDV ldv = new DAOLoaiDV();
 
+        public void HienThiDanhSach(string sTimKiem, DataGridView d)
+        {
+            ldv.HienThiDanhSach(sTimKiem, d);
+        }
         public DataTable LDV_Select()
         {
             return ldv.loaidv_select();

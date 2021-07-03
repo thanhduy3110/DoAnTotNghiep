@@ -102,7 +102,7 @@ namespace DoAnQLKhachSan
         {
             if (txtTaiKhoan.TextName==""||txtMatKhau.TextName=="")//nếu trống thì cho lable hiển thị là chưa nhập
             {
-                MessageBox.Show("Bạn chưa nhập tài khoản hoặc mật khẩu");
+                MessageBox.Show("Bạn chưa nhập tài khoản hoặc mật khẩu","Thông báo");
             }
             else
             {

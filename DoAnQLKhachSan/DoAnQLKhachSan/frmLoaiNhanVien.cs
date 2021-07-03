@@ -75,6 +75,7 @@ namespace DoAnQLKhachSan
 
         void hienthi_textbox(int numrow)
         {
+
             txtID.Text = dgvDSLoaiNV.Rows[numrow].Cells[0].Value.ToString();
             txtTenLoaiNV.Text = dgvDSLoaiNV.Rows[numrow].Cells[1].Value.ToString();
             string t = dgvDSLoaiNV.Rows[numrow].Cells[2].Value.ToString();
@@ -152,10 +153,28 @@ namespace DoAnQLKhachSan
             txtID.ReadOnly = true;
         }
 
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTim_TextChangeEvent(object sender, EventArgs e)
+        {
+            bLNV.HienThiDanhSach(txtTim.TextValue, dgvDSLoaiNV);
+        }
+
         private void dgvDSLoaiNV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int vt = dgvDSLoaiNV.CurrentCell.RowIndex;
-            hienthi_textbox(vt);
+            try
+            {
+                int vt = dgvDSLoaiNV.CurrentCell.RowIndex;
+                hienthi_textbox(vt);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Không có dữ liệu");
+            }
+           
         }
     }
 }

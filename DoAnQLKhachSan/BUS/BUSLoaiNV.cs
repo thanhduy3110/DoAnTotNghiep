@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using DAO;
 
 namespace BUS
@@ -12,6 +13,10 @@ namespace BUS
     {
         DAOLoaiNV LNV = new DAOLoaiNV();
 
+        public void HienThiDanhSach(string sTimKiem, DataGridView d)
+        {
+            LNV.HienThiDanhSach(sTimKiem, d);
+        }
         //Loại nhân viên ở DAO
         public DataTable LoaiNV_selecl()
         {

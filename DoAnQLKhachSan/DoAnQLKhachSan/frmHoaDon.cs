@@ -280,10 +280,18 @@ namespace DoAnQLKhachSan
 
         private void dgvDSHD_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            int vt = dgvDSHD.CurrentCell.RowIndex;
-            hienthi_textbox(vt);
-            int ID_HD = Int32.Parse(dgvDSHD.Rows[vt].Cells[0].Value.ToString());
-            bCTHD.HienThiDSCTHD(dgvDSCTHD, ID_HD);
+            try
+            {
+                int vt = dgvDSHD.CurrentCell.RowIndex;
+                hienthi_textbox(vt);
+                int ID_HD = Int32.Parse(dgvDSHD.Rows[vt].Cells[0].Value.ToString());
+                bCTHD.HienThiDSCTHD(dgvDSCTHD, ID_HD);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Không có dữ liệu");
+            }
+           
            
         }
 
@@ -302,8 +310,16 @@ namespace DoAnQLKhachSan
         }
         private void dgvDSCTHD_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int vt = dgvDSCTHD.CurrentCell.RowIndex;
-            hienthitextbox(vt);
+            try
+            {
+                int vt = dgvDSCTHD.CurrentCell.RowIndex;
+                hienthitextbox(vt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không có dữ liệu");
+            }
+           
         }
 
         private void cboHinhThucThue_TextChanged(object sender, EventArgs e)

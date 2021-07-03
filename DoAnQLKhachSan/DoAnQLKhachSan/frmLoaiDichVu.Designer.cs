@@ -33,27 +33,25 @@
             ePOSOne.btnProduct.Button_WOC btnSua;
             ePOSOne.btnProduct.Button_WOC btnLuu;
             ePOSOne.btnProduct.Button_WOC btnThem;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            ePOSOne.btnProduct.Button_WOC btnTim;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvLoaiDV = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hieuluc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtTim = new JTextBox.JTextBox();
             this.cboHieuLuc = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.txtTenLoaiDV = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtID = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hieuluc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtTim = new JTextBox.JTextBox();
             btnXoaTatCa = new ePOSOne.btnProduct.Button_WOC();
             btnXoa = new ePOSOne.btnProduct.Button_WOC();
             btnSua = new ePOSOne.btnProduct.Button_WOC();
             btnLuu = new ePOSOne.btnProduct.Button_WOC();
             btnThem = new ePOSOne.btnProduct.Button_WOC();
-            btnTim = new ePOSOne.btnProduct.Button_WOC();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiDV)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -100,7 +98,7 @@
             btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnXoa.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             btnXoa.ForeColor = System.Drawing.Color.White;
-            btnXoa.Location = new System.Drawing.Point(680, 282);
+            btnXoa.Location = new System.Drawing.Point(698, 282);
             btnXoa.Name = "btnXoa";
             btnXoa.OnHoverBorderColor = System.Drawing.Color.Red;
             btnXoa.OnHoverButtonColor = System.Drawing.Color.Yellow;
@@ -127,7 +125,7 @@
             btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnSua.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             btnSua.ForeColor = System.Drawing.Color.White;
-            btnSua.Location = new System.Drawing.Point(800, 282);
+            btnSua.Location = new System.Drawing.Point(871, 282);
             btnSua.Name = "btnSua";
             btnSua.OnHoverBorderColor = System.Drawing.Color.Red;
             btnSua.OnHoverButtonColor = System.Drawing.Color.Yellow;
@@ -154,7 +152,7 @@
             btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnLuu.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             btnLuu.ForeColor = System.Drawing.Color.White;
-            btnLuu.Location = new System.Drawing.Point(923, 282);
+            btnLuu.Location = new System.Drawing.Point(1041, 282);
             btnLuu.Name = "btnLuu";
             btnLuu.OnHoverBorderColor = System.Drawing.Color.Red;
             btnLuu.OnHoverButtonColor = System.Drawing.Color.Yellow;
@@ -180,7 +178,7 @@
             btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnThem.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             btnThem.ForeColor = System.Drawing.Color.White;
-            btnThem.Location = new System.Drawing.Point(557, 282);
+            btnThem.Location = new System.Drawing.Point(538, 282);
             btnThem.Name = "btnThem";
             btnThem.OnHoverBorderColor = System.Drawing.Color.Red;
             btnThem.OnHoverButtonColor = System.Drawing.Color.Yellow;
@@ -212,14 +210,14 @@
             this.Column2,
             this.Column1,
             this.hieuluc});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvLoaiDV.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLoaiDV.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvLoaiDV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgvLoaiDV.Location = new System.Drawing.Point(3, 24);
             this.dgvLoaiDV.Name = "dgvLoaiDV";
@@ -229,10 +227,33 @@
             this.dgvLoaiDV.TabIndex = 140;
             this.dgvLoaiDV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLoaiDV_CellClick);
             // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "id";
+            this.Column2.HeaderText = "ID";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 125;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "tenloaidv";
+            this.Column1.HeaderText = "TÊN LOẠI DỊCH VỤ";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 250;
+            // 
+            // hieuluc
+            // 
+            this.hieuluc.DataPropertyName = "hieuluc";
+            this.hieuluc.HeaderText = "HIỆU LỰC";
+            this.hieuluc.MinimumWidth = 6;
+            this.hieuluc.Name = "hieuluc";
+            this.hieuluc.Width = 125;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtTim);
-            this.groupBox2.Controls.Add(btnTim);
             this.groupBox2.Controls.Add(btnXoa);
             this.groupBox2.Controls.Add(btnSua);
             this.groupBox2.Controls.Add(btnLuu);
@@ -250,6 +271,25 @@
             this.groupBox2.TabIndex = 153;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Loại Dịch Vụ";
+            // 
+            // txtTim
+            // 
+            this.txtTim.AutoSize = true;
+            this.txtTim.BorderColor = System.Drawing.Color.Black;
+            this.txtTim.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtTim.Hint = "";
+            this.txtTim.IsPassword = false;
+            this.txtTim.Length = 0;
+            this.txtTim.Location = new System.Drawing.Point(27, 282);
+            this.txtTim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTim.Name = "txtTim";
+            this.txtTim.OnFocus = System.Drawing.Color.DarkGray;
+            this.txtTim.OnlyChar = false;
+            this.txtTim.OnlyNumber = false;
+            this.txtTim.Size = new System.Drawing.Size(449, 48);
+            this.txtTim.TabIndex = 204;
+            this.txtTim.TextValue = "";
+            this.txtTim.TextChangeEvent += new System.EventHandler(this.txtTim_TextChangeEvent);
             // 
             // cboHieuLuc
             // 
@@ -336,73 +376,6 @@
             this.labelX3.Size = new System.Drawing.Size(146, 24);
             this.labelX3.TabIndex = 192;
             this.labelX3.Text = "Tên Loại DV:";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "id";
-            this.Column2.HeaderText = "ID";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "tenloaidv";
-            this.Column1.HeaderText = "TÊN LOẠI DỊCH VỤ";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 250;
-            // 
-            // hieuluc
-            // 
-            this.hieuluc.DataPropertyName = "hieuluc";
-            this.hieuluc.HeaderText = "HIỆU LỰC";
-            this.hieuluc.MinimumWidth = 6;
-            this.hieuluc.Name = "hieuluc";
-            this.hieuluc.Width = 125;
-            // 
-            // txtTim
-            // 
-            this.txtTim.AutoSize = true;
-            this.txtTim.BorderColor = System.Drawing.Color.Black;
-            this.txtTim.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtTim.Hint = "";
-            this.txtTim.IsPassword = false;
-            this.txtTim.Length = 0;
-            this.txtTim.Location = new System.Drawing.Point(27, 282);
-            this.txtTim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtTim.Name = "txtTim";
-            this.txtTim.OnFocus = System.Drawing.Color.DarkGray;
-            this.txtTim.OnlyChar = false;
-            this.txtTim.OnlyNumber = false;
-            this.txtTim.Size = new System.Drawing.Size(278, 48);
-            this.txtTim.TabIndex = 204;
-            this.txtTim.TextValue = "";
-            // 
-            // btnTim
-            // 
-            btnTim.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            btnTim.BorderColor = System.Drawing.Color.Black;
-            btnTim.ButtonColor = System.Drawing.Color.Blue;
-            btnTim.CausesValidation = false;
-            btnTim.Cursor = System.Windows.Forms.Cursors.Default;
-            btnTim.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            btnTim.FlatAppearance.BorderSize = 0;
-            btnTim.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            btnTim.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            btnTim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnTim.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            btnTim.ForeColor = System.Drawing.Color.White;
-            btnTim.Location = new System.Drawing.Point(312, 282);
-            btnTim.Name = "btnTim";
-            btnTim.OnHoverBorderColor = System.Drawing.Color.Red;
-            btnTim.OnHoverButtonColor = System.Drawing.Color.Yellow;
-            btnTim.OnHoverTextColor = System.Drawing.Color.Black;
-            btnTim.Size = new System.Drawing.Size(117, 48);
-            btnTim.TabIndex = 203;
-            btnTim.Text = "TÌM";
-            btnTim.TextColor = System.Drawing.Color.White;
-            btnTim.UseVisualStyleBackColor = true;
             // 
             // frmLoaiDichVu
             // 

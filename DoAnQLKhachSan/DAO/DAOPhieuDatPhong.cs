@@ -12,6 +12,7 @@ namespace DAO
     {
         dbConnectionData db = new dbConnectionData();
         DataSet dsID_KH = new DataSet();
+        DataSet dsPDP = new DataSet();
         string[] name = { };
         object[] value = { };
         public void HienThiID_KH(ComboBox cboID_KH)
@@ -20,6 +21,11 @@ namespace DAO
             cboID_KH.DataSource = dsID_KH.Tables[0];
             cboID_KH.DisplayMember = "id";
             cboID_KH.ValueMember = "id";
+        }
+        public void HienThiDanhSach(string sTimKiem, DataGridView d)
+        {
+            dsPDP = db.LayDanhSach("select * from PhieuDatPhong where ID_KH like '%" + sTimKiem + "%'");
+            d.DataSource = dsPDP.Tables[0];
         }
         public DataTable phieudatphong_select()
         {

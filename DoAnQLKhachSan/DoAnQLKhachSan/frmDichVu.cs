@@ -124,8 +124,15 @@ namespace DoAnQLKhachSan
         }
         private void dgvDichVu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int vt = dgvDichVu.CurrentCell.RowIndex;
-            hienthi_textbox(vt);
+            try
+            {
+                int vt = dgvDichVu.CurrentCell.RowIndex;
+                hienthi_textbox(vt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không có dữ liệu");
+            }
         }
 
         private void pictureBox_Click(object sender, EventArgs e)
@@ -140,6 +147,11 @@ namespace DoAnQLKhachSan
                     p.Image = Image.FromFile(open.FileName);
                 }
             }
+        }
+
+        private void txtTim_TextChangeEvent(object sender, EventArgs e)
+        {
+            bdv.HienThiDanhSach(txtTim.TextValue, dgvDichVu);
         }
     }
 }
