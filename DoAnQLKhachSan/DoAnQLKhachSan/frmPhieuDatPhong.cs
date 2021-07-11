@@ -19,28 +19,18 @@ namespace DoAnQLKhachSan
         }
 
         BUSPhieuDatPhong bpdp = new BUSPhieuDatPhong();
-        
+        bool flag=false;
 
         private void btnThem_Click_1(object sender, EventArgs e)
         {
-            Tang_ID();
-            clear_textbox();
-            flag = 1;
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            flag = 2;
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnLuu_Click(object sender, EventArgs e)
-        {
-            if (flag == 1)
+            if(flag==false)
+            {
+                clear_textbox();
+                txtID.Text = (bpdp.PDP_Select().Rows.Count + 1).ToString();
+                flag = true;
+            }    
+      
+            else if (flag == true)
             {
                 if (cboTenKH.Text == "" || dtNgayDen.Text == "" || dtNgayDi.Text == "" || cboHinhThucThue.Text == "" || txtSoKH.Text == "" || rtxtGhiChu.Text == "" || cboDaXuLy.Text == "" || cboHieuLuc.Text == "")
                 {
@@ -50,16 +40,34 @@ namespace DoAnQLKhachSan
                 {
                     bpdp.PDP_Them(txtID.Text, cboTenKH.SelectedValue.ToString(), dtNgayDen.Text, dtNgayDi.Text, cboHinhThucThue.Text, txtSoKH.Text, rtxtGhiChu.Text, cboDaXuLy.Text, cboHieuLuc.Text);
                     MessageBox.Show("thêm thành công rồi nè");
+                    flag = false;
                     dgvPhieuDatPhong.DataSource = bpdp.PDP_Select();
                 }
             }
-            if (flag == 2)
+           
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            if(flag == false)
+            {
+                flag = true;
+            }    
+            else if (flag == true)
             {
                 bpdp.PDP_CapNhat(txtID.Text, cboTenKH.SelectedValue.ToString(), dtNgayDen.Text, dtNgayDi.Text, cboHinhThucThue.Text, txtSoKH.Text, rtxtGhiChu.Text, cboDaXuLy.Text, cboHieuLuc.Text);
                 MessageBox.Show("thêm thành công rồi nè");
+                flag = false;
                 dgvPhieuDatPhong.DataSource = bpdp.PDP_Select();
             }
         }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+      
 
         private void frmPhieuDatPhong_Load(object sender, EventArgs e)
         {
@@ -80,7 +88,7 @@ namespace DoAnQLKhachSan
             cboHieuLuc.Text = dgvPhieuDatPhong.Rows[numrow].Cells[8].Value.ToString();
 
         }
-        int flag;
+
         void Tang_ID()
         {
             int count = 0;

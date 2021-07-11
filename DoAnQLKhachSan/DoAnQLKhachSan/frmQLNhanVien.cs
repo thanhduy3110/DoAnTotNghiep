@@ -21,7 +21,7 @@ namespace DoAnQLKhachSan
         }
 
         BUSNhanVien bNV = new BUSNhanVien();
-        int flag;
+        bool flag=false;
 
         void Tang_ID()
         {
@@ -77,7 +77,6 @@ namespace DoAnQLKhachSan
             rtxtDiaChi.Text = "";
             txtEmail.Text = "";
             txtCMND.Text = "";
-            cboGioiTinh.Text = "";
             txtHinhAnh.Text = "";
             cboHieuLuc.Text = "";
         }
@@ -86,8 +85,7 @@ namespace DoAnQLKhachSan
             btnThem.Enabled = t;
             btnXoa.Enabled = t;
             btnSua.Enabled = t;
-            btnLuu.Enabled = !t;
-            btnChonHinh.Enabled = !t;
+            btnClear.Enabled = !t;
         }
 
         void xulytextbox(Boolean t)
@@ -109,17 +107,18 @@ namespace DoAnQLKhachSan
             xulychucnang(true);
             xulytextbox(true);
             txtID.ReadOnly = true;
+            dgvDSNhanVien.ReadOnly = true;
+            txtMaNV.ReadOnly = true;
             bNV.HienThiTenLoaiNV(cboLoaiNV);
             dgvDSNhanVien.DataSource = bNV.NhanVien_Select();
-
-
+           
         }
 
         void hienthi_textbox(int numrow)
         {
 
             txtID.Text = dgvDSNhanVien.Rows[numrow].Cells[0].Value.ToString();
-            cboLoaiNV.SelectedValue = dgvDSNhanVien.Rows[numrow].Cells[1].Value.ToString();
+            cboLoaiNV.Text = dgvDSNhanVien.Rows[numrow].Cells[1].Value.ToString();
             txtMaNV.Text = dgvDSNhanVien.Rows[numrow].Cells[2].Value.ToString();
             txtMatKhau.Text = dgvDSNhanVien.Rows[numrow].Cells[3].Value.ToString();
             txtHoTen.Text = dgvDSNhanVien.Rows[numrow].Cells[4].Value.ToString();
@@ -131,24 +130,22 @@ namespace DoAnQLKhachSan
             txtHinhAnh.Text = dgvDSNhanVien.Rows[numrow].Cells[11].Value.ToString();
             try
             {
-                string duongdanhinh = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\QLKhachSan\\QLKhachSan\\Images\\" + txtHinhAnh.Text;
+                string duongdanhinh = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan\\DoAnQLKhachSan\\Images\\" + txtHinhAnh.Text;
                 Bitmap a = new Bitmap(duongdanhinh);
                 pichHinh.Image = a;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Không có hình");
+               
             }
-
-
             string GT = dgvDSNhanVien.Rows[numrow].Cells[10].Value.ToString();
-            if (GT == "False")
+            if (GT == "Nữ")
             {
-                cboGioiTinh.SelectedIndex = 0;
+                radioNu.Checked=true;
             }
             else
             {
-                cboGioiTinh.SelectedIndex = 1;
+                radioNam.Checked = true;
             }
 
             string HL = dgvDSNhanVien.Rows[numrow].Cells[12].Value.ToString();
@@ -164,17 +161,86 @@ namespace DoAnQLKhachSan
 
         private void btnThem_Click_1(object sender, EventArgs e)
         {
-            clear_textbox();
-            xulychucnang(false);
-            xulytextbox(false);
-            flag = 1;
-        }
+
+            if (flag == false)
+            {
+                clear_textbox();
+                xulytextbox(false);
+                radioNam.Checked = true;
+                flag = true;
+            }else if(flag==true)
+            {
+               
+                if (txtEmail.Text == "" || txtCMND.Text == "" || txtHinhAnh.Text == "" || txtHoTen.Text == "" || txtMatKhau.Text == "" || txtSDT.Text == "" || cboLoaiNV.Text == "" || rtxtDiaChi.Text == "" || txtMaNV.Text == "" || cboHieuLuc.Text == "")
+                {
+                    MessageBox.Show("Lỗi");
+                }
+                else
+                {
+
+                    Boolean GT=false;
+                    if (radioNam.Checked == true)
+                    {
+                        GT = true;
+
+                    }
+                    else if (radioNu.Checked == true)
+                    {
+                        GT = false;
+                    }
+                    bNV.NhanVien_Them(Int32.Parse(txtID.Text), cboLoaiNV.SelectedIndex + 1, txtMaNV.Text, MaHoa("123", txtMatKhau.Text), txtHoTen.Text, Convert.ToDateTime(dtpNgaySinh.Text).ToString("yyyy-MM-dd"), txtSDT.Text, rtxtDiaChi.Text, txtEmail.Text, Int32.Parse(txtCMND.Text), GT, txtHinhAnh.Text, cboHieuLuc.SelectedIndex);
+                    File.Copy(DuongDan, Path.Combine(@"D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\Images", Path.GetFileName(txtHinhAnh.Text)), true);
+                    MessageBox.Show("Thêm thành công ");
+                    flag = false;
+                    dgvDSNhanVien.DataSource = bNV.NhanVien_Select();
+                    
+                }
+            }    
+
+               
+         }
+          
+
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            xulychucnang(false);
-            xulytextbox(false);
-            flag = 2;
+            if (flag == false)
+            {
+                
+                xulytextbox(false);
+                flag = true;
+            }else if(flag==true)
+            {
+                
+                {
+                    if (txtEmail.Text == "" || txtCMND.Text == "" || txtHinhAnh.Text == "" || txtHoTen.Text == "" || txtMatKhau.Text == "" || txtSDT.Text == "" || cboLoaiNV.Text == "" || rtxtDiaChi.Text == "" || txtMaNV.Text == "" || cboHieuLuc.Text == "")
+                    {
+                        MessageBox.Show("Lỗi");
+                    }
+                    else
+                    {
+
+                        Boolean GT = false;
+                        if (radioNam.Checked == true)
+                        {
+                            GT = true;
+
+                        }
+                        else if (radioNu.Checked == true)
+                        {
+                            GT = false;
+                        }
+                        txtHinhAnh.Text = txtID.Text + "Sua" + (Int32.Parse(txtID.Text) + 1).ToString() + ".jpg";
+                        bNV.NhanVien_CapNhat(ID, cboLoaiNV.SelectedIndex + 1, txtMaNV.Text, txtMatKhau.Text, txtHoTen.Text, Convert.ToDateTime(dtpNgaySinh.Text).ToString("yyyy-MM-dd"), txtSDT.Text, rtxtDiaChi.Text, txtEmail.Text, int.Parse(txtCMND.Text), GT, txtHinhAnh.Text, cboHieuLuc.SelectedIndex);
+                        File.Copy(DuongDan, Path.Combine(@"D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\Images", Path.GetFileName(txtHinhAnh.Text)), true);
+                        MessageBox.Show("Sữa thành công ");
+                        flag = false;
+                        dgvDSNhanVien.DataSource = bNV.NhanVien_Select();
+                        
+                    }
+                }
+            }    
+
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -214,59 +280,39 @@ namespace DoAnQLKhachSan
             }
             return str;
         }
-        private void btnLuu_Click(object sender, EventArgs e)
-        {           
-            if (flag == 1)
-            {
 
-                if (txtEmail.Text == "" || txtCMND.Text == "" || txtHinhAnh.Text == "" || txtHoTen.Text == "" || txtMatKhau.Text == "" || txtSDT.Text == "" || cboGioiTinh.Text == "" || cboLoaiNV.Text == "" || rtxtDiaChi.Text == "" || txtMaNV.Text == "" || cboHieuLuc.Text == "")
-                {
-                    MessageBox.Show("Lỗi");
-                }
-                else
-                {
-                    xulychucnang(true);
-                    bNV.NhanVien_Them(Int32.Parse(txtID.Text), cboLoaiNV.SelectedIndex + 1, txtMaNV.Text, GetMD5(txtMatKhau.Text), txtHoTen.Text, Convert.ToDateTime(dtpNgaySinh.Text).ToString("yyyy-MM-dd"), txtSDT.Text, rtxtDiaChi.Text, txtEmail.Text, Int32.Parse(txtCMND.Text), cboGioiTinh.SelectedIndex, txtHinhAnh.Text, cboHieuLuc.SelectedIndex);
-                    File.Copy(DuongDan, Path.Combine(@"D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\Images\", Path.GetFileName(txtHinhAnh.Text)), true);
-                    MessageBox.Show("Thêm thành công ");
-                    dgvDSNhanVien.DataSource = bNV.NhanVien_Select();
-                }
-            }
-            if (flag == 2)
-            {
-                if (txtEmail.Text == "" || txtCMND.Text == "" || txtHinhAnh.Text == "" || txtHoTen.Text == "" || txtMatKhau.Text == "" || txtSDT.Text == "" || cboGioiTinh.Text == "" || cboLoaiNV.Text == "" || rtxtDiaChi.Text == "" || txtMaNV.Text == "" || cboHieuLuc.Text == "")
-                {
-                    MessageBox.Show("Lỗi");
-                }
-                else
-                {
-                    xulychucnang(true);
-                    bNV.NhanVien_CapNhat(Int32.Parse(txtID.Text), cboLoaiNV.SelectedIndex + 1, txtMaNV.Text, txtMatKhau.Text, txtHoTen.Text, Convert.ToDateTime(dtpNgaySinh.Text).ToString("yyyy-MM-dd"), txtSDT.Text, rtxtDiaChi.Text, txtEmail.Text, Int32.Parse(txtCMND.Text), cboGioiTinh.SelectedIndex, txtHinhAnh.Text, cboHieuLuc.SelectedIndex);
-                    File.Copy(DuongDan, Path.Combine(@"D:\DoAnTotNghiep\DoAnTotNghiep\QLKhachSan\QLKhachSan\Images\", Path.GetFileName(txtHinhAnh.Text)), true);
-                    MessageBox.Show("Sữa thành công ");
-                    dgvDSNhanVien.DataSource = bNV.NhanVien_Select();
-                }
-            }
+        public string GiaiMa(string key, string toDecrypt)//có mã hóa thì phải có giải mã, chỉ cần ở chỗ phân quyền này thôi
+                                                          //chỗ nhân viên ko cần
+        {
+            byte[] keyArray;
+            byte[] toEncryptArray = Convert.FromBase64String(toDecrypt);
+
+            MD5CryptoServiceProvider hashmd5 = new MD5CryptoServiceProvider();
+            keyArray = hashmd5.ComputeHash(UTF8Encoding.UTF8.GetBytes(key));
+
+            TripleDESCryptoServiceProvider tdes = new TripleDESCryptoServiceProvider();
+            tdes.Key = keyArray;
+            tdes.Mode = CipherMode.ECB;
+            tdes.Padding = PaddingMode.PKCS7;
+            ICryptoTransform cTransform = tdes.CreateDecryptor();
+            byte[] resultArray = cTransform.TransformFinalBlock(
+            toEncryptArray, 0, toEncryptArray.Length);
+            return UTF8Encoding.UTF8.GetString(resultArray);
         }
 
+        int ID,vt;
         private void dgvDSNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                int vt = dgvDSNhanVien.CurrentCell.RowIndex;
+                vt = dgvDSNhanVien.CurrentCell.RowIndex;
+                
                 hienthi_textbox(vt);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Không có dữ liệu");
-            }
-           
+                ID = Int32.Parse(dgvDSNhanVien.Rows[vt].Cells[0].Value.ToString());
         }
         string DuongDan = "";
 
         private void btnChonHinh_Click(object sender, EventArgs e)
         {
-            OpenFileDialog o = new OpenFileDialog();
+                OpenFileDialog o = new OpenFileDialog();
             o.Filter = "bitmap (*.jpg)|*.jpg|(*.jpeg)|*.jpeg|(*.png)|*.png|ALL Files (*.*)|*.*";
             if (o.ShowDialog() == DialogResult.Cancel)
             {
@@ -287,6 +333,26 @@ namespace DoAnQLKhachSan
             bNV.HienThiDanhSach(txtTim.TextValue, dgvDSNhanVien);
         }
 
-       
+        public string MaHoa(string key, string toEncrypt)//bỏ thằng mã hóa này vô để mã hóa mật khẩu
+        {
+            byte[] keyArray;
+            byte[] toEncryptArray = UTF8Encoding.UTF8.GetBytes(toEncrypt);
+            MD5CryptoServiceProvider hashmd5 = new MD5CryptoServiceProvider();
+            keyArray = hashmd5.ComputeHash(UTF8Encoding.UTF8.GetBytes(key));
+            TripleDESCryptoServiceProvider tdes =
+            new TripleDESCryptoServiceProvider();
+            tdes.Key = keyArray;
+            tdes.Mode = CipherMode.ECB;
+            tdes.Padding = PaddingMode.PKCS7;
+            ICryptoTransform cTransform = tdes.CreateEncryptor();
+            byte[] resultArray = cTransform.TransformFinalBlock(
+                toEncryptArray, 0, toEncryptArray.Length);
+            return Convert.ToBase64String(resultArray, 0, resultArray.Length);
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

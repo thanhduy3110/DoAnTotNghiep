@@ -49,9 +49,11 @@
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.radioNu = new System.Windows.Forms.RadioButton();
+            this.radioNam = new System.Windows.Forms.RadioButton();
             this.btnXoa = new ePOSOne.btnProduct.Button_WOC();
             this.btnSua = new ePOSOne.btnProduct.Button_WOC();
-            this.btnLuu = new ePOSOne.btnProduct.Button_WOC();
+            this.btnClear = new ePOSOne.btnProduct.Button_WOC();
             this.btnChonHinh = new ePOSOne.btnProduct.Button_WOC();
             this.btnThem = new ePOSOne.btnProduct.Button_WOC();
             this.txtTim = new JTextBox.JTextBox();
@@ -70,9 +72,6 @@
             this.comboItem3 = new DevComponents.Editors.ComboItem();
             this.comboItem4 = new DevComponents.Editors.ComboItem();
             this.cboLoaiNV = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.cboGioiTinh = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.comboItem1 = new DevComponents.Editors.ComboItem();
-            this.comboItem2 = new DevComponents.Editors.ComboItem();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
@@ -165,7 +164,7 @@
             // 
             this.dgvDSNhanVien.BackgroundColor = System.Drawing.Color.White;
             this.dgvDSNhanVien.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -201,6 +200,7 @@
             this.dgvDSNhanVien.Location = new System.Drawing.Point(5, 23);
             this.dgvDSNhanVien.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.dgvDSNhanVien.Name = "dgvDSNhanVien";
+            this.dgvDSNhanVien.RowHeadersVisible = false;
             this.dgvDSNhanVien.RowHeadersWidth = 51;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dgvDSNhanVien.RowsDefaultCellStyle = dataGridViewCellStyle3;
@@ -215,15 +215,16 @@
             this.Column1.HeaderText = "ID";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
+            this.Column1.Visible = false;
             this.Column1.Width = 125;
             // 
             // Column2
             // 
-            this.Column2.DataPropertyName = "id_loainv";
-            this.Column2.HeaderText = "LOẠI NV";
+            this.Column2.DataPropertyName = "hoten";
+            this.Column2.HeaderText = "HỌ VÀ TÊN";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
+            this.Column2.Width = 160;
             // 
             // Column3
             // 
@@ -243,11 +244,11 @@
             // 
             // Column5
             // 
-            this.Column5.DataPropertyName = "hoten";
-            this.Column5.HeaderText = "HỌ TÊN";
+            this.Column5.DataPropertyName = "tenloainv";
+            this.Column5.HeaderText = "TÊN LOẠI NV";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
+            this.Column5.Width = 150;
             // 
             // Column6
             // 
@@ -315,9 +316,11 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.radioNu);
+            this.groupBox2.Controls.Add(this.radioNam);
             this.groupBox2.Controls.Add(this.btnXoa);
             this.groupBox2.Controls.Add(this.btnSua);
-            this.groupBox2.Controls.Add(this.btnLuu);
+            this.groupBox2.Controls.Add(this.btnClear);
             this.groupBox2.Controls.Add(this.btnChonHinh);
             this.groupBox2.Controls.Add(this.btnThem);
             this.groupBox2.Controls.Add(this.txtTim);
@@ -334,7 +337,6 @@
             this.groupBox2.Controls.Add(this.txtID);
             this.groupBox2.Controls.Add(this.cboHieuLuc);
             this.groupBox2.Controls.Add(this.cboLoaiNV);
-            this.groupBox2.Controls.Add(this.cboGioiTinh);
             this.groupBox2.Controls.Add(this.labelX10);
             this.groupBox2.Controls.Add(this.labelX12);
             this.groupBox2.Controls.Add(this.labelX11);
@@ -357,6 +359,28 @@
             this.groupBox2.TabIndex = 153;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Nhân Viên";
+            // 
+            // radioNu
+            // 
+            this.radioNu.AutoSize = true;
+            this.radioNu.Location = new System.Drawing.Point(815, 288);
+            this.radioNu.Name = "radioNu";
+            this.radioNu.Size = new System.Drawing.Size(60, 28);
+            this.radioNu.TabIndex = 182;
+            this.radioNu.TabStop = true;
+            this.radioNu.Text = "Nữ";
+            this.radioNu.UseVisualStyleBackColor = true;
+            // 
+            // radioNam
+            // 
+            this.radioNam.AutoSize = true;
+            this.radioNam.Location = new System.Drawing.Point(682, 288);
+            this.radioNam.Name = "radioNam";
+            this.radioNam.Size = new System.Drawing.Size(77, 28);
+            this.radioNam.TabIndex = 182;
+            this.radioNam.TabStop = true;
+            this.radioNam.Text = "Nam";
+            this.radioNam.UseVisualStyleBackColor = true;
             // 
             // btnXoa
             // 
@@ -412,32 +436,32 @@
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // btnLuu
+            // btnClear
             // 
-            this.btnLuu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnLuu.BorderColor = System.Drawing.Color.Black;
-            this.btnLuu.ButtonColor = System.Drawing.Color.Blue;
-            this.btnLuu.CausesValidation = false;
-            this.btnLuu.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnLuu.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnLuu.FlatAppearance.BorderSize = 0;
-            this.btnLuu.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.btnLuu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnLuu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLuu.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuu.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Location = new System.Drawing.Point(1106, 548);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.OnHoverBorderColor = System.Drawing.Color.Red;
-            this.btnLuu.OnHoverButtonColor = System.Drawing.Color.Yellow;
-            this.btnLuu.OnHoverTextColor = System.Drawing.Color.Black;
-            this.btnLuu.Size = new System.Drawing.Size(112, 48);
-            this.btnLuu.TabIndex = 180;
-            this.btnLuu.Text = "LƯU";
-            this.btnLuu.TextColor = System.Drawing.Color.White;
-            this.btnLuu.UseVisualStyleBackColor = true;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            this.btnClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClear.BorderColor = System.Drawing.Color.Black;
+            this.btnClear.ButtonColor = System.Drawing.Color.Blue;
+            this.btnClear.CausesValidation = false;
+            this.btnClear.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnClear.FlatAppearance.BorderSize = 0;
+            this.btnClear.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btnClear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnClear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.White;
+            this.btnClear.Location = new System.Drawing.Point(1106, 548);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.OnHoverBorderColor = System.Drawing.Color.Red;
+            this.btnClear.OnHoverButtonColor = System.Drawing.Color.Yellow;
+            this.btnClear.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btnClear.Size = new System.Drawing.Size(164, 48);
+            this.btnClear.TabIndex = 180;
+            this.btnClear.Text = "XÓA TextBox";
+            this.btnClear.TextColor = System.Drawing.Color.White;
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnChonHinh
             // 
@@ -529,9 +553,11 @@
             // pichHinh
             // 
             this.pichHinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pichHinh.Image = global::DoAnQLKhachSan.Properties.Resources.AnhNV;
             this.pichHinh.Location = new System.Drawing.Point(1133, 281);
             this.pichHinh.Name = "pichHinh";
             this.pichHinh.Size = new System.Drawing.Size(257, 182);
+            this.pichHinh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pichHinh.TabIndex = 161;
             this.pichHinh.TabStop = false;
             // 
@@ -729,31 +755,6 @@
             this.cboLoaiNV.Size = new System.Drawing.Size(257, 36);
             this.cboLoaiNV.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cboLoaiNV.TabIndex = 150;
-            // 
-            // cboGioiTinh
-            // 
-            this.cboGioiTinh.DisplayMember = "Text";
-            this.cboGioiTinh.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboGioiTinh.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboGioiTinh.ForeColor = System.Drawing.Color.Black;
-            this.cboGioiTinh.FormattingEnabled = true;
-            this.cboGioiTinh.ItemHeight = 30;
-            this.cboGioiTinh.Items.AddRange(new object[] {
-            this.comboItem1,
-            this.comboItem2});
-            this.cboGioiTinh.Location = new System.Drawing.Point(682, 284);
-            this.cboGioiTinh.Name = "cboGioiTinh";
-            this.cboGioiTinh.Size = new System.Drawing.Size(257, 36);
-            this.cboGioiTinh.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cboGioiTinh.TabIndex = 149;
-            // 
-            // comboItem1
-            // 
-            this.comboItem1.Text = "Nam";
-            // 
-            // comboItem2
-            // 
-            this.comboItem2.Text = "Nữ";
             // 
             // labelX10
             // 
@@ -994,7 +995,6 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txtID;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cboHieuLuc;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cboLoaiNV;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cboGioiTinh;
         private DevComponents.DotNetBar.LabelX labelX10;
         private DevComponents.DotNetBar.LabelX labelX12;
         private DevComponents.DotNetBar.LabelX labelX11;
@@ -1010,13 +1010,13 @@
         private DevComponents.DotNetBar.LabelX labelX13;
         private DevComponents.Editors.ComboItem comboItem3;
         private DevComponents.Editors.ComboItem comboItem4;
-        private DevComponents.Editors.ComboItem comboItem1;
-        private DevComponents.Editors.ComboItem comboItem2;
         private ePOSOne.btnProduct.Button_WOC btnThem;
         private ePOSOne.btnProduct.Button_WOC btnXoa;
         private ePOSOne.btnProduct.Button_WOC btnSua;
-        private ePOSOne.btnProduct.Button_WOC btnLuu;
+        private ePOSOne.btnProduct.Button_WOC btnClear;
         private ePOSOne.btnProduct.Button_WOC btnChonHinh;
+        private System.Windows.Forms.RadioButton radioNu;
+        private System.Windows.Forms.RadioButton radioNam;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

@@ -31,9 +31,9 @@
             ePOSOne.btnProduct.Button_WOC btnXoaTatCa;
             ePOSOne.btnProduct.Button_WOC btnXoa;
             ePOSOne.btnProduct.Button_WOC btnSua;
-            ePOSOne.btnProduct.Button_WOC btnLuu;
             ePOSOne.btnProduct.Button_WOC btnThem;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvDSPhong = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,7 +74,6 @@
             btnXoaTatCa = new ePOSOne.btnProduct.Button_WOC();
             btnXoa = new ePOSOne.btnProduct.Button_WOC();
             btnSua = new ePOSOne.btnProduct.Button_WOC();
-            btnLuu = new ePOSOne.btnProduct.Button_WOC();
             btnThem = new ePOSOne.btnProduct.Button_WOC();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSPhong)).BeginInit();
@@ -161,33 +160,6 @@
             btnSua.UseVisualStyleBackColor = true;
             btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // btnLuu
-            // 
-            btnLuu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            btnLuu.BorderColor = System.Drawing.Color.Black;
-            btnLuu.ButtonColor = System.Drawing.Color.Blue;
-            btnLuu.CausesValidation = false;
-            btnLuu.Cursor = System.Windows.Forms.Cursors.Default;
-            btnLuu.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            btnLuu.FlatAppearance.BorderSize = 0;
-            btnLuu.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            btnLuu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            btnLuu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnLuu.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            btnLuu.ForeColor = System.Drawing.Color.White;
-            btnLuu.Location = new System.Drawing.Point(1060, 441);
-            btnLuu.Name = "btnLuu";
-            btnLuu.OnHoverBorderColor = System.Drawing.Color.Red;
-            btnLuu.OnHoverButtonColor = System.Drawing.Color.Yellow;
-            btnLuu.OnHoverTextColor = System.Drawing.Color.Black;
-            btnLuu.Size = new System.Drawing.Size(117, 48);
-            btnLuu.TabIndex = 176;
-            btnLuu.Text = "LƯU";
-            btnLuu.TextColor = System.Drawing.Color.White;
-            btnLuu.UseVisualStyleBackColor = true;
-            btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
             // btnThem
             // 
             btnThem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -229,6 +201,14 @@
             // dgvDSPhong
             // 
             this.dgvDSPhong.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDSPhong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDSPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDSPhong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -242,17 +222,18 @@
             this.Column8,
             this.Column9,
             this.Column10});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDSPhong.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDSPhong.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDSPhong.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgvDSPhong.Location = new System.Drawing.Point(3, 24);
             this.dgvDSPhong.Name = "dgvDSPhong";
+            this.dgvDSPhong.RowHeadersVisible = false;
             this.dgvDSPhong.RowHeadersWidth = 51;
             this.dgvDSPhong.RowTemplate.Height = 24;
             this.dgvDSPhong.Size = new System.Drawing.Size(1482, 296);
@@ -265,12 +246,13 @@
             this.Column1.HeaderText = "ID";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
+            this.Column1.Visible = false;
             this.Column1.Width = 125;
             // 
             // Column2
             // 
-            this.Column2.DataPropertyName = "id_loaiphong";
-            this.Column2.HeaderText = "ID_LoaiPhong";
+            this.Column2.DataPropertyName = "tenloaiphong";
+            this.Column2.HeaderText = "Tên Loại Phòng";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             this.Column2.Width = 200;
@@ -305,7 +287,7 @@
             this.Column6.HeaderText = "Giá thuê theo giờ";
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
-            this.Column6.Width = 200;
+            this.Column6.Width = 190;
             // 
             // Column11
             // 
@@ -321,7 +303,7 @@
             this.Column7.HeaderText = "Góc nhìn";
             this.Column7.MinimumWidth = 6;
             this.Column7.Name = "Column7";
-            this.Column7.Width = 125;
+            this.Column7.Width = 150;
             // 
             // Column8
             // 
@@ -329,7 +311,7 @@
             this.Column8.HeaderText = "Bồn tắm";
             this.Column8.MinimumWidth = 6;
             this.Column8.Name = "Column8";
-            this.Column8.Width = 125;
+            this.Column8.Width = 150;
             // 
             // Column9
             // 
@@ -353,7 +335,6 @@
             this.groupBox2.Controls.Add(this.rtxtGhiChu);
             this.groupBox2.Controls.Add(btnXoa);
             this.groupBox2.Controls.Add(btnSua);
-            this.groupBox2.Controls.Add(btnLuu);
             this.groupBox2.Controls.Add(btnThem);
             this.groupBox2.Controls.Add(this.cboBonTam);
             this.groupBox2.Controls.Add(this.cboTenLP);

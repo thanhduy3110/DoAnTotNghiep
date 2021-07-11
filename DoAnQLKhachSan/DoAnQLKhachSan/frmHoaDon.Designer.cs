@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             ePOSOne.btnProduct.Button_WOC btnTim;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lblTongTien = new System.Windows.Forms.Label();
             this.lblTongTienDV = new System.Windows.Forms.Label();
@@ -57,9 +57,6 @@
             this.btnSua = new ePOSOne.btnProduct.Button_WOC();
             this.btnLuu = new ePOSOne.btnProduct.Button_WOC();
             this.btnThem = new ePOSOne.btnProduct.Button_WOC();
-            this.dtpNgayLap = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.dtpNgayDi = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.dtpNgayDen = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.cboTenNV = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.cboMaPhong = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.cboTenKH = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -110,13 +107,13 @@
             this.labelX17 = new DevComponents.DotNetBar.LabelX();
             this.labelX16 = new DevComponents.DotNetBar.LabelX();
             this.cboTenDV = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.dtpNgayLap = new System.Windows.Forms.DateTimePicker();
+            this.dtpNgayDen = new System.Windows.Forms.DateTimePicker();
+            this.dtpNgayDi = new System.Windows.Forms.DateTimePicker();
             btnTim = new ePOSOne.btnProduct.Button_WOC();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSHD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtpNgayLap)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtpNgayDi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtpNgayDen)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSCTHD)).BeginInit();
@@ -149,6 +146,9 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.dtpNgayDi);
+            this.groupBox3.Controls.Add(this.dtpNgayDen);
+            this.groupBox3.Controls.Add(this.dtpNgayLap);
             this.groupBox3.Controls.Add(this.lblTongTien);
             this.groupBox3.Controls.Add(this.lblTongTienDV);
             this.groupBox3.Controls.Add(this.lblTongTienPhong);
@@ -159,9 +159,6 @@
             this.groupBox3.Controls.Add(this.btnLuu);
             this.groupBox3.Controls.Add(this.btnThem);
             this.groupBox3.Controls.Add(btnTim);
-            this.groupBox3.Controls.Add(this.dtpNgayLap);
-            this.groupBox3.Controls.Add(this.dtpNgayDi);
-            this.groupBox3.Controls.Add(this.dtpNgayDen);
             this.groupBox3.Controls.Add(this.cboTenNV);
             this.groupBox3.Controls.Add(this.cboMaPhong);
             this.groupBox3.Controls.Add(this.cboTenKH);
@@ -271,14 +268,14 @@
             this.Column13,
             this.Column14,
             this.Column15});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDSHD.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDSHD.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDSHD.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDSHD.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgvDSHD.Location = new System.Drawing.Point(3, 24);
@@ -506,144 +503,6 @@
             this.btnThem.TextColor = System.Drawing.Color.White;
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // dtpNgayLap
-            // 
-            // 
-            // 
-            // 
-            this.dtpNgayLap.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.dtpNgayLap.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtpNgayLap.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dtpNgayLap.ButtonDropDown.Visible = true;
-            this.dtpNgayLap.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNgayLap.ForeColor = System.Drawing.Color.Black;
-            this.dtpNgayLap.IsPopupCalendarOpen = false;
-            this.dtpNgayLap.Location = new System.Drawing.Point(670, 28);
-            // 
-            // 
-            // 
-            // 
-            // 
-            // 
-            this.dtpNgayLap.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtpNgayLap.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
-            this.dtpNgayLap.MonthCalendar.ClearButtonVisible = true;
-            // 
-            // 
-            // 
-            this.dtpNgayLap.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.dtpNgayLap.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.dtpNgayLap.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.dtpNgayLap.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.dtpNgayLap.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.dtpNgayLap.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dtpNgayLap.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtpNgayLap.MonthCalendar.DisplayMonth = new System.DateTime(2021, 6, 1, 0, 0, 0, 0);
-            // 
-            // 
-            // 
-            this.dtpNgayLap.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.dtpNgayLap.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.dtpNgayLap.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dtpNgayLap.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtpNgayLap.MonthCalendar.TodayButtonVisible = true;
-            this.dtpNgayLap.Name = "dtpNgayLap";
-            this.dtpNgayLap.Size = new System.Drawing.Size(274, 35);
-            this.dtpNgayLap.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dtpNgayLap.TabIndex = 176;
-            // 
-            // dtpNgayDi
-            // 
-            // 
-            // 
-            // 
-            this.dtpNgayDi.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.dtpNgayDi.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtpNgayDi.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dtpNgayDi.ButtonDropDown.Visible = true;
-            this.dtpNgayDi.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNgayDi.ForeColor = System.Drawing.Color.Black;
-            this.dtpNgayDi.IsPopupCalendarOpen = false;
-            this.dtpNgayDi.Location = new System.Drawing.Point(670, 147);
-            // 
-            // 
-            // 
-            // 
-            // 
-            // 
-            this.dtpNgayDi.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtpNgayDi.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
-            this.dtpNgayDi.MonthCalendar.ClearButtonVisible = true;
-            // 
-            // 
-            // 
-            this.dtpNgayDi.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.dtpNgayDi.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.dtpNgayDi.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.dtpNgayDi.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.dtpNgayDi.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.dtpNgayDi.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dtpNgayDi.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtpNgayDi.MonthCalendar.DisplayMonth = new System.DateTime(2021, 6, 1, 0, 0, 0, 0);
-            // 
-            // 
-            // 
-            this.dtpNgayDi.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.dtpNgayDi.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.dtpNgayDi.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dtpNgayDi.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtpNgayDi.MonthCalendar.TodayButtonVisible = true;
-            this.dtpNgayDi.Name = "dtpNgayDi";
-            this.dtpNgayDi.Size = new System.Drawing.Size(274, 35);
-            this.dtpNgayDi.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dtpNgayDi.TabIndex = 178;
-            // 
-            // dtpNgayDen
-            // 
-            // 
-            // 
-            // 
-            this.dtpNgayDen.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.dtpNgayDen.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtpNgayDen.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dtpNgayDen.ButtonDropDown.Visible = true;
-            this.dtpNgayDen.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNgayDen.ForeColor = System.Drawing.Color.Black;
-            this.dtpNgayDen.IsPopupCalendarOpen = false;
-            this.dtpNgayDen.Location = new System.Drawing.Point(670, 87);
-            // 
-            // 
-            // 
-            // 
-            // 
-            // 
-            this.dtpNgayDen.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtpNgayDen.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
-            this.dtpNgayDen.MonthCalendar.ClearButtonVisible = true;
-            // 
-            // 
-            // 
-            this.dtpNgayDen.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.dtpNgayDen.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.dtpNgayDen.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.dtpNgayDen.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.dtpNgayDen.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.dtpNgayDen.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dtpNgayDen.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtpNgayDen.MonthCalendar.DisplayMonth = new System.DateTime(2021, 6, 1, 0, 0, 0, 0);
-            // 
-            // 
-            // 
-            this.dtpNgayDen.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.dtpNgayDen.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.dtpNgayDen.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dtpNgayDen.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtpNgayDen.MonthCalendar.TodayButtonVisible = true;
-            this.dtpNgayDen.Name = "dtpNgayDen";
-            this.dtpNgayDen.Size = new System.Drawing.Size(274, 35);
-            this.dtpNgayDen.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dtpNgayDen.TabIndex = 177;
             // 
             // cboTenNV
             // 
@@ -1074,14 +933,14 @@
             this.ID_DV,
             this.soluong,
             this.dongia});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDSCTHD.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDSCTHD.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDSCTHD.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDSCTHD.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgvDSCTHD.Location = new System.Drawing.Point(3, 24);
@@ -1343,6 +1202,33 @@
             this.cboTenDV.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cboTenDV.TabIndex = 164;
             // 
+            // dtpNgayLap
+            // 
+            this.dtpNgayLap.CustomFormat = "dd/MM/yyyy hh:mm";
+            this.dtpNgayLap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayLap.Location = new System.Drawing.Point(670, 34);
+            this.dtpNgayLap.Name = "dtpNgayLap";
+            this.dtpNgayLap.Size = new System.Drawing.Size(275, 32);
+            this.dtpNgayLap.TabIndex = 187;
+            // 
+            // dtpNgayDen
+            // 
+            this.dtpNgayDen.CustomFormat = "dd/MM/yyyy hh:mm";
+            this.dtpNgayDen.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayDen.Location = new System.Drawing.Point(669, 87);
+            this.dtpNgayDen.Name = "dtpNgayDen";
+            this.dtpNgayDen.Size = new System.Drawing.Size(275, 32);
+            this.dtpNgayDen.TabIndex = 187;
+            // 
+            // dtpNgayDi
+            // 
+            this.dtpNgayDi.CustomFormat = "dd/MM/yyyy hh:mm";
+            this.dtpNgayDi.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayDi.Location = new System.Drawing.Point(669, 153);
+            this.dtpNgayDi.Name = "dtpNgayDi";
+            this.dtpNgayDi.Size = new System.Drawing.Size(275, 32);
+            this.dtpNgayDi.TabIndex = 187;
+            // 
             // frmHoaDon
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1359,9 +1245,6 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSHD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtpNgayLap)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtpNgayDi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtpNgayDen)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSCTHD)).EndInit();
@@ -1373,9 +1256,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private JTextBox.JTextBox txtTim;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput dtpNgayLap;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput dtpNgayDi;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput dtpNgayDen;
         private DevComponents.DotNetBar.Controls.TextBoxX txtID;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cboHieuLuc;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cboThanhToan;
@@ -1449,5 +1329,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_DV;
         private System.Windows.Forms.DataGridViewTextBoxColumn soluong;
         private System.Windows.Forms.DataGridViewTextBoxColumn dongia;
+        private System.Windows.Forms.DateTimePicker dtpNgayLap;
+        private System.Windows.Forms.DateTimePicker dtpNgayDi;
+        private System.Windows.Forms.DateTimePicker dtpNgayDen;
     }
 }

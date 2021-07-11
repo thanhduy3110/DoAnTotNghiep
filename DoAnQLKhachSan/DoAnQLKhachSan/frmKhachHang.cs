@@ -31,7 +31,7 @@ namespace DoAnQLKhachSan
             cboHieuLuc.Text = dgvKhachHang.Rows[numrow].Cells[8].Value.ToString();
 
         }
-        int flag;
+        bool flag = false;
         void Tang_ID()
         {
             int count = 0;
@@ -65,24 +65,13 @@ namespace DoAnQLKhachSan
         }
         private void btnThem_Click_1(object sender, EventArgs e)
         {
-            Tang_ID();
-            clear_textbox();
-            flag = 1;
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            flag = 2;
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnLuu_Click(object sender, EventArgs e)
-        {
-            if (flag == 1)
+            if(flag==false)
+            {
+                clear_textbox();
+                txtID.Text = (bkh.KH_Select().Rows.Count+1).ToString();
+                flag = true;
+            }    
+            else if (flag == true)
             {
                 if (txtHoTen.Text == "" || dtNgaySinh.Text == "" || txtSDT.Text == "" || txtCMND.Text == "" || cboGioiTinh.Text == "" || cboQuocTich.Text == "" || cboHieuLuc.Text == "")
                 {
@@ -92,16 +81,34 @@ namespace DoAnQLKhachSan
                 {
                     bkh.KH_Them(txtID.Text, txtHoTen.Text, dtNgaySinh.Text, txtSDT.Text, txtEmail.Text, txtCMND.Text, cboGioiTinh.Text, cboQuocTich.Text, cboHieuLuc.Text);
                     MessageBox.Show("thêm thành công rồi nè");
+                    flag = false;
                     dgvKhachHang.DataSource = bkh.KH_Select();
                 }
             }
-            if (flag == 2)
+           
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            if (flag == false)
+            {
+                flag = true;
+            }
+            else if (flag == true)
             {
                 bkh.KH_CapNhat(txtID.Text, txtHoTen.Text, dtNgaySinh.Text, txtSDT.Text, txtEmail.Text, txtCMND.Text, cboGioiTinh.Text, cboQuocTich.Text, cboHieuLuc.Text);
                 MessageBox.Show("thêm thành công rồi nè");
+                flag = false;
                 dgvKhachHang.DataSource = bkh.KH_Select();
             }
         }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+      
 
         private void frmKhachHang_Load(object sender, EventArgs e)
         {

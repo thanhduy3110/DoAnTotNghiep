@@ -18,27 +18,28 @@ namespace DoAnQLKhachSan
             InitializeComponent();
         }
         BUSDichVu bdv = new BUSDichVu();
-        int flag;
-        void Tang_ID()
-        {
-            int count = 0;
-            count = dgvDichVu.Rows.Count;
-            string chuoi = "";
-            int chuoi2 = 0;
-            if (count <= 1)
-            {
-                txtID.Text = "0";
-            }
-            else
-            {
-                chuoi = Convert.ToString(dgvDichVu.Rows[count - 2].Cells[0].Value);
-                chuoi2 = Convert.ToInt32((chuoi.Remove(0, 0)));
-                if (chuoi2 + 1 < 10)
-                    txtID.Text = "" + (chuoi2 + 1).ToString();
-                else if (chuoi2 + 1 < 100)
-                    txtID.Text = "" + (chuoi2 + 1).ToString();
-            }
-        }
+        bool flag=false;
+        //void Tang_ID()
+        //{
+        //    int count = 0;
+        //    count = dgvDichVu.Rows.Count;
+        //    string chuoi = "";
+        //    int chuoi2 = 0;
+        //    if (count <= 1)
+        //    {
+        //        txtID.Text = "0";
+        //    }
+        //    else
+        //    {
+        //        chuoi = Convert.ToString(dgvDichVu.Rows[count - 2].Cells[0].Value);
+        //        chuoi2 = Convert.ToInt32((chuoi.Remove(0, 0)));
+        //        if (chuoi2 + 1 < 10)
+        //            txtID.Text = "" + (chuoi2 + 1).ToString();
+        //        else if (chuoi2 + 1 < 100)
+        //            txtID.Text = "" + (chuoi2 + 1).ToString();
+        //    }
+        //}
+        
         void clear_textbox()
         {
             txtTenDV.Text = "";
@@ -53,15 +54,51 @@ namespace DoAnQLKhachSan
         }
         private void btnThem_Click_1(object sender, EventArgs e)
         {
-            Tang_ID();
-            clear_textbox();
-            flag = 1;
+           
+            if(flag==false)
+            {
+                txtID.Text = (bdv.DV_Select().Rows.Count+1).ToString();
+                flag = true;
+            }
+            else if (flag == true)
+            {
+                if (cboLoaiDV.Text == "" || txtTenDV.Text == "" || rtxtMoTa.Text == "" || pictureBox.Image == null || txtGiaTien.Text == "" || txtSLTon.Text == "" || txtDVT.Text == "" || rtxtGhiChu.Text == "" || cboHieuLuc.Text == "")
+                {
+                    MessageBox.Show("Lỗi");
+                }
+                else
+                {
+                    
+                    clear_textbox();
+                    string fname = txtID.Text + ".jpg"; // tên ảnh theo id
+                    string floder = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan\\DoAnQLKhachSan\\Images\\";//đường dẫn lưu ảnh
+                    string path = System.IO.Path.Combine(floder, fname);//lưu tên ảnh xuống csdl
+                    Image a = pictureBox.Image;
+                    a.Save(path);
+                    bdv.DV_Them(txtID.Text, cboLoaiDV.SelectedValue.ToString(), txtTenDV.Text, rtxtMoTa.Text, fname, txtGiaTien.Text, txtSLTon.Text, txtDVT.Text, rtxtGhiChu.Text, cboHieuLuc.Text);
+                    MessageBox.Show("thêm thành công rồi nè");
+                    flag = false;
+                    dgvDichVu.DataSource = bdv.DV_Select();
+                }
+            }
+          
 
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            flag = 2;
+            if(flag==false)
+            {
+                flag = true;
+            }
+            else if (flag == true)
+            {
+                string fname = txtID.Text + ".jpg"; // tên ảnh theo id
+                bdv.DV_CapNhat(txtID.Text, cboLoaiDV.SelectedValue.ToString(), txtTenDV.Text, rtxtMoTa.Text, fname, txtGiaTien.Text, txtSLTon.Text, txtDVT.Text, rtxtGhiChu.Text, cboHieuLuc.Text);
+                MessageBox.Show("sửa thành công rồi nè");
+                flag = false;
+                dgvDichVu.DataSource = bdv.DV_Select();
+            }
 
         }
 
@@ -72,33 +109,7 @@ namespace DoAnQLKhachSan
             dgvDichVu.DataSource = bdv.DV_Select();
         }
 
-        private void btnLuu_Click(object sender, EventArgs e)
-        {
-            string fname = txtID.Text + ".jpg"; // tên ảnh theo id
-            string floder = "C:\\Users\\USER\\source\\repos\\DoAnTotNghiep\\QLKhachSan\\image";//đường dẫn lưu ảnh
-            string path = System.IO.Path.Combine(floder, fname);//lưu tên ảnh xuống csdl
-            Image a = pictureBox.Image;
-            a.Save(path);
-            if (flag == 1)
-            {
-                if (cboLoaiDV.Text == "" || txtTenDV.Text == "" || rtxtMoTa.Text == "" || pictureBox.Image == null || txtGiaTien.Text == "" || txtSLTon.Text == "" || txtDVT.Text == "" || rtxtGhiChu.Text == "" || cboHieuLuc.Text == "")
-                {
-                    MessageBox.Show("Lỗi");
-                }
-                else
-                {
-                    bdv.DV_Them(txtID.Text, cboLoaiDV.SelectedValue.ToString(), txtTenDV.Text, rtxtMoTa.Text, fname, txtGiaTien.Text, txtSLTon.Text, txtDVT.Text, rtxtGhiChu.Text, cboHieuLuc.Text);
-                    MessageBox.Show("thêm thành công rồi nè");
-                    dgvDichVu.DataSource = bdv.DV_Select();
-                }
-            }
-            if (flag == 2)
-            {
-                bdv.DV_CapNhat(txtID.Text, cboLoaiDV.SelectedValue.ToString(), txtTenDV.Text, rtxtMoTa.Text, fname, txtGiaTien.Text, txtSLTon.Text, txtDVT.Text, rtxtGhiChu.Text, cboHieuLuc.Text);
-                MessageBox.Show("sửa thành công rồi nè");
-                dgvDichVu.DataSource = bdv.DV_Select();
-            }
-        }
+       
 
         private void frmDichVu_Load(object sender, EventArgs e)
         {
@@ -118,7 +129,7 @@ namespace DoAnQLKhachSan
             txtDVT.Text = dgvDichVu.Rows[numrow].Cells[7].Value.ToString();
             rtxtGhiChu.Text = dgvDichVu.Rows[numrow].Cells[8].Value.ToString();
             cboHieuLuc.Text = dgvDichVu.Rows[numrow].Cells[9].Value.ToString();
-            string floder = "C:\\Users\\USER\\source\\repos\\DoAnTotNghiep\\QLKhachSan\\image\\" + txtHinhAnh.Text;
+            string floder = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan\\DoAnQLKhachSan\\Images\\" + txtHinhAnh.Text;
             Bitmap a = new Bitmap(floder);
             pictureBox.Image = a;
         }

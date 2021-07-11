@@ -30,9 +30,10 @@
         {
             ePOSOne.btnProduct.Button_WOC btnXoaTatCa;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnXoa = new ePOSOne.btnProduct.Button_WOC();
             this.btnSua = new ePOSOne.btnProduct.Button_WOC();
-            this.btnLuu = new ePOSOne.btnProduct.Button_WOC();
             this.btnThem = new ePOSOne.btnProduct.Button_WOC();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -57,11 +58,6 @@
             this.pictureBox45 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvPhongDaDat = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dtpNgayDi = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.dtpNgayDen = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
@@ -74,6 +70,11 @@
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             btnXoaTatCa = new ePOSOne.btnProduct.Button_WOC();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -172,33 +173,6 @@
             this.btnSua.TextColor = System.Drawing.Color.White;
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnLuu.BorderColor = System.Drawing.Color.Black;
-            this.btnLuu.ButtonColor = System.Drawing.Color.Blue;
-            this.btnLuu.CausesValidation = false;
-            this.btnLuu.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnLuu.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.btnLuu.FlatAppearance.BorderSize = 0;
-            this.btnLuu.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.btnLuu.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
-            this.btnLuu.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
-            this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLuu.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuu.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Location = new System.Drawing.Point(997, 338);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.OnHoverBorderColor = System.Drawing.Color.Red;
-            this.btnLuu.OnHoverButtonColor = System.Drawing.Color.Yellow;
-            this.btnLuu.OnHoverTextColor = System.Drawing.Color.Black;
-            this.btnLuu.Size = new System.Drawing.Size(117, 48);
-            this.btnLuu.TabIndex = 170;
-            this.btnLuu.Text = "LƯU";
-            this.btnLuu.TextColor = System.Drawing.Color.White;
-            this.btnLuu.UseVisualStyleBackColor = true;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnThem
             // 
@@ -461,6 +435,14 @@
             // dgvPhongDaDat
             // 
             this.dgvPhongDaDat.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPhongDaDat.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPhongDaDat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPhongDaDat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -468,62 +450,31 @@
             this.Column8,
             this.Column9,
             this.Column10});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPhongDaDat.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPhongDaDat.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPhongDaDat.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgvPhongDaDat.Location = new System.Drawing.Point(3, 24);
             this.dgvPhongDaDat.Name = "dgvPhongDaDat";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPhongDaDat.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvPhongDaDat.RowHeadersVisible = false;
             this.dgvPhongDaDat.RowHeadersWidth = 51;
             this.dgvPhongDaDat.RowTemplate.Height = 24;
             this.dgvPhongDaDat.Size = new System.Drawing.Size(1460, 341);
             this.dgvPhongDaDat.TabIndex = 5;
             this.dgvPhongDaDat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhongDaDat_CellClick);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "id";
-            this.Column1.HeaderText = "ID";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "id_phieudp";
-            this.Column7.HeaderText = "ID_PhieuDat";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 125;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "id_phong";
-            this.Column8.HeaderText = "ID_Phong";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 130;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "ngayden";
-            this.Column9.HeaderText = "Ngày đến";
-            this.Column9.MinimumWidth = 6;
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 125;
-            // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "ngaydi";
-            this.Column10.HeaderText = "Ngày đi";
-            this.Column10.MinimumWidth = 6;
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 125;
             // 
             // groupBox2
             // 
@@ -540,7 +491,6 @@
             this.groupBox2.Controls.Add(this.labelX2);
             this.groupBox2.Controls.Add(this.btnXoa);
             this.groupBox2.Controls.Add(this.btnSua);
-            this.groupBox2.Controls.Add(this.btnLuu);
             this.groupBox2.Controls.Add(this.btnThem);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(2, 2);
@@ -770,6 +720,47 @@
             this.labelX2.TabIndex = 176;
             this.labelX2.Text = "ID Phòng đã đặt:";
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "id";
+            this.Column1.HeaderText = "ID";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Visible = false;
+            this.Column1.Width = 125;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "id_phieudp";
+            this.Column7.HeaderText = "ID_PhieuDat";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 125;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "sophong";
+            this.Column8.HeaderText = "Số Phòng";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 130;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "ngayden";
+            this.Column9.HeaderText = "Ngày đến";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 125;
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "ngaydi";
+            this.Column10.HeaderText = "Ngày đi";
+            this.Column10.MinimumWidth = 6;
+            this.Column10.Name = "Column10";
+            this.Column10.Width = 125;
+            // 
             // frmPhongDaDat
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -847,14 +838,13 @@
         private DevComponents.DotNetBar.Controls.ComboBoxEx cboID_PDP;
         private ePOSOne.btnProduct.Button_WOC btnXoa;
         private ePOSOne.btnProduct.Button_WOC btnSua;
-        private ePOSOne.btnProduct.Button_WOC btnLuu;
         private ePOSOne.btnProduct.Button_WOC btnThem;
+        private DevComponents.Editors.DateTimeAdv.DateTimeInput dtpNgayDi;
+        private DevComponents.Editors.DateTimeAdv.DateTimeInput dtpNgayDen;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput dtpNgayDi;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput dtpNgayDen;
     }
 }

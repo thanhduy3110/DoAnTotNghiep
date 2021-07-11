@@ -12,7 +12,7 @@ namespace DoAnQLKhachSan
 {
     public partial class frmMenu : Form
     {
-        public string MaNV="", LoaiNV="";
+        private string MaNV="", LoaiNV="";
         public frmMenu()
         {
             InitializeComponent();
@@ -61,13 +61,30 @@ namespace DoAnQLKhachSan
 
         private void btnLoaiNV_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmLoaiNhanVien(MaNV,LoaiNV));
+            //if (this.LoaiNV == "4")
+            //{
+                openChildForm(new frmLoaiNhanVien());
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Bạn không có quyền vào chức năng này");
+            //}
+
         }
 
+       
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmQLNhanVien());
-        }
+        //    if(this.LoaiNV == "4")
+        //    {
+               openChildForm(new frmQLNhanVien());
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Bạn không có quyền vào chức năng này");
+            //}
+        }    
+          
 
         private void btnKhachHang_Click(object sender, EventArgs e)
         {
@@ -83,12 +100,28 @@ namespace DoAnQLKhachSan
 
         private void btnPhong_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmPhong());
+            
+            //if (this.LoaiNV == "4")
+            //{
+                openChildForm(new frmPhong());
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Bạn không có quyền vào chức năng này");
+            //}
         }
 
         private void btnLoaiDV_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmLoaiDichVu());
+            
+            //if (this.LoaiNV == "4")
+            //{
+                openChildForm(new frmLoaiDichVu());
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Bạn không có quyền vào chức năng này");
+            //}
         }
 
         private void btnDichVu_Click(object sender, EventArgs e)
@@ -98,11 +131,20 @@ namespace DoAnQLKhachSan
 
         private void btnLoaiPhong_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmLoaiPhong());
-        }
+            
+            //if (this.LoaiNV == "4")
+            //{
+                openChildForm(new frmLoaiPhong());
+             //}
+        //    else
+        //    {
+        //        MessageBox.Show("Bạn không có quyền vào chức năng này");
+        //    }
+}
 
         private void btnPhieuDatPhong_Click(object sender, EventArgs e)
         {
+
             openChildForm(new frmPhieuDatPhong());
         }
 

@@ -170,7 +170,7 @@ namespace DoAnQLKhachSan
                 else
                 {
                     xulychucnang(true);
-                    bHD.HoaDon_Them(txtID.Text, txtMaHD.Text, cboTenNV.SelectedValue.ToString(), cboTenKH.SelectedValue.ToString(), cboMaPhong.SelectedValue.ToString(), Convert.ToDateTime(dtpNgayLap.Text).ToString("yyyy-MM-dd"), Convert.ToDateTime(dtpNgayDen.Text).ToString("yyyy-MM-dd"), Convert.ToDateTime(dtpNgayDi.Text).ToString("yyyy-MM-dd"), cboHinhThucThue.SelectedIndex, lblTongTienPhong.Text, lblTongTienDV.Text, lblTongTien.Text, rtxtGhiChu.Text, cboThanhToan.SelectedIndex, cboHieuLuc.SelectedIndex);
+                    bHD.HoaDon_Them(txtID.Text, txtMaHD.Text, cboTenNV.SelectedValue.ToString(), cboTenKH.SelectedValue.ToString(), cboMaPhong.SelectedValue.ToString(), Convert.ToDateTime(dtpNgayLap.Text).ToString("yyyy/MM/dd hh:mm"), Convert.ToDateTime(dtpNgayDen.Text).ToString("yyyy/MM/dd hh:mm"), Convert.ToDateTime(dtpNgayDi.Text).ToString("yyyy/MM/dd hh:mm"), cboHinhThucThue.SelectedIndex, lblTongTienPhong.Text, lblTongTienDV.Text, lblTongTien.Text, rtxtGhiChu.Text, cboThanhToan.SelectedIndex, cboHieuLuc.SelectedIndex);
                     MessageBox.Show("Thêm thành công ");
                     dgvDSHD.DataSource = bHD.HoaDon_Select();
                 }
@@ -179,7 +179,7 @@ namespace DoAnQLKhachSan
             if (flag == 2)
             {
                 xulychucnang(true);
-                bHD.HoaDon_CapNhat(txtID.Text, txtMaHD.Text, cboTenNV.SelectedValue.ToString(), cboTenKH.SelectedValue.ToString(), cboMaPhong.SelectedValue.ToString(), Convert.ToDateTime(dtpNgayLap.Text).ToString("yyyy-MM-dd"), Convert.ToDateTime(dtpNgayDen.Text).ToString("yyyy-MM-dd"), Convert.ToDateTime(dtpNgayDi.Text).ToString("yyyy-MM-dd"), cboHinhThucThue.SelectedIndex, lblTongTienPhong.Text, lblTongTienDV.Text, lblTongTien.Text, rtxtGhiChu.Text, cboThanhToan.SelectedIndex, cboHieuLuc.SelectedIndex);
+                bHD.HoaDon_CapNhat(txtID.Text, txtMaHD.Text, cboTenNV.SelectedValue.ToString(), cboTenKH.SelectedValue.ToString(), cboMaPhong.SelectedValue.ToString(), Convert.ToDateTime(dtpNgayLap.Text).ToString("yyyy/MM/dd hh:mm"), Convert.ToDateTime(dtpNgayDen.Text).ToString("yyyy/MM/dd hh:mm"), Convert.ToDateTime(dtpNgayDi.Text).ToString("yyyy/MM/dd hh:mm"), cboHinhThucThue.SelectedIndex, lblTongTienPhong.Text, lblTongTienDV.Text, lblTongTien.Text, rtxtGhiChu.Text, cboThanhToan.SelectedIndex, cboHieuLuc.SelectedIndex);
                 MessageBox.Show("Thêm thành công ");
                 dgvDSHD.DataSource = bHD.HoaDon_Select();
             }

@@ -27,13 +27,13 @@ namespace BUS
         }
 
         //Thêm Nhân Viên
-        public int NhanVien_Them(int ID, int ID_LoaiNV, string MaNV, string MK, string Hoten, string NgaySinh, string SDT, string DChi, string Email, int CMND, int GioiTinh, string Hinh, int HieuLuc)
+        public int NhanVien_Them(int ID, int ID_LoaiNV, string MaNV, string MK, string Hoten, string NgaySinh, string SDT, string DChi, string Email, int CMND, bool GioiTinh, string Hinh, int HieuLuc)
         {
             return NV.NhanVien_Them(ID, ID_LoaiNV, MaNV, MK, Hoten, NgaySinh, SDT, DChi, Email, CMND, GioiTinh, Hinh, HieuLuc);
         }
 
         //Sữa Nhân Viên
-        public int NhanVien_CapNhat(int ID, int ID_LoaiNV, string MaNV, string MK, string Hoten, string NgaySinh, string SDT, string DChi, string Email, int CMND, int GioiTinh, string Hinh, int HieuLuc)
+        public int NhanVien_CapNhat(int ID, int ID_LoaiNV, string MaNV, string MK, string Hoten, string NgaySinh, string SDT, string DChi, string Email, int CMND, bool GioiTinh, string Hinh, int HieuLuc)
         {
             return NV.NhanVien_CapNhat(ID, ID_LoaiNV, MaNV, MK, Hoten, NgaySinh, SDT, DChi, Email, CMND, GioiTinh, Hinh, HieuLuc);
         }

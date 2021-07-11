@@ -19,7 +19,7 @@ namespace DoAnQLKhachSan
         }
 
         BUSPhongDaDat bPDD = new BUSPhongDaDat();
-        int flag;
+        bool flag=false;
         void Tang_ID()
         {
             int count = 0;
@@ -48,7 +48,6 @@ namespace DoAnQLKhachSan
 
         void clear_textbox()
         {
-            Tang_ID();
             cboID_PDP.Text = "";
             cboMaPhong.Text = "";
             dtpNgayDen.Text = "";
@@ -59,7 +58,6 @@ namespace DoAnQLKhachSan
             btnThem.Enabled = t;
             btnXoa.Enabled = t;
             btnSua.Enabled = t;
-            btnLuu.Enabled = !t;
 
         }
 
@@ -82,25 +80,14 @@ namespace DoAnQLKhachSan
 
         private void btnThem_Click_1(object sender, EventArgs e)
         {
-            xulychucnang(false);
-            clear_textbox();
-            flag = 1;
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            xulychucnang(false);
-            flag = 2;
-        }
-
-        private void btnLuu_Click(object sender, EventArgs e)
-        {
-            if (flag == 1)
+            if(flag==false)
+            {
+                clear_textbox();
+                txtID.Text = (bPDD.PhongDaDat_Select().Rows.Count + 1).ToString();
+                flag = true;
+            }    
+           
+            else if (flag == true)
             {
 
                 if (cboID_PDP.Text == "" || cboMaPhong.Text == "")
@@ -112,10 +99,25 @@ namespace DoAnQLKhachSan
                     xulychucnang(true);
                     bPDD.PhongDaDat_Them(txtID.Text, cboID_PDP.SelectedValue.ToString(), cboMaPhong.SelectedValue.ToString(), dtpNgayDen.Text, dtpNgayDi.Text);
                     MessageBox.Show("Thêm thành công ");
+                    flag = false;
                     dgvPhongDaDat.DataSource = bPDD.PhongDaDat_Select();
                 }
             }
-            if (flag == 2)
+            
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            if(flag==false)
+            {
+                flag = true;
+            }    
+            else if (flag == true)
             {
                 if (cboID_PDP.Text == "" || cboMaPhong.Text == "")
                 {
@@ -126,10 +128,13 @@ namespace DoAnQLKhachSan
                     xulychucnang(true);
                     bPDD.PhongDaDat_CapNhat(txtID.Text, cboID_PDP.SelectedValue.ToString(), cboMaPhong.SelectedValue.ToString(), dtpNgayDen.Text, dtpNgayDi.Text);
                     MessageBox.Show("Sữa thành công ");
+                    flag = false;
                     dgvPhongDaDat.DataSource = bPDD.PhongDaDat_Select();
                 }
             }
         }
+
+       
 
         private void dgvPhongDaDat_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -140,7 +145,7 @@ namespace DoAnQLKhachSan
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Không có dữ liệu");
+                
             }
         }
 

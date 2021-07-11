@@ -41,7 +41,6 @@ namespace DoAnQLKhachSan
         }
         void clear_textbox()
         {
-            Tang_ID();
             txtTenLoaiPhong.Text = "";
             txtSoGiuongDoi.Text = "";
             txtSoGiuongDon.Text = "";
@@ -57,7 +56,7 @@ namespace DoAnQLKhachSan
             txtSoKhach.Text = dgvDSLoaiPhong.Rows[numrow].Cells[4].Value.ToString();
             cboHieuLuc.Text = dgvDSLoaiPhong.Rows[numrow].Cells[5].Value.ToString();
         }
-        int flag;
+        bool flag=false;
         private void frmLoaiPhong_Load(object sender, EventArgs e)
         {
             dgvDSLoaiPhong.DataSource = blp.LP_Select();
@@ -65,9 +64,27 @@ namespace DoAnQLKhachSan
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-
-            clear_textbox();
-            flag = 1;
+            if(flag==false)
+            {
+                clear_textbox();
+                txtID.Text = (blp.LP_Select().Rows.Count+1).ToString();
+                flag = true;
+            }    
+            else if (flag == true)
+            {
+                if (txtTenLoaiPhong.Text == "" || txtSoGiuongDoi.Text == "" || txtSoGiuongDon.Text == "" || txtSoKhach.Text == "" || cboHieuLuc.Text == "")
+                {
+                    MessageBox.Show("Lỗi");
+                }
+                else
+                {
+                    blp.LP_Them(txtID.Text, txtTenLoaiPhong.Text, txtSoGiuongDoi.Text, txtSoGiuongDon.Text, txtSoKhach.Text, cboHieuLuc.Text);
+                    MessageBox.Show("Thêm thành công ");
+                    flag = false;
+                    dgvDSLoaiPhong.DataSource = blp.LP_Select();
+                }
+            }
+           
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -79,31 +96,20 @@ namespace DoAnQLKhachSan
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            flag = 2;
-        }
-
-        private void btnLuu_Click(object sender, EventArgs e)
-        {
-            if (flag == 1)
+            if(flag==false)
             {
-                if (txtTenLoaiPhong.Text == "" || txtSoGiuongDoi.Text == "" || txtSoGiuongDon.Text == "" || txtSoKhach.Text == "" || cboHieuLuc.Text == "")
-                {
-                    MessageBox.Show("Lỗi");
-                }
-                else
-                {
-                    blp.LP_Them(txtID.Text, txtTenLoaiPhong.Text, txtSoGiuongDoi.Text, txtSoGiuongDon.Text, txtSoKhach.Text, cboHieuLuc.Text);
-                    MessageBox.Show("Thêm thành công ");
-                    dgvDSLoaiPhong.DataSource = blp.LP_Select();
-                }
-            }
-            if (flag == 2)
+                flag = true;
+            }    
+            else if (flag == true)
             {
                 blp.LP_CapNhat(txtID.Text, txtTenLoaiPhong.Text, txtSoGiuongDoi.Text, txtSoGiuongDon.Text, txtSoKhach.Text, cboHieuLuc.Text);
                 MessageBox.Show("Sữa thành công ");
+                flag = false;
                 dgvDSLoaiPhong.DataSource = blp.LP_Select();
             }
         }
+
+       
 
         private void dgvDSLoaiPhong_CellClick(object sender, DataGridViewCellEventArgs e)
         {

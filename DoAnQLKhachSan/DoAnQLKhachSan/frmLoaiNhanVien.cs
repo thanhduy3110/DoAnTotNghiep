@@ -26,7 +26,7 @@ namespace DoAnQLKhachSan
             this.LoaiNV = LoaiNV;
         }
         BUSLoaiNV bLNV = new BUSLoaiNV();
-        int flag;
+        bool flag = false;
 
         private void btn_Thoat_Click(object sender, EventArgs e)
         {
@@ -56,7 +56,6 @@ namespace DoAnQLKhachSan
 
         void clear_textbox()
         {
-            Tang_ID();
             txtTenLoaiNV.Text = "";
             cboHieuLuc.Text = "";
         }
@@ -65,7 +64,6 @@ namespace DoAnQLKhachSan
             btnThem.Enabled = t;
             btnXoa.Enabled = t;
             btnSua.Enabled = t;
-            btnLuu.Enabled = !t;
         }
 
         void xulytextbox(Boolean t)
@@ -92,39 +90,16 @@ namespace DoAnQLKhachSan
 
         private void btnThem_Click_1(object sender, EventArgs e)
         {
-            if(LoaiNV=="1")
+
+            if (flag == false)
             {
                 clear_textbox();
-                xulychucnang(false);
                 xulytextbox(false);
-                flag = 1;
-            } 
-            else
+                txtID.Text = (bLNV.LoaiNV_selecl().Rows.Count + 1).ToString();
+                flag = true;
+            }
+            else if (flag == true)
             {
-                MessageBox.Show("Bạn không có quyền thêm loại nhân viên");
-            }    
-           
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            bLNV.LoaiNV_Xoa(Int32.Parse(txtID.Text), 0);
-            MessageBox.Show("Xóa thành công ");
-            dgvDSLoaiNV.DataSource = bLNV.LoaiNV_selecl();
-        }
-
-        private void ttnSua_Click(object sender, EventArgs e)
-        {
-            xulychucnang(false);
-            xulytextbox(false);
-            flag = 2;
-        }
-
-        private void btnLuu_Click(object sender, EventArgs e)
-        {
-            if (flag == 1)
-            {
-                xulychucnang(true);
                 if (txtTenLoaiNV.Text == "" || cboHieuLuc.Text == "")
                 {
                     MessageBox.Show("Lỗi");
@@ -133,17 +108,42 @@ namespace DoAnQLKhachSan
                 {
                     bLNV.LoaiNV_Them(Int32.Parse(txtID.Text), txtTenLoaiNV.Text, cboHieuLuc.SelectedIndex);
                     MessageBox.Show("Thêm thành công ");
+                    flag = false;
                     dgvDSLoaiNV.DataSource = bLNV.LoaiNV_selecl();
+                    
                 }
             }
-            if (flag == 2)
+
+        }
+
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            bLNV.LoaiNV_Xoa(Int32.Parse(txtID.Text), 0);
+            MessageBox.Show("Xóa thành công ");
+
+            dgvDSLoaiNV.DataSource = bLNV.LoaiNV_selecl();
+        }
+
+        private void ttnSua_Click(object sender, EventArgs e)
+        {
+            //xulychucnang(false);
+            //xulytextbox(false);
+            if (flag==false)
+            {
+                flag = true;
+            }
+            else if(flag==true)
             {
                 xulychucnang(true);
                 bLNV.LoaiNV_CapNhat(Int32.Parse(txtID.Text), txtTenLoaiNV.Text, cboHieuLuc.SelectedIndex);
                 MessageBox.Show("Sữa thành công ");
+                flag = false;
                 dgvDSLoaiNV.DataSource = bLNV.LoaiNV_selecl();
             }
         }
+
+      
 
         private void frmLoaiNhanVien_Load(object sender, EventArgs e)
         {
@@ -172,7 +172,7 @@ namespace DoAnQLKhachSan
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Không có dữ liệu");
+                
             }
            
         }

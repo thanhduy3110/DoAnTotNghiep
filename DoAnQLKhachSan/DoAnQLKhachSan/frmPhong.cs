@@ -47,7 +47,7 @@ namespace DoAnQLKhachSan
         }
 
        
-        int flag;
+        bool flag=false;
         void Tang_ID()
         {
             int count = 0;
@@ -84,24 +84,14 @@ namespace DoAnQLKhachSan
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            Tang_ID();
-            clear_textbox();
-            flag = 1;
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            flag = 2;
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnLuu_Click(object sender, EventArgs e)
-        {
-            if (flag == 1)
+            if(flag==false)
+            {
+                clear_textbox();
+                txtID.Text = (Bphong.Phong_Select().Rows.Count+1).ToString();
+                flag = true;
+            }    
+            
+            else if (flag == true)
             {
                 if (cboTenLP.Text == "" || txtTang.Text == "" || txtTang.Text == "" || txtGiaThueTheoNgay.Text == "" || txtGiaThueTheoGio.Text == "" || rtxtGhiChu.Text == "" || cboGocNhin.Text == "" || cboBonTam.Text == "" || cboConTrong.Text == "" || cboHieuLuc.Text == "")
                 {
@@ -111,16 +101,33 @@ namespace DoAnQLKhachSan
                 {
                     Bphong.P_Them(txtID.Text, cboTenLP.SelectedValue.ToString(), txtTang.Text, txtTang.Text, txtGiaThueTheoNgay.Text, txtGiaThueTheoGio.Text, rtxtGhiChu.Text, cboGocNhin.Text, cboBonTam.Text, cboConTrong.Text, cboHieuLuc.Text);
                     MessageBox.Show("thêm thành công rồi nè");
+                    flag = false;
                     dgvDSPhong.DataSource = Bphong.Phong_Select();
                 }
             }
-            if (flag == 2)
+            
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            if(flag==false)
+            {
+                flag = true;
+            }    
+            else if (flag == true)
             {
                 Bphong.P_CapNhat(txtID.Text, cboTenLP.SelectedValue.ToString(), txtTang.Text, txtTang.Text, txtGiaThueTheoNgay.Text, txtGiaThueTheoGio.Text, rtxtGhiChu.Text, cboGocNhin.Text, cboBonTam.Text, cboConTrong.Text, cboHieuLuc.Text);
                 MessageBox.Show("sửa thành công rồi nè");
+                flag = false;
                 dgvDSPhong.DataSource = Bphong.Phong_Select();
             }
         }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
         private void dgvDSPhong_CellClick(object sender, DataGridViewCellEventArgs e)
         {

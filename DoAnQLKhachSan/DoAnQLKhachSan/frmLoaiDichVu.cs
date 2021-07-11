@@ -48,28 +48,18 @@ namespace DoAnQLKhachSan
             txtTenLoaiDV.Text = "";
             cboHieuLuc.Text = "";
         }
-        int flag;
+        bool flag=false;
 
         private void btnThem_Click_1(object sender, EventArgs e)
         {
-            Tang_ID();
-            clear_textbox();
-            flag = 1;
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            flag = 2;
-        }
-
-        private void btnLuu_Click(object sender, EventArgs e)
-        {
-            if (flag == 1)
+            if(flag==false)
+            {
+                clear_textbox();
+                txtID.Text = (ldv.LDV_Select().Rows.Count+1).ToString();
+                flag = true;
+            }    
+            
+            else if (flag == true)
             {
                 if (txtTenLoaiDV.Text == "" || cboHieuLuc.Text == "")
                 {
@@ -79,16 +69,34 @@ namespace DoAnQLKhachSan
                 {
                     ldv.LDV_Them(txtID.Text, txtTenLoaiDV.Text, cboHieuLuc.Text);
                     MessageBox.Show("thêm thành công rồi nè");
+                    flag = false;
                     dgvLoaiDV.DataSource = ldv.LDV_Select();
                 }
             }
-            if (flag == 2)
+           
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            if(flag==false)
+            {
+                flag = true;
+            }    
+            if (flag == true)
             {
                 ldv.LDV_CapNhat(txtID.Text, txtTenLoaiDV.Text, cboHieuLuc.Text);
                 MessageBox.Show("sửa thành công rồi nè");
+                flag = false;
                 dgvLoaiDV.DataSource = ldv.LDV_Select();
             }
         }
+
+     
 
         void hienthi_textbox(int numrow)
         {
