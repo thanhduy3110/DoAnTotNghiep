@@ -22,11 +22,11 @@ namespace BUS
             return ldv.loaidv_select();
         }
 
-        public int LDV_Them(string ID, string TenLoaiDV, string HieuLuc)
+        public int LDV_Them(string ID, string TenLoaiDV, bool HieuLuc)
         {
             return ldv.loaidv_them(ID, TenLoaiDV, HieuLuc);
         }
-        public int LDV_CapNhat(string ID, string TenLoaiDV, string HieuLuc)
+        public int LDV_CapNhat(string ID, string TenLoaiDV, bool HieuLuc)
         {
             return ldv.loaidv_capnhat(ID, TenLoaiDV, HieuLuc);
         }

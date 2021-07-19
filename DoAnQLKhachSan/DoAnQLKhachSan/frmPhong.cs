@@ -31,21 +31,7 @@ namespace DoAnQLKhachSan
             dgvDSPhong.DataSource = Bphong.Phong_Select();
 
         }
-        void hienthi_textbox(int numrow)
-        {
-            txtID.Text = dgvDSPhong.Rows[numrow].Cells[0].Value.ToString();
-            cboTenLP.SelectedValue = dgvDSPhong.Rows[numrow].Cells[1].Value.ToString();
-            txtTang.Text = dgvDSPhong.Rows[numrow].Cells[2].Value.ToString();
-            txtSoPhong.Text = dgvDSPhong.Rows[numrow].Cells[3].Value.ToString();
-            txtGiaThueTheoNgay.Text = dgvDSPhong.Rows[numrow].Cells[4].Value.ToString();
-            txtGiaThueTheoGio.Text = dgvDSPhong.Rows[numrow].Cells[5].Value.ToString();
-            rtxtGhiChu.Text = dgvDSPhong.Rows[numrow].Cells[6].Value.ToString();
-            cboGocNhin.Text = dgvDSPhong.Rows[numrow].Cells[7].Value.ToString();
-            cboBonTam.Text = dgvDSPhong.Rows[numrow].Cells[8].Value.ToString();
-            cboConTrong.Text = dgvDSPhong.Rows[numrow].Cells[9].Value.ToString();
-            cboHieuLuc.Text = dgvDSPhong.Rows[numrow].Cells[10].Value.ToString();
-        }
-
+       
        
         bool flag=false;
         void Tang_ID()
@@ -76,58 +62,160 @@ namespace DoAnQLKhachSan
             txtGiaThueTheoGio.Text = "";
             txtGiaThueTheoNgay.Text = "";
             rtxtGhiChu.Text = "";
-            cboGocNhin.Text = "";
-            cboGocNhin.Text = "";
-            cboConTrong.Text = "";
-            cboHieuLuc.Text = "";
+           
         }
 
-        private void btnThem_Click(object sender, EventArgs e)
+      
+ 
+
+        private void txtTim_TextChangeEvent(object sender, EventArgs e)
         {
-            if(flag==false)
+            Bphong.HienThiDanhSach(txtTim.TextValue, dgvDSPhong);
+        }
+
+       
+        private void btnThem_Click_1(object sender, EventArgs e)
+        {
+            if (flag == false)
             {
                 clear_textbox();
-                txtID.Text = (Bphong.Phong_Select().Rows.Count+1).ToString();
+                txtID.Text = (Bphong.Phong_Select().Rows.Count + 1).ToString();
+                chkBonTam.Checked = false;
+                chkGocNhin.Checked = false;
+                chkHieuLuc.Checked = false;
                 flag = true;
-            }    
-            
+            }
+
             else if (flag == true)
             {
-                if (cboTenLP.Text == "" || txtTang.Text == "" || txtTang.Text == "" || txtGiaThueTheoNgay.Text == "" || txtGiaThueTheoGio.Text == "" || rtxtGhiChu.Text == "" || cboGocNhin.Text == "" || cboBonTam.Text == "" || cboConTrong.Text == "" || cboHieuLuc.Text == "")
+                if (cboTenLP.Text == "" || txtTang.Text == "" || txtTang.Text == "" || txtGiaThueTheoNgay.Text == "" || txtGiaThueTheoGio.Text == "" || rtxtGhiChu.Text == "")
                 {
                     MessageBox.Show("Lỗi");
                 }
                 else
                 {
-                    Bphong.P_Them(txtID.Text, cboTenLP.SelectedValue.ToString(), txtTang.Text, txtTang.Text, txtGiaThueTheoNgay.Text, txtGiaThueTheoGio.Text, rtxtGhiChu.Text, cboGocNhin.Text, cboBonTam.Text, cboConTrong.Text, cboHieuLuc.Text);
+                    bool hieuluc, bontam, gocnhin;
+
+                    if (chkBonTam.Checked == true)
+                    {
+                        bontam = true;
+                    }
+                    else
+                    {
+                        bontam = false;
+                    }
+                    if (chkHieuLuc.Checked == true)
+                    {
+                        hieuluc = true;
+                    }
+                    else
+                    {
+                        hieuluc = false;
+                    }
+                    if (chkGocNhin.Checked == true)
+                    {
+                        gocnhin = true;
+                    }
+                    else
+                    {
+                        gocnhin = false;
+                    }
+                    Bphong.P_Them(txtID.Text, cboTenLP.SelectedValue.ToString(), txtTang.Text, txtTang.Text, txtGiaThueTheoNgay.Text, txtGiaThueTheoGio.Text, rtxtGhiChu.Text, gocnhin, bontam, cboConTrong.SelectedIndex, hieuluc);
                     MessageBox.Show("thêm thành công rồi nè");
                     flag = false;
                     dgvDSPhong.DataSource = Bphong.Phong_Select();
                 }
             }
-            
         }
 
-        private void btnSua_Click(object sender, EventArgs e)
+        private void btnSua_Click_1(object sender, EventArgs e)
         {
-            if(flag==false)
+            if (flag == false)
             {
                 flag = true;
-            }    
+            }
             else if (flag == true)
             {
-                Bphong.P_CapNhat(txtID.Text, cboTenLP.SelectedValue.ToString(), txtTang.Text, txtTang.Text, txtGiaThueTheoNgay.Text, txtGiaThueTheoGio.Text, rtxtGhiChu.Text, cboGocNhin.Text, cboBonTam.Text, cboConTrong.Text, cboHieuLuc.Text);
+                bool hieuluc, bontam, gocnhin;
+
+                if (chkBonTam.Checked == true)
+                {
+                    bontam = true;
+                }
+                else
+                {
+                    bontam = false;
+                }
+                if (chkHieuLuc.Checked == true)
+                {
+                    hieuluc = true;
+                }
+                else
+                {
+                    hieuluc = false;
+                }
+                if (chkGocNhin.Checked == true)
+                {
+                    gocnhin = true;
+                }
+                else
+                {
+                    gocnhin = false;
+                }
+                Bphong.P_CapNhat(txtID.Text, cboTenLP.SelectedValue.ToString(), txtTang.Text, txtTang.Text, txtGiaThueTheoNgay.Text, txtGiaThueTheoGio.Text, rtxtGhiChu.Text, gocnhin, bontam, cboConTrong.SelectedIndex, hieuluc);
                 MessageBox.Show("sửa thành công rồi nè");
                 flag = false;
                 dgvDSPhong.DataSource = Bphong.Phong_Select();
             }
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
+        private void btnXoa_Click_1(object sender, EventArgs e)
         {
 
         }
 
+        void hienthi_textbox(int numrow)
+        {
+            txtID.Text = dgvDSPhong.Rows[numrow].Cells[0].Value.ToString();
+            cboTenLP.Text= dgvDSPhong.Rows[numrow].Cells[1].Value.ToString();
+            txtSoPhong.Text= dgvDSPhong.Rows[numrow].Cells[2].Value.ToString();
+            txtTang.Text= dgvDSPhong.Rows[numrow].Cells[3].Value.ToString();
+            txtGiaThueTheoNgay.Text= dgvDSPhong.Rows[numrow].Cells[4].Value.ToString();
+            txtGiaThueTheoGio.Text= dgvDSPhong.Rows[numrow].Cells[5].Value.ToString();
+            rtxtGhiChu.Text= dgvDSPhong.Rows[numrow].Cells[6].Value.ToString();
+            cboConTrong.Text= dgvDSPhong.Rows[numrow].Cells[9].Value.ToString();
+
+            string GocNhin= dgvDSPhong.Rows[numrow].Cells[7].Value.ToString();
+            string BonTam= dgvDSPhong.Rows[numrow].Cells[8].Value.ToString();
+            string HieuLuc= dgvDSPhong.Rows[numrow].Cells[10].Value.ToString();
+            if (GocNhin== "Có ban công")
+            {
+                chkGocNhin.Checked = true;
+            }    
+            else
+            {
+                chkGocNhin.Checked = false;
+            }
+
+            if (BonTam == "Có bồn tắm")
+            {
+                chkBonTam.Checked = true;
+            }
+            else
+            {
+                chkBonTam.Checked = false;
+            }
+
+            if (HieuLuc == "Còn sử dụng")
+            {
+                chkHieuLuc.Checked = true;
+            }
+            else
+            {
+                chkHieuLuc.Checked = false;
+            }
+
+        }
 
         private void dgvDSPhong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -138,23 +226,8 @@ namespace DoAnQLKhachSan
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Không có dữ liệu");
+
             }
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTim_TextChangeEvent(object sender, EventArgs e)
-        {
-            Bphong.HienThiDanhSach(txtTim.TextValue, dgvDSPhong);
         }
     }
 }

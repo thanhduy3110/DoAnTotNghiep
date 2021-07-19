@@ -27,11 +27,11 @@ namespace BUS
         {
             return p.phong_select();
         }
-        public int P_Them(string ID, string ID_LoaiPhong, string SoPhong, string Tang, string GiaThueNgay, string GiaThueGio, string GhiChu, string GocNhin, string BonTam, string ConTrong, string HieuLuc)
+        public int P_Them(string ID, string ID_LoaiPhong, string SoPhong, string Tang, string GiaThueNgay, string GiaThueGio, string GhiChu, bool GocNhin, bool BonTam, int ConTrong, bool HieuLuc)
         {
             return p.phong_them(ID, ID_LoaiPhong, SoPhong, Tang, GiaThueNgay, GiaThueGio, GhiChu, GocNhin, BonTam, ConTrong, HieuLuc);
         }
-        public int P_CapNhat(string ID, string ID_LoaiPhong, string SoPhong, string Tang, string GiaThueNgay, string GiaThueGio, string GhiChu, string GocNhin, string BonTam, string ConTrong, string HieuLuc)
+        public int P_CapNhat(string ID, string ID_LoaiPhong, string SoPhong, string Tang, string GiaThueNgay, string GiaThueGio, string GhiChu, bool GocNhin, bool BonTam, int ConTrong, bool HieuLuc)
         {
             return p.phong_capnhat(ID, ID_LoaiPhong, SoPhong, Tang, GiaThueNgay, GiaThueGio, GhiChu, GocNhin, BonTam, ConTrong, HieuLuc);
         }

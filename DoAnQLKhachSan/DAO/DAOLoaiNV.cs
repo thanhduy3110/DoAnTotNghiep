@@ -29,7 +29,7 @@ namespace DAO
         }
 
         //phương thức này gọi đến phương thức ThucHien ở dbConnectionData để thêm dữ liệu
-        public int LoaiNV_Them(int ID, string TenLoaiNV, int HieuLuc)
+        public int LoaiNV_Them(int ID, string TenLoaiNV, bool HieuLuc)
         {
             name = new string[3];
             value = new object[3];
@@ -40,7 +40,7 @@ namespace DAO
         }
 
         //update
-        public int LoaiNV_CapNhat(int ID, string TenLoaiNV, int HieuLuc)
+        public int LoaiNV_CapNhat(int ID, string TenLoaiNV, bool HieuLuc)
         {
             name = new string[3];
             value = new object[3];

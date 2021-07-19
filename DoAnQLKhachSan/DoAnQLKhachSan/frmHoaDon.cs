@@ -20,7 +20,7 @@ namespace DoAnQLKhachSan
         BUSHoaDon bHD = new BUSHoaDon();
         BUSCTHD bCTHD = new BUSCTHD();
         DataSet DsHD = new DataSet();
-        int flag;
+        bool flag=false;
 
         void Tang_ID()
         {
@@ -95,14 +95,16 @@ namespace DoAnQLKhachSan
             txtMaHD.ReadOnly = t;
             rtxtGhiChu.ReadOnly = t;
         }
+        int iIdInHD;
         public void hienthi_textbox(int numrow)
         {
+            iIdInHD = int.Parse(dgvDSHD.Rows[numrow].Cells[0].Value.ToString());
             txtID.Text = dgvDSHD.Rows[numrow].Cells[0].Value.ToString();
             txtID_HD.Text = dgvDSHD.Rows[numrow].Cells[0].Value.ToString();
             txtMaHD.Text = dgvDSHD.Rows[numrow].Cells[1].Value.ToString();
-            cboTenNV.SelectedValue = dgvDSHD.Rows[numrow].Cells[2].Value.ToString();
-            cboTenKH.SelectedValue = dgvDSHD.Rows[numrow].Cells[3].Value.ToString();
-            cboMaPhong.SelectedValue = dgvDSHD.Rows[numrow].Cells[4].Value.ToString();
+            cboTenNV.Text = dgvDSHD.Rows[numrow].Cells[2].Value.ToString();
+            cboTenKH.Text = dgvDSHD.Rows[numrow].Cells[3].Value.ToString();
+            cboMaPhong.Text = dgvDSHD.Rows[numrow].Cells[4].Value.ToString();
             dtpNgayLap.Text = dgvDSHD.Rows[numrow].Cells[5].Value.ToString();
             dtpNgayDen.Text = dgvDSHD.Rows[numrow].Cells[6].Value.ToString();
             dtpNgayDi.Text = dgvDSHD.Rows[numrow].Cells[7].Value.ToString();
@@ -144,26 +146,18 @@ namespace DoAnQLKhachSan
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            clear_textbox();
-            xulychucnang(false);
-            xulytextbox(false);
-            flag = 1;
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            xulychucnang(false);
-            xulytextbox(false);
-            flag = 2;
-        }
-
-        private void btnLuu_Click(object sender, EventArgs e)
-        {
-            if (flag == 1)
+            
+            if(flag==false)
             {
-               
+                clear_textbox();
+                xulychucnang(false);
+                xulytextbox(false);
+                flag = true;
+            }
+            else if (flag == true)
+            {
 
-                if (cboTenNV.Text == "" || cboTenKH.Text == "" || cboMaPhong.Text == "" || cboHinhThucThue.Text == "" || dtpNgayLap.Text == "" || dtpNgayDen.Text == "" || dtpNgayDi.Text == "" || rtxtGhiChu.Text == "" || cboThanhToan.Text == "" || cboHieuLuc.Text == "")
+                if (cboTenNV.Text == "" || cboTenKH.Text == "" || cboMaPhong.Text == "" || cboHinhThucThue.Text == "" || dtpNgayLap.Text == "" || dtpNgayDen.Text == "" || dtpNgayDi.Text == "" || rtxtGhiChu.Text == "" || cboThanhToan.Text == "")
                 {
                     MessageBox.Show("Lỗi");
                 }
@@ -172,25 +166,45 @@ namespace DoAnQLKhachSan
                     xulychucnang(true);
                     bHD.HoaDon_Them(txtID.Text, txtMaHD.Text, cboTenNV.SelectedValue.ToString(), cboTenKH.SelectedValue.ToString(), cboMaPhong.SelectedValue.ToString(), Convert.ToDateTime(dtpNgayLap.Text).ToString("yyyy/MM/dd hh:mm"), Convert.ToDateTime(dtpNgayDen.Text).ToString("yyyy/MM/dd hh:mm"), Convert.ToDateTime(dtpNgayDi.Text).ToString("yyyy/MM/dd hh:mm"), cboHinhThucThue.SelectedIndex, lblTongTienPhong.Text, lblTongTienDV.Text, lblTongTien.Text, rtxtGhiChu.Text, cboThanhToan.SelectedIndex, cboHieuLuc.SelectedIndex);
                     MessageBox.Show("Thêm thành công ");
+                    flag = false;
                     dgvDSHD.DataSource = bHD.HoaDon_Select();
                 }
             }
 
-            if (flag == 2)
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            
+            if(flag==false)
+            {
+                xulychucnang(false);
+                xulytextbox(false);
+                flag = true;
+            }    
+            if (flag == true)
             {
                 xulychucnang(true);
                 bHD.HoaDon_CapNhat(txtID.Text, txtMaHD.Text, cboTenNV.SelectedValue.ToString(), cboTenKH.SelectedValue.ToString(), cboMaPhong.SelectedValue.ToString(), Convert.ToDateTime(dtpNgayLap.Text).ToString("yyyy/MM/dd hh:mm"), Convert.ToDateTime(dtpNgayDen.Text).ToString("yyyy/MM/dd hh:mm"), Convert.ToDateTime(dtpNgayDi.Text).ToString("yyyy/MM/dd hh:mm"), cboHinhThucThue.SelectedIndex, lblTongTienPhong.Text, lblTongTienDV.Text, lblTongTien.Text, rtxtGhiChu.Text, cboThanhToan.SelectedIndex, cboHieuLuc.SelectedIndex);
                 MessageBox.Show("Thêm thành công ");
+                flag = false;
                 dgvDSHD.DataSource = bHD.HoaDon_Select();
             }
         }
 
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+           
+           
+        }
+
+        int coCTHD;
         private void btnThemCTHD_Click(object sender, EventArgs e)
         {
             bCTHD.TongID(txtID_CTHD);
             int TongID = Int32.Parse(txtID_CTHD.Text) + 1;
             txtID_CTHD.Text = TongID.ToString();
-            flag = 1;
+            coCTHD = 1;
         }
 
         private void btnLuuCTHD_Click(object sender, EventArgs e)
@@ -209,7 +223,7 @@ namespace DoAnQLKhachSan
                 }
             }
 
-            if (flag == 1)
+            if (coCTHD == 1)
             {
                 if (flagg == 1)
                 {
@@ -247,7 +261,7 @@ namespace DoAnQLKhachSan
 
             }
            
-            if(flag==2)
+            if(coCTHD == 2)
             {
                 bCTHD.CTHD_CapNhat(txtID_CTHD.Text, txtID_HD.Text, cboTenDV.SelectedValue.ToString(), txtSoLuong.Text, lblDonGia.Text);
                 MessageBox.Show("Sữa thành công ");
@@ -286,10 +300,11 @@ namespace DoAnQLKhachSan
                 hienthi_textbox(vt);
                 int ID_HD = Int32.Parse(dgvDSHD.Rows[vt].Cells[0].Value.ToString());
                 bCTHD.HienThiDSCTHD(dgvDSCTHD, ID_HD);
+                
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Không có dữ liệu");
+               
             }
            
            
@@ -297,7 +312,7 @@ namespace DoAnQLKhachSan
 
         private void btnSuaCTHD_Click(object sender, EventArgs e)
         {
-            flag = 2;
+            coCTHD = 2;
         }
 
         public void hienthitextbox(int numrow)
@@ -317,7 +332,7 @@ namespace DoAnQLKhachSan
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Không có dữ liệu");
+               
             }
            
         }
@@ -333,6 +348,17 @@ namespace DoAnQLKhachSan
                 bHD.HienThiTienPhong(cboMaPhong, cboHinhThucThue, lblTongTienPhong, 1);
             }
         }
+
+        private void btnInHD_Click(object sender, EventArgs e)
+        {
+            //ReportHD rHD = new ReportHD(iIdInHD);
+            frmReport rHD = new frmReport(iIdInHD);
+            rHD.Show();         
+        }
+
+      
+
+
 
 
         //if (cboHinhThucThue.SelectedIndex == 0)

@@ -39,12 +39,21 @@
             ePOSOne.btnProduct.Button_WOC btnXoaTatCa;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvDichVu = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtTim = new JTextBox.JTextBox();
             this.rtxtGhiChu = new DevComponents.DotNetBar.Controls.RichTextBoxEx();
             this.rtxtMoTa = new DevComponents.DotNetBar.Controls.RichTextBoxEx();
             this.cboLoaiDV = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.cboHieuLuc = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.txtDVT = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtHinhAnh = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -62,18 +71,7 @@
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboItem1 = new DevComponents.Editors.ComboItem();
-            this.comboItem2 = new DevComponents.Editors.ComboItem();
+            this.chkHieuLuc = new System.Windows.Forms.CheckBox();
             btnXoa = new ePOSOne.btnProduct.Button_WOC();
             btnSua = new ePOSOne.btnProduct.Button_WOC();
             btnThem = new ePOSOne.btnProduct.Button_WOC();
@@ -147,13 +145,94 @@
             this.dgvDichVu.TabIndex = 67;
             this.dgvDichVu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDichVu_CellClick);
             // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "id";
+            this.Column4.HeaderText = "ID";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Visible = false;
+            this.Column4.Width = 125;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "tenloaidv";
+            this.Column8.HeaderText = "Tên Loại Dịch Vụ";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 170;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "tendv";
+            this.Column2.HeaderText = "Tên Dịch Vụ";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 150;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "mota";
+            this.Column1.HeaderText = "Mô tả";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 212;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "hinhanh";
+            this.Column3.HeaderText = "Hình ảnh";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 200;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "giatien";
+            this.Column5.HeaderText = "Giá tiền";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 125;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "slton";
+            this.Column6.HeaderText = "Số lượng tồn";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 125;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "dvt";
+            this.Column7.HeaderText = "Đơn vị tính";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 125;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "ghichu";
+            this.Column9.HeaderText = "Ghi chú";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 200;
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "hieuluc";
+            this.Column10.HeaderText = "Hiệu lực";
+            this.Column10.MinimumWidth = 6;
+            this.Column10.Name = "Column10";
+            this.Column10.Width = 125;
+            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.chkHieuLuc);
             this.groupBox2.Controls.Add(this.txtTim);
             this.groupBox2.Controls.Add(this.rtxtGhiChu);
             this.groupBox2.Controls.Add(this.rtxtMoTa);
             this.groupBox2.Controls.Add(this.cboLoaiDV);
-            this.groupBox2.Controls.Add(this.cboHieuLuc);
             this.groupBox2.Controls.Add(btnXoa);
             this.groupBox2.Controls.Add(btnSua);
             this.groupBox2.Controls.Add(btnThem);
@@ -241,22 +320,6 @@
             this.cboLoaiDV.Size = new System.Drawing.Size(260, 36);
             this.cboLoaiDV.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cboLoaiDV.TabIndex = 169;
-            // 
-            // cboHieuLuc
-            // 
-            this.cboHieuLuc.DisplayMember = "Text";
-            this.cboHieuLuc.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboHieuLuc.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboHieuLuc.FormattingEnabled = true;
-            this.cboHieuLuc.ItemHeight = 30;
-            this.cboHieuLuc.Items.AddRange(new object[] {
-            this.comboItem1,
-            this.comboItem2});
-            this.cboHieuLuc.Location = new System.Drawing.Point(924, 194);
-            this.cboHieuLuc.Name = "cboHieuLuc";
-            this.cboHieuLuc.Size = new System.Drawing.Size(260, 36);
-            this.cboHieuLuc.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cboHieuLuc.TabIndex = 168;
             // 
             // pictureBox
             // 
@@ -510,87 +573,6 @@
             this.labelX1.TabIndex = 145;
             this.labelX1.Text = "Tên DV:";
             // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "id";
-            this.Column4.HeaderText = "ID";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Visible = false;
-            this.Column4.Width = 125;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "tenloaidv";
-            this.Column8.HeaderText = "Tên Loại Dịch Vụ";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 170;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "tendv";
-            this.Column2.HeaderText = "Tên Dịch Vụ";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 150;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "mota";
-            this.Column1.HeaderText = "Mô tả";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 212;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "hinhanh";
-            this.Column3.HeaderText = "Hình ảnh";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 200;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "giatien";
-            this.Column5.HeaderText = "Giá tiền";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "slton";
-            this.Column6.HeaderText = "Số lượng tồn";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 125;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "dvt";
-            this.Column7.HeaderText = "Đơn vị tính";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 125;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "ghichu";
-            this.Column9.HeaderText = "Ghi chú";
-            this.Column9.MinimumWidth = 6;
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 200;
-            // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "hieuluc";
-            this.Column10.HeaderText = "Hiệu lực";
-            this.Column10.MinimumWidth = 6;
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 125;
-            // 
             // btnXoa
             // 
             btnXoa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -697,13 +679,14 @@
             btnXoaTatCa.TextColor = System.Drawing.Color.White;
             btnXoaTatCa.UseVisualStyleBackColor = true;
             // 
-            // comboItem1
+            // chkHieuLuc
             // 
-            this.comboItem1.Text = "Hết";
-            // 
-            // comboItem2
-            // 
-            this.comboItem2.Text = "Còn";
+            this.chkHieuLuc.AutoSize = true;
+            this.chkHieuLuc.Location = new System.Drawing.Point(924, 211);
+            this.chkHieuLuc.Name = "chkHieuLuc";
+            this.chkHieuLuc.Size = new System.Drawing.Size(18, 17);
+            this.chkHieuLuc.TabIndex = 185;
+            this.chkHieuLuc.UseVisualStyleBackColor = true;
             // 
             // frmDichVu
             // 
@@ -734,7 +717,6 @@
         private DevComponents.DotNetBar.Controls.RichTextBoxEx rtxtGhiChu;
         private DevComponents.DotNetBar.Controls.RichTextBoxEx rtxtMoTa;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cboLoaiDV;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cboHieuLuc;
         private System.Windows.Forms.PictureBox pictureBox;
         private DevComponents.DotNetBar.Controls.TextBoxX txtDVT;
         private DevComponents.DotNetBar.Controls.TextBoxX txtHinhAnh;
@@ -763,7 +745,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private DevComponents.Editors.ComboItem comboItem1;
-        private DevComponents.Editors.ComboItem comboItem2;
+        private System.Windows.Forms.CheckBox chkHieuLuc;
     }
 }

@@ -59,6 +59,7 @@
     <Compile Include="BUSPhieuDatPhong.cs" />
     <Compile Include="BUSPhong.cs" />
     <Compile Include="BUSPhongDaDat.cs" />
+    <Compile Include="BUSThongKe.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -78,7 +78,7 @@ namespace DoAnQLKhachSan
             txtEmail.Text = "";
             txtCMND.Text = "";
             txtHinhAnh.Text = "";
-            cboHieuLuc.Text = "";
+           
         }
         void xulychucnang(Boolean t)
         {
@@ -149,13 +149,13 @@ namespace DoAnQLKhachSan
             }
 
             string HL = dgvDSNhanVien.Rows[numrow].Cells[12].Value.ToString();
-            if (HL == "False")
+            if (HL == "Còn làm")
             {
-                cboHieuLuc.SelectedIndex = 0;
+                chkHieuLuc.Checked = true;
             }
             else
             {
-                cboHieuLuc.SelectedIndex = 1;
+                chkHieuLuc.Checked = false;
             }
         }
 
@@ -171,7 +171,7 @@ namespace DoAnQLKhachSan
             }else if(flag==true)
             {
                
-                if (txtEmail.Text == "" || txtCMND.Text == "" || txtHinhAnh.Text == "" || txtHoTen.Text == "" || txtMatKhau.Text == "" || txtSDT.Text == "" || cboLoaiNV.Text == "" || rtxtDiaChi.Text == "" || txtMaNV.Text == "" || cboHieuLuc.Text == "")
+                if (txtEmail.Text == "" || txtCMND.Text == "" || txtHinhAnh.Text == "" || txtHoTen.Text == "" || txtMatKhau.Text == "" || txtSDT.Text == "" || cboLoaiNV.Text == "" || rtxtDiaChi.Text == "" || txtMaNV.Text == "" )
                 {
                     MessageBox.Show("Lỗi");
                 }
@@ -179,6 +179,7 @@ namespace DoAnQLKhachSan
                 {
 
                     Boolean GT=false;
+                    bool HieuLuc;
                     if (radioNam.Checked == true)
                     {
                         GT = true;
@@ -188,7 +189,16 @@ namespace DoAnQLKhachSan
                     {
                         GT = false;
                     }
-                    bNV.NhanVien_Them(Int32.Parse(txtID.Text), cboLoaiNV.SelectedIndex + 1, txtMaNV.Text, MaHoa("123", txtMatKhau.Text), txtHoTen.Text, Convert.ToDateTime(dtpNgaySinh.Text).ToString("yyyy-MM-dd"), txtSDT.Text, rtxtDiaChi.Text, txtEmail.Text, Int32.Parse(txtCMND.Text), GT, txtHinhAnh.Text, cboHieuLuc.SelectedIndex);
+
+                    if(chkHieuLuc.Checked==true)
+                    {
+                        HieuLuc = true;
+                    }    
+                    else
+                    {
+                        HieuLuc = false;
+                    }    
+                    bNV.NhanVien_Them(Int32.Parse(txtID.Text), cboLoaiNV.SelectedIndex + 1, txtMaNV.Text, MaHoa("123", txtMatKhau.Text), txtHoTen.Text, Convert.ToDateTime(dtpNgaySinh.Text).ToString("yyyy-MM-dd"), txtSDT.Text, rtxtDiaChi.Text, txtEmail.Text, Int32.Parse(txtCMND.Text), GT, txtHinhAnh.Text, HieuLuc);
                     File.Copy(DuongDan, Path.Combine(@"D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\Images", Path.GetFileName(txtHinhAnh.Text)), true);
                     MessageBox.Show("Thêm thành công ");
                     flag = false;
@@ -213,7 +223,7 @@ namespace DoAnQLKhachSan
             {
                 
                 {
-                    if (txtEmail.Text == "" || txtCMND.Text == "" || txtHinhAnh.Text == "" || txtHoTen.Text == "" || txtMatKhau.Text == "" || txtSDT.Text == "" || cboLoaiNV.Text == "" || rtxtDiaChi.Text == "" || txtMaNV.Text == "" || cboHieuLuc.Text == "")
+                    if (txtEmail.Text == "" || txtCMND.Text == "" || txtHinhAnh.Text == "" || txtHoTen.Text == "" || txtMatKhau.Text == "" || txtSDT.Text == "" || cboLoaiNV.Text == "" || rtxtDiaChi.Text == "" || txtMaNV.Text == "")
                     {
                         MessageBox.Show("Lỗi");
                     }
@@ -221,6 +231,7 @@ namespace DoAnQLKhachSan
                     {
 
                         Boolean GT = false;
+                        bool HieuLuc;
                         if (radioNam.Checked == true)
                         {
                             GT = true;
@@ -230,8 +241,16 @@ namespace DoAnQLKhachSan
                         {
                             GT = false;
                         }
+                        if (chkHieuLuc.Checked == true)
+                        {
+                            HieuLuc = true;
+                        }
+                        else
+                        {
+                            HieuLuc = false;
+                        }
                         txtHinhAnh.Text = txtID.Text + "Sua" + (Int32.Parse(txtID.Text) + 1).ToString() + ".jpg";
-                        bNV.NhanVien_CapNhat(ID, cboLoaiNV.SelectedIndex + 1, txtMaNV.Text, txtMatKhau.Text, txtHoTen.Text, Convert.ToDateTime(dtpNgaySinh.Text).ToString("yyyy-MM-dd"), txtSDT.Text, rtxtDiaChi.Text, txtEmail.Text, int.Parse(txtCMND.Text), GT, txtHinhAnh.Text, cboHieuLuc.SelectedIndex);
+                        bNV.NhanVien_CapNhat(ID, cboLoaiNV.SelectedIndex + 1, txtMaNV.Text, txtMatKhau.Text, txtHoTen.Text, Convert.ToDateTime(dtpNgaySinh.Text).ToString("yyyy-MM-dd"), txtSDT.Text, rtxtDiaChi.Text, txtEmail.Text, int.Parse(txtCMND.Text), GT, txtHinhAnh.Text,HieuLuc);
                         File.Copy(DuongDan, Path.Combine(@"D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\Images", Path.GetFileName(txtHinhAnh.Text)), true);
                         MessageBox.Show("Sữa thành công ");
                         flag = false;

@@ -32,23 +32,21 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvDSLoaiNV = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtTim = new JTextBox.JTextBox();
             this.btnXoaTatCa = new ePOSOne.btnProduct.Button_WOC();
             this.btnXoa = new ePOSOne.btnProduct.Button_WOC();
             this.btnSua = new ePOSOne.btnProduct.Button_WOC();
             this.btnThem = new ePOSOne.btnProduct.Button_WOC();
-            this.cboHieuLuc = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.comboItem1 = new DevComponents.Editors.ComboItem();
-            this.comboItem2 = new DevComponents.Editors.ComboItem();
             this.txtTenLoaiNV = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtID = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chkHieuLuc = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSLoaiNV)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -91,6 +89,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDSLoaiNV.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvDSLoaiNV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDSLoaiNV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgvDSLoaiNV.Location = new System.Drawing.Point(3, 24);
             this.dgvDSLoaiNV.Name = "dgvDSLoaiNV";
@@ -101,15 +100,40 @@
             this.dgvDSLoaiNV.TabIndex = 1;
             this.dgvDSLoaiNV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSLoaiNV_CellClick);
             // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "id";
+            this.Column3.HeaderText = "ID";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Visible = false;
+            this.Column3.Width = 125;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "tenloainv";
+            this.Column1.HeaderText = "TÊN LOẠI NHÂN VIÊN";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 250;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "hieuluc";
+            this.Column2.HeaderText = "HIỆU LỰC";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 150;
+            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
+            this.groupBox2.Controls.Add(this.chkHieuLuc);
             this.groupBox2.Controls.Add(this.txtTim);
             this.groupBox2.Controls.Add(this.btnXoaTatCa);
             this.groupBox2.Controls.Add(this.btnXoa);
             this.groupBox2.Controls.Add(this.btnSua);
             this.groupBox2.Controls.Add(this.btnThem);
-            this.groupBox2.Controls.Add(this.cboHieuLuc);
             this.groupBox2.Controls.Add(this.txtTenLoaiNV);
             this.groupBox2.Controls.Add(this.txtID);
             this.groupBox2.Controls.Add(this.labelX2);
@@ -249,30 +273,6 @@
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click_1);
             // 
-            // cboHieuLuc
-            // 
-            this.cboHieuLuc.DisplayMember = "Text";
-            this.cboHieuLuc.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboHieuLuc.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboHieuLuc.FormattingEnabled = true;
-            this.cboHieuLuc.ItemHeight = 30;
-            this.cboHieuLuc.Items.AddRange(new object[] {
-            this.comboItem1,
-            this.comboItem2});
-            this.cboHieuLuc.Location = new System.Drawing.Point(1154, 62);
-            this.cboHieuLuc.Name = "cboHieuLuc";
-            this.cboHieuLuc.Size = new System.Drawing.Size(282, 36);
-            this.cboHieuLuc.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cboHieuLuc.TabIndex = 163;
-            // 
-            // comboItem1
-            // 
-            this.comboItem1.Text = "Không còn trống";
-            // 
-            // comboItem2
-            // 
-            this.comboItem2.Text = "Còn trống";
-            // 
             // txtTenLoaiNV
             // 
             // 
@@ -346,30 +346,14 @@
             this.labelX3.TabIndex = 153;
             this.labelX3.Text = "Tên Loại NV:";
             // 
-            // Column3
+            // chkHieuLuc
             // 
-            this.Column3.DataPropertyName = "id";
-            this.Column3.HeaderText = "ID";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Visible = false;
-            this.Column3.Width = 125;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "tenloainv";
-            this.Column1.HeaderText = "TÊN LOẠI NHÂN VIÊN";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 250;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "hieuluc";
-            this.Column2.HeaderText = "HIỆU LỰC";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 150;
+            this.chkHieuLuc.AutoSize = true;
+            this.chkHieuLuc.Location = new System.Drawing.Point(1136, 74);
+            this.chkHieuLuc.Name = "chkHieuLuc";
+            this.chkHieuLuc.Size = new System.Drawing.Size(18, 17);
+            this.chkHieuLuc.TabIndex = 199;
+            this.chkHieuLuc.UseVisualStyleBackColor = true;
             // 
             // frmLoaiNhanVien
             // 
@@ -397,7 +381,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private DevComponents.DotNetBar.Controls.DataGridViewX dgvDSLoaiNV;
         private System.Windows.Forms.GroupBox groupBox2;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cboHieuLuc;
         private DevComponents.DotNetBar.Controls.TextBoxX txtID;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.LabelX labelX1;
@@ -408,10 +391,9 @@
         private ePOSOne.btnProduct.Button_WOC btnThem;
         private DevComponents.DotNetBar.Controls.TextBoxX txtTenLoaiNV;
         private JTextBox.JTextBox txtTim;
-        private DevComponents.Editors.ComboItem comboItem1;
-        private DevComponents.Editors.ComboItem comboItem2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.CheckBox chkHieuLuc;
     }
 }

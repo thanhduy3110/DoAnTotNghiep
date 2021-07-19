@@ -37,17 +37,17 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvLoaiDV = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hieuluc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtTim = new JTextBox.JTextBox();
-            this.cboHieuLuc = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.txtTenLoaiDV = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtID = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hieuluc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chkHieuLuc = new System.Windows.Forms.CheckBox();
             btnXoaTatCa = new ePOSOne.btnProduct.Button_WOC();
             btnXoa = new ePOSOne.btnProduct.Button_WOC();
             btnSua = new ePOSOne.btnProduct.Button_WOC();
@@ -236,14 +236,39 @@
             this.dgvLoaiDV.TabIndex = 140;
             this.dgvLoaiDV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLoaiDV_CellClick);
             // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "id";
+            this.Column2.HeaderText = "ID";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Visible = false;
+            this.Column2.Width = 125;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "tenloaidv";
+            this.Column1.HeaderText = "TÊN LOẠI DỊCH VỤ";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 250;
+            // 
+            // hieuluc
+            // 
+            this.hieuluc.DataPropertyName = "hieuluc";
+            this.hieuluc.HeaderText = "HIỆU LỰC";
+            this.hieuluc.MinimumWidth = 6;
+            this.hieuluc.Name = "hieuluc";
+            this.hieuluc.Width = 125;
+            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.chkHieuLuc);
             this.groupBox2.Controls.Add(this.txtTim);
             this.groupBox2.Controls.Add(btnXoa);
             this.groupBox2.Controls.Add(btnSua);
             this.groupBox2.Controls.Add(btnLuu);
             this.groupBox2.Controls.Add(btnThem);
-            this.groupBox2.Controls.Add(this.cboHieuLuc);
             this.groupBox2.Controls.Add(this.txtTenLoaiDV);
             this.groupBox2.Controls.Add(this.txtID);
             this.groupBox2.Controls.Add(this.labelX2);
@@ -275,19 +300,6 @@
             this.txtTim.TabIndex = 204;
             this.txtTim.TextValue = "";
             this.txtTim.TextChangeEvent += new System.EventHandler(this.txtTim_TextChangeEvent);
-            // 
-            // cboHieuLuc
-            // 
-            this.cboHieuLuc.DisplayMember = "Text";
-            this.cboHieuLuc.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboHieuLuc.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboHieuLuc.FormattingEnabled = true;
-            this.cboHieuLuc.ItemHeight = 30;
-            this.cboHieuLuc.Location = new System.Drawing.Point(1156, 89);
-            this.cboHieuLuc.Name = "cboHieuLuc";
-            this.cboHieuLuc.Size = new System.Drawing.Size(282, 36);
-            this.cboHieuLuc.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cboHieuLuc.TabIndex = 197;
             // 
             // txtTenLoaiDV
             // 
@@ -362,30 +374,14 @@
             this.labelX3.TabIndex = 192;
             this.labelX3.Text = "Tên Loại DV:";
             // 
-            // Column2
+            // chkHieuLuc
             // 
-            this.Column2.DataPropertyName = "id";
-            this.Column2.HeaderText = "ID";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Visible = false;
-            this.Column2.Width = 125;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "tenloaidv";
-            this.Column1.HeaderText = "TÊN LOẠI DỊCH VỤ";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 250;
-            // 
-            // hieuluc
-            // 
-            this.hieuluc.DataPropertyName = "hieuluc";
-            this.hieuluc.HeaderText = "HIỆU LỰC";
-            this.hieuluc.MinimumWidth = 6;
-            this.hieuluc.Name = "hieuluc";
-            this.hieuluc.Width = 125;
+            this.chkHieuLuc.AutoSize = true;
+            this.chkHieuLuc.Location = new System.Drawing.Point(1140, 100);
+            this.chkHieuLuc.Name = "chkHieuLuc";
+            this.chkHieuLuc.Size = new System.Drawing.Size(18, 17);
+            this.chkHieuLuc.TabIndex = 205;
+            this.chkHieuLuc.UseVisualStyleBackColor = true;
             // 
             // frmLoaiDichVu
             // 
@@ -417,7 +413,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private DevComponents.DotNetBar.Controls.DataGridViewX dgvLoaiDV;
         private System.Windows.Forms.GroupBox groupBox2;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cboHieuLuc;
         private DevComponents.DotNetBar.Controls.TextBoxX txtID;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.LabelX labelX1;
@@ -427,5 +422,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn hieuluc;
+        private System.Windows.Forms.CheckBox chkHieuLuc;
     }
 }

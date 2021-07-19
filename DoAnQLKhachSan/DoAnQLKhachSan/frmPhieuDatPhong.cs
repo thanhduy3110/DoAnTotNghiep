@@ -27,18 +27,49 @@ namespace DoAnQLKhachSan
             {
                 clear_textbox();
                 txtID.Text = (bpdp.PDP_Select().Rows.Count + 1).ToString();
+                chkHieuLuc.Checked = false;
+                chkDaXuLy.Checked = false;
+                radioGio.Checked = false;
+                radioNgay.Checked = false;
                 flag = true;
             }    
       
             else if (flag == true)
             {
-                if (cboTenKH.Text == "" || dtNgayDen.Text == "" || dtNgayDi.Text == "" || cboHinhThucThue.Text == "" || txtSoKH.Text == "" || rtxtGhiChu.Text == "" || cboDaXuLy.Text == "" || cboHieuLuc.Text == "")
+                if (cboTenKH.Text == "" || dtNgayDen.Text == "" || dtNgayDi.Text == ""  || txtSoKH.Text == "" || rtxtGhiChu.Text == "" )
                 {
                     MessageBox.Show("Lỗi");
                 }
                 else
                 {
-                    bpdp.PDP_Them(txtID.Text, cboTenKH.SelectedValue.ToString(), dtNgayDen.Text, dtNgayDi.Text, cboHinhThucThue.Text, txtSoKH.Text, rtxtGhiChu.Text, cboDaXuLy.Text, cboHieuLuc.Text);
+
+                    bool HinhThucThue=false, DaXuLy, HieuLuc;
+                    if(chkDaXuLy.Checked==true)
+                    {
+                        DaXuLy = true;
+                    }    
+                    else
+                    {
+                        DaXuLy = false;
+                    }    
+
+                    if(chkHieuLuc.Checked==true)
+                    {
+                        HieuLuc = true;
+                    }    
+                    else
+                    {
+                        HieuLuc = false;
+                    }   
+                    if(radioGio.Checked==true)
+                    {
+                        HinhThucThue = true;
+                    }    
+                    else if(radioNgay.Checked==true)
+                    {
+                        HinhThucThue = false;
+                    }    
+                    bpdp.PDP_Them(txtID.Text, cboTenKH.SelectedValue.ToString(), dtNgayDen.Text, dtNgayDi.Text, HinhThucThue, txtSoKH.Text, rtxtGhiChu.Text, DaXuLy, HieuLuc);
                     MessageBox.Show("thêm thành công rồi nè");
                     flag = false;
                     dgvPhieuDatPhong.DataSource = bpdp.PDP_Select();
@@ -55,7 +86,33 @@ namespace DoAnQLKhachSan
             }    
             else if (flag == true)
             {
-                bpdp.PDP_CapNhat(txtID.Text, cboTenKH.SelectedValue.ToString(), dtNgayDen.Text, dtNgayDi.Text, cboHinhThucThue.Text, txtSoKH.Text, rtxtGhiChu.Text, cboDaXuLy.Text, cboHieuLuc.Text);
+                bool HinhThucThue = false, DaXuLy, HieuLuc;
+                if (chkDaXuLy.Checked == true)
+                {
+                    DaXuLy = true;
+                }
+                else
+                {
+                    DaXuLy = false;
+                }
+
+                if (chkHieuLuc.Checked == true)
+                {
+                    HieuLuc = true;
+                }
+                else
+                {
+                    HieuLuc = false;
+                }
+                if (radioNgay.Checked == true)
+                {
+                    HinhThucThue = true;
+                }
+                else if (radioGio.Checked == true)
+                {
+                    HinhThucThue = false;
+                }
+                bpdp.PDP_CapNhat(txtID.Text, cboTenKH.SelectedValue.ToString(), dtNgayDen.Text, dtNgayDi.Text, HinhThucThue, txtSoKH.Text, rtxtGhiChu.Text, DaXuLy, HieuLuc);
                 MessageBox.Show("thêm thành công rồi nè");
                 flag = false;
                 dgvPhieuDatPhong.DataSource = bpdp.PDP_Select();
@@ -78,14 +135,39 @@ namespace DoAnQLKhachSan
         void hienthi_textbox(int numrow)
         {
             txtID.Text = dgvPhieuDatPhong.Rows[numrow].Cells[0].Value.ToString();
-            cboTenKH.SelectedValue = dgvPhieuDatPhong.Rows[numrow].Cells[1].Value.ToString();
+            cboTenKH.Text = dgvPhieuDatPhong.Rows[numrow].Cells[1].Value.ToString();
             dtNgayDen.Text = dgvPhieuDatPhong.Rows[numrow].Cells[2].Value.ToString();
             dtNgayDi.Text = dgvPhieuDatPhong.Rows[numrow].Cells[3].Value.ToString();
-            cboHinhThucThue.Text = dgvPhieuDatPhong.Rows[numrow].Cells[4].Value.ToString();
+            string HTT = dgvPhieuDatPhong.Rows[numrow].Cells[4].Value.ToString();
             txtSoKH.Text = dgvPhieuDatPhong.Rows[numrow].Cells[5].Value.ToString();
             rtxtGhiChu.Text = dgvPhieuDatPhong.Rows[numrow].Cells[6].Value.ToString();
-            cboDaXuLy.Text = dgvPhieuDatPhong.Rows[numrow].Cells[7].Value.ToString();
-            cboHieuLuc.Text = dgvPhieuDatPhong.Rows[numrow].Cells[8].Value.ToString();
+            string DXL = dgvPhieuDatPhong.Rows[numrow].Cells[7].Value.ToString();
+            string HL = dgvPhieuDatPhong.Rows[numrow].Cells[8].Value.ToString();
+            if(HTT== "Thuê theo ngày")
+            {
+                radioNgay.Checked = true;
+            }    
+            else
+            {
+                radioGio.Checked = true;
+            }   
+            
+            if(DXL== "Xử lý rồi")
+            {
+                chkDaXuLy.Checked = true;
+            }    
+            else
+            {
+                chkDaXuLy.Checked = false;
+            }
+            if (HL == "Còn")
+            {
+                chkHieuLuc.Checked = true;
+            }
+            else
+            {
+                chkHieuLuc.Checked = false;
+            }
 
         }
 
@@ -113,12 +195,9 @@ namespace DoAnQLKhachSan
         {
             cboTenKH.Text = "";
             dtNgayDen.Text = "";
-            dtNgayDi.Text = "";
-            cboHinhThucThue.Text = "";
+            dtNgayDi.Text = "";            
             txtSoKH.Text = "";
             rtxtGhiChu.Text = "";
-            cboDaXuLy.Text = "";
-            cboHieuLuc.Text = "";
         }
 
         private void dgvPhieuDatPhong_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -130,7 +209,7 @@ namespace DoAnQLKhachSan
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Không có dữ liệu");
+                
             }
         }
 
@@ -138,5 +217,7 @@ namespace DoAnQLKhachSan
         {
             bpdp.HienThiDanhSach(txtTim.TextValue, dgvPhieuDatPhong);
         }
+
+       
     }
 }

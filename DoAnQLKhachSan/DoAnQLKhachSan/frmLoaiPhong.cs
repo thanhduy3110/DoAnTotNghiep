@@ -45,7 +45,6 @@ namespace DoAnQLKhachSan
             txtSoGiuongDoi.Text = "";
             txtSoGiuongDon.Text = "";
             txtSoKhach.Text = "";
-            cboHieuLuc.Text = "";
         }
         void hienthi_textbox(int numrow)
         {
@@ -54,7 +53,15 @@ namespace DoAnQLKhachSan
             txtSoGiuongDoi.Text = dgvDSLoaiPhong.Rows[numrow].Cells[2].Value.ToString();
             txtSoGiuongDon.Text = dgvDSLoaiPhong.Rows[numrow].Cells[3].Value.ToString();
             txtSoKhach.Text = dgvDSLoaiPhong.Rows[numrow].Cells[4].Value.ToString();
-            cboHieuLuc.Text = dgvDSLoaiPhong.Rows[numrow].Cells[5].Value.ToString();
+            string HL = dgvDSLoaiPhong.Rows[numrow].Cells[5].Value.ToString();
+            if(HL== "Còn trống")
+            {
+                chkHieuLuc.Checked = true;
+            }    
+            else
+            {
+                chkHieuLuc.Checked = false;
+            }    
         }
         bool flag=false;
         private void frmLoaiPhong_Load(object sender, EventArgs e)
@@ -68,17 +75,27 @@ namespace DoAnQLKhachSan
             {
                 clear_textbox();
                 txtID.Text = (blp.LP_Select().Rows.Count+1).ToString();
+                chkHieuLuc.Checked = false;
                 flag = true;
             }    
             else if (flag == true)
             {
-                if (txtTenLoaiPhong.Text == "" || txtSoGiuongDoi.Text == "" || txtSoGiuongDon.Text == "" || txtSoKhach.Text == "" || cboHieuLuc.Text == "")
+                if (txtTenLoaiPhong.Text == "" || txtSoGiuongDoi.Text == "" || txtSoGiuongDon.Text == "" || txtSoKhach.Text == "" )
                 {
                     MessageBox.Show("Lỗi");
                 }
                 else
                 {
-                    blp.LP_Them(txtID.Text, txtTenLoaiPhong.Text, txtSoGiuongDoi.Text, txtSoGiuongDon.Text, txtSoKhach.Text, cboHieuLuc.Text);
+                    bool HieuLuc;
+                    if (chkHieuLuc.Checked == true)
+                    {
+                        HieuLuc = true;
+                    }
+                    else
+                    {
+                        HieuLuc = false;
+                    }
+                    blp.LP_Them(txtID.Text, txtTenLoaiPhong.Text, txtSoGiuongDoi.Text, txtSoGiuongDon.Text, txtSoKhach.Text, HieuLuc);
                     MessageBox.Show("Thêm thành công ");
                     flag = false;
                     dgvDSLoaiPhong.DataSource = blp.LP_Select();
@@ -102,7 +119,16 @@ namespace DoAnQLKhachSan
             }    
             else if (flag == true)
             {
-                blp.LP_CapNhat(txtID.Text, txtTenLoaiPhong.Text, txtSoGiuongDoi.Text, txtSoGiuongDon.Text, txtSoKhach.Text, cboHieuLuc.Text);
+                bool HieuLuc;
+                if (chkHieuLuc.Checked == true)
+                {
+                    HieuLuc = true;
+                }
+                else
+                {
+                    HieuLuc = false;
+                }
+                blp.LP_CapNhat(txtID.Text, txtTenLoaiPhong.Text, txtSoGiuongDoi.Text, txtSoGiuongDon.Text, txtSoKhach.Text, HieuLuc);
                 MessageBox.Show("Sữa thành công ");
                 flag = false;
                 dgvDSLoaiPhong.DataSource = blp.LP_Select();

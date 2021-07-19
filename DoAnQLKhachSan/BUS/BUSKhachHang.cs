@@ -22,12 +22,12 @@ namespace BUS
             return kh.khachhang_select();
         }
 
-        public int KH_Them(string ID, string HoTen, string NgaySinh, string SDT, string Email, string CMND, string GioiTinh, string QuocTich, string HieuLuc)
+        public int KH_Them(string ID, string HoTen, string NgaySinh, string SDT, string Email, string CMND, bool GioiTinh, string QuocTich, bool HieuLuc)
         {
             return kh.khachhang_them(ID, HoTen, NgaySinh, SDT, Email, CMND, GioiTinh, QuocTich, HieuLuc);
         }
 
-        public int KH_CapNhat(string ID, string HoTen, string NgaySinh, string SDT, string Email, string CMND, string GioiTinh, string QuocTich, string HieuLuc)
+        public int KH_CapNhat(string ID, string HoTen, string NgaySinh, string SDT, string Email, string CMND, bool GioiTinh, string QuocTich, bool HieuLuc)
         {
             return kh.khachang_capnhat(ID, HoTen, NgaySinh, SDT, Email, CMND, GioiTinh, QuocTich, HieuLuc);
         }

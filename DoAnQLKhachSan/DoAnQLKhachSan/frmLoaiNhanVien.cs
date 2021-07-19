@@ -57,7 +57,6 @@ namespace DoAnQLKhachSan
         void clear_textbox()
         {
             txtTenLoaiNV.Text = "";
-            cboHieuLuc.Text = "";
         }
         void xulychucnang(Boolean t)
         {
@@ -77,13 +76,13 @@ namespace DoAnQLKhachSan
             txtID.Text = dgvDSLoaiNV.Rows[numrow].Cells[0].Value.ToString();
             txtTenLoaiNV.Text = dgvDSLoaiNV.Rows[numrow].Cells[1].Value.ToString();
             string t = dgvDSLoaiNV.Rows[numrow].Cells[2].Value.ToString();
-            if (t == "False")
+            if (t == "Còn trống")
             {
-                cboHieuLuc.SelectedIndex = 0;
+                chkHieuLuc.Checked = true;
             }
             else
             {
-                cboHieuLuc.SelectedIndex = 1;
+                chkHieuLuc.Checked = false;
             }
         }
 
@@ -96,17 +95,28 @@ namespace DoAnQLKhachSan
                 clear_textbox();
                 xulytextbox(false);
                 txtID.Text = (bLNV.LoaiNV_selecl().Rows.Count + 1).ToString();
+                chkHieuLuc.Checked = false;
                 flag = true;
             }
             else if (flag == true)
             {
-                if (txtTenLoaiNV.Text == "" || cboHieuLuc.Text == "")
+                if (txtTenLoaiNV.Text == "")
                 {
                     MessageBox.Show("Lỗi");
                 }
                 else
                 {
-                    bLNV.LoaiNV_Them(Int32.Parse(txtID.Text), txtTenLoaiNV.Text, cboHieuLuc.SelectedIndex);
+                    bool HieuLuc;
+                    if (chkHieuLuc.Checked == true)
+                    {
+                        HieuLuc = true;
+                    } 
+                    else
+                    {
+                        HieuLuc = false;
+                    }    
+                        
+                    bLNV.LoaiNV_Them(Int32.Parse(txtID.Text), txtTenLoaiNV.Text, HieuLuc);
                     MessageBox.Show("Thêm thành công ");
                     flag = false;
                     dgvDSLoaiNV.DataSource = bLNV.LoaiNV_selecl();
@@ -135,8 +145,17 @@ namespace DoAnQLKhachSan
             }
             else if(flag==true)
             {
+                bool HieuLuc;
+                if (chkHieuLuc.Checked == true)
+                {
+                    HieuLuc = true;
+                }
+                else
+                {
+                    HieuLuc = false;
+                }
                 xulychucnang(true);
-                bLNV.LoaiNV_CapNhat(Int32.Parse(txtID.Text), txtTenLoaiNV.Text, cboHieuLuc.SelectedIndex);
+                bLNV.LoaiNV_CapNhat(Int32.Parse(txtID.Text), txtTenLoaiNV.Text, HieuLuc);
                 MessageBox.Show("Sữa thành công ");
                 flag = false;
                 dgvDSLoaiNV.DataSource = bLNV.LoaiNV_selecl();

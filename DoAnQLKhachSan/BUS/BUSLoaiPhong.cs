@@ -23,11 +23,11 @@ namespace BUS
         {
             return lpd.loaiphong_select();
         }
-        public int LP_Them(string id, string TenLoaiPhong, string SoGiuongDoi, string SoGiuongDon, string SoKhach, string HieuLuc)
+        public int LP_Them(string id, string TenLoaiPhong, string SoGiuongDoi, string SoGiuongDon, string SoKhach, bool HieuLuc)
         {
             return lpd.loaiphong_them(id, TenLoaiPhong, SoGiuongDoi, SoGiuongDon, SoKhach, HieuLuc);
         }
-        public int LP_CapNhat(string id, string TenLoaiPhong, string SoGiuongDoi, string SoGiuongDon, string SoKhach, string HieuLuc)
+        public int LP_CapNhat(string id, string TenLoaiPhong, string SoGiuongDoi, string SoGiuongDon, string SoKhach, bool HieuLuc)
         {
             return lpd.loaiphong_capnhat(id, TenLoaiPhong, SoGiuongDoi, SoGiuongDon, SoKhach, HieuLuc);
         }

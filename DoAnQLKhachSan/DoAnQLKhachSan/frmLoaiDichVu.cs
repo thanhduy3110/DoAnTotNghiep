@@ -46,7 +46,6 @@ namespace DoAnQLKhachSan
         void clear_textbox()
         {
             txtTenLoaiDV.Text = "";
-            cboHieuLuc.Text = "";
         }
         bool flag=false;
 
@@ -56,18 +55,28 @@ namespace DoAnQLKhachSan
             {
                 clear_textbox();
                 txtID.Text = (ldv.LDV_Select().Rows.Count+1).ToString();
+                chkHieuLuc.Checked = false;
                 flag = true;
             }    
             
             else if (flag == true)
             {
-                if (txtTenLoaiDV.Text == "" || cboHieuLuc.Text == "")
+                if (txtTenLoaiDV.Text == "" )
                 {
                     MessageBox.Show("Lỗi");
                 }
                 else
                 {
-                    ldv.LDV_Them(txtID.Text, txtTenLoaiDV.Text, cboHieuLuc.Text);
+                    bool HieuLuc;
+                    if (chkHieuLuc.Checked == true)
+                    {
+                        HieuLuc = true;
+                    }
+                    else
+                    {
+                        HieuLuc = false;
+                    }
+                    ldv.LDV_Them(txtID.Text, txtTenLoaiDV.Text, HieuLuc);
                     MessageBox.Show("thêm thành công rồi nè");
                     flag = false;
                     dgvLoaiDV.DataSource = ldv.LDV_Select();
@@ -89,7 +98,16 @@ namespace DoAnQLKhachSan
             }    
             if (flag == true)
             {
-                ldv.LDV_CapNhat(txtID.Text, txtTenLoaiDV.Text, cboHieuLuc.Text);
+                bool HieuLuc;
+                if (chkHieuLuc.Checked == true)
+                {
+                    HieuLuc = true;
+                }
+                else
+                {
+                    HieuLuc = false;
+                }
+                ldv.LDV_CapNhat(txtID.Text, txtTenLoaiDV.Text, HieuLuc);
                 MessageBox.Show("sửa thành công rồi nè");
                 flag = false;
                 dgvLoaiDV.DataSource = ldv.LDV_Select();
@@ -102,7 +120,15 @@ namespace DoAnQLKhachSan
         {
             txtID.Text = dgvLoaiDV.Rows[numrow].Cells[0].Value.ToString();
             txtTenLoaiDV.Text = dgvLoaiDV.Rows[numrow].Cells[1].Value.ToString();
-            cboHieuLuc.Text = dgvLoaiDV.Rows[numrow].Cells[2].Value.ToString();
+           string HL = dgvLoaiDV.Rows[numrow].Cells[2].Value.ToString();
+            if(HL=="Còn")
+            {
+                chkHieuLuc.Checked = true;
+            }    
+            else
+            {
+                chkHieuLuc.Checked = false;
+            }    
         }
 
         private void dgvLoaiDV_CellClick(object sender, DataGridViewCellEventArgs e)

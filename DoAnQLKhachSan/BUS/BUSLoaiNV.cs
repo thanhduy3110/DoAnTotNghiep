@@ -22,11 +22,11 @@ namespace BUS
         {
             return LNV.LoaiNV_Select();
         }
-        public int LoaiNV_Them(int ID, string TenLoaiNV, int HieuLuc)
+        public int LoaiNV_Them(int ID, string TenLoaiNV, bool HieuLuc)
         {
             return LNV.LoaiNV_Them(ID, TenLoaiNV, HieuLuc);
         }
-        public int LoaiNV_CapNhat(int ID, string TenLoaiNV, int HieuLuc)
+        public int LoaiNV_CapNhat(int ID, string TenLoaiNV, bool HieuLuc)
         {
             return LNV.LoaiNV_CapNhat(ID, TenLoaiNV, HieuLuc);
         }

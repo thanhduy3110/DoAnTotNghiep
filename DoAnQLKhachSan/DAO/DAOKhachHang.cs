@@ -27,7 +27,7 @@ namespace DAO
             return db.Laydulieu("khachhang_select");
         }
 
-        public int khachhang_them(string ID, string HoTen, string NgaySinh, string SDT, string Email, string CMND, string GioiTinh, string QuocTich, string HieuLuc)
+        public int khachhang_them(string ID, string HoTen, string NgaySinh, string SDT, string Email, string CMND, bool GioiTinh, string QuocTich, bool HieuLuc)
         {
             name = new string[9];
             value = new object[9];
@@ -45,7 +45,7 @@ namespace DAO
 
         }
 
-        public int khachang_capnhat(string ID, string HoTen, string NgaySinh, string SDT, string Email, string CMND, string GioiTinh, string QuocTich, string HieuLuc)
+        public int khachang_capnhat(string ID, string HoTen, string NgaySinh, string SDT, string Email, string CMND, bool GioiTinh, string QuocTich, bool HieuLuc)
         {
             name = new string[9];
             value = new object[9];

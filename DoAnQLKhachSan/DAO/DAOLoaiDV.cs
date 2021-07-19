@@ -27,7 +27,7 @@ namespace DAO
             return db.Laydulieu("loaidv_select");
         }
 
-        public int loaidv_them(string ID, string TenLoaiDV, string HieuLuc)
+        public int loaidv_them(string ID, string TenLoaiDV, bool HieuLuc)
         {
             name = new string[3];
             value = new object[3];
@@ -38,7 +38,7 @@ namespace DAO
             return db.ThucHien("loaidv_them", name, value, 3);
         }
 
-        public int loaidv_capnhat(string ID, string TenLoaiDV, string HieuLuc)
+        public int loaidv_capnhat(string ID, string TenLoaiDV, bool HieuLuc)
         {
             name = new string[3];
             value = new object[3];

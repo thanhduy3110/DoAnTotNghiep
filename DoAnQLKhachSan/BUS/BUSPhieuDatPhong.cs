@@ -28,12 +28,12 @@ namespace BUS
             return pdp.phieudatphong_select();
         }
 
-        public int PDP_Them(string ID, string ID_KH, string NgayDen, string NgayDi, string HinhThucThue, string SoKhach, string GhiChu, string DaXuLy, string HieuLuc)
+        public int PDP_Them(string ID, string ID_KH, string NgayDen, string NgayDi, bool HinhThucThue, string SoKhach, string GhiChu, bool DaXuLy, bool HieuLuc)
         {
             return pdp.phieudatphong_them(ID, ID_KH, NgayDen, NgayDi, HinhThucThue, SoKhach, GhiChu, DaXuLy, HieuLuc);
         }
 
-        public int PDP_CapNhat(string ID, string ID_KH, string NgayDen, string NgayDi, string HinhThucThue, string SoKhach, string GhiChu, string DaXuLy, string HieuLuc)
+        public int PDP_CapNhat(string ID, string ID_KH, string NgayDen, string NgayDi, bool HinhThucThue, string SoKhach, string GhiChu, bool DaXuLy, bool HieuLuc)
         {
             return pdp.phieudatphong_capnhat(ID, ID_KH, NgayDen, NgayDi, HinhThucThue, SoKhach, GhiChu, DaXuLy, HieuLuc);
         }

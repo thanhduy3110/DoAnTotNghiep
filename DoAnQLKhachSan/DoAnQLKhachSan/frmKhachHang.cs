@@ -26,9 +26,27 @@ namespace DoAnQLKhachSan
             txtSDT.Text = dgvKhachHang.Rows[numrow].Cells[3].Value.ToString();
             txtEmail.Text = dgvKhachHang.Rows[numrow].Cells[4].Value.ToString();
             txtCMND.Text = dgvKhachHang.Rows[numrow].Cells[5].Value.ToString();
-            cboGioiTinh.Text = dgvKhachHang.Rows[numrow].Cells[6].Value.ToString();
+            string GT = dgvKhachHang.Rows[numrow].Cells[6].Value.ToString();
             cboQuocTich.Text = dgvKhachHang.Rows[numrow].Cells[7].Value.ToString();
-            cboHieuLuc.Text = dgvKhachHang.Rows[numrow].Cells[8].Value.ToString();
+            string HL = dgvKhachHang.Rows[numrow].Cells[8].Value.ToString();
+
+            if (GT == "Nữ")
+            {
+                radioNu.Checked = true;
+            }
+            else
+            {
+                radioNam.Checked = true;
+            }
+
+            if (HL == "Còn")
+            {
+                chkHieuLuc.Checked = true;
+            }
+            else
+            {
+                chkHieuLuc.Checked = false;
+            }
 
         }
         bool flag = false;
@@ -59,9 +77,7 @@ namespace DoAnQLKhachSan
             txtSDT.Text = "";
             txtEmail.Text = "";
             txtCMND.Text = "";
-            cboGioiTinh.Text = "";
             cboQuocTich.Text = "";
-            cboHieuLuc.Text = "";
         }
         private void btnThem_Click_1(object sender, EventArgs e)
         {
@@ -69,17 +85,40 @@ namespace DoAnQLKhachSan
             {
                 clear_textbox();
                 txtID.Text = (bkh.KH_Select().Rows.Count+1).ToString();
+                radioNam.Checked = false;
+                radioNu.Checked = false;
+                chkHieuLuc.Checked = false;
                 flag = true;
             }    
             else if (flag == true)
             {
-                if (txtHoTen.Text == "" || dtNgaySinh.Text == "" || txtSDT.Text == "" || txtCMND.Text == "" || cboGioiTinh.Text == "" || cboQuocTich.Text == "" || cboHieuLuc.Text == "")
+                if (txtHoTen.Text == "" || dtNgaySinh.Text == "" || txtSDT.Text == "" || txtCMND.Text == "" ||  cboQuocTich.Text == "" )
                 {
                     MessageBox.Show("Lỗi");
                 }
                 else
                 {
-                    bkh.KH_Them(txtID.Text, txtHoTen.Text, dtNgaySinh.Text, txtSDT.Text, txtEmail.Text, txtCMND.Text, cboGioiTinh.Text, cboQuocTich.Text, cboHieuLuc.Text);
+                    Boolean GT = false;
+                    bool HieuLuc;
+                    if (radioNam.Checked == true)
+                    {
+                        GT = true;
+
+                    }
+                    else if (radioNu.Checked == true)
+                    {
+                        GT = false;
+                    }
+
+                    if (chkHieuLuc.Checked == true)
+                    {
+                        HieuLuc = true;
+                    }
+                    else
+                    {
+                        HieuLuc = false;
+                    }
+                    bkh.KH_Them(txtID.Text, txtHoTen.Text, dtNgaySinh.Text, txtSDT.Text, txtEmail.Text, txtCMND.Text, GT, cboQuocTich.Text, HieuLuc);
                     MessageBox.Show("thêm thành công rồi nè");
                     flag = false;
                     dgvKhachHang.DataSource = bkh.KH_Select();
@@ -96,7 +135,27 @@ namespace DoAnQLKhachSan
             }
             else if (flag == true)
             {
-                bkh.KH_CapNhat(txtID.Text, txtHoTen.Text, dtNgaySinh.Text, txtSDT.Text, txtEmail.Text, txtCMND.Text, cboGioiTinh.Text, cboQuocTich.Text, cboHieuLuc.Text);
+                Boolean GT = false;
+                bool HieuLuc;
+                if (radioNam.Checked == true)
+                {
+                    GT = true;
+
+                }
+                else if (radioNu.Checked == true)
+                {
+                    GT = false;
+                }
+
+                if (chkHieuLuc.Checked == true)
+                {
+                    HieuLuc = true;
+                }
+                else
+                {
+                    HieuLuc = false;
+                }
+                bkh.KH_CapNhat(txtID.Text, txtHoTen.Text, dtNgaySinh.Text, txtSDT.Text, txtEmail.Text, txtCMND.Text, GT, cboQuocTich.Text, HieuLuc);
                 MessageBox.Show("thêm thành công rồi nè");
                 flag = false;
                 dgvKhachHang.DataSource = bkh.KH_Select();

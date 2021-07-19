@@ -30,7 +30,7 @@ namespace DAO
 
 
         //phương thức này gọi đến phương thức ThucHien ở dbConnectionData để thêm dữ liệu
-        public int loaiphong_them(string ID, string TenLoaiPhong, string SoGiuongDoi, string SoGiuongDon, string SoKhach, string HieuLuc)
+        public int loaiphong_them(string ID, string TenLoaiPhong, string SoGiuongDoi, string SoGiuongDon, string SoKhach, bool HieuLuc)
         {
             name = new string[6];
             value = new object[6];
@@ -44,7 +44,7 @@ namespace DAO
         }
 
         //update
-        public int loaiphong_capnhat(string id, string TenLoaiPhong, string SoGiuongDoi, string SoGiuongDon, string SoKhach, string HieuLuc)
+        public int loaiphong_capnhat(string id, string TenLoaiPhong, string SoGiuongDoi, string SoGiuongDon, string SoKhach, bool HieuLuc)
         {
             name = new string[6];
             value = new object[6];

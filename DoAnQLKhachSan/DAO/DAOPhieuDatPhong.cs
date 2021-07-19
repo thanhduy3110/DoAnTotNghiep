@@ -17,9 +17,9 @@ namespace DAO
         object[] value = { };
         public void HienThiID_KH(ComboBox cboID_KH)
         {
-            dsID_KH = db.LayDanhSach("select ID from KhachHang");// truy vấn lên sql
+            dsID_KH = db.LayDanhSach("select ID,HoTen from KhachHang");// truy vấn lên sql
             cboID_KH.DataSource = dsID_KH.Tables[0];
-            cboID_KH.DisplayMember = "id";
+            cboID_KH.DisplayMember = "hoten";
             cboID_KH.ValueMember = "id";
         }
         public void HienThiDanhSach(string sTimKiem, DataGridView d)
@@ -32,7 +32,7 @@ namespace DAO
             return db.Laydulieu("phieudatphong_select");
         }
 
-        public int phieudatphong_them(string ID, string ID_KH, string NgayDen, string NgayDi, string HinhThucThue, string SoKhach, string GhiChu, string DaXuLy, string HieuLuc)
+        public int phieudatphong_them(string ID, string ID_KH, string NgayDen, string NgayDi, bool HinhThucThue, string SoKhach, string GhiChu, bool DaXuLy, bool HieuLuc)
         {
             name = new string[9];
             value = new object[9];
@@ -50,7 +50,7 @@ namespace DAO
 
             return db.ThucHien("phieudatphong_them", name, value, 9);
         }
-        public int phieudatphong_capnhat(string ID, string ID_KH, string NgayDen, string NgayDi, string HinhThucThue, string SoKhach, string GhiChu, string DaXuLy, string HieuLuc)
+        public int phieudatphong_capnhat(string ID, string ID_KH, string NgayDen, string NgayDi, bool HinhThucThue, string SoKhach, string GhiChu, bool DaXuLy, bool HieuLuc)
         {
             name = new string[9];
             value = new object[9];

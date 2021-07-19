@@ -59,6 +59,7 @@
     <Compile Include="DAOPhieuDatPhong.cs" />
     <Compile Include="DAOPhong.cs" />
     <Compile Include="DAOPhongDaDat.cs" />
+    <Compile Include="DAOThongKe.cs" />
     <Compile Include="dbConnectionData.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

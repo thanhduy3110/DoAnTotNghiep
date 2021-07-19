@@ -155,6 +155,7 @@ namespace DoAnQLKhachSan
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
+            openChildForm(new frmThongKe());
         }
 
         private void btnDoiMatKhau_Click(object sender, EventArgs e)
