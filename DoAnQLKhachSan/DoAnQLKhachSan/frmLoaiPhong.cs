@@ -154,5 +154,7 @@ namespace DoAnQLKhachSan
         {
             blp.HienThiDanhSach(txtTim.TextValue, dgvDSLoaiPhong);
         }
+
+       
     }
 }

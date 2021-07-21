@@ -29,13 +29,18 @@ namespace DoAnQLKhachSan
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnThongKeDV = new ePOSOne.btnProduct.Button_WOC();
             this.radioSLTonKho = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtpDVNgayKT = new System.Windows.Forms.DateTimePicker();
             this.radioDVBanChay = new System.Windows.Forms.RadioButton();
+            this.dtpDVNgayBD = new System.Windows.Forms.DateTimePicker();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnThongKe = new ePOSOne.btnProduct.Button_WOC();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpNgayKetThuc = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayBatDau = new System.Windows.Forms.DateTimePicker();
@@ -44,11 +49,6 @@ namespace DoAnQLKhachSan
             this.radioNgay = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvThongKe = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.dtpDVNgayBD = new System.Windows.Forms.DateTimePicker();
-            this.dtpDVNgayKT = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnThongKeDV = new ePOSOne.btnProduct.Button_WOC();
-            this.btnThongKe = new ePOSOne.btnProduct.Button_WOC();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -84,6 +84,29 @@ namespace DoAnQLKhachSan
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Dịch Vụ";
             // 
+            // btnThongKeDV
+            // 
+            this.btnThongKeDV.BorderColor = System.Drawing.Color.Black;
+            this.btnThongKeDV.ButtonColor = System.Drawing.Color.Lime;
+            this.btnThongKeDV.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnThongKeDV.FlatAppearance.BorderSize = 0;
+            this.btnThongKeDV.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btnThongKeDV.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnThongKeDV.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnThongKeDV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThongKeDV.ForeColor = System.Drawing.Color.White;
+            this.btnThongKeDV.Location = new System.Drawing.Point(68, 296);
+            this.btnThongKeDV.Name = "btnThongKeDV";
+            this.btnThongKeDV.OnHoverBorderColor = System.Drawing.Color.Red;
+            this.btnThongKeDV.OnHoverButtonColor = System.Drawing.Color.Yellow;
+            this.btnThongKeDV.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btnThongKeDV.Size = new System.Drawing.Size(236, 54);
+            this.btnThongKeDV.TabIndex = 5;
+            this.btnThongKeDV.Text = "Thống kê dịch vụ";
+            this.btnThongKeDV.TextColor = System.Drawing.Color.Black;
+            this.btnThongKeDV.UseVisualStyleBackColor = true;
+            this.btnThongKeDV.Click += new System.EventHandler(this.btnThongKeDV_Click);
+            // 
             // radioSLTonKho
             // 
             this.radioSLTonKho.AutoSize = true;
@@ -95,6 +118,23 @@ namespace DoAnQLKhachSan
             this.radioSLTonKho.Text = "Số lượng tồn kho";
             this.radioSLTonKho.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(337, 131);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 24);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Đến";
+            // 
+            // dtpDVNgayKT
+            // 
+            this.dtpDVNgayKT.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDVNgayKT.Location = new System.Drawing.Point(412, 123);
+            this.dtpDVNgayKT.Name = "dtpDVNgayKT";
+            this.dtpDVNgayKT.Size = new System.Drawing.Size(216, 32);
+            this.dtpDVNgayKT.TabIndex = 3;
+            // 
             // radioDVBanChay
             // 
             this.radioDVBanChay.AutoSize = true;
@@ -105,6 +145,14 @@ namespace DoAnQLKhachSan
             this.radioDVBanChay.TabStop = true;
             this.radioDVBanChay.Text = "Dịch vụ bán chạy";
             this.radioDVBanChay.UseVisualStyleBackColor = true;
+            // 
+            // dtpDVNgayBD
+            // 
+            this.dtpDVNgayBD.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDVNgayBD.Location = new System.Drawing.Point(103, 125);
+            this.dtpDVNgayBD.Name = "dtpDVNgayBD";
+            this.dtpDVNgayBD.Size = new System.Drawing.Size(216, 32);
+            this.dtpDVNgayBD.TabIndex = 3;
             // 
             // groupBox3
             // 
@@ -122,6 +170,29 @@ namespace DoAnQLKhachSan
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tổng Thu Nhập";
+            // 
+            // btnThongKe
+            // 
+            this.btnThongKe.BorderColor = System.Drawing.Color.Black;
+            this.btnThongKe.ButtonColor = System.Drawing.Color.Lime;
+            this.btnThongKe.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnThongKe.FlatAppearance.BorderSize = 0;
+            this.btnThongKe.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btnThongKe.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnThongKe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThongKe.ForeColor = System.Drawing.Color.White;
+            this.btnThongKe.Location = new System.Drawing.Point(34, 296);
+            this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.OnHoverBorderColor = System.Drawing.Color.Red;
+            this.btnThongKe.OnHoverButtonColor = System.Drawing.Color.Yellow;
+            this.btnThongKe.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btnThongKe.Size = new System.Drawing.Size(225, 54);
+            this.btnThongKe.TabIndex = 5;
+            this.btnThongKe.Text = "Thống kê";
+            this.btnThongKe.TextColor = System.Drawing.Color.Black;
+            this.btnThongKe.UseVisualStyleBackColor = true;
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
             // label1
             // 
@@ -195,23 +266,23 @@ namespace DoAnQLKhachSan
             // 
             // dgvThongKe
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvThongKe.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvThongKe.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvThongKe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvThongKe.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvThongKe.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvThongKe.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvThongKe.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgvThongKe.Location = new System.Drawing.Point(3, 24);
@@ -221,63 +292,6 @@ namespace DoAnQLKhachSan
             this.dgvThongKe.RowTemplate.Height = 24;
             this.dgvThongKe.Size = new System.Drawing.Size(1464, 236);
             this.dgvThongKe.TabIndex = 0;
-            // 
-            // dtpDVNgayBD
-            // 
-            this.dtpDVNgayBD.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDVNgayBD.Location = new System.Drawing.Point(103, 125);
-            this.dtpDVNgayBD.Name = "dtpDVNgayBD";
-            this.dtpDVNgayBD.Size = new System.Drawing.Size(216, 32);
-            this.dtpDVNgayBD.TabIndex = 3;
-            // 
-            // dtpDVNgayKT
-            // 
-            this.dtpDVNgayKT.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDVNgayKT.Location = new System.Drawing.Point(412, 123);
-            this.dtpDVNgayKT.Name = "dtpDVNgayKT";
-            this.dtpDVNgayKT.Size = new System.Drawing.Size(216, 32);
-            this.dtpDVNgayKT.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(337, 131);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 24);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Đến";
-            // 
-            // btnThongKeDV
-            // 
-            this.btnThongKeDV.BorderColor = System.Drawing.Color.White;
-            this.btnThongKeDV.ButtonColor = System.Drawing.Color.Blue;
-            this.btnThongKeDV.Location = new System.Drawing.Point(68, 296);
-            this.btnThongKeDV.Name = "btnThongKeDV";
-            this.btnThongKeDV.OnHoverBorderColor = System.Drawing.Color.Gray;
-            this.btnThongKeDV.OnHoverButtonColor = System.Drawing.Color.Yellow;
-            this.btnThongKeDV.OnHoverTextColor = System.Drawing.Color.Gray;
-            this.btnThongKeDV.Size = new System.Drawing.Size(236, 54);
-            this.btnThongKeDV.TabIndex = 5;
-            this.btnThongKeDV.Text = "Thống kê dịch vụ";
-            this.btnThongKeDV.TextColor = System.Drawing.Color.White;
-            this.btnThongKeDV.UseVisualStyleBackColor = true;
-            this.btnThongKeDV.Click += new System.EventHandler(this.btnThongKeDV_Click);
-            // 
-            // btnThongKe
-            // 
-            this.btnThongKe.BorderColor = System.Drawing.Color.White;
-            this.btnThongKe.ButtonColor = System.Drawing.Color.Blue;
-            this.btnThongKe.Location = new System.Drawing.Point(34, 296);
-            this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.OnHoverBorderColor = System.Drawing.Color.Gray;
-            this.btnThongKe.OnHoverButtonColor = System.Drawing.Color.Yellow;
-            this.btnThongKe.OnHoverTextColor = System.Drawing.Color.Gray;
-            this.btnThongKe.Size = new System.Drawing.Size(225, 54);
-            this.btnThongKe.TabIndex = 5;
-            this.btnThongKe.Text = "Thống kê";
-            this.btnThongKe.TextColor = System.Drawing.Color.White;
-            this.btnThongKe.UseVisualStyleBackColor = true;
-            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
             // frmThongKe
             // 

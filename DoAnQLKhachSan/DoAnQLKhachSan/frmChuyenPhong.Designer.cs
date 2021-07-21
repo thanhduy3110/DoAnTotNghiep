@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             ePOSOne.btnProduct.Button_WOC button_WOC5;
             ePOSOne.btnProduct.Button_WOC button_WOC1;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_Phong = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +47,58 @@
             button_WOC1 = new ePOSOne.btnProduct.Button_WOC();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Phong)).BeginInit();
             this.SuspendLayout();
+            // 
+            // button_WOC5
+            // 
+            button_WOC5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button_WOC5.BorderColor = System.Drawing.Color.Black;
+            button_WOC5.ButtonColor = System.Drawing.Color.Lime;
+            button_WOC5.CausesValidation = false;
+            button_WOC5.Cursor = System.Windows.Forms.Cursors.Default;
+            button_WOC5.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            button_WOC5.FlatAppearance.BorderSize = 0;
+            button_WOC5.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            button_WOC5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            button_WOC5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            button_WOC5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button_WOC5.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            button_WOC5.ForeColor = System.Drawing.Color.White;
+            button_WOC5.Location = new System.Drawing.Point(982, 703);
+            button_WOC5.Name = "button_WOC5";
+            button_WOC5.OnHoverBorderColor = System.Drawing.Color.Red;
+            button_WOC5.OnHoverButtonColor = System.Drawing.Color.Yellow;
+            button_WOC5.OnHoverTextColor = System.Drawing.Color.Black;
+            button_WOC5.Size = new System.Drawing.Size(288, 48);
+            button_WOC5.TabIndex = 133;
+            button_WOC5.Text = "THỰC HIỆN CHUYỂN PHÒNG";
+            button_WOC5.TextColor = System.Drawing.Color.Black;
+            button_WOC5.UseVisualStyleBackColor = true;
+            // 
+            // button_WOC1
+            // 
+            button_WOC1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button_WOC1.BorderColor = System.Drawing.Color.Black;
+            button_WOC1.ButtonColor = System.Drawing.Color.Lime;
+            button_WOC1.CausesValidation = false;
+            button_WOC1.Cursor = System.Windows.Forms.Cursors.Default;
+            button_WOC1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            button_WOC1.FlatAppearance.BorderSize = 0;
+            button_WOC1.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            button_WOC1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            button_WOC1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            button_WOC1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button_WOC1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            button_WOC1.ForeColor = System.Drawing.Color.White;
+            button_WOC1.Location = new System.Drawing.Point(812, 703);
+            button_WOC1.Name = "button_WOC1";
+            button_WOC1.OnHoverBorderColor = System.Drawing.Color.Red;
+            button_WOC1.OnHoverButtonColor = System.Drawing.Color.Yellow;
+            button_WOC1.OnHoverTextColor = System.Drawing.Color.Black;
+            button_WOC1.Size = new System.Drawing.Size(164, 48);
+            button_WOC1.TabIndex = 133;
+            button_WOC1.Text = "HỦY";
+            button_WOC1.TextColor = System.Drawing.Color.Black;
+            button_WOC1.UseVisualStyleBackColor = true;
             // 
             // dgv_Phong
             // 
@@ -77,65 +130,19 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_Phong.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_Phong.GridColor = System.Drawing.Color.Black;
+            this.dgv_Phong.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            this.dgv_Phong.HighlightSelectedColumnHeaders = false;
             this.dgv_Phong.Location = new System.Drawing.Point(12, 12);
             this.dgv_Phong.Name = "dgv_Phong";
+            this.dgv_Phong.PaintEnhancedSelection = false;
             this.dgv_Phong.RowHeadersWidth = 51;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dgv_Phong.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_Phong.RowTemplate.Height = 24;
+            this.dgv_Phong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Phong.Size = new System.Drawing.Size(1258, 675);
             this.dgv_Phong.TabIndex = 68;
-            // 
-            // button_WOC5
-            // 
-            button_WOC5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button_WOC5.BorderColor = System.Drawing.Color.Black;
-            button_WOC5.ButtonColor = System.Drawing.Color.Blue;
-            button_WOC5.CausesValidation = false;
-            button_WOC5.Cursor = System.Windows.Forms.Cursors.Default;
-            button_WOC5.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            button_WOC5.FlatAppearance.BorderSize = 0;
-            button_WOC5.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            button_WOC5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            button_WOC5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            button_WOC5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button_WOC5.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            button_WOC5.ForeColor = System.Drawing.Color.White;
-            button_WOC5.Location = new System.Drawing.Point(982, 703);
-            button_WOC5.Name = "button_WOC5";
-            button_WOC5.OnHoverBorderColor = System.Drawing.Color.Red;
-            button_WOC5.OnHoverButtonColor = System.Drawing.Color.Yellow;
-            button_WOC5.OnHoverTextColor = System.Drawing.Color.Black;
-            button_WOC5.Size = new System.Drawing.Size(288, 48);
-            button_WOC5.TabIndex = 133;
-            button_WOC5.Text = "THỰC HIỆN CHUYỂN PHÒNG";
-            button_WOC5.TextColor = System.Drawing.Color.White;
-            button_WOC5.UseVisualStyleBackColor = true;
-            // 
-            // button_WOC1
-            // 
-            button_WOC1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button_WOC1.BorderColor = System.Drawing.Color.Black;
-            button_WOC1.ButtonColor = System.Drawing.Color.Blue;
-            button_WOC1.CausesValidation = false;
-            button_WOC1.Cursor = System.Windows.Forms.Cursors.Default;
-            button_WOC1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            button_WOC1.FlatAppearance.BorderSize = 0;
-            button_WOC1.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            button_WOC1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            button_WOC1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            button_WOC1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button_WOC1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            button_WOC1.ForeColor = System.Drawing.Color.White;
-            button_WOC1.Location = new System.Drawing.Point(812, 703);
-            button_WOC1.Name = "button_WOC1";
-            button_WOC1.OnHoverBorderColor = System.Drawing.Color.Red;
-            button_WOC1.OnHoverButtonColor = System.Drawing.Color.Yellow;
-            button_WOC1.OnHoverTextColor = System.Drawing.Color.Black;
-            button_WOC1.Size = new System.Drawing.Size(164, 48);
-            button_WOC1.TabIndex = 133;
-            button_WOC1.Text = "HỦY";
-            button_WOC1.TextColor = System.Drawing.Color.White;
-            button_WOC1.UseVisualStyleBackColor = true;
             // 
             // Column2
             // 

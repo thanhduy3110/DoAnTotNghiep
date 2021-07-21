@@ -34,6 +34,7 @@
             ePOSOne.btnProduct.Button_WOC btnThem;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvKhachHang = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +47,9 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.radioNu = new System.Windows.Forms.RadioButton();
+            this.radioNam = new System.Windows.Forms.RadioButton();
+            this.chkHieuLuc = new System.Windows.Forms.CheckBox();
             this.txtTim = new JTextBox.JTextBox();
             this.dtNgaySinh = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.txtID = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -63,9 +67,6 @@
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.chkHieuLuc = new System.Windows.Forms.CheckBox();
-            this.radioNam = new System.Windows.Forms.RadioButton();
-            this.radioNu = new System.Windows.Forms.RadioButton();
             btnXoaTatCa = new ePOSOne.btnProduct.Button_WOC();
             btnXoa = new ePOSOne.btnProduct.Button_WOC();
             btnSua = new ePOSOne.btnProduct.Button_WOC();
@@ -106,7 +107,7 @@
             // 
             btnXoa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             btnXoa.BorderColor = System.Drawing.Color.Black;
-            btnXoa.ButtonColor = System.Drawing.Color.Blue;
+            btnXoa.ButtonColor = System.Drawing.Color.Lime;
             btnXoa.CausesValidation = false;
             btnXoa.Cursor = System.Windows.Forms.Cursors.Default;
             btnXoa.FlatAppearance.BorderColor = System.Drawing.Color.White;
@@ -117,7 +118,7 @@
             btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnXoa.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             btnXoa.ForeColor = System.Drawing.Color.White;
-            btnXoa.Location = new System.Drawing.Point(861, 430);
+            btnXoa.Location = new System.Drawing.Point(594, 437);
             btnXoa.Name = "btnXoa";
             btnXoa.OnHoverBorderColor = System.Drawing.Color.Red;
             btnXoa.OnHoverButtonColor = System.Drawing.Color.Yellow;
@@ -125,7 +126,7 @@
             btnXoa.Size = new System.Drawing.Size(117, 48);
             btnXoa.TabIndex = 160;
             btnXoa.Text = "XÓA";
-            btnXoa.TextColor = System.Drawing.Color.White;
+            btnXoa.TextColor = System.Drawing.Color.Black;
             btnXoa.UseVisualStyleBackColor = true;
             btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
@@ -133,7 +134,7 @@
             // 
             btnSua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             btnSua.BorderColor = System.Drawing.Color.Black;
-            btnSua.ButtonColor = System.Drawing.Color.Blue;
+            btnSua.ButtonColor = System.Drawing.Color.Lime;
             btnSua.CausesValidation = false;
             btnSua.Cursor = System.Windows.Forms.Cursors.Default;
             btnSua.FlatAppearance.BorderColor = System.Drawing.Color.White;
@@ -144,7 +145,7 @@
             btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnSua.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             btnSua.ForeColor = System.Drawing.Color.White;
-            btnSua.Location = new System.Drawing.Point(674, 430);
+            btnSua.Location = new System.Drawing.Point(471, 437);
             btnSua.Name = "btnSua";
             btnSua.OnHoverBorderColor = System.Drawing.Color.Red;
             btnSua.OnHoverButtonColor = System.Drawing.Color.Yellow;
@@ -152,7 +153,7 @@
             btnSua.Size = new System.Drawing.Size(117, 48);
             btnSua.TabIndex = 161;
             btnSua.Text = "SỮA";
-            btnSua.TextColor = System.Drawing.Color.White;
+            btnSua.TextColor = System.Drawing.Color.Black;
             btnSua.UseVisualStyleBackColor = true;
             btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
@@ -160,7 +161,7 @@
             // 
             btnThem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             btnThem.BorderColor = System.Drawing.Color.Black;
-            btnThem.ButtonColor = System.Drawing.Color.Blue;
+            btnThem.ButtonColor = System.Drawing.Color.Lime;
             btnThem.CausesValidation = false;
             btnThem.Cursor = System.Windows.Forms.Cursors.Default;
             btnThem.FlatAppearance.BorderColor = System.Drawing.Color.White;
@@ -170,7 +171,7 @@
             btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnThem.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             btnThem.ForeColor = System.Drawing.Color.White;
-            btnThem.Location = new System.Drawing.Point(507, 430);
+            btnThem.Location = new System.Drawing.Point(348, 437);
             btnThem.Name = "btnThem";
             btnThem.OnHoverBorderColor = System.Drawing.Color.Red;
             btnThem.OnHoverButtonColor = System.Drawing.Color.Yellow;
@@ -178,7 +179,7 @@
             btnThem.Size = new System.Drawing.Size(117, 48);
             btnThem.TabIndex = 163;
             btnThem.Text = "THÊM";
-            btnThem.TextColor = System.Drawing.Color.White;
+            btnThem.TextColor = System.Drawing.Color.Black;
             btnThem.UseVisualStyleBackColor = true;
             btnThem.Click += new System.EventHandler(this.btnThem_Click_1);
             // 
@@ -225,11 +226,17 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvKhachHang.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvKhachHang.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            this.dgvKhachHang.HighlightSelectedColumnHeaders = false;
             this.dgvKhachHang.Location = new System.Drawing.Point(3, 24);
             this.dgvKhachHang.Name = "dgvKhachHang";
+            this.dgvKhachHang.PaintEnhancedSelection = false;
             this.dgvKhachHang.RowHeadersVisible = false;
             this.dgvKhachHang.RowHeadersWidth = 51;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dgvKhachHang.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvKhachHang.RowTemplate.Height = 24;
+            this.dgvKhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvKhachHang.Size = new System.Drawing.Size(1478, 321);
             this.dgvKhachHang.TabIndex = 2;
             this.dgvKhachHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachHang_CellClick);
@@ -342,10 +349,41 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Khách Hàng";
             // 
+            // radioNu
+            // 
+            this.radioNu.AutoSize = true;
+            this.radioNu.Location = new System.Drawing.Point(823, 250);
+            this.radioNu.Name = "radioNu";
+            this.radioNu.Size = new System.Drawing.Size(60, 28);
+            this.radioNu.TabIndex = 167;
+            this.radioNu.TabStop = true;
+            this.radioNu.Text = "Nữ";
+            this.radioNu.UseVisualStyleBackColor = true;
+            // 
+            // radioNam
+            // 
+            this.radioNam.AutoSize = true;
+            this.radioNam.Location = new System.Drawing.Point(702, 250);
+            this.radioNam.Name = "radioNam";
+            this.radioNam.Size = new System.Drawing.Size(77, 28);
+            this.radioNam.TabIndex = 167;
+            this.radioNam.TabStop = true;
+            this.radioNam.Text = "Nam";
+            this.radioNam.UseVisualStyleBackColor = true;
+            // 
+            // chkHieuLuc
+            // 
+            this.chkHieuLuc.AutoSize = true;
+            this.chkHieuLuc.Location = new System.Drawing.Point(1140, 261);
+            this.chkHieuLuc.Name = "chkHieuLuc";
+            this.chkHieuLuc.Size = new System.Drawing.Size(18, 17);
+            this.chkHieuLuc.TabIndex = 166;
+            this.chkHieuLuc.UseVisualStyleBackColor = true;
+            // 
             // txtTim
             // 
             this.txtTim.AutoSize = true;
-            this.txtTim.BorderColor = System.Drawing.Color.Black;
+            this.txtTim.BorderColor = System.Drawing.Color.Lime;
             this.txtTim.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtTim.Hint = "";
             this.txtTim.IsPassword = false;
@@ -356,7 +394,7 @@
             this.txtTim.OnFocus = System.Drawing.Color.DarkGray;
             this.txtTim.OnlyChar = false;
             this.txtTim.OnlyNumber = false;
-            this.txtTim.Size = new System.Drawing.Size(405, 48);
+            this.txtTim.Size = new System.Drawing.Size(314, 55);
             this.txtTim.TabIndex = 165;
             this.txtTim.TextValue = "";
             this.txtTim.TextChangeEvent += new System.EventHandler(this.txtTim_TextChangeEvent);
@@ -625,37 +663,6 @@
             this.labelX2.Size = new System.Drawing.Size(126, 24);
             this.labelX2.TabIndex = 141;
             this.labelX2.Text = "Họ và Tên:";
-            // 
-            // chkHieuLuc
-            // 
-            this.chkHieuLuc.AutoSize = true;
-            this.chkHieuLuc.Location = new System.Drawing.Point(1140, 261);
-            this.chkHieuLuc.Name = "chkHieuLuc";
-            this.chkHieuLuc.Size = new System.Drawing.Size(18, 17);
-            this.chkHieuLuc.TabIndex = 166;
-            this.chkHieuLuc.UseVisualStyleBackColor = true;
-            // 
-            // radioNam
-            // 
-            this.radioNam.AutoSize = true;
-            this.radioNam.Location = new System.Drawing.Point(702, 250);
-            this.radioNam.Name = "radioNam";
-            this.radioNam.Size = new System.Drawing.Size(77, 28);
-            this.radioNam.TabIndex = 167;
-            this.radioNam.TabStop = true;
-            this.radioNam.Text = "Nam";
-            this.radioNam.UseVisualStyleBackColor = true;
-            // 
-            // radioNu
-            // 
-            this.radioNu.AutoSize = true;
-            this.radioNu.Location = new System.Drawing.Point(823, 250);
-            this.radioNu.Name = "radioNu";
-            this.radioNu.Size = new System.Drawing.Size(60, 28);
-            this.radioNu.TabIndex = 167;
-            this.radioNu.TabStop = true;
-            this.radioNu.Text = "Nữ";
-            this.radioNu.UseVisualStyleBackColor = true;
             // 
             // frmKhachHang
             // 

@@ -127,7 +127,7 @@ namespace DoAnQLKhachSan
             txtCMND.Text = dgvDSNhanVien.Rows[numrow].Cells[9].Value.ToString();
             try
             {
-                string duongdanhinh = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan\\ImageNhanVien\\" + dgvDSNhanVien.Rows[numrow].Cells[11].Value.ToString();
+                string duongdanhinh = "C:\\Users\\USER\\source\\repos\\DoAnTotNghiep\\DoAnQLKhachSan\\ImageNhanVien\\" + dgvDSNhanVien.Rows[numrow].Cells[11].Value.ToString();
                 Bitmap a = new Bitmap(duongdanhinh);
                 pichHinh.Image = a;
             }
@@ -168,7 +168,7 @@ namespace DoAnQLKhachSan
             }else if(flag==true)
             {
                 string fname = DuoiAnh; // tên ảnh
-                string floder = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan";//đường dẫn lưu ảnh
+                string floder = "C:\\Users\\USER\\source\\repos\\DoAnTotNghiep\\DoAnQLKhachSan\\ImageNhanVien";//đường dẫn lưu ảnh
                 string path = System.IO.Path.Combine(floder, fname);
                 Image a = pichHinh.Image;
                 a.Save(path); //lưu ảnh vào đường dẫn   
@@ -221,7 +221,7 @@ namespace DoAnQLKhachSan
             }else if(flag==true)
             {
                 string fname1 = DuoiAnh; // tên ảnh
-                string floder1 = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan\\ImageNhanVien";//đường dẫn lưu ảnh
+                string floder1 = "C:\\Users\\USER\\source\\repos\\DoAnTotNghiep\\DoAnQLKhachSan\\ImageNhanVien";//đường dẫn lưu ảnh
                 string path1 = System.IO.Path.Combine(floder1, fname1);
 
                 {
@@ -252,22 +252,20 @@ namespace DoAnQLKhachSan
                             HieuLuc = false;
                         }
                         int r = this.dgvDSNhanVien.CurrentCell.RowIndex;
-                        string address = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan\\ImageNhanVien\\" + dgvDSNhanVien.Rows[r].Cells[11].Value.ToString();
+                        string address = "C:\\Users\\USER\\source\\repos\\DoAnTotNghiep\\DoAnQLKhachSan\\ImageNhanVien\\" + dgvDSNhanVien.Rows[r].Cells[11].Value.ToString();
                         string result;
                         result = Path.GetFileName(address);
                         string b = dgvDSNhanVien.Rows[r].Cells[11].Value.ToString();
-                        //{
-                        //    MessageBox.Show("du lieu datagridview " + b);
-                        //}
+                       
 
-                        FileInfo info = new FileInfo(@"D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\ImageNhanVien\" + DuoiAnh);
+                        FileInfo info = new FileInfo(@"C:\Users\USER\source\repos\DoAnTotNghiep\DoAnQLKhachSan\ImageNhanVien\" + DuoiAnh);
                         //Get file infromation from info object
 
 
                         string FileNames = info.Name;
-                        {
-                            MessageBox.Show("info " + FileNames);
-                        }
+                        //{
+                        //    MessageBox.Show("info " + FileNames);
+                        //}
 
                         if (FileNames == "")  //picturebox bằng null là ảnh giống ảnh cũ
                         {
