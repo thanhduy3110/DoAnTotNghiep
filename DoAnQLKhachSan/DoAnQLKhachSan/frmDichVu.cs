@@ -137,7 +137,7 @@ namespace DoAnQLKhachSan
         void hienthi_textbox(int numrow)
         {
 
-            txtHinhAnh.Text = dgvDichVu.Rows[numrow].Cells[4].Value.ToString();
+            //txtHinhAnh.Text = dgvDichVu.Rows[numrow].Cells[4].Value.ToString();
             txtID.Text = dgvDichVu.Rows[numrow].Cells[0].Value.ToString();
             cboLoaiDV.SelectedValue = dgvDichVu.Rows[numrow].Cells[1].Value.ToString();
             txtTenDV.Text = dgvDichVu.Rows[numrow].Cells[2].Value.ToString();
@@ -155,7 +155,7 @@ namespace DoAnQLKhachSan
             {
                 chkHieuLuc.Checked = false;
             }    
-            string floder = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan\\DoAnQLKhachSan\\Images\\" + txtHinhAnh.Text;
+            string floder = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan\\DoAnQLKhachSan\\Images\\" + dgvDichVu.Rows[numrow].Cells[4].Value.ToString();
             Bitmap a = new Bitmap(floder);
             pictureBox.Image = a;
         }

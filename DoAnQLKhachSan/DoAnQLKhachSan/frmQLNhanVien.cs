@@ -77,7 +77,6 @@ namespace DoAnQLKhachSan
             rtxtDiaChi.Text = "";
             txtEmail.Text = "";
             txtCMND.Text = "";
-            txtHinhAnh.Text = "";
            
         }
         void xulychucnang(Boolean t)
@@ -97,7 +96,6 @@ namespace DoAnQLKhachSan
             rtxtDiaChi.ReadOnly = t;
             txtEmail.ReadOnly = t;
             txtCMND.ReadOnly = t;
-            txtHinhAnh.ReadOnly = t;
 
         }
 
@@ -120,17 +118,16 @@ namespace DoAnQLKhachSan
             txtID.Text = dgvDSNhanVien.Rows[numrow].Cells[0].Value.ToString();
             cboLoaiNV.Text = dgvDSNhanVien.Rows[numrow].Cells[1].Value.ToString();
             txtMaNV.Text = dgvDSNhanVien.Rows[numrow].Cells[2].Value.ToString();
-            txtMatKhau.Text = dgvDSNhanVien.Rows[numrow].Cells[3].Value.ToString();
+            //txtMatKhau.Text = dgvDSNhanVien.Rows[numrow].Cells[3].Value.ToString();
             txtHoTen.Text = dgvDSNhanVien.Rows[numrow].Cells[4].Value.ToString();
             dtpNgaySinh.Text = dgvDSNhanVien.Rows[numrow].Cells[5].Value.ToString();
             txtSDT.Text = dgvDSNhanVien.Rows[numrow].Cells[6].Value.ToString();
             rtxtDiaChi.Text = dgvDSNhanVien.Rows[numrow].Cells[7].Value.ToString();
             txtEmail.Text = dgvDSNhanVien.Rows[numrow].Cells[8].Value.ToString();
             txtCMND.Text = dgvDSNhanVien.Rows[numrow].Cells[9].Value.ToString();
-            txtHinhAnh.Text = dgvDSNhanVien.Rows[numrow].Cells[11].Value.ToString();
             try
             {
-                string duongdanhinh = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan\\DoAnQLKhachSan\\Images\\" + txtHinhAnh.Text;
+                string duongdanhinh = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan\\ImageNhanVien\\" + dgvDSNhanVien.Rows[numrow].Cells[11].Value.ToString();
                 Bitmap a = new Bitmap(duongdanhinh);
                 pichHinh.Image = a;
             }
@@ -149,7 +146,7 @@ namespace DoAnQLKhachSan
             }
 
             string HL = dgvDSNhanVien.Rows[numrow].Cells[12].Value.ToString();
-            if (HL == "Còn làm")
+            if (HL == "Còn Làm")
             {
                 chkHieuLuc.Checked = true;
             }
@@ -170,8 +167,12 @@ namespace DoAnQLKhachSan
                 flag = true;
             }else if(flag==true)
             {
-               
-                if (txtEmail.Text == "" || txtCMND.Text == "" || txtHinhAnh.Text == "" || txtHoTen.Text == "" || txtMatKhau.Text == "" || txtSDT.Text == "" || cboLoaiNV.Text == "" || rtxtDiaChi.Text == "" || txtMaNV.Text == "" )
+                string fname = DuoiAnh; // tên ảnh
+                string floder = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan";//đường dẫn lưu ảnh
+                string path = System.IO.Path.Combine(floder, fname);
+                Image a = pichHinh.Image;
+                a.Save(path); //lưu ảnh vào đường dẫn   
+                if (txtEmail.Text == "" || txtCMND.Text == "" || txtHoTen.Text == "" || txtMatKhau.Text == "" || txtSDT.Text == "" || cboLoaiNV.Text == "" || rtxtDiaChi.Text == "" || txtMaNV.Text == "" )
                 {
                     MessageBox.Show("Lỗi");
                 }
@@ -197,15 +198,13 @@ namespace DoAnQLKhachSan
                     else
                     {
                         HieuLuc = false;
-                    }    
-                    bNV.NhanVien_Them(Int32.Parse(txtID.Text), cboLoaiNV.SelectedIndex + 1, txtMaNV.Text, MaHoa("123", txtMatKhau.Text), txtHoTen.Text, Convert.ToDateTime(dtpNgaySinh.Text).ToString("yyyy-MM-dd"), txtSDT.Text, rtxtDiaChi.Text, txtEmail.Text, Int32.Parse(txtCMND.Text), GT, txtHinhAnh.Text, HieuLuc);
-                    File.Copy(DuongDan, Path.Combine(@"D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\Images", Path.GetFileName(txtHinhAnh.Text)), true);
+                    }
+                    bNV.NhanVien_Them(Int32.Parse(txtID.Text), cboLoaiNV.SelectedIndex + 1, txtMaNV.Text, txtMatKhau.Text, txtHoTen.Text, Convert.ToDateTime(dtpNgaySinh.Text).ToString("yyyy-MM-dd"), txtSDT.Text, rtxtDiaChi.Text, txtEmail.Text, Int32.Parse(txtCMND.Text), GT, fname, HieuLuc);
                     MessageBox.Show("Thêm thành công ");
-                    flag = false;
                     dgvDSNhanVien.DataSource = bNV.NhanVien_Select();
-                    
                 }
-            }    
+                }
+                
 
                
          }
@@ -221,9 +220,12 @@ namespace DoAnQLKhachSan
                 flag = true;
             }else if(flag==true)
             {
-                
+                string fname1 = DuoiAnh; // tên ảnh
+                string floder1 = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan\\ImageNhanVien";//đường dẫn lưu ảnh
+                string path1 = System.IO.Path.Combine(floder1, fname1);
+
                 {
-                    if (txtEmail.Text == "" || txtCMND.Text == "" || txtHinhAnh.Text == "" || txtHoTen.Text == "" || txtMatKhau.Text == "" || txtSDT.Text == "" || cboLoaiNV.Text == "" || rtxtDiaChi.Text == "" || txtMaNV.Text == "")
+                    if (txtEmail.Text == "" || txtCMND.Text == "" || txtHoTen.Text == "" || txtSDT.Text == "" || cboLoaiNV.Text == "" || rtxtDiaChi.Text == "" || txtMaNV.Text == "")
                     {
                         MessageBox.Show("Lỗi");
                     }
@@ -249,13 +251,60 @@ namespace DoAnQLKhachSan
                         {
                             HieuLuc = false;
                         }
-                        txtHinhAnh.Text = txtID.Text + "Sua" + (Int32.Parse(txtID.Text) + 1).ToString() + ".jpg";
-                        bNV.NhanVien_CapNhat(ID, cboLoaiNV.SelectedIndex + 1, txtMaNV.Text, txtMatKhau.Text, txtHoTen.Text, Convert.ToDateTime(dtpNgaySinh.Text).ToString("yyyy-MM-dd"), txtSDT.Text, rtxtDiaChi.Text, txtEmail.Text, int.Parse(txtCMND.Text), GT, txtHinhAnh.Text,HieuLuc);
-                        File.Copy(DuongDan, Path.Combine(@"D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\Images", Path.GetFileName(txtHinhAnh.Text)), true);
-                        MessageBox.Show("Sữa thành công ");
-                        flag = false;
-                        dgvDSNhanVien.DataSource = bNV.NhanVien_Select();
-                        
+                        int r = this.dgvDSNhanVien.CurrentCell.RowIndex;
+                        string address = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan\\ImageNhanVien\\" + dgvDSNhanVien.Rows[r].Cells[11].Value.ToString();
+                        string result;
+                        result = Path.GetFileName(address);
+                        string b = dgvDSNhanVien.Rows[r].Cells[11].Value.ToString();
+                        //{
+                        //    MessageBox.Show("du lieu datagridview " + b);
+                        //}
+
+                        FileInfo info = new FileInfo(@"D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\ImageNhanVien\" + DuoiAnh);
+                        //Get file infromation from info object
+
+
+                        string FileNames = info.Name;
+                        {
+                            MessageBox.Show("info " + FileNames);
+                        }
+
+                        if (FileNames == "")  //picturebox bằng null là ảnh giống ảnh cũ
+                        {
+                            MessageBox.Show("Có vô so sánh if 1");
+                            if (txtMatKhau.Text == "")
+                            {
+                                txtMatKhau.Text = dgvDSNhanVien.Rows[r].Cells[3].Value.ToString();
+                            }
+                            bNV.NhanVien_CapNhat(Int32.Parse(txtID.Text), cboLoaiNV.SelectedIndex + 1, txtMaNV.Text, txtMatKhau.Text, txtHoTen.Text, Convert.ToDateTime(dtpNgaySinh.Text).ToString("yyyy-MM-dd"), txtSDT.Text, rtxtDiaChi.Text, txtEmail.Text, Int32.Parse(txtCMND.Text), GT, result, HieuLuc);
+                            txtMatKhau.Text = "";
+                            dgvDSNhanVien.DataSource = bNV.NhanVien_Select();
+
+                            MessageBox.Show("Có lưu if 1");
+
+
+                        }
+
+                        else //khác
+                        {
+                            {
+                                MessageBox.Show("có vô so sánh if 2 " + path1);
+                            }
+                            if (txtMatKhau.Text == "")
+                            {
+                                txtMatKhau.Text = dgvDSNhanVien.Rows[r].Cells[3].Value.ToString();
+                            }
+                            Image a1 = pichHinh.Image;
+                            a1.Save(path1); //lưu ảnh mới vào đường dẫn 
+                            bNV.NhanVien_CapNhat(Int32.Parse(txtID.Text), cboLoaiNV.SelectedIndex + 1, txtMaNV.Text, txtMatKhau.Text, txtHoTen.Text, Convert.ToDateTime(dtpNgaySinh.Text).ToString("yyyy-MM-dd"), txtSDT.Text, rtxtDiaChi.Text, txtEmail.Text, Int32.Parse(txtCMND.Text), GT, DuoiAnh, HieuLuc);
+                            txtMatKhau.Text = "";
+                            //MessageBox.Show("Sửa hình mới thành công");
+                            dgvDSNhanVien.DataSource = bNV.NhanVien_Select();
+                            MessageBox.Show("có lưu ảnh  if 2 ");
+
+
+                        }
+
                     }
                 }
             }    
@@ -322,30 +371,20 @@ namespace DoAnQLKhachSan
         int ID,vt;
         private void dgvDSNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
                 vt = dgvDSNhanVien.CurrentCell.RowIndex;
-                
                 hienthi_textbox(vt);
                 ID = Int32.Parse(dgvDSNhanVien.Rows[vt].Cells[0].Value.ToString());
+            }catch(Exception ex)
+            {
+
+            }
+               
         }
         string DuongDan = "";
 
-        private void btnChonHinh_Click(object sender, EventArgs e)
-        {
-                OpenFileDialog o = new OpenFileDialog();
-            o.Filter = "bitmap (*.jpg)|*.jpg|(*.jpeg)|*.jpeg|(*.png)|*.png|ALL Files (*.*)|*.*";
-            if (o.ShowDialog() == DialogResult.Cancel)
-            {
-                MessageBox.Show("bạn phải chọn ảnh");
-                o.ShowDialog();
-            }
-            else
-            {
-                Bitmap a = new Bitmap(o.FileName);
-                txtHinhAnh.Text = txtID.Text + ".jpg";
-                DuongDan = o.FileName;
-                pichHinh.Image = a;
-            }
-        }
+       
 
         private void txtTim_TextChangeEvent(object sender, EventArgs e)
         {
@@ -367,6 +406,25 @@ namespace DoAnQLKhachSan
             byte[] resultArray = cTransform.TransformFinalBlock(
                 toEncryptArray, 0, toEncryptArray.Length);
             return Convert.ToBase64String(resultArray, 0, resultArray.Length);
+        }
+
+        string DuoiAnh = "";
+        private void pichHinh_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            PictureBox p = sender as PictureBox;
+            if (p != null)
+            {
+                open.Filter = "(*.jpg;)|*.jpg;";
+                if (open.ShowDialog() == DialogResult.OK)
+                {
+                    p.Image = Image.FromFile(open.FileName);
+                    DuoiAnh = open.SafeFileName;// lấy tên ảnh
+
+
+                }
+
+            }
         }
 
         private void btnClear_Click(object sender, EventArgs e)

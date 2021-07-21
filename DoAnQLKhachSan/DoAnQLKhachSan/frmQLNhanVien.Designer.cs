@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ePOSOne.btnProduct.Button_WOC button_WOC6;
-            ePOSOne.btnProduct.Button_WOC button_WOC1;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            ePOSOne.btnProduct.Button_WOC button_WOC6;
+            ePOSOne.btnProduct.Button_WOC button_WOC1;
             this.dgvDSNhanVien = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,20 +69,18 @@
             this.txtHoTen = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtSDT = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtMaNV = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtHinhAnh = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.dtpNgaySinh = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.pichHinh = new System.Windows.Forms.PictureBox();
             this.txtTim = new JTextBox.JTextBox();
-            this.btnThem = new ePOSOne.btnProduct.Button_WOC();
-            this.btnChonHinh = new ePOSOne.btnProduct.Button_WOC();
-            this.btnClear = new ePOSOne.btnProduct.Button_WOC();
-            this.btnSua = new ePOSOne.btnProduct.Button_WOC();
-            this.btnXoa = new ePOSOne.btnProduct.Button_WOC();
             this.radioNam = new System.Windows.Forms.RadioButton();
             this.radioNu = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rtxtDiaChi = new DevComponents.DotNetBar.Controls.RichTextBoxEx();
             this.chkHieuLuc = new System.Windows.Forms.CheckBox();
+            this.rtxtDiaChi = new DevComponents.DotNetBar.Controls.RichTextBoxEx();
+            this.btnXoa = new ePOSOne.btnProduct.Button_WOC();
+            this.btnSua = new ePOSOne.btnProduct.Button_WOC();
+            this.btnClear = new ePOSOne.btnProduct.Button_WOC();
+            this.btnThem = new ePOSOne.btnProduct.Button_WOC();
             button_WOC6 = new ePOSOne.btnProduct.Button_WOC();
             button_WOC1 = new ePOSOne.btnProduct.Button_WOC();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSNhanVien)).BeginInit();
@@ -91,57 +89,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pichHinh)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button_WOC6
-            // 
-            button_WOC6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button_WOC6.BorderColor = System.Drawing.Color.Black;
-            button_WOC6.ButtonColor = System.Drawing.Color.Blue;
-            button_WOC6.CausesValidation = false;
-            button_WOC6.Cursor = System.Windows.Forms.Cursors.Default;
-            button_WOC6.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            button_WOC6.FlatAppearance.BorderSize = 0;
-            button_WOC6.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            button_WOC6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            button_WOC6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            button_WOC6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button_WOC6.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            button_WOC6.ForeColor = System.Drawing.Color.White;
-            button_WOC6.Location = new System.Drawing.Point(1167, 566);
-            button_WOC6.Name = "button_WOC6";
-            button_WOC6.OnHoverBorderColor = System.Drawing.Color.Red;
-            button_WOC6.OnHoverButtonColor = System.Drawing.Color.Yellow;
-            button_WOC6.OnHoverTextColor = System.Drawing.Color.Black;
-            button_WOC6.Size = new System.Drawing.Size(116, 48);
-            button_WOC6.TabIndex = 162;
-            button_WOC6.Text = "XÓA TẤT CẢ";
-            button_WOC6.TextColor = System.Drawing.Color.White;
-            button_WOC6.UseVisualStyleBackColor = true;
-            // 
-            // button_WOC1
-            // 
-            button_WOC1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button_WOC1.BorderColor = System.Drawing.Color.Black;
-            button_WOC1.ButtonColor = System.Drawing.Color.Blue;
-            button_WOC1.CausesValidation = false;
-            button_WOC1.Cursor = System.Windows.Forms.Cursors.Default;
-            button_WOC1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            button_WOC1.FlatAppearance.BorderSize = 0;
-            button_WOC1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            button_WOC1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            button_WOC1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button_WOC1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            button_WOC1.ForeColor = System.Drawing.Color.White;
-            button_WOC1.Location = new System.Drawing.Point(394, 566);
-            button_WOC1.Name = "button_WOC1";
-            button_WOC1.OnHoverBorderColor = System.Drawing.Color.Red;
-            button_WOC1.OnHoverButtonColor = System.Drawing.Color.Yellow;
-            button_WOC1.OnHoverTextColor = System.Drawing.Color.Black;
-            button_WOC1.Size = new System.Drawing.Size(117, 48);
-            button_WOC1.TabIndex = 167;
-            button_WOC1.Text = "TÌM";
-            button_WOC1.TextColor = System.Drawing.Color.White;
-            button_WOC1.UseVisualStyleBackColor = true;
             // 
             // dgvDSNhanVien
             // 
@@ -619,20 +566,6 @@
             this.txtMaNV.Size = new System.Drawing.Size(257, 35);
             this.txtMaNV.TabIndex = 157;
             // 
-            // txtHinhAnh
-            // 
-            // 
-            // 
-            // 
-            this.txtHinhAnh.Border.Class = "TextBoxBorder";
-            this.txtHinhAnh.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtHinhAnh.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHinhAnh.Location = new System.Drawing.Point(1133, 206);
-            this.txtHinhAnh.Name = "txtHinhAnh";
-            this.txtHinhAnh.PreventEnterBeep = true;
-            this.txtHinhAnh.Size = new System.Drawing.Size(257, 35);
-            this.txtHinhAnh.TabIndex = 158;
-            // 
             // dtpNgaySinh
             // 
             // 
@@ -683,12 +616,13 @@
             // 
             this.pichHinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pichHinh.Image = global::DoAnQLKhachSan.Properties.Resources.AnhNV;
-            this.pichHinh.Location = new System.Drawing.Point(1133, 281);
+            this.pichHinh.Location = new System.Drawing.Point(1133, 207);
             this.pichHinh.Name = "pichHinh";
             this.pichHinh.Size = new System.Drawing.Size(257, 182);
             this.pichHinh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pichHinh.TabIndex = 161;
             this.pichHinh.TabStop = false;
+            this.pichHinh.Click += new System.EventHandler(this.pichHinh_Click);
             // 
             // txtTim
             // 
@@ -708,139 +642,6 @@
             this.txtTim.TabIndex = 171;
             this.txtTim.TextValue = "";
             this.txtTim.TextChangeEvent += new System.EventHandler(this.txtTim_TextChangeEvent);
-            // 
-            // btnThem
-            // 
-            this.btnThem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnThem.BorderColor = System.Drawing.Color.Black;
-            this.btnThem.ButtonColor = System.Drawing.Color.Blue;
-            this.btnThem.CausesValidation = false;
-            this.btnThem.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnThem.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnThem.FlatAppearance.BorderSize = 0;
-            this.btnThem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnThem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThem.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.Location = new System.Drawing.Point(590, 548);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.OnHoverBorderColor = System.Drawing.Color.Red;
-            this.btnThem.OnHoverButtonColor = System.Drawing.Color.Yellow;
-            this.btnThem.OnHoverTextColor = System.Drawing.Color.Black;
-            this.btnThem.Size = new System.Drawing.Size(112, 48);
-            this.btnThem.TabIndex = 181;
-            this.btnThem.Text = "THÊM";
-            this.btnThem.TextColor = System.Drawing.Color.White;
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click_1);
-            // 
-            // btnChonHinh
-            // 
-            this.btnChonHinh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnChonHinh.BorderColor = System.Drawing.Color.Black;
-            this.btnChonHinh.ButtonColor = System.Drawing.Color.Blue;
-            this.btnChonHinh.CausesValidation = false;
-            this.btnChonHinh.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnChonHinh.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnChonHinh.FlatAppearance.BorderSize = 0;
-            this.btnChonHinh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnChonHinh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnChonHinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChonHinh.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChonHinh.ForeColor = System.Drawing.Color.White;
-            this.btnChonHinh.Location = new System.Drawing.Point(976, 338);
-            this.btnChonHinh.Name = "btnChonHinh";
-            this.btnChonHinh.OnHoverBorderColor = System.Drawing.Color.Red;
-            this.btnChonHinh.OnHoverButtonColor = System.Drawing.Color.Yellow;
-            this.btnChonHinh.OnHoverTextColor = System.Drawing.Color.Black;
-            this.btnChonHinh.Size = new System.Drawing.Size(112, 48);
-            this.btnChonHinh.TabIndex = 181;
-            this.btnChonHinh.Text = "Chọn hình";
-            this.btnChonHinh.TextColor = System.Drawing.Color.White;
-            this.btnChonHinh.UseVisualStyleBackColor = true;
-            this.btnChonHinh.Click += new System.EventHandler(this.btnChonHinh_Click);
-            // 
-            // btnClear
-            // 
-            this.btnClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnClear.BorderColor = System.Drawing.Color.Black;
-            this.btnClear.ButtonColor = System.Drawing.Color.Blue;
-            this.btnClear.CausesValidation = false;
-            this.btnClear.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnClear.FlatAppearance.BorderSize = 0;
-            this.btnClear.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.btnClear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnClear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(1106, 548);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.OnHoverBorderColor = System.Drawing.Color.Red;
-            this.btnClear.OnHoverButtonColor = System.Drawing.Color.Yellow;
-            this.btnClear.OnHoverTextColor = System.Drawing.Color.Black;
-            this.btnClear.Size = new System.Drawing.Size(164, 48);
-            this.btnClear.TabIndex = 180;
-            this.btnClear.Text = "XÓA TextBox";
-            this.btnClear.TextColor = System.Drawing.Color.White;
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // btnSua
-            // 
-            this.btnSua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSua.BorderColor = System.Drawing.Color.Black;
-            this.btnSua.ButtonColor = System.Drawing.Color.Blue;
-            this.btnSua.CausesValidation = false;
-            this.btnSua.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnSua.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnSua.FlatAppearance.BorderSize = 0;
-            this.btnSua.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.btnSua.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnSua.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.ForeColor = System.Drawing.Color.White;
-            this.btnSua.Location = new System.Drawing.Point(763, 548);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.OnHoverBorderColor = System.Drawing.Color.Red;
-            this.btnSua.OnHoverButtonColor = System.Drawing.Color.Yellow;
-            this.btnSua.OnHoverTextColor = System.Drawing.Color.Black;
-            this.btnSua.Size = new System.Drawing.Size(112, 48);
-            this.btnSua.TabIndex = 179;
-            this.btnSua.Text = "SỮA";
-            this.btnSua.TextColor = System.Drawing.Color.White;
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnXoa.BorderColor = System.Drawing.Color.Black;
-            this.btnXoa.ButtonColor = System.Drawing.Color.Blue;
-            this.btnXoa.CausesValidation = false;
-            this.btnXoa.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnXoa.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnXoa.FlatAppearance.BorderSize = 0;
-            this.btnXoa.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.btnXoa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnXoa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoa.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(936, 548);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.OnHoverBorderColor = System.Drawing.Color.Red;
-            this.btnXoa.OnHoverButtonColor = System.Drawing.Color.Yellow;
-            this.btnXoa.OnHoverTextColor = System.Drawing.Color.Black;
-            this.btnXoa.Size = new System.Drawing.Size(112, 48);
-            this.btnXoa.TabIndex = 178;
-            this.btnXoa.Text = "XÓA";
-            this.btnXoa.TextColor = System.Drawing.Color.White;
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // radioNam
             // 
@@ -872,13 +673,11 @@
             this.groupBox2.Controls.Add(this.btnXoa);
             this.groupBox2.Controls.Add(this.btnSua);
             this.groupBox2.Controls.Add(this.btnClear);
-            this.groupBox2.Controls.Add(this.btnChonHinh);
             this.groupBox2.Controls.Add(this.btnThem);
             this.groupBox2.Controls.Add(this.txtTim);
             this.groupBox2.Controls.Add(this.rtxtDiaChi);
             this.groupBox2.Controls.Add(this.pichHinh);
             this.groupBox2.Controls.Add(this.dtpNgaySinh);
-            this.groupBox2.Controls.Add(this.txtHinhAnh);
             this.groupBox2.Controls.Add(this.txtMaNV);
             this.groupBox2.Controls.Add(this.txtSDT);
             this.groupBox2.Controls.Add(this.txtHoTen);
@@ -910,6 +709,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Nhân Viên";
             // 
+            // chkHieuLuc
+            // 
+            this.chkHieuLuc.AutoSize = true;
+            this.chkHieuLuc.Location = new System.Drawing.Point(682, 449);
+            this.chkHieuLuc.Name = "chkHieuLuc";
+            this.chkHieuLuc.Size = new System.Drawing.Size(18, 17);
+            this.chkHieuLuc.TabIndex = 183;
+            this.chkHieuLuc.UseVisualStyleBackColor = true;
+            // 
             // rtxtDiaChi
             // 
             // 
@@ -926,14 +734,163 @@
             this.rtxtDiaChi.Size = new System.Drawing.Size(257, 182);
             this.rtxtDiaChi.TabIndex = 170;
             // 
-            // chkHieuLuc
+            // btnXoa
             // 
-            this.chkHieuLuc.AutoSize = true;
-            this.chkHieuLuc.Location = new System.Drawing.Point(682, 449);
-            this.chkHieuLuc.Name = "chkHieuLuc";
-            this.chkHieuLuc.Size = new System.Drawing.Size(18, 17);
-            this.chkHieuLuc.TabIndex = 183;
-            this.chkHieuLuc.UseVisualStyleBackColor = true;
+            this.btnXoa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnXoa.BorderColor = System.Drawing.Color.Black;
+            this.btnXoa.ButtonColor = System.Drawing.Color.Blue;
+            this.btnXoa.CausesValidation = false;
+            this.btnXoa.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnXoa.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnXoa.FlatAppearance.BorderSize = 0;
+            this.btnXoa.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btnXoa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnXoa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoa.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.ForeColor = System.Drawing.Color.White;
+            this.btnXoa.Location = new System.Drawing.Point(936, 548);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.OnHoverBorderColor = System.Drawing.Color.Red;
+            this.btnXoa.OnHoverButtonColor = System.Drawing.Color.Yellow;
+            this.btnXoa.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btnXoa.Size = new System.Drawing.Size(112, 48);
+            this.btnXoa.TabIndex = 178;
+            this.btnXoa.Text = "XÓA";
+            this.btnXoa.TextColor = System.Drawing.Color.White;
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSua.BorderColor = System.Drawing.Color.Black;
+            this.btnSua.ButtonColor = System.Drawing.Color.Blue;
+            this.btnSua.CausesValidation = false;
+            this.btnSua.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnSua.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSua.FlatAppearance.BorderSize = 0;
+            this.btnSua.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btnSua.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnSua.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSua.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.ForeColor = System.Drawing.Color.White;
+            this.btnSua.Location = new System.Drawing.Point(763, 548);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.OnHoverBorderColor = System.Drawing.Color.Red;
+            this.btnSua.OnHoverButtonColor = System.Drawing.Color.Yellow;
+            this.btnSua.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btnSua.Size = new System.Drawing.Size(112, 48);
+            this.btnSua.TabIndex = 179;
+            this.btnSua.Text = "SỮA";
+            this.btnSua.TextColor = System.Drawing.Color.White;
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClear.BorderColor = System.Drawing.Color.Black;
+            this.btnClear.ButtonColor = System.Drawing.Color.Blue;
+            this.btnClear.CausesValidation = false;
+            this.btnClear.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnClear.FlatAppearance.BorderSize = 0;
+            this.btnClear.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btnClear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnClear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.White;
+            this.btnClear.Location = new System.Drawing.Point(1106, 548);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.OnHoverBorderColor = System.Drawing.Color.Red;
+            this.btnClear.OnHoverButtonColor = System.Drawing.Color.Yellow;
+            this.btnClear.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btnClear.Size = new System.Drawing.Size(164, 48);
+            this.btnClear.TabIndex = 180;
+            this.btnClear.Text = "XÓA TextBox";
+            this.btnClear.TextColor = System.Drawing.Color.White;
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnThem.BorderColor = System.Drawing.Color.Black;
+            this.btnThem.ButtonColor = System.Drawing.Color.Blue;
+            this.btnThem.CausesValidation = false;
+            this.btnThem.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnThem.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnThem.FlatAppearance.BorderSize = 0;
+            this.btnThem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnThem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThem.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.ForeColor = System.Drawing.Color.White;
+            this.btnThem.Location = new System.Drawing.Point(590, 548);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.OnHoverBorderColor = System.Drawing.Color.Red;
+            this.btnThem.OnHoverButtonColor = System.Drawing.Color.Yellow;
+            this.btnThem.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btnThem.Size = new System.Drawing.Size(112, 48);
+            this.btnThem.TabIndex = 181;
+            this.btnThem.Text = "THÊM";
+            this.btnThem.TextColor = System.Drawing.Color.White;
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click_1);
+            // 
+            // button_WOC6
+            // 
+            button_WOC6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button_WOC6.BorderColor = System.Drawing.Color.Black;
+            button_WOC6.ButtonColor = System.Drawing.Color.Blue;
+            button_WOC6.CausesValidation = false;
+            button_WOC6.Cursor = System.Windows.Forms.Cursors.Default;
+            button_WOC6.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            button_WOC6.FlatAppearance.BorderSize = 0;
+            button_WOC6.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            button_WOC6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            button_WOC6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            button_WOC6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button_WOC6.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            button_WOC6.ForeColor = System.Drawing.Color.White;
+            button_WOC6.Location = new System.Drawing.Point(1167, 566);
+            button_WOC6.Name = "button_WOC6";
+            button_WOC6.OnHoverBorderColor = System.Drawing.Color.Red;
+            button_WOC6.OnHoverButtonColor = System.Drawing.Color.Yellow;
+            button_WOC6.OnHoverTextColor = System.Drawing.Color.Black;
+            button_WOC6.Size = new System.Drawing.Size(116, 48);
+            button_WOC6.TabIndex = 162;
+            button_WOC6.Text = "XÓA TẤT CẢ";
+            button_WOC6.TextColor = System.Drawing.Color.White;
+            button_WOC6.UseVisualStyleBackColor = true;
+            // 
+            // button_WOC1
+            // 
+            button_WOC1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button_WOC1.BorderColor = System.Drawing.Color.Black;
+            button_WOC1.ButtonColor = System.Drawing.Color.Blue;
+            button_WOC1.CausesValidation = false;
+            button_WOC1.Cursor = System.Windows.Forms.Cursors.Default;
+            button_WOC1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            button_WOC1.FlatAppearance.BorderSize = 0;
+            button_WOC1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            button_WOC1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            button_WOC1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button_WOC1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            button_WOC1.ForeColor = System.Drawing.Color.White;
+            button_WOC1.Location = new System.Drawing.Point(394, 566);
+            button_WOC1.Name = "button_WOC1";
+            button_WOC1.OnHoverBorderColor = System.Drawing.Color.Red;
+            button_WOC1.OnHoverButtonColor = System.Drawing.Color.Yellow;
+            button_WOC1.OnHoverTextColor = System.Drawing.Color.Black;
+            button_WOC1.Size = new System.Drawing.Size(117, 48);
+            button_WOC1.TabIndex = 167;
+            button_WOC1.Text = "TÌM";
+            button_WOC1.TextColor = System.Drawing.Color.White;
+            button_WOC1.UseVisualStyleBackColor = true;
             // 
             // frmQLNhanVien
             // 
@@ -997,12 +954,10 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txtHoTen;
         private DevComponents.DotNetBar.Controls.TextBoxX txtSDT;
         private DevComponents.DotNetBar.Controls.TextBoxX txtMaNV;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtHinhAnh;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dtpNgaySinh;
         private System.Windows.Forms.PictureBox pichHinh;
         private JTextBox.JTextBox txtTim;
         private ePOSOne.btnProduct.Button_WOC btnThem;
-        private ePOSOne.btnProduct.Button_WOC btnChonHinh;
         private ePOSOne.btnProduct.Button_WOC btnClear;
         private ePOSOne.btnProduct.Button_WOC btnSua;
         private ePOSOne.btnProduct.Button_WOC btnXoa;
