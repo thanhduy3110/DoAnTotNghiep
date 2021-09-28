@@ -478,6 +478,13 @@ namespace DoAnQLKhachSan
             CP.Show();
         }
 
+        private void btnXoaCTHD_Click(object sender, EventArgs e)
+        {
+            bCTHD.CTHD_Xoa(txtID_CTHD.Text);
+            MessageBox.Show("Xóa thành công ");
+            bCTHD.HienThiDSCTHD(dgvDSCTHD, ID_HD);
+        }
+
 
 
 

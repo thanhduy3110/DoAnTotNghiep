@@ -42,5 +42,9 @@ namespace BUS
             return CTHD.CTHD_CapNhat(ID, ID_HD, ID_DV, SoLuong, DonGia);
         }
 
+        public int CTHD_Xoa(string ID)
+        {
+            return CTHD.CTHD_Xoa(ID);
+        }
     }
 }

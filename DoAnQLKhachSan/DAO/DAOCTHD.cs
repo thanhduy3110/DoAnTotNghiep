@@ -80,6 +80,14 @@ namespace DAO
 
             return db.ThucHien("CTHD_CapNhat", name, value, 5);
         }
+
+        public int CTHD_Xoa(string ID)
+        {
+            name = new string[1];
+            value = new object[1];
+            name[0] = "@ID"; value[0] = ID;
+            return db.ThucHien("CTHD_Xoa", name, value, 1);
+        }
     }
 }
 
