@@ -18,5 +18,9 @@ namespace DoAnQLKhachSan.ReportTing
         public int TongTienDV { get; set; }
         public int TongTien { get; set; }
 
+        public string TenDV { get; set; }
+        public int SoLuong { get; set; }
+        public int DonGia { get; set; }
+
     }
 }

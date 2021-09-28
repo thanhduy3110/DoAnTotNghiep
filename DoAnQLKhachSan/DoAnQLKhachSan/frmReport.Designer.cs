@@ -39,6 +39,7 @@ namespace DoAnQLKhachSan
             this.reportHD.ServerReport.BearerToken = null;
             this.reportHD.Size = new System.Drawing.Size(1450, 655);
             this.reportHD.TabIndex = 0;
+            this.reportHD.Load += new System.EventHandler(this.reportHD_Load);
             // 
             // frmReport
             // 

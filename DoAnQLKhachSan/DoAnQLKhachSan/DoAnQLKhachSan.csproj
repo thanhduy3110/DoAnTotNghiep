@@ -504,6 +504,7 @@
     <EmbeddedResource Include="ReportTing\ReportHD.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\DoAnQLKhachSan.ReportTing.ReportHD.datasource" />
+    <None Include="Properties\DataSources\DoAnQLKhachSan.ReportTing.ReportHD1.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -138,6 +138,37 @@ namespace DoAnQLKhachSan
             }
         }
 
+
+        bool KT()
+        {
+            bool dk=false;
+            if (dtpNgayLap.Value.Day != DateTime.Now.Day || dtpNgayLap.Value.Month != DateTime.Now.Month || dtpNgayLap.Value.Year != DateTime.Now.Year|| dtpNgayLap.Value.Year > dtpNgayDen.Value.Year || dtpNgayLap.Value.Year > dtpNgayDi.Value.Year || dtpNgayDen.Value.Year > dtpNgayDi.Value.Year || dtpNgayLap.Value.Month > dtpNgayDen.Value.Month || dtpNgayLap.Value.Month > dtpNgayDi.Value.Month || dtpNgayDen.Value.Month > dtpNgayDi.Value.Month)
+            {
+                dk = false;
+            }
+
+            else if ((dtpNgayLap.Value.Year == dtpNgayDen.Value.Year&& dtpNgayLap.Value.Month == dtpNgayDen.Value.Month&& dtpNgayDi.Value.Year == dtpNgayDen.Value.Year && dtpNgayDi.Value.Month == dtpNgayDen.Value.Month) )
+            {
+               if(dtpNgayDen.Value.Day > dtpNgayLap.Value.Day||dtpNgayDen.Value.Day>dtpNgayDi.Value.Day)
+                {
+                    dk = false;
+                }    
+            }
+            else if(dtpNgayDen.Value.Month>dtpNgayDi.Value.Month||dtpNgayDen.Value.Month<dtpNgayLap.Value.Month)
+            {
+               
+                    dk = false;  
+            }    
+           else
+            {
+                dk = true;
+            }    
+        
+            return dk;
+        }
+            
+  
+
         private void btnThem_Click(object sender, EventArgs e)
         {
 
@@ -145,6 +176,7 @@ namespace DoAnQLKhachSan
             {
                 clear_textbox();
                 xulytextbox(false);
+                chkHL.Checked = true;
                 flag = true;
             }
             else if (flag == true)
@@ -154,55 +186,43 @@ namespace DoAnQLKhachSan
                 {
                     MessageBox.Show("Lỗi");
                 }
-                //if (dtpNgayLap.Value.Year > dtpNgayDen.Value.Year || dtpNgayLap.Value.Year > dtpNgayDi.Value.Year || dtpNgayDen.Value.Year > dtpNgayDi.Value.Year|| dtpNgayLap.Value.Month > dtpNgayDen.Value.Month || dtpNgayLap.Value.Month > dtpNgayDi.Value.Month || dtpNgayDen.Value.Month > dtpNgayDi.Value.Month)
-                //    {
-                //        MessageBox.Show("Lỗi thời gian");
-                //    }
-                //else if (dtpNgayLap.Value.Year == dtpNgayDen.Value.Year|| dtpNgayDen.Value.Year == dtpNgayDi.Value.Year)
-                //    {
-                //        if (dtpNgayLap.Value.Month == dtpNgayDen.Value.Month)
-                //        {
-                //            if (dtpNgayLap.Value.Day > dtpNgayDen.Value.Day)
-                //            {
-                //                MessageBox.Show("Ngày lập không được lớn hơn ngày đến");
-                //            }
-                //        }
-
-                //    if (dtpNgayDen.Value.Month == dtpNgayDi.Value.Month)
-                //    {
-                //        if (dtpNgayDen.Value.Day > dtpNgayDi.Value.Day)
-
-                //        {
-                //            MessageBox.Show("Ngày đến không được lớn hơn ngày đi");
-                //        }
-                //    }
-                //     } 
-               else
+              
+                else
                 {
-                    bool HieuLuc,ThanhToan;
-                    if (chkHL.Checked == true)
+                   if(KT()==true)
                     {
-                        HieuLuc = true;
-                    }
-                    else
-                    {
-                        HieuLuc = false;
-                    }
+                        
+                        bool HieuLuc, ThanhToan;
+                        if (chkHL.Checked == true)
+                        {
+                            HieuLuc = true;
+                        }
+                        else
+                        {
+                            HieuLuc = false;
+                        }
 
-                    if (chkThanhToan.Checked == true)
-                    {
-                        ThanhToan = true;
-                    }
-                    else
-                    {
-                        ThanhToan = false;
-                    }
-                    int ID = dgvDSHD.Rows.Count + 1;
+                        if (chkThanhToan.Checked == true)
+                        {
+                            ThanhToan = true;
+                        }
+                        else
+                        {
+                            ThanhToan = false;
+                        }
+                        int ID = dgvDSHD.Rows.Count + 1;
                         bHD.HoaDon_Them(ID, txtMaHD.Text, cboTenNV.SelectedValue.ToString(), cboTenKH.SelectedValue.ToString(), cboMaPhong.SelectedValue.ToString(), Convert.ToDateTime(dtpNgayLap.Text).ToString("yyyy/MM/dd hh:mm"), Convert.ToDateTime(dtpNgayDen.Text).ToString("yyyy/MM/dd hh:mm"), Convert.ToDateTime(dtpNgayDi.Text).ToString("yyyy/MM/dd hh:mm"), cboHinhThucThue.SelectedIndex, lblTongTienPhong.Text, lblTongTienDV.Text, lblTongTien.Text, rtxtGhiChu.Text, ThanhToan, HieuLuc);
                         MessageBox.Show("Thêm thành công ");
                         flag = false;
                         dgvDSHD.DataSource = bHD.HoaDon_Select();
-                }    
+                    }    
+                     else
+                    {
+                        MessageBox.Show("Lỗi thời gian");
+                    }    
+                    }    
+                    
+                    
             }
            
         }
@@ -454,6 +474,15 @@ namespace DoAnQLKhachSan
             dgvDSHD.DataSource = bHD.HoaDon_Select();
         }
 
+      
+
+        private void btnXoaCTHD_Click(object sender, EventArgs e)
+        {
+            bCTHD.CTHD_Xoa(txtID_CTHD.Text);
+            MessageBox.Show("Xóa thành công ");
+            bCTHD.HienThiDSCTHD(dgvDSCTHD, ID_HD);
+        }
+
         private void btnChuyenPhong_Click(object sender, EventArgs e)
         {
             int HTT;
@@ -476,13 +505,6 @@ namespace DoAnQLKhachSan
 
             frmChuyenPhong CP = new frmChuyenPhong(ID_HD, HTT, NamDen, NamDi, ThangDen, ThangDi, NgayDen, NgayDi, GioDen, GioDi);
             CP.Show();
-        }
-
-        private void btnXoaCTHD_Click(object sender, EventArgs e)
-        {
-            bCTHD.CTHD_Xoa(txtID_CTHD.Text);
-            MessageBox.Show("Xóa thành công ");
-            bCTHD.HienThiDSCTHD(dgvDSCTHD, ID_HD);
         }
 
 

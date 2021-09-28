@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.chkThanhToan = new System.Windows.Forms.CheckBox();
             this.chkHL = new System.Windows.Forms.CheckBox();
@@ -102,11 +102,11 @@
             this.btnSuaCTHD = new ePOSOne.btnProduct.Button_WOC();
             this.btnLuuCTHD = new ePOSOne.btnProduct.Button_WOC();
             this.btnThemCTHD = new ePOSOne.btnProduct.Button_WOC();
-            this.btnChuyenPhong = new ePOSOne.btnProduct.Button_WOC();
             this.btnSua = new ePOSOne.btnProduct.Button_WOC();
             this.btnInHD = new ePOSOne.btnProduct.Button_WOC();
             this.btnXoa = new ePOSOne.btnProduct.Button_WOC();
             this.btnThem = new ePOSOne.btnProduct.Button_WOC();
+            this.btnChuyenPhong = new ePOSOne.btnProduct.Button_WOC();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSHD)).BeginInit();
@@ -119,7 +119,6 @@
             // 
             this.groupBox3.Controls.Add(this.chkThanhToan);
             this.groupBox3.Controls.Add(this.chkHL);
-            this.groupBox3.Controls.Add(this.btnChuyenPhong);
             this.groupBox3.Controls.Add(this.dtpNgayDi);
             this.groupBox3.Controls.Add(this.dtpNgayDen);
             this.groupBox3.Controls.Add(this.dtpNgayLap);
@@ -132,6 +131,7 @@
             this.groupBox3.Controls.Add(this.btnSua);
             this.groupBox3.Controls.Add(this.btnInHD);
             this.groupBox3.Controls.Add(this.btnXoa);
+            this.groupBox3.Controls.Add(this.btnChuyenPhong);
             this.groupBox3.Controls.Add(this.btnThem);
             this.groupBox3.Controls.Add(this.cboTenNV);
             this.groupBox3.Controls.Add(this.cboMaPhong);
@@ -266,14 +266,14 @@
             // dgvDSHD
             // 
             this.dgvDSHD.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDSHD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDSHD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvDSHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDSHD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -291,14 +291,14 @@
             this.Column13,
             this.Column14,
             this.Column15});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDSHD.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDSHD.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvDSHD.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDSHD.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgvDSHD.HighlightSelectedColumnHeaders = false;
@@ -307,9 +307,9 @@
             this.dgvDSHD.PaintEnhancedSelection = false;
             this.dgvDSHD.RowHeadersVisible = false;
             this.dgvDSHD.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dgvDSHD.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dgvDSHD.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvDSHD.RowTemplate.Height = 24;
             this.dgvDSHD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDSHD.Size = new System.Drawing.Size(991, 211);
@@ -804,14 +804,14 @@
             this.TenDV,
             this.soluong,
             this.dongia});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDSCTHD.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDSCTHD.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvDSCTHD.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDSCTHD.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgvDSCTHD.HighlightSelectedColumnHeaders = false;
@@ -819,9 +819,9 @@
             this.dgvDSCTHD.Name = "dgvDSCTHD";
             this.dgvDSCTHD.PaintEnhancedSelection = false;
             this.dgvDSCTHD.RowHeadersWidth = 51;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dgvDSCTHD.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dgvDSCTHD.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvDSCTHD.RowTemplate.Height = 24;
             this.dgvDSCTHD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDSCTHD.Size = new System.Drawing.Size(473, 211);
@@ -1079,22 +1079,6 @@
             this.btnThemCTHD.UseVisualStyleBackColor = true;
             this.btnThemCTHD.Click += new System.EventHandler(this.btnThemCTHD_Click);
             // 
-            // btnChuyenPhong
-            // 
-            this.btnChuyenPhong.BorderColor = System.Drawing.Color.Silver;
-            this.btnChuyenPhong.ButtonColor = System.Drawing.Color.Red;
-            this.btnChuyenPhong.Location = new System.Drawing.Point(13, 444);
-            this.btnChuyenPhong.Name = "btnChuyenPhong";
-            this.btnChuyenPhong.OnHoverBorderColor = System.Drawing.Color.Gray;
-            this.btnChuyenPhong.OnHoverButtonColor = System.Drawing.Color.Yellow;
-            this.btnChuyenPhong.OnHoverTextColor = System.Drawing.Color.Gray;
-            this.btnChuyenPhong.Size = new System.Drawing.Size(171, 52);
-            this.btnChuyenPhong.TabIndex = 188;
-            this.btnChuyenPhong.Text = "Chuyển Phòng";
-            this.btnChuyenPhong.TextColor = System.Drawing.Color.White;
-            this.btnChuyenPhong.UseVisualStyleBackColor = true;
-            this.btnChuyenPhong.Click += new System.EventHandler(this.btnChuyenPhong_Click);
-            // 
             // btnSua
             // 
             this.btnSua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -1202,6 +1186,32 @@
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
+            // btnChuyenPhong
+            // 
+            this.btnChuyenPhong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnChuyenPhong.BorderColor = System.Drawing.Color.Black;
+            this.btnChuyenPhong.ButtonColor = System.Drawing.Color.Lime;
+            this.btnChuyenPhong.CausesValidation = false;
+            this.btnChuyenPhong.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnChuyenPhong.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnChuyenPhong.FlatAppearance.BorderSize = 0;
+            this.btnChuyenPhong.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnChuyenPhong.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnChuyenPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChuyenPhong.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChuyenPhong.ForeColor = System.Drawing.Color.White;
+            this.btnChuyenPhong.Location = new System.Drawing.Point(24, 448);
+            this.btnChuyenPhong.Name = "btnChuyenPhong";
+            this.btnChuyenPhong.OnHoverBorderColor = System.Drawing.Color.Red;
+            this.btnChuyenPhong.OnHoverButtonColor = System.Drawing.Color.Yellow;
+            this.btnChuyenPhong.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btnChuyenPhong.Size = new System.Drawing.Size(159, 48);
+            this.btnChuyenPhong.TabIndex = 181;
+            this.btnChuyenPhong.Text = "Chuyển Phòng";
+            this.btnChuyenPhong.TextColor = System.Drawing.Color.Black;
+            this.btnChuyenPhong.UseVisualStyleBackColor = true;
+            this.btnChuyenPhong.Click += new System.EventHandler(this.btnChuyenPhong_Click);
+            // 
             // frmHoaDon
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1296,9 +1306,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDV;
         private System.Windows.Forms.DataGridViewTextBoxColumn soluong;
         private System.Windows.Forms.DataGridViewTextBoxColumn dongia;
-        private ePOSOne.btnProduct.Button_WOC btnChuyenPhong;
         private System.Windows.Forms.CheckBox chkThanhToan;
         private System.Windows.Forms.CheckBox chkHL;
         private ePOSOne.btnProduct.Button_WOC btnXoaCTHD;
+        private ePOSOne.btnProduct.Button_WOC btnChuyenPhong;
     }
 }

@@ -35,7 +35,7 @@ namespace DoAnQLKhachSan
         {
             using (var _dbContext = new ConnectReportHD())
             {
-                string sql = "select MaHD,NhanVien.HoTen as TenNV,KhachHang.HoTen as TenKH,NgayDen,NgayDi,SoPhong,TongTienPhong,TongTienDV,TongTien from HoaDon,NhanVien,KhachHang,Phong where HoaDon.ID_NV=NhanVien.ID and HoaDon.ID_KH=KhachHang.ID and HoaDon.ID_Phong=Phong.ID and  HoaDon.ID="+ID;
+                string sql = "select MaHD,NhanVien.HoTen as TenNV,KhachHang.HoTen as TenKH,NgayDen,NgayDi,SoPhong,TongTienPhong,TongTienDV,TongTien,TenDV,SoLuong,DonGia  from HoaDon,NhanVien,KhachHang,Phong,CTHD,DichVu where HoaDon.ID_NV=NhanVien.ID and HoaDon.ID_KH=KhachHang.ID and HoaDon.ID_Phong=Phong.ID and DichVu.ID=CTHD.ID_DV and CTHD.ID_HD = HoaDon.ID and  HoaDon.ID=" + ID;
                 List<ReportHD> DanhSach = _dbContext.Database.SqlQuery<ReportHD>(sql).ToList();
 
                 this.reportHD.LocalReport.ReportPath = @"D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\ReportTing\ReportHD.rdlc";
@@ -44,6 +44,11 @@ namespace DoAnQLKhachSan
                 this.reportHD.LocalReport.DataSources.Add(reportDatasoure);
                 this.reportHD.RefreshReport();
             }
+
+        }
+
+        private void reportHD_Load(object sender, EventArgs e)
+        {
 
         }
     }
