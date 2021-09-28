@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace DAO
 {
     public class DAOThongKe
@@ -17,10 +18,15 @@ namespace DAO
            return db.LayDanhSach("select  sum(TongTien)  from HoaDon where NgayLap Between '"+NgayBD+ "' and '"+NgayKT+"' ");
             
         }
-
+      
         public DataSet ThongKeDV(string NgayBD, string NgayKT)
         {
             return dsThongKe = db.LayDanhSach("select TenDV as N'Tên dịch vụ',TenLoaiDV as N'Tên loại dịch vụ', Sum(CTHD.SoLuong) as N'Số lượng',DonGia as N'Dơn giá' from CTHD, DichVu, LoaiDV, HoaDon where CTHD.ID_DV = DichVu.ID and DichVu.ID_LoaiDV = LoaiDV.ID and HoaDon.ID = CTHD.ID_HD and HoaDon.NgayLap between '"+NgayBD+"' and '"+ NgayKT +"' group by TenDV, TenLoaiDV, DonGia, CTHD.SoLuong");
+        }
+
+        public DataTable bieudo_select()
+        {
+            return db.Laydulieu("bieudo_select");
         }
 
         public DataSet ThongKeSLT()

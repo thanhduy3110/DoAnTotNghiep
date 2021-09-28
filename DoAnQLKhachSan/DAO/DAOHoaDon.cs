@@ -73,7 +73,7 @@ namespace DAO
         }
 
         //phương thức này gọi đến phương thức ThucHien ở dbConnectionData để thêm dữ liệu
-        public int HoaDon_Them(string ID, string MaHD, string ID_NV, string ID_KH, string ID_Phong, string NgayLap, string NgayDen, string NgayDi, int HinhThucThue, string TTPhong, string TTDV, string TT, string GhiChu, int TToan, int HieuLuc)
+        public int HoaDon_Them(int ID, string MaHD, string ID_NV, string ID_KH, string ID_Phong, string NgayLap, string NgayDen, string NgayDi, int HinhThucThue, string TTPhong, string TTDV, string TT, string GhiChu, bool TToan, bool HieuLuc)
         {
             name = new string[15];
             value = new object[15];
@@ -96,7 +96,7 @@ namespace DAO
         }
 
         //update
-        public int HoaDon_CapNhat(string ID, string MaHD, string ID_NV, string ID_KH, string ID_Phong, string NgayLap, string NgayDen, string NgayDi, int HinhThucThue, string TTPhong, string TTDV, string TT, string GhiChu, int TToan, int HieuLuc)
+        public int HoaDon_CapNhat(int ID, string MaHD, string ID_NV, string ID_KH, string ID_Phong, string NgayLap, string NgayDen, string NgayDi, int HinhThucThue, string TTPhong, string TTDV, string TT, string GhiChu, bool TToan, bool HieuLuc)
         {
             name = new string[15];
             value = new object[15];
@@ -116,6 +116,24 @@ namespace DAO
             name[13] = "@ThanhToan"; value[13] = TToan;
             name[14] = "@HieuLuc"; value[14] = HieuLuc;
             return db.ThucHien("HoaDon_CapNhat", name, value, 15);
+        }
+
+        public int HoaDon_CapNhatChuyenPhong(int ID,string sophong)
+        {
+            name = new string[2];
+            value = new object[2];
+            name[0] = "@ID"; value[0] = ID;
+            name[1] = "@ID_LoaiPhong"; value[0] = sophong;
+            return db.ThucHien("HoaDon_CapNhat", name, value, 2);
+        }
+
+        public int HoaDon_Xoa(int ID, bool HieuLuc)
+        {
+            name = new string[2];
+            value = new object[2];
+            name[0] = "@ID"; value[0] = ID;
+            name[1] = "@HieuLuc"; value[1] = HieuLuc;
+            return db.ThucHien("HoaDon_Xoa", name, value, 2);
         }
     }
 }

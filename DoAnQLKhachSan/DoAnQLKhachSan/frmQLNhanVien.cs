@@ -84,7 +84,7 @@ namespace DoAnQLKhachSan
             btnThem.Enabled = t;
             btnXoa.Enabled = t;
             btnSua.Enabled = t;
-            btnClear.Enabled = !t;
+
         }
 
         void xulytextbox(Boolean t)
@@ -96,6 +96,7 @@ namespace DoAnQLKhachSan
             rtxtDiaChi.ReadOnly = t;
             txtEmail.ReadOnly = t;
             txtCMND.ReadOnly = t;
+            rtxtDiaChi.ReadOnly = t;
 
         }
 
@@ -201,6 +202,8 @@ namespace DoAnQLKhachSan
                     }
                     bNV.NhanVien_Them(Int32.Parse(txtID.Text), cboLoaiNV.SelectedIndex + 1, txtMaNV.Text, txtMatKhau.Text, txtHoTen.Text, Convert.ToDateTime(dtpNgaySinh.Text).ToString("yyyy-MM-dd"), txtSDT.Text, rtxtDiaChi.Text, txtEmail.Text, Int32.Parse(txtCMND.Text), GT, fname, HieuLuc);
                     MessageBox.Show("Thêm thành công ");
+                    xulytextbox(true);
+                    flag = false;
                     dgvDSNhanVien.DataSource = bNV.NhanVien_Select();
                 }
                 }
@@ -298,6 +301,8 @@ namespace DoAnQLKhachSan
                             txtMatKhau.Text = "";
                             //MessageBox.Show("Sửa hình mới thành công");
                             dgvDSNhanVien.DataSource = bNV.NhanVien_Select();
+                            flag = false;
+                            xulytextbox(true);
                             MessageBox.Show("có lưu ảnh  if 2 ");
 
 
@@ -311,7 +316,10 @@ namespace DoAnQLKhachSan
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-
+            bool HL = false;
+            bNV.NhanVien_Xoa(ID, HL);
+            MessageBox.Show("Xóa thành công");
+            dgvDSNhanVien.DataSource = bNV.NhanVien_Select();
         }
 
         public string Encrypt(string toEncrypt, bool useHashing)
@@ -425,9 +433,24 @@ namespace DoAnQLKhachSan
             }
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
+        private void txtCMND_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
+                e.Handled = true;
         }
+
+        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
+                e.Handled = true;
+        }
+
+        private void txtHoTen_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) == true && char.IsControl(e.KeyChar) == false)
+                e.Handled = true;
+        }
+
+       
     }
 }

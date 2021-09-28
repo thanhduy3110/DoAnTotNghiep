@@ -39,9 +39,9 @@ namespace BUS
         }
 
         //Xóa Nhân Viên
-        public int NhanVien_Xoa(int ID, int HieuLuc)
+        public int NhanVien_Xoa(int ID, bool HieuLuc)
         {
-            return NV.NhanVien_Xoat(ID, HieuLuc);
+            return NV.NhanVien_Xoa(ID, HieuLuc);
         }
     }
 }

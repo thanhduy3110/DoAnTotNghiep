@@ -27,7 +27,7 @@ namespace DAO
 
         public void HienThiDSCTHD(DataGridView dgvDSCTHD, int ID_HD)
         {
-            string sql = "select ID,ID_HD,ID_DV,SoLuong,DonGia from CTHD where ID_HD = " + ID_HD;
+            string sql = "select CTHD.ID,ID_HD,TenDV,SoLuong,DonGia from CTHD,DichVu where DichVu.ID=CTHD.ID_DV and ID_HD = " + ID_HD;
             dsCTHD = db.LayDanhSach(sql);
             dgvDSCTHD.DataSource = dsCTHD.Tables[0];
         }
@@ -45,7 +45,7 @@ namespace DAO
 
 
         //phương thức này gọi đến phương thức ThucHien ở dbConnectionData để thêm dữ liệu
-        public int CTHD_Them(string ID, string ID_HD,string ID_DV, string SoLuong, string DonGia)
+        public int CTHD_Them(int ID, int ID_HD,string ID_DV, string SoLuong, string DonGia)
         {
             name = new string[5];
             value = new object[5];
@@ -68,7 +68,7 @@ namespace DAO
         }
 
         //update
-        public int CTHD_CapNhat(string ID, string ID_HD, string ID_DV, string SoLuong, string DonGia)
+        public int CTHD_CapNhat(int ID, int ID_HD, string ID_DV, string SoLuong, string DonGia)
         {
             name = new string[5];
             value = new object[5];

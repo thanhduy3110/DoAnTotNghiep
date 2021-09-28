@@ -131,7 +131,6 @@ namespace DoAnQLKhachSan
         {
             bLNV.LoaiNV_Xoa(Int32.Parse(txtID.Text), 0);
             MessageBox.Show("Xóa thành công ");
-
             dgvDSLoaiNV.DataSource = bLNV.LoaiNV_selecl();
         }
 

@@ -27,8 +27,10 @@ namespace DoAnQLKhachSan
       
         private void frmPhong_Load(object sender, EventArgs e)
         {
+            txtID.ReadOnly = true;
             Bphong.HienThiLP(cboTenLP);
             dgvDSPhong.DataSource = Bphong.Phong_Select();
+            xulytextbox(true);
 
         }
        
@@ -65,7 +67,14 @@ namespace DoAnQLKhachSan
            
         }
 
-      
+        void xulytextbox(Boolean t)
+        {
+            txtTang.ReadOnly = t;
+            rtxtGhiChu.ReadOnly = t;
+            txtGiaThueTheoGio.ReadOnly = t;
+            txtGiaThueTheoNgay.ReadOnly = t;
+            txtSoPhong.ReadOnly = t;
+        }
  
 
         private void txtTim_TextChangeEvent(object sender, EventArgs e)
@@ -79,6 +88,7 @@ namespace DoAnQLKhachSan
             if (flag == false)
             {
                 clear_textbox();
+                xulytextbox(false);
                 txtID.Text = (Bphong.Phong_Select().Rows.Count + 1).ToString();
                 chkBonTam.Checked = false;
                 chkGocNhin.Checked = false;
@@ -88,7 +98,7 @@ namespace DoAnQLKhachSan
 
             else if (flag == true)
             {
-                if (cboTenLP.Text == "" || txtTang.Text == "" || txtTang.Text == "" || txtGiaThueTheoNgay.Text == "" || txtGiaThueTheoGio.Text == "" || rtxtGhiChu.Text == "")
+                if (cboTenLP.Text == "" || txtTang.Text == "" || txtTang.Text == "" || txtGiaThueTheoNgay.Text == "" || txtGiaThueTheoGio.Text == "" )
                 {
                     MessageBox.Show("Lỗi");
                 }
@@ -121,8 +131,9 @@ namespace DoAnQLKhachSan
                         gocnhin = false;
                     }
                     Bphong.P_Them(txtID.Text, cboTenLP.SelectedValue.ToString(), txtTang.Text, txtTang.Text, txtGiaThueTheoNgay.Text, txtGiaThueTheoGio.Text, rtxtGhiChu.Text, gocnhin, bontam, cboConTrong.SelectedIndex, hieuluc);
-                    MessageBox.Show("thêm thành công rồi nè");
+                    MessageBox.Show("thêm thành công");
                     flag = false;
+                    xulytextbox(true);
                     dgvDSPhong.DataSource = Bphong.Phong_Select();
                 }
             }
@@ -132,6 +143,7 @@ namespace DoAnQLKhachSan
         {
             if (flag == false)
             {
+                xulytextbox(false);
                 flag = true;
             }
             else if (flag == true)
@@ -163,15 +175,19 @@ namespace DoAnQLKhachSan
                     gocnhin = false;
                 }
                 Bphong.P_CapNhat(txtID.Text, cboTenLP.SelectedValue.ToString(), txtTang.Text, txtTang.Text, txtGiaThueTheoNgay.Text, txtGiaThueTheoGio.Text, rtxtGhiChu.Text, gocnhin, bontam, cboConTrong.SelectedIndex, hieuluc);
-                MessageBox.Show("sửa thành công rồi nè");
+                MessageBox.Show("sửa thành công");
                 flag = false;
+                xulytextbox(true);
                 dgvDSPhong.DataSource = Bphong.Phong_Select();
             }
         }
 
         private void btnXoa_Click_1(object sender, EventArgs e)
         {
-
+            bool HL = false;
+            Bphong.Phong_Xoa(ID, HL);
+            MessageBox.Show("Xóa thành công");
+            dgvDSPhong.DataSource = Bphong.Phong_Select();
         }
 
         void hienthi_textbox(int numrow)
@@ -217,17 +233,30 @@ namespace DoAnQLKhachSan
 
         }
 
+        int ID;
         private void dgvDSPhong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 int vt = dgvDSPhong.CurrentCell.RowIndex;
                 hienthi_textbox(vt);
+                ID = Int32.Parse(dgvDSPhong.Rows[vt].Cells[0].Value.ToString());
             }
             catch (Exception ex)
             {
 
             }
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSoPhong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
+                e.Handled = true;
         }
     }
 }

@@ -36,5 +36,9 @@ namespace BUS
             return p.phong_capnhat(ID, ID_LoaiPhong, SoPhong, Tang, GiaThueNgay, GiaThueGio, GhiChu, GocNhin, BonTam, ConTrong, HieuLuc);
         }
 
+        public int Phong_Xoa(int ID, bool HieuLuc)
+        {
+            return p.Phong_Xoa(ID, HieuLuc);
+        }
     }
 }

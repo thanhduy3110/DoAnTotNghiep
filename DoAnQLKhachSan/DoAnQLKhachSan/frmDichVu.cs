@@ -51,6 +51,15 @@ namespace DoAnQLKhachSan
             txtSLTon.Text = "";
             txtDVT.Text = "";
         }
+
+        void xulytextbox(Boolean t)
+        {
+            txtTenDV.ReadOnly = t;
+            txtGiaTien.ReadOnly = t;
+            txtDVT.ReadOnly = t;
+            txtSLTon.ReadOnly = t;
+            rtxtGhiChu.ReadOnly = t;
+        }
         private void btnThem_Click_1(object sender, EventArgs e)
         {
            
@@ -59,10 +68,11 @@ namespace DoAnQLKhachSan
                 txtID.Text = (bdv.DV_Select().Rows.Count+1).ToString();
                 chkHieuLuc.Checked = false;
                 flag = true;
+                xulytextbox(false);
             }
             else if (flag == true)
             {
-                if (cboLoaiDV.Text == "" || txtTenDV.Text == "" || rtxtMoTa.Text == "" || pictureBox.Image == null || txtGiaTien.Text == "" || txtSLTon.Text == "" || txtDVT.Text == "" || rtxtGhiChu.Text == "" )
+                if (cboLoaiDV.Text == "" || txtTenDV.Text == "" || pictureBox.Image == null || txtGiaTien.Text == "" || txtSLTon.Text == "" || txtDVT.Text == ""  )
                 {
                     MessageBox.Show("Lỗi");
                 }
@@ -85,7 +95,7 @@ namespace DoAnQLKhachSan
                     Image a = pictureBox.Image;
                     a.Save(path);
                     bdv.DV_Them(txtID.Text, cboLoaiDV.SelectedValue.ToString(), txtTenDV.Text, rtxtMoTa.Text, fname, txtGiaTien.Text, txtSLTon.Text, txtDVT.Text, rtxtGhiChu.Text, HieuLuc);
-                    MessageBox.Show("thêm thành công rồi nè");
+                    MessageBox.Show("thêm thành công");
                     flag = false;
                     dgvDichVu.DataSource = bdv.DV_Select();
                 }
@@ -99,6 +109,7 @@ namespace DoAnQLKhachSan
             if(flag==false)
             {
                 flag = true;
+                xulytextbox(false);
             }
             else if (flag == true)
             {
@@ -113,8 +124,9 @@ namespace DoAnQLKhachSan
                 }
                 string fname = txtID.Text + ".jpg"; // tên ảnh theo id
                 bdv.DV_CapNhat(txtID.Text, cboLoaiDV.SelectedValue.ToString(), txtTenDV.Text, rtxtMoTa.Text, fname, txtGiaTien.Text, txtSLTon.Text, txtDVT.Text, rtxtGhiChu.Text,HieuLuc);
-                MessageBox.Show("sửa thành công rồi nè");
+                MessageBox.Show("sửa thành công");
                 flag = false;
+                xulytextbox(true);
                 dgvDichVu.DataSource = bdv.DV_Select();
             }
 
@@ -123,7 +135,7 @@ namespace DoAnQLKhachSan
         private void btnXoa_Click(object sender, EventArgs e)
         {
             bdv.DV_Xoa(txtID.Text);
-            MessageBox.Show("Xóa thành công rồi nè");
+            MessageBox.Show("Xóa thành");
             dgvDichVu.DataSource = bdv.DV_Select();
         }
 
@@ -133,6 +145,7 @@ namespace DoAnQLKhachSan
         {
             bdv.HienTHiLoaiDichVu(cboLoaiDV);
             dgvDichVu.DataSource = bdv.DV_Select();
+            xulytextbox(true);
         }
         void hienthi_textbox(int numrow)
         {
@@ -168,7 +181,7 @@ namespace DoAnQLKhachSan
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Không có dữ liệu");
+               
             }
         }
 
@@ -189,6 +202,12 @@ namespace DoAnQLKhachSan
         private void txtTim_TextChangeEvent(object sender, EventArgs e)
         {
             bdv.HienThiDanhSach(txtTim.TextValue, dgvDichVu);
+        }
+
+        private void txtGiaTien_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
+                e.Handled = true;
         }
     }
 }

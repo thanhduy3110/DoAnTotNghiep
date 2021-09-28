@@ -27,6 +27,11 @@ namespace BUS
         {
             return TK.ThongKeSLT();
         }
+        public DataTable bieudo_select()
+        {
+            return TK.bieudo_select();
+        }
+
     }
 }
 

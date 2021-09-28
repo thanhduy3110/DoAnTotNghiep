@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using BUS;
 
 namespace DoAnQLKhachSan
@@ -20,11 +21,12 @@ namespace DoAnQLKhachSan
         BUSThongKe bTK = new BUSThongKe();
         private void frmThongKe_Load(object sender, EventArgs e)
         {
-
+            LoadBieuDo();
         }
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
+            
             if (radioNgay.Checked == true)
             {
                
@@ -131,7 +133,7 @@ namespace DoAnQLKhachSan
 
         private void btnThongKeDV_Click(object sender, EventArgs e)
         {
-            if(radioDVBanChay.Checked==true)
+            if (radioDVBanChay.Checked == true)
             {
                 dgvThongKe.Columns.Clear();
                 DataSet data = new DataSet();
@@ -141,8 +143,8 @@ namespace DoAnQLKhachSan
                 dgvThongKe.Columns[1].Width = 200;
                 dgvThongKe.Columns[2].Width = 200;
                 dgvThongKe.Columns[3].Width = 200;
-            } 
-            else if(radioSLTonKho.Checked==true)
+            }
+            else if (radioSLTonKho.Checked == true)
             {
                 dgvThongKe.Columns.Clear();
                 DataSet data = new DataSet();
@@ -152,7 +154,27 @@ namespace DoAnQLKhachSan
                 dgvThongKe.Columns[1].Width = 200;
                 dgvThongKe.Columns[2].Width = 200;
                 dgvThongKe.Columns[3].Width = 200;
-            }    
+            }
+        }
+
+        public void LoadBieuDo()
+        {
+            var chart = chart1.ChartAreas[0];
+            chart.AxisX.IntervalType = DateTimeIntervalType.Number;
+
+            chart.AxisX.LabelStyle.Format = "";
+            chart.AxisY.LabelStyle.Format = "{#,###}Đ";
+            chart.AxisY.LabelStyle.IsEndLabelVisible = true;
+
+            chart.AxisX.Minimum = 1;
+            chart.AxisX.Maximum = 12;
+            chart.AxisY.Minimum = 0;
+
+            chart1.DataSource = bTK.bieudo_select();
+            chart1.Series["ThongKe"].XValueMember = "Thang";
+            chart1.Series["ThongKe"].YValueMembers = "TongTien";
+            
+            
         }
     }
 }

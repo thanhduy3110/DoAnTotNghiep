@@ -31,5 +31,10 @@ namespace BUS
         {
             return kh.khachang_capnhat(ID, HoTen, NgaySinh, SDT, Email, CMND, GioiTinh, QuocTich, HieuLuc);
         }
+
+        public int khachang_Xoa(int ID, bool HieuLuc)
+        {
+            return kh.khachhang_Xoa(ID, HieuLuc);
+        }
     }
 }

@@ -79,7 +79,7 @@ namespace DAO
             return db.ThucHien("NhanVien_CapNhat", name, value, 13);
         }
         //delete
-        public int NhanVien_Xoat(int ID, int HieuLuc)
+        public int NhanVien_Xoa(int ID, bool HieuLuc)
         {
             name = new string[2];
             value = new object[2];

@@ -39,14 +39,24 @@ namespace BUS
             return HD.HoaDon_Select();
         }
 
-        public int HoaDon_Them(string ID, string MaHD, string ID_NV, string ID_KH, string ID_Phong, string NgayLap, string NgayDen, string NgayDi, int HinhThucThue, string TTPhong, string TTDV, string TT, string GhiChu, int TToan, int HieuLuc)
+        public int HoaDon_Them(int ID, string MaHD, string ID_NV, string ID_KH, string ID_Phong, string NgayLap, string NgayDen, string NgayDi, int HinhThucThue, string TTPhong, string TTDV, string TT, string GhiChu, bool TToan, bool HieuLuc)
         {
             return HD.HoaDon_Them(ID, MaHD, ID_NV, ID_KH, ID_Phong, NgayLap, NgayDen, NgayDi, HinhThucThue, TTPhong, TTDV, TT, GhiChu, TToan, HieuLuc);
         }
 
-        public int HoaDon_CapNhat(string ID, string MaHD, string ID_NV, string ID_KH, string ID_Phong, string NgayLap, string NgayDen, string NgayDi, int HinhThucThue, string TTPhong, string TTDV, string TT, string GhiChu, int TToan, int HieuLuc)
+        public int HoaDon_CapNhat(int ID, string MaHD, string ID_NV, string ID_KH, string ID_Phong, string NgayLap, string NgayDen, string NgayDi, int HinhThucThue, string TTPhong, string TTDV, string TT, string GhiChu, bool TToan, bool HieuLuc)
         {
             return HD.HoaDon_CapNhat(ID, MaHD, ID_NV, ID_KH, ID_Phong, NgayLap, NgayDen, NgayDi, HinhThucThue, TTPhong, TTDV, TT, GhiChu, TToan, HieuLuc);
+        }
+
+        public int HoaDon_CapNhatChuyenPhong(int ID,string sophong)
+        {
+            return HD.HoaDon_CapNhatChuyenPhong(ID, sophong);
+        }
+
+        public int HoaDon_Xoa(int ID, bool HieuLuc)
+        {
+            return HD.HoaDon_Xoa(ID, HieuLuc);
         }
     }
 }

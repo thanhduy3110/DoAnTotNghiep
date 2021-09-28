@@ -79,11 +79,20 @@ namespace DoAnQLKhachSan
             txtCMND.Text = "";
             cboQuocTich.Text = "";
         }
+
+        void xulytextbox(Boolean t)
+        {
+            txtHoTen.ReadOnly = t;
+            txtCMND.ReadOnly = t;
+            txtSDT.ReadOnly = t;
+            txtEmail.ReadOnly = t;
+        }
         private void btnThem_Click_1(object sender, EventArgs e)
         {
             if(flag==false)
             {
                 clear_textbox();
+                xulytextbox(false);
                 txtID.Text = (bkh.KH_Select().Rows.Count+1).ToString();
                 radioNam.Checked = false;
                 radioNu.Checked = false;
@@ -119,8 +128,9 @@ namespace DoAnQLKhachSan
                         HieuLuc = false;
                     }
                     bkh.KH_Them(txtID.Text, txtHoTen.Text, dtNgaySinh.Text, txtSDT.Text, txtEmail.Text, txtCMND.Text, GT, cboQuocTich.Text, HieuLuc);
-                    MessageBox.Show("thêm thành công rồi nè");
+                    MessageBox.Show("thêm thành công");
                     flag = false;
+                    xulytextbox(true);
                     dgvKhachHang.DataSource = bkh.KH_Select();
                 }
             }
@@ -132,6 +142,7 @@ namespace DoAnQLKhachSan
             if (flag == false)
             {
                 flag = true;
+                xulytextbox(false);
             }
             else if (flag == true)
             {
@@ -156,15 +167,19 @@ namespace DoAnQLKhachSan
                     HieuLuc = false;
                 }
                 bkh.KH_CapNhat(txtID.Text, txtHoTen.Text, dtNgaySinh.Text, txtSDT.Text, txtEmail.Text, txtCMND.Text, GT, cboQuocTich.Text, HieuLuc);
-                MessageBox.Show("thêm thành công rồi nè");
+                MessageBox.Show("Sữa thành công");
                 flag = false;
+                xulytextbox(true);
                 dgvKhachHang.DataSource = bkh.KH_Select();
             }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-
+            bool HL = false;
+            bkh.khachang_Xoa(ID, HL);
+            MessageBox.Show("Xóa thành công");
+            dgvKhachHang.DataSource = bkh.KH_Select();
         }
 
       
@@ -172,24 +187,46 @@ namespace DoAnQLKhachSan
         private void frmKhachHang_Load(object sender, EventArgs e)
         {
             dgvKhachHang.DataSource = bkh.KH_Select();
+            xulytextbox(true);
+            txtID.ReadOnly = true;
         }
 
+        int ID;
         private void dgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 int vt = dgvKhachHang.CurrentCell.RowIndex;
                 hienthi_textbox(vt);
+                ID = Int32.Parse(dgvKhachHang.Rows[vt].Cells[0].Value.ToString());
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Không có dữ liệu");
+                
             }
         }
 
         private void txtTim_TextChangeEvent(object sender, EventArgs e)
         {
             bkh.HienThiDanhSach(txtTim.TextValue, dgvKhachHang);
+        }
+
+        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
+                e.Handled = true;
+        }
+
+        private void txtHoTen_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) == true && char.IsControl(e.KeyChar) == false)
+                e.Handled = true;
+        }
+
+        private void txtCMND_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
+                e.Handled = true;
         }
     }
 }
