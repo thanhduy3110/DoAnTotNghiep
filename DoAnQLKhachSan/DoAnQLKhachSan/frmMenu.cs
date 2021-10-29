@@ -13,16 +13,18 @@ namespace DoAnQLKhachSan
     public partial class frmMenu : Form
     {
         private string MaNV="", LoaiNV="";
+        private int ID;
         public frmMenu()
         {
             InitializeComponent();
         }
 
-        public frmMenu(string MaNV,string LoaiNV)
+        public frmMenu(string MaNV,string LoaiNV,int ID)
         {
             InitializeComponent();
             this.MaNV = MaNV;
             this.LoaiNV = LoaiNV;
+            this.ID = ID;
         }
 
         public Form activeForm = null;
@@ -160,8 +162,7 @@ namespace DoAnQLKhachSan
 
         private void btnDoiMatKhau_Click(object sender, EventArgs e)
         {
-            frmDoiMatKhau dmk = new frmDoiMatKhau();
-            dmk.Show();
+            openChildForm(new frmThongTinDangNhap(MaNV,ID,LoaiNV));
         }
 
         private void panelMenu_Paint(object sender, PaintEventArgs e)

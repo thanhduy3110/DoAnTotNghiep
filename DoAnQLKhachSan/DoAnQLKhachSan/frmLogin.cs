@@ -25,22 +25,22 @@ namespace DoAnQLKhachSan
         {
             this.Close();
         }
-        public string MaHoa(string key, string toEncrypt)//bỏ thằng mã hóa này vô để mã hóa mật khẩu
-        {
-            byte[] keyArray;
-            byte[] toEncryptArray = UTF8Encoding.UTF8.GetBytes(toEncrypt);
-            MD5CryptoServiceProvider hashmd5 = new MD5CryptoServiceProvider();
-            keyArray = hashmd5.ComputeHash(UTF8Encoding.UTF8.GetBytes(key));
-            TripleDESCryptoServiceProvider tdes =
-            new TripleDESCryptoServiceProvider();
-            tdes.Key = keyArray;
-            tdes.Mode = CipherMode.ECB;
-            tdes.Padding = PaddingMode.PKCS7;
-            ICryptoTransform cTransform = tdes.CreateEncryptor();
-            byte[] resultArray = cTransform.TransformFinalBlock(
-                toEncryptArray, 0, toEncryptArray.Length);
-            return Convert.ToBase64String(resultArray, 0, resultArray.Length);
-        }
+        //public string MaHoa(string key, string toEncrypt)//bỏ thằng mã hóa này vô để mã hóa mật khẩu
+        //{
+        //    byte[] keyArray;
+        //    byte[] toEncryptArray = UTF8Encoding.UTF8.GetBytes(toEncrypt);
+        //    MD5CryptoServiceProvider hashmd5 = new MD5CryptoServiceProvider();
+        //    keyArray = hashmd5.ComputeHash(UTF8Encoding.UTF8.GetBytes(key));
+        //    TripleDESCryptoServiceProvider tdes =
+        //    new TripleDESCryptoServiceProvider();
+        //    tdes.Key = keyArray;
+        //    tdes.Mode = CipherMode.ECB;
+        //    tdes.Padding = PaddingMode.PKCS7;
+        //    ICryptoTransform cTransform = tdes.CreateEncryptor();
+        //    byte[] resultArray = cTransform.TransformFinalBlock(
+        //        toEncryptArray, 0, toEncryptArray.Length);
+        //    return Convert.ToBase64String(resultArray, 0, resultArray.Length);
+        //}
 
         //public string GiaiMa(string key, string toDecrypt)//có mã hóa thì phải có giải mã, chỉ cần ở chỗ phân quyền này thôi
         //                                                  //chỗ nhân viên ko cần
@@ -109,7 +109,7 @@ namespace DoAnQLKhachSan
                 //string s = txtMatKhau.TextName;
                 //string mahoa = Encrypt(s, true);
                 //đếm số phần tử trùng mã và mật khẩu nhé, tất nhiên sẽ ko thể có 2 tài khoản cùng mã và mật khẩu đc
-                int count = bLG.DangNhap_Select(txtTaiKhoan.TextName, MaHoa("123",txtMatKhau.TextName)).Rows.Count;
+                int count = bLG.DangNhap_Select(txtTaiKhoan.TextName, GetMD5(txtMatKhau.TextName)).Rows.Count;
                 //vì vậy nếu đếm là 0 thì ko có tài khoản nào phù hợp nhé
                 //tại chưa xử lý nếu form đăng nhập close giữa chừng nên nó sẽ vô form main nếu close form dăng nhập
                 //tuy nhiên vô thì nó sẽ ko có quyền gì hết trừ quyền đăng xuất và mua hàng :))))))))))))
@@ -121,10 +121,11 @@ namespace DoAnQLKhachSan
                 else
                 {
                     MessageBox.Show("Đăng nhập thành công");
-                    this.Hide();            
-                    string LoaiNV = bLG.DangNhap_Select(txtTaiKhoan.TextName, MaHoa("123",txtMatKhau.TextName)).Rows[0][0].ToString();
-                    string MaNV = bLG.DangNhap_Select(txtTaiKhoan.TextName, MaHoa("123",txtMatKhau.TextName)).Rows[0][1].ToString();
-                    frmMenu Menu = new frmMenu(MaNV,LoaiNV);
+                    this.Hide();
+                    int ID =Int32.Parse(bLG.DangNhap_Select(txtTaiKhoan.TextName, GetMD5(txtMatKhau.TextName)).Rows[0][0].ToString());
+                    string LoaiNV = bLG.DangNhap_Select(txtTaiKhoan.TextName, GetMD5(txtMatKhau.TextName)).Rows[0][1].ToString();
+                    string MaNV = bLG.DangNhap_Select(txtTaiKhoan.TextName, GetMD5(txtMatKhau.TextName)).Rows[0][2].ToString();
+                    frmMenu Menu = new frmMenu(MaNV,LoaiNV,ID);
                     Menu.Show();
                 }
             }

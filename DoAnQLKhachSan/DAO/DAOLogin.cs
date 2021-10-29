@@ -26,5 +26,15 @@ namespace DAO
 
             return db.LayDuLieuCoDK("DangNhap_Select", name, value, 2);
         }
+
+        public DataTable ThongTinDangNhap(string MaNV)
+        {
+            name = new string[1];
+            value = new object[1];
+
+            name[0] = "@MaNV"; value[0] = MaNV;
+
+            return db.LayDuLieuCoDK("ThongTinDangNhap", name, value, 1);
+        }
     }
 }

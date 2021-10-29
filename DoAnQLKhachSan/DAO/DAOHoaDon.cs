@@ -22,15 +22,32 @@ namespace DAO
             cboTenNV.ValueMember = "ID";
         }
 
-        public void HienThiTenKH(ComboBox cboTenKH)
+        //public void HienThiTenKH(ComboBox cboTenKH)
+        //{
+        //    dsHoaDon = db.LayDanhSach("select ID, HoTen from KhachHang where HieuLuc=1");// truy vấn lên sql
+        //    cboTenKH.DataSource = dsHoaDon.Tables[0];
+        //    cboTenKH.DisplayMember = "HoTen";
+        //    cboTenKH.ValueMember = "ID";
+        //}
+
+        public void HienThiTenKH(ComboBox cboSDT,TextBox txtTenKH)
         {
-            dsHoaDon = db.LayDanhSach("select ID, HoTen from KhachHang where HieuLuc=1");// truy vấn lên sql
-            cboTenKH.DataSource = dsHoaDon.Tables[0];
-            cboTenKH.DisplayMember = "HoTen";
-            cboTenKH.ValueMember = "ID";
+            DataSet dsKH = new DataSet();
+            dsKH = db.LayDanhSach("select * from KhachHang");
+            cboSDT.DataSource = dsKH.Tables[0];
+            txtTenKH.DataBindings.Clear();
+            txtTenKH.DataBindings.Add("Text", cboSDT.DataSource, "HoTen");
+
         }
 
-
+        public void HienThiSDT(ComboBox cboSDT)
+        {
+            DataSet dsKH = new DataSet();
+            dsKH = db.LayDanhSach("select ID,SDT from KhachHang");// truy vấn lên sql
+            cboSDT.DataSource = dsKH.Tables[0];
+            cboSDT.DisplayMember = "SDT";
+            cboSDT.ValueMember = "ID";
+        }
 
         public void HienThiMaPhong(ComboBox cboMaPhong)
         {
@@ -73,7 +90,7 @@ namespace DAO
         }
 
         //phương thức này gọi đến phương thức ThucHien ở dbConnectionData để thêm dữ liệu
-        public int HoaDon_Them(int ID, string MaHD, string ID_NV, string ID_KH, string ID_Phong, string NgayLap, string NgayDen, string NgayDi, int HinhThucThue, string TTPhong, string TTDV, string TT, string GhiChu, bool TToan, bool HieuLuc)
+        public int HoaDon_Them(int ID, string MaHD, string ID_NV, string ID_KH, string ID_Phong, string NgayLap, string NgayDen, string NgayDi, int HinhThucThue, int TTPhong, string TTDV, int TT, string GhiChu, bool TToan, bool HieuLuc)
         {
             name = new string[15];
             value = new object[15];
@@ -118,13 +135,14 @@ namespace DAO
             return db.ThucHien("HoaDon_CapNhat", name, value, 15);
         }
 
-        public int HoaDon_CapNhatChuyenPhong(int ID,string sophong)
+        public int HoaDon_CapNhatChuyenPhong(int ID,string sophong,int TTP)
         {
-            name = new string[2];
-            value = new object[2];
+            name = new string[3];
+            value = new object[3];
             name[0] = "@ID"; value[0] = ID;
-            name[1] = "@ID_LoaiPhong"; value[0] = sophong;
-            return db.ThucHien("HoaDon_CapNhat", name, value, 2);
+            name[1] = "@ID_Phong"; value[1] = sophong;
+            name[2] = "@TongTienPhong";value[2] = TTP;
+            return db.ThucHien("HoaDon_CapNhatChuyenPhong", name, value, 3);
         }
 
         public int HoaDon_Xoa(int ID, bool HieuLuc)

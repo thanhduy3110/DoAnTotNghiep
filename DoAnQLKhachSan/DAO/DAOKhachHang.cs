@@ -59,7 +59,7 @@ namespace DAO
             name[7] = "@QuocTich"; value[7] = QuocTich;
             name[8] = "@HieuLuc"; value[8] = HieuLuc;
 
-            return db.ThucHien("khachang_capnhat", name, value, 9);
+            return db.ThucHien("khachhang_capnhat", name, value, 9);
 
         }
         public int khachhang_Xoa(int ID, bool HieuLuc)

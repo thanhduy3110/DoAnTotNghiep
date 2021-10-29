@@ -17,7 +17,7 @@ namespace DoAnQLKhachSan
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new frmMenu());
-            Application.Run(new frmMenu());
+            Application.Run(new frmLogin());
         }
     }
 }

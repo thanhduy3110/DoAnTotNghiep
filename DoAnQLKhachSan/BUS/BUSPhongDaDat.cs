@@ -29,7 +29,12 @@ namespace BUS
             PDD.HienThiID_PDD(cboID_PDD, dtpNgayDen, dtpNgayDi);
         }
 
-        public DataTable PhongDaDat_Select()
+        public void HienThiSDT(ComboBox cboSDT, DateTimeInput dtpNgayDen, DateTimeInput dtpNgayDi, TextBox txtHoTen)
+        {
+            PDD.HienThiSDT(cboSDT, dtpNgayDen, dtpNgayDi, txtHoTen);
+        }
+
+            public DataTable PhongDaDat_Select()
         {
             return PDD.PhongDaDat_Select();
         }

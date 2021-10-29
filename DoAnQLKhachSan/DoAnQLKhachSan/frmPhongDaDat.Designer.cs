@@ -59,23 +59,31 @@
             this.pictureBox45 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvPhongDaDat = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dtpNgayDi = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.dtpNgayDen = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.cboMaPhong = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.cboID_PDP = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.txtTim = new JTextBox.JTextBox();
             this.txtID = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.labelX6 = new DevComponents.DotNetBar.LabelX();
+            this.cboSDTKH = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.labelX7 = new DevComponents.DotNetBar.LabelX();
+            this.txtTenKH = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             btnXoaTatCa = new ePOSOne.btnProduct.Button_WOC();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -451,6 +459,12 @@
             this.dgvPhongDaDat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column7,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column11,
             this.Column8,
             this.Column9,
             this.Column10});
@@ -486,59 +500,20 @@
             this.dgvPhongDaDat.TabIndex = 5;
             this.dgvPhongDaDat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhongDaDat_CellClick);
             // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "id";
-            this.Column1.HeaderText = "ID";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Visible = false;
-            this.Column1.Width = 125;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "id_phieudp";
-            this.Column7.HeaderText = "ID_PhieuDat";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 125;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "sophong";
-            this.Column8.HeaderText = "Số Phòng";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 130;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "ngayden";
-            this.Column9.HeaderText = "Ngày đến";
-            this.Column9.MinimumWidth = 6;
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 125;
-            // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "ngaydi";
-            this.Column10.HeaderText = "Ngày đi";
-            this.Column10.MinimumWidth = 6;
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 125;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dtpNgayDi);
             this.groupBox2.Controls.Add(this.dtpNgayDen);
+            this.groupBox2.Controls.Add(this.cboSDTKH);
             this.groupBox2.Controls.Add(this.cboMaPhong);
-            this.groupBox2.Controls.Add(this.cboID_PDP);
             this.groupBox2.Controls.Add(this.txtTim);
+            this.groupBox2.Controls.Add(this.txtTenKH);
             this.groupBox2.Controls.Add(this.txtID);
             this.groupBox2.Controls.Add(this.labelX5);
             this.groupBox2.Controls.Add(this.labelX4);
+            this.groupBox2.Controls.Add(this.labelX7);
+            this.groupBox2.Controls.Add(this.labelX6);
             this.groupBox2.Controls.Add(this.labelX3);
-            this.groupBox2.Controls.Add(this.labelX1);
             this.groupBox2.Controls.Add(this.labelX2);
             this.groupBox2.Controls.Add(this.btnXoa);
             this.groupBox2.Controls.Add(this.btnSua);
@@ -561,7 +536,7 @@
             this.dtpNgayDi.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dtpNgayDi.ButtonDropDown.Visible = true;
             this.dtpNgayDi.IsPopupCalendarOpen = false;
-            this.dtpNgayDi.Location = new System.Drawing.Point(731, 203);
+            this.dtpNgayDi.Location = new System.Drawing.Point(1141, 204);
             // 
             // 
             // 
@@ -651,18 +626,6 @@
             this.cboMaPhong.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cboMaPhong.TabIndex = 186;
             // 
-            // cboID_PDP
-            // 
-            this.cboID_PDP.DisplayMember = "Text";
-            this.cboID_PDP.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboID_PDP.FormattingEnabled = true;
-            this.cboID_PDP.ItemHeight = 27;
-            this.cboID_PDP.Location = new System.Drawing.Point(731, 105);
-            this.cboID_PDP.Name = "cboID_PDP";
-            this.cboID_PDP.Size = new System.Drawing.Size(272, 33);
-            this.cboID_PDP.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cboID_PDP.TabIndex = 186;
-            // 
             // txtTim
             // 
             this.txtTim.AutoSize = true;
@@ -704,7 +667,7 @@
             this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX5.ForeColor = System.Drawing.Color.DarkBlue;
-            this.labelX5.Location = new System.Drawing.Point(499, 203);
+            this.labelX5.Location = new System.Drawing.Point(1032, 203);
             this.labelX5.Margin = new System.Windows.Forms.Padding(4);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(103, 24);
@@ -741,21 +704,6 @@
             this.labelX3.TabIndex = 174;
             this.labelX3.Text = "Mã phòng";
             // 
-            // labelX1
-            // 
-            // 
-            // 
-            // 
-            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX1.ForeColor = System.Drawing.Color.DarkBlue;
-            this.labelX1.Location = new System.Drawing.Point(499, 105);
-            this.labelX1.Margin = new System.Windows.Forms.Padding(4);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(224, 24);
-            this.labelX1.TabIndex = 175;
-            this.labelX1.Text = "ID Phiếu đặt phòng:";
-            // 
             // labelX2
             // 
             // 
@@ -770,6 +718,156 @@
             this.labelX2.Size = new System.Drawing.Size(195, 24);
             this.labelX2.TabIndex = 176;
             this.labelX2.Text = "ID Phòng đã đặt:";
+            // 
+            // labelX6
+            // 
+            // 
+            // 
+            // 
+            this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX6.ForeColor = System.Drawing.Color.DarkBlue;
+            this.labelX6.Location = new System.Drawing.Point(504, 105);
+            this.labelX6.Margin = new System.Windows.Forms.Padding(4);
+            this.labelX6.Name = "labelX6";
+            this.labelX6.Size = new System.Drawing.Size(177, 24);
+            this.labelX6.TabIndex = 174;
+            this.labelX6.Text = "SĐT Khách Hàng";
+            // 
+            // cboSDTKH
+            // 
+            this.cboSDTKH.DisplayMember = "Text";
+            this.cboSDTKH.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboSDTKH.FormattingEnabled = true;
+            this.cboSDTKH.ItemHeight = 27;
+            this.cboSDTKH.Location = new System.Drawing.Point(711, 105);
+            this.cboSDTKH.Name = "cboSDTKH";
+            this.cboSDTKH.Size = new System.Drawing.Size(272, 33);
+            this.cboSDTKH.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cboSDTKH.TabIndex = 186;
+            // 
+            // labelX7
+            // 
+            // 
+            // 
+            // 
+            this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX7.ForeColor = System.Drawing.Color.DarkBlue;
+            this.labelX7.Location = new System.Drawing.Point(504, 212);
+            this.labelX7.Margin = new System.Windows.Forms.Padding(4);
+            this.labelX7.Name = "labelX7";
+            this.labelX7.Size = new System.Drawing.Size(177, 24);
+            this.labelX7.TabIndex = 174;
+            this.labelX7.Text = "Tên Khách Hàng";
+            // 
+            // txtTenKH
+            // 
+            // 
+            // 
+            // 
+            this.txtTenKH.Border.Class = "TextBoxBorder";
+            this.txtTenKH.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtTenKH.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenKH.Location = new System.Drawing.Point(711, 201);
+            this.txtTenKH.Name = "txtTenKH";
+            this.txtTenKH.PreventEnterBeep = true;
+            this.txtTenKH.Size = new System.Drawing.Size(272, 35);
+            this.txtTenKH.TabIndex = 179;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "id";
+            this.Column1.HeaderText = "ID";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Visible = false;
+            this.Column1.Width = 125;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "id_phieudp";
+            this.Column7.HeaderText = "ID_PhieuDat";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.Visible = false;
+            this.Column7.Width = 125;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "HoTenKH";
+            this.Column2.HeaderText = "Tên Khách Hàng";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 200;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "SDT";
+            this.Column3.HeaderText = "SĐT";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 125;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "HTT";
+            this.Column4.HeaderText = "HTT";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Visible = false;
+            this.Column4.Width = 125;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "GTG";
+            this.Column5.HeaderText = "GTG";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Visible = false;
+            this.Column5.Width = 125;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "GTN";
+            this.Column6.HeaderText = "GTN";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.Visible = false;
+            this.Column6.Width = 125;
+            // 
+            // Column11
+            // 
+            this.Column11.DataPropertyName = "ID_KH";
+            this.Column11.HeaderText = "ID_KH";
+            this.Column11.MinimumWidth = 6;
+            this.Column11.Name = "Column11";
+            this.Column11.Visible = false;
+            this.Column11.Width = 125;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "SoPhong";
+            this.Column8.HeaderText = "Số Phòng";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 130;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "ngayden";
+            this.Column9.HeaderText = "Ngày đến";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 200;
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "ngaydi";
+            this.Column10.HeaderText = "Ngày đi";
+            this.Column10.MinimumWidth = 6;
+            this.Column10.Name = "Column10";
+            this.Column10.Width = 200;
             // 
             // frmPhongDaDat
             // 
@@ -841,18 +939,26 @@
         private DevComponents.DotNetBar.LabelX labelX5;
         private DevComponents.DotNetBar.LabelX labelX4;
         private DevComponents.DotNetBar.LabelX labelX3;
-        private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.LabelX labelX2;
         private JTextBox.JTextBox txtTim;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cboMaPhong;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cboID_PDP;
         private ePOSOne.btnProduct.Button_WOC btnXoa;
         private ePOSOne.btnProduct.Button_WOC btnSua;
         private ePOSOne.btnProduct.Button_WOC btnThem;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dtpNgayDi;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dtpNgayDen;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cboSDTKH;
+        private DevComponents.DotNetBar.LabelX labelX7;
+        private DevComponents.DotNetBar.LabelX labelX6;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtTenKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;

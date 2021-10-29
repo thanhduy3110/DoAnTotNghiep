@@ -18,9 +18,19 @@ namespace BUS
             HD.HienThiTenNV(cboTenNV);
         }
 
-        public void HienThiTenKH(ComboBox cboTenKH)
+        //public void HienThiTenKH(ComboBox cboTenKH)
+        //{
+        //    HD.HienThiTenKH(cboTenKH);
+        //}
+
+        public void HienThiSDT(ComboBox cboSDT)
         {
-            HD.HienThiTenKH(cboTenKH);
+            HD.HienThiSDT(cboSDT);
+        }
+
+        public void HienThiTenKH(ComboBox cboSDT, TextBox txtTenKH)
+        {
+            HD.HienThiTenKH(cboSDT,txtTenKH);
         }
 
 
@@ -39,7 +49,7 @@ namespace BUS
             return HD.HoaDon_Select();
         }
 
-        public int HoaDon_Them(int ID, string MaHD, string ID_NV, string ID_KH, string ID_Phong, string NgayLap, string NgayDen, string NgayDi, int HinhThucThue, string TTPhong, string TTDV, string TT, string GhiChu, bool TToan, bool HieuLuc)
+        public int HoaDon_Them(int ID, string MaHD, string ID_NV, string ID_KH, string ID_Phong, string NgayLap, string NgayDen, string NgayDi, int HinhThucThue, int TTPhong, string TTDV, int TT, string GhiChu, bool TToan, bool HieuLuc)
         {
             return HD.HoaDon_Them(ID, MaHD, ID_NV, ID_KH, ID_Phong, NgayLap, NgayDen, NgayDi, HinhThucThue, TTPhong, TTDV, TT, GhiChu, TToan, HieuLuc);
         }
@@ -49,9 +59,9 @@ namespace BUS
             return HD.HoaDon_CapNhat(ID, MaHD, ID_NV, ID_KH, ID_Phong, NgayLap, NgayDen, NgayDi, HinhThucThue, TTPhong, TTDV, TT, GhiChu, TToan, HieuLuc);
         }
 
-        public int HoaDon_CapNhatChuyenPhong(int ID,string sophong)
+        public int HoaDon_CapNhatChuyenPhong(int ID,string sophong,int TTP)
         {
-            return HD.HoaDon_CapNhatChuyenPhong(ID, sophong);
+            return HD.HoaDon_CapNhatChuyenPhong(ID, sophong,TTP);
         }
 
         public int HoaDon_Xoa(int ID, bool HieuLuc)

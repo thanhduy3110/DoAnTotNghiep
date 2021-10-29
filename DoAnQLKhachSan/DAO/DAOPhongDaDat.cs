@@ -39,6 +39,30 @@ namespace DAO
             dsPDD = db.LayDanhSach("select * from PhongDaDat where ID_Phong like '%" + sTimKiem + "%'");
             d.DataSource = dsPDD.Tables[0];
         }
+
+        //public void HienThiSDT(ComboBox cboSDT)
+        //{
+        //    DataSet dsKH = new DataSet();
+        //    dsKH = db.LayDanhSach("select SDT,ID_KH from KhachHang KH ,PhieuDatPhong where KH.ID=ID_KH");// truy vấn lên sql
+        //    cboSDT.DataSource = dsKH.Tables[0];
+        //    cboSDT.DisplayMember = "SDT";
+        //    cboSDT.ValueMember = "ID_KH";
+        //}
+
+
+        public void HienThiSDT(ComboBox cboSDT, DateTimeInput dtpNgayDen, DateTimeInput dtpNgayDi, TextBox txtHoTen)
+        {
+            DataSet dsKH = new DataSet();
+            dsKH = db.LayDanhSach("select PDD.ID as ID,SDT,KH.HoTen as HoTenKH,PDP.NgayDen as NgayDen,PDP.NgayDi as NgayDi,PDP.HinhThucThue as HTT,Phong.GiaThueGio as GTG,Phong.GiaThueNgay as GTN,Phong.SoPhong,PDP.ID as ID_PhieuDP,ID_KH  from KhachHang KH, PhieuDatPhong PDP, PhongDaDat PDD, Phong where KH.ID = PDP.ID_KH and PDD.ID_PhieuDP = PDP.ID and Phong.ID = PDD.ID_Phong");// truy vấn lên sql
+            cboSDT.DataSource = dsKH.Tables[0];
+            cboSDT.DisplayMember = "SDT";
+            cboSDT.ValueMember = "ID_PhieuDP";
+            dtpNgayDen.DataBindings.Add("Text", cboSDT.DataSource, "ngayden");
+            dtpNgayDi.DataBindings.Add("Text", cboSDT.DataSource, "ngaydi");
+            txtHoTen.DataBindings.Add("Text", cboSDT.DataSource, "HoTenKH");
+        }
+
+
         public DataTable PhongDaDat_Select()
         {
             return db.Laydulieu("PhongDaDat_Select");

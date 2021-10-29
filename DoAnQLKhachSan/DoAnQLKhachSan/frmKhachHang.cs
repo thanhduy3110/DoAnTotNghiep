@@ -127,7 +127,7 @@ namespace DoAnQLKhachSan
                     {
                         HieuLuc = false;
                     }
-                    bkh.KH_Them(txtID.Text, txtHoTen.Text, dtNgaySinh.Text, txtSDT.Text, txtEmail.Text, txtCMND.Text, GT, cboQuocTich.Text, HieuLuc);
+                    bkh.KH_Them(txtID.Text, txtHoTen.Text, Convert.ToDateTime(dtNgaySinh.Text).ToString("yyyy-MM-dd"), txtSDT.Text, txtEmail.Text, txtCMND.Text, GT, cboQuocTich.Text, HieuLuc);
                     MessageBox.Show("thêm thành công");
                     flag = false;
                     xulytextbox(true);
@@ -166,7 +166,7 @@ namespace DoAnQLKhachSan
                 {
                     HieuLuc = false;
                 }
-                bkh.KH_CapNhat(txtID.Text, txtHoTen.Text, dtNgaySinh.Text, txtSDT.Text, txtEmail.Text, txtCMND.Text, GT, cboQuocTich.Text, HieuLuc);
+                bkh.KH_CapNhat(txtID.Text, txtHoTen.Text, Convert.ToDateTime(dtNgaySinh.Text).ToString("yyyy-MM-dd"), txtSDT.Text, txtEmail.Text, txtCMND.Text, GT, cboQuocTich.Text, HieuLuc);
                 MessageBox.Show("Sữa thành công");
                 flag = false;
                 xulytextbox(true);
