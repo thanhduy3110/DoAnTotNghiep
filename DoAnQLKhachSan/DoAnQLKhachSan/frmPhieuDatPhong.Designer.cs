@@ -56,7 +56,6 @@
             this.dtNgayDi = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.dtNgayDen = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.txtSoKH = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtID = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.cboTenKH = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
@@ -65,7 +64,6 @@
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             btnXoaTatCa = new ePOSOne.btnProduct.Button_WOC();
             btnXoa = new ePOSOne.btnProduct.Button_WOC();
@@ -329,7 +327,6 @@
             this.groupBox2.Controls.Add(this.dtNgayDi);
             this.groupBox2.Controls.Add(this.dtNgayDen);
             this.groupBox2.Controls.Add(this.txtSoKH);
-            this.groupBox2.Controls.Add(this.txtID);
             this.groupBox2.Controls.Add(this.cboTenKH);
             this.groupBox2.Controls.Add(this.labelX8);
             this.groupBox2.Controls.Add(this.labelX6);
@@ -338,7 +335,6 @@
             this.groupBox2.Controls.Add(this.labelX3);
             this.groupBox2.Controls.Add(this.labelX2);
             this.groupBox2.Controls.Add(this.labelX1);
-            this.groupBox2.Controls.Add(this.labelX9);
             this.groupBox2.Controls.Add(this.labelX7);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(2, 2);
@@ -397,10 +393,10 @@
             // 
             this.rtxtGhiChu.BackgroundStyle.Class = "RichTextBoxBorder";
             this.rtxtGhiChu.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.rtxtGhiChu.Location = new System.Drawing.Point(261, 209);
+            this.rtxtGhiChu.Location = new System.Drawing.Point(261, 136);
             this.rtxtGhiChu.Name = "rtxtGhiChu";
             this.rtxtGhiChu.Rtf = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 " +
-    "Tahoma;}}\r\n{\\*\\generator Riched20 10.0.18362}\\viewkind4\\uc1 \r\n\\pard\\b\\f0\\fs24\\pa" +
+    "Tahoma;}}\r\n{\\*\\generator Riched20 10.0.22000}\\viewkind4\\uc1 \r\n\\pard\\b\\f0\\fs24\\pa" +
     "r\r\n}\r\n";
             this.rtxtGhiChu.Size = new System.Drawing.Size(254, 155);
             this.rtxtGhiChu.TabIndex = 173;
@@ -436,7 +432,7 @@
             this.dtNgayDi.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtNgayDi.ForeColor = System.Drawing.Color.Black;
             this.dtNgayDi.IsPopupCalendarOpen = false;
-            this.dtNgayDi.Location = new System.Drawing.Point(261, 122);
+            this.dtNgayDi.Location = new System.Drawing.Point(261, 49);
             // 
             // 
             // 
@@ -530,20 +526,6 @@
             this.txtSoKH.Size = new System.Drawing.Size(254, 35);
             this.txtSoKH.TabIndex = 162;
             // 
-            // txtID
-            // 
-            // 
-            // 
-            // 
-            this.txtID.Border.Class = "TextBoxBorder";
-            this.txtID.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtID.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(261, 52);
-            this.txtID.Name = "txtID";
-            this.txtID.PreventEnterBeep = true;
-            this.txtID.Size = new System.Drawing.Size(254, 35);
-            this.txtID.TabIndex = 161;
-            // 
             // cboTenKH
             // 
             this.cboTenKH.DisplayMember = "Text";
@@ -596,7 +578,7 @@
             this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX5.ForeColor = System.Drawing.Color.DarkBlue;
-            this.labelX5.Location = new System.Drawing.Point(40, 209);
+            this.labelX5.Location = new System.Drawing.Point(40, 136);
             this.labelX5.Margin = new System.Windows.Forms.Padding(4);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(165, 24);
@@ -656,27 +638,12 @@
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX1.ForeColor = System.Drawing.Color.DarkBlue;
-            this.labelX1.Location = new System.Drawing.Point(40, 129);
+            this.labelX1.Location = new System.Drawing.Point(40, 56);
             this.labelX1.Margin = new System.Windows.Forms.Padding(4);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(165, 24);
             this.labelX1.TabIndex = 149;
             this.labelX1.Text = "Ngày đến:";
-            // 
-            // labelX9
-            // 
-            // 
-            // 
-            // 
-            this.labelX9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX9.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX9.ForeColor = System.Drawing.Color.DarkBlue;
-            this.labelX9.Location = new System.Drawing.Point(40, 56);
-            this.labelX9.Margin = new System.Windows.Forms.Padding(4);
-            this.labelX9.Name = "labelX9";
-            this.labelX9.Size = new System.Drawing.Size(214, 24);
-            this.labelX9.TabIndex = 156;
-            this.labelX9.Text = "ID Phiếu đặt phòng:";
             // 
             // labelX7
             // 
@@ -731,7 +698,6 @@
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dtNgayDi;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dtNgayDen;
         private DevComponents.DotNetBar.Controls.TextBoxX txtSoKH;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtID;
         private DevComponents.DotNetBar.LabelX labelX8;
         private DevComponents.DotNetBar.LabelX labelX6;
         private DevComponents.DotNetBar.LabelX labelX5;
@@ -739,7 +705,6 @@
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.LabelX labelX1;
-        private DevComponents.DotNetBar.LabelX labelX9;
         private DevComponents.DotNetBar.LabelX labelX7;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cboTenKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;

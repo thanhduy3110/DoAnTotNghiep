@@ -20,31 +20,31 @@ namespace DoAnQLKhachSan
 
         BUSPhongDaDat bPDD = new BUSPhongDaDat();
         bool flag=false;
-        void Tang_ID()
-        {
-            int count = 0;
-            count = dgvPhongDaDat.Rows.Count;
-            string chuoi = "";
-            int chuoi2 = 0;
-            if (count <= 1)
-            {
-                txtID.Text = "0";
-            }
-            else
-            {
-                chuoi = Convert.ToString(dgvPhongDaDat.Rows[count - 2].Cells[0].Value);
-                chuoi2 = Convert.ToInt32((chuoi.Remove(0, 0)));
-                if (chuoi2 + 1 < 10)
-                {
-                    txtID.Text = "" + (chuoi2 + 1).ToString();
-                }
-                else if (chuoi2 + 1 < 100)
-                {
-                    txtID.Text = "" + (chuoi2 + 1).ToString();
-                }
+        //void Tang_ID()
+        //{
+        //    int count = 0;
+        //    count = dgvPhongDaDat.Rows.Count;
+        //    string chuoi = "";
+        //    int chuoi2 = 0;
+        //    if (count <= 1)
+        //    {
+        //        txtID.Text = "0";
+        //    }
+        //    else
+        //    {
+        //        chuoi = Convert.ToString(dgvPhongDaDat.Rows[count - 2].Cells[0].Value);
+        //        chuoi2 = Convert.ToInt32((chuoi.Remove(0, 0)));
+        //        if (chuoi2 + 1 < 10)
+        //        {
+        //            txtID.Text = "" + (chuoi2 + 1).ToString();
+        //        }
+        //        else if (chuoi2 + 1 < 100)
+        //        {
+        //            txtID.Text = "" + (chuoi2 + 1).ToString();
+        //        }
 
-            }
-        }
+        //    }
+        //}
 
         void clear_textbox()
         {
@@ -64,7 +64,7 @@ namespace DoAnQLKhachSan
         {
             try
             {
-                txtID.Text = dgvPhongDaDat.Rows[numrow].Cells[0].Value.ToString();
+
                 txtTenKH.Text = dgvPhongDaDat.Rows[numrow].Cells[2].Value.ToString();
                 cboSDTKH.Text = dgvPhongDaDat.Rows[numrow].Cells[3].Value.ToString();
                 cboMaPhong.Text = dgvPhongDaDat.Rows[numrow].Cells[8].Value.ToString();
@@ -83,7 +83,7 @@ namespace DoAnQLKhachSan
             if(flag==false)
             {
                 clear_textbox();
-                txtID.Text = (bPDD.PhongDaDat_Select().Rows.Count + 1).ToString();
+                
                 flag = true;
             }    
            
@@ -96,8 +96,9 @@ namespace DoAnQLKhachSan
                 }
                 else
                 {
+                    string TangID = (bPDD.PhongDaDat_Select().Rows.Count + 1).ToString();
                     xulychucnang(true);
-                    bPDD.PhongDaDat_Them(txtID.Text, cboSDTKH.SelectedValue.ToString(), cboMaPhong.SelectedValue.ToString(), dtpNgayDen.Text, dtpNgayDi.Text);
+                    bPDD.PhongDaDat_Them(TangID, cboSDTKH.SelectedValue.ToString(), cboMaPhong.SelectedValue.ToString(), dtpNgayDen.Text, dtpNgayDi.Text);
                     MessageBox.Show("Thêm thành công ");
                     flag = false;
                     dgvPhongDaDat.DataSource = bPDD.PhongDaDat_Select();
@@ -108,8 +109,13 @@ namespace DoAnQLKhachSan
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-
-        }
+            if (MessageBox.Show("Bạn có muốn xóa phiếu đặt phòng này không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                bool HL = false;
+                bPDD.PhongDaDat_Xoa(ID.ToString());
+                dgvPhongDaDat.DataSource = bPDD.PhongDaDat_Select();
+            }
+            }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
@@ -126,7 +132,7 @@ namespace DoAnQLKhachSan
                 else
                 {
                     xulychucnang(true);
-                    bPDD.PhongDaDat_CapNhat(txtID.Text, cboSDTKH.SelectedValue.ToString(), cboMaPhong.SelectedValue.ToString(), dtpNgayDen.Text, dtpNgayDi.Text);
+                    bPDD.PhongDaDat_CapNhat(ID.ToString(), cboSDTKH.SelectedValue.ToString(), cboMaPhong.SelectedValue.ToString(), dtpNgayDen.Text, dtpNgayDi.Text);
                     MessageBox.Show("Sữa thành công ");
                     flag = false;
                     dgvPhongDaDat.DataSource = bPDD.PhongDaDat_Select();
@@ -134,14 +140,15 @@ namespace DoAnQLKhachSan
             }
         }
 
-       
 
+        int ID;
         private void dgvPhongDaDat_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 int vt = dgvPhongDaDat.CurrentCell.RowIndex;
                 hienthi_textbox(vt);
+                ID = Int32.Parse(dgvPhongDaDat.Rows[vt].Cells[0].Value.ToString());
             }
             catch (Exception ex)
             {
@@ -151,7 +158,7 @@ namespace DoAnQLKhachSan
 
         private void frmPhongDaDat_Load(object sender, EventArgs e)
         {
-            txtID.ReadOnly = true;
+
             txtTenKH.ReadOnly = true;
             xulychucnang(true);
             //bPDD.HienThiID_PDD(cboID_PDP, dtpNgayDen, dtpNgayDi);

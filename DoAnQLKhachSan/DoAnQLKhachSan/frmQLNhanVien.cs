@@ -23,31 +23,31 @@ namespace DoAnQLKhachSan
         BUSNhanVien bNV = new BUSNhanVien();
         bool flag=false;
 
-        void Tang_ID()
-        {
-            int count = 0;
-            count = dgvDSNhanVien.Rows.Count;
-            string chuoi = "";
-            int chuoi2 = 0;
-            if (count <= 1)
-            {
-                txtID.Text = "0";
-            }
-            else
-            {
-                chuoi = Convert.ToString(dgvDSNhanVien.Rows[count - 2].Cells[0].Value);
-                chuoi2 = Convert.ToInt32((chuoi.Remove(0, 0)));
-                if (chuoi2 + 1 < 10)
-                {
-                    txtID.Text = "" + (chuoi2 + 1).ToString();
-                }
-                else if (chuoi2 + 1 < 100)
-                {
-                    txtID.Text = "" + (chuoi2 + 1).ToString();
-                }
+        //void Tang_ID()
+        //{
+        //    int count = 0;
+        //    count = dgvDSNhanVien.Rows.Count;
+        //    string chuoi = "";
+        //    int chuoi2 = 0;
+        //    if (count <= 1)
+        //    {
+        //        txtID.Text = "0";
+        //    }
+        //    else
+        //    {
+        //        chuoi = Convert.ToString(dgvDSNhanVien.Rows[count - 2].Cells[0].Value);
+        //        chuoi2 = Convert.ToInt32((chuoi.Remove(0, 0)));
+        //        if (chuoi2 + 1 < 10)
+        //        {
+        //            txtID.Text = "" + (chuoi2 + 1).ToString();
+        //        }
+        //        else if (chuoi2 + 1 < 100)
+        //        {
+        //            txtID.Text = "" + (chuoi2 + 1).ToString();
+        //        }
 
-            }
-        }
+        //    }
+        //}
 
         string PhatSinhMaTuDong()
         {
@@ -67,7 +67,6 @@ namespace DoAnQLKhachSan
 
         void clear_textbox()
         {
-            Tang_ID();
             txtMaNV.Text = PhatSinhMaTuDong();
             cboLoaiNV.Text = "";
             txtHoTen.Text = "";
@@ -89,7 +88,6 @@ namespace DoAnQLKhachSan
 
         void xulytextbox(Boolean t)
         {
-            txtMaNV.ReadOnly = t;
             txtHoTen.ReadOnly = t;
             txtMatKhau.ReadOnly = t;
             txtSDT.ReadOnly = t;
@@ -100,12 +98,12 @@ namespace DoAnQLKhachSan
 
         }
 
-
+        
         private void frmQLNhanVien_Load(object sender, EventArgs e)
         {
+            
             xulychucnang(true);
             xulytextbox(true);
-            txtID.ReadOnly = true;
             dgvDSNhanVien.ReadOnly = true;
             txtMaNV.ReadOnly = true;
             bNV.HienThiTenLoaiNV(cboLoaiNV);
@@ -116,7 +114,6 @@ namespace DoAnQLKhachSan
         void hienthi_textbox(int numrow)
         {
 
-            txtID.Text = dgvDSNhanVien.Rows[numrow].Cells[0].Value.ToString();
             cboLoaiNV.Text = dgvDSNhanVien.Rows[numrow].Cells[1].Value.ToString();
             txtMaNV.Text = dgvDSNhanVien.Rows[numrow].Cells[2].Value.ToString();
             //txtMatKhau.Text = dgvDSNhanVien.Rows[numrow].Cells[3].Value.ToString();
@@ -169,7 +166,7 @@ namespace DoAnQLKhachSan
             }else if(flag==true)
             {
                 string fname = DuoiAnh; // tên ảnh
-                string floder = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan\\ImageNhanVien";//đường dẫn lưu ảnh
+                string floder = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan\\ImageNhanVien\\";//đường dẫn lưu ảnh
                 string path = System.IO.Path.Combine(floder, fname);
                 Image a = pichHinh.Image;
                 a.Save(path); //lưu ảnh vào đường dẫn   
@@ -200,7 +197,8 @@ namespace DoAnQLKhachSan
                     {
                         HieuLuc = false;
                     }
-                    bNV.NhanVien_Them(Int32.Parse(txtID.Text), cboLoaiNV.SelectedIndex + 1, txtMaNV.Text,GetMD5(txtMatKhau.Text), txtHoTen.Text, Convert.ToDateTime(dtpNgaySinh.Text).ToString("yyyy-MM-dd"), txtSDT.Text, rtxtDiaChi.Text, txtEmail.Text, Int32.Parse(txtCMND.Text), GT, fname, HieuLuc);
+                    int TangID  = bNV.NhanVien_Select().Rows.Count + 1;
+                    bNV.NhanVien_Them(TangID, cboLoaiNV.SelectedIndex + 1, txtMaNV.Text,GetMD5(txtMatKhau.Text), txtHoTen.Text, Convert.ToDateTime(dtpNgaySinh.Text).ToString("yyyy-MM-dd"), txtSDT.Text, rtxtDiaChi.Text, txtEmail.Text, Int32.Parse(txtCMND.Text), GT, fname, HieuLuc);
                     MessageBox.Show("Thêm thành công ");
                     xulytextbox(true);
                     flag = false;
@@ -218,13 +216,13 @@ namespace DoAnQLKhachSan
         {
             if (flag == false)
             {
-                
+                txtMatKhau.Text = "";
                 xulytextbox(false);
                 flag = true;
             }else if(flag==true)
             {
                 string fname1 = DuoiAnh; // tên ảnh
-                string floder1 = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan\\ImageNhanVien";//đường dẫn lưu ảnh
+                string floder1 = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan\\ImageNhanVien\\";//đường dẫn lưu ảnh
                 string path1 = System.IO.Path.Combine(floder1, fname1);
 
                 {
@@ -277,10 +275,12 @@ namespace DoAnQLKhachSan
                             {
                                 txtMatKhau.Text = dgvDSNhanVien.Rows[r].Cells[3].Value.ToString();
                             }
-                            bNV.NhanVien_CapNhat(Int32.Parse(txtID.Text), cboLoaiNV.SelectedIndex + 1, txtMaNV.Text, txtMatKhau.Text, txtHoTen.Text, Convert.ToDateTime(dtpNgaySinh.Text).ToString("yyyy-MM-dd"), txtSDT.Text, rtxtDiaChi.Text, txtEmail.Text, Int32.Parse(txtCMND.Text), GT, result, HieuLuc);
+                            bNV.NhanVien_CapNhat(ID, cboLoaiNV.SelectedIndex + 1, txtMaNV.Text, txtMatKhau.Text, txtHoTen.Text, Convert.ToDateTime(dtpNgaySinh.Text).ToString("yyyy-MM-dd"), txtSDT.Text, rtxtDiaChi.Text, txtEmail.Text, Int32.Parse(txtCMND.Text), GT, result, HieuLuc);
                             txtMatKhau.Text = "";
+                            MessageBox.Show("Cập nhật thành công");
                             dgvDSNhanVien.DataSource = bNV.NhanVien_Select();
-
+                            flag = false;
+                            xulytextbox(true);
                             //MessageBox.Show("Có lưu if 1");
 
 
@@ -297,9 +297,9 @@ namespace DoAnQLKhachSan
                             }
                             Image a1 = pichHinh.Image;
                             a1.Save(path1); //lưu ảnh mới vào đường dẫn 
-                            bNV.NhanVien_CapNhat(Int32.Parse(txtID.Text), cboLoaiNV.SelectedIndex + 1, txtMaNV.Text, txtMatKhau.Text, txtHoTen.Text, Convert.ToDateTime(dtpNgaySinh.Text).ToString("yyyy-MM-dd"), txtSDT.Text, rtxtDiaChi.Text, txtEmail.Text, Int32.Parse(txtCMND.Text), GT, DuoiAnh, HieuLuc);
+                            bNV.NhanVien_CapNhat(ID, cboLoaiNV.SelectedIndex + 1, txtMaNV.Text, txtMatKhau.Text, txtHoTen.Text, Convert.ToDateTime(dtpNgaySinh.Text).ToString("yyyy-MM-dd"), txtSDT.Text, rtxtDiaChi.Text, txtEmail.Text, Int32.Parse(txtCMND.Text), GT, DuoiAnh, HieuLuc);
                             txtMatKhau.Text = "";
-                            //MessageBox.Show("Sửa hình mới thành công");
+                            MessageBox.Show("Cập nhật thành công");
                             dgvDSNhanVien.DataSource = bNV.NhanVien_Select();
                             flag = false;
                             xulytextbox(true);

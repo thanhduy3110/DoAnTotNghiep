@@ -34,9 +34,9 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.txtMatKhau = new JMaterialTextbox.JMaterialTextbox();
-            this.txtTaiKhoan = new JMaterialTextbox.JMaterialTextbox();
             this.btnThoat = new ePOSOne.btnProduct.Button_WOC();
             this.btnDangNhap = new ePOSOne.btnProduct.Button_WOC();
+            this.cboSDT = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -107,28 +107,6 @@
             this.txtMatKhau.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtMatKhau.TextName = "Mật khẩu";
             // 
-            // txtTaiKhoan
-            // 
-            this.txtTaiKhoan.BackColor = System.Drawing.Color.Transparent;
-            this.txtTaiKhoan.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTaiKhoan.Font_Size = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTaiKhoan.ForeColors = System.Drawing.Color.White;
-            this.txtTaiKhoan.HintText = "Tài khoản";
-            this.txtTaiKhoan.IsPassword = false;
-            this.txtTaiKhoan.LineBackColor = System.Drawing.Color.White;
-            this.txtTaiKhoan.LineThickness = 3;
-            this.txtTaiKhoan.Location = new System.Drawing.Point(121, 224);
-            this.txtTaiKhoan.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.txtTaiKhoan.MaxLength = 32767;
-            this.txtTaiKhoan.Name = "txtTaiKhoan";
-            this.txtTaiKhoan.OnFocusedColor = System.Drawing.Color.Black;
-            this.txtTaiKhoan.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.txtTaiKhoan.ReadOnly = false;
-            this.txtTaiKhoan.Size = new System.Drawing.Size(409, 36);
-            this.txtTaiKhoan.TabIndex = 0;
-            this.txtTaiKhoan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtTaiKhoan.TextName = "Tài khoản";
-            // 
             // btnThoat
             // 
             this.btnThoat.BorderColor = System.Drawing.Color.Silver;
@@ -145,6 +123,7 @@
             this.btnThoat.Text = "Thoát";
             this.btnThoat.TextColor = System.Drawing.Color.White;
             this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnDangNhap
             // 
@@ -164,12 +143,27 @@
             this.btnDangNhap.UseVisualStyleBackColor = true;
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
+            // cboSDT
+            // 
+            this.cboSDT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.cboSDT.DisplayMember = "MaNV";
+            this.cboSDT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSDT.ForeColor = System.Drawing.Color.White;
+            this.cboSDT.FormattingEnabled = true;
+            this.cboSDT.Location = new System.Drawing.Point(121, 221);
+            this.cboSDT.Name = "cboSDT";
+            this.cboSDT.Size = new System.Drawing.Size(409, 39);
+            this.cboSDT.TabIndex = 6;
+            this.cboSDT.ValueMember = "MaNV";
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkBlue;
             this.ClientSize = new System.Drawing.Size(560, 622);
+            this.Controls.Add(this.cboSDT);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnDangNhap);
@@ -177,7 +171,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtMatKhau);
-            this.Controls.Add(this.txtTaiKhoan);
             this.ForeColor = System.Drawing.Color.DarkBlue;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLogin";
@@ -199,6 +192,6 @@
         private ePOSOne.btnProduct.Button_WOC btnThoat;
         private System.Windows.Forms.PictureBox pictureBox3;
         private JMaterialTextbox.JMaterialTextbox txtMatKhau;
-        private JMaterialTextbox.JMaterialTextbox txtTaiKhoan;
+        private System.Windows.Forms.ComboBox cboSDT;
     }
 }

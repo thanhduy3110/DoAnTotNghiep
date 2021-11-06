@@ -18,7 +18,12 @@ namespace BUS
             return LG.DangNhap_Select(MaTK, MatKhau);
         }
 
-        public DataTable ThongTinDangNhap(string MaNV)
+        public void HienSDT(ComboBox cboSDT)
+        {
+            LG.HienSDT(cboSDT);
+        }
+
+            public DataTable ThongTinDangNhap(string MaNV)
         {
             return LG.ThongTinDangNhap(MaNV);
         }

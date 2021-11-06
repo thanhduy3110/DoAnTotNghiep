@@ -36,6 +36,11 @@ namespace BUS
         public int PDP_CapNhat(string ID, string ID_KH, string NgayDen, string NgayDi, bool HinhThucThue, string SoKhach, string GhiChu, bool DaXuLy, bool HieuLuc)
         {
             return pdp.phieudatphong_capnhat(ID, ID_KH, NgayDen, NgayDi, HinhThucThue, SoKhach, GhiChu, DaXuLy, HieuLuc);
+     
+       }
+        public int phieudatphong_xoa(int ID, bool HieuLuc)
+        {
+            return pdp.phieudatphong_xoa(ID, HieuLuc);
         }
-    }
+        }
 }

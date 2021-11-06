@@ -69,6 +69,14 @@ namespace DAO
             return db.ThucHien("phieudatphong_capnhat", name, value, 9);
         }
 
+        public int phieudatphong_xoa(int ID, bool HieuLuc)
+        {
+            name = new string[2];
+            value = new object[2];
+            name[0] = "@ID"; value[0] = ID;
+            name[1] = "@HieuLuc"; value[1] = HieuLuc;
+            return db.ThucHien("PDP_Xoa", name, value, 2);
+        }
 
     }
 }

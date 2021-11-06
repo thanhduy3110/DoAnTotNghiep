@@ -26,7 +26,7 @@ namespace DoAnQLKhachSan
             if(flag==false)
             {
                 clear_textbox();
-                txtID.Text = (bpdp.PDP_Select().Rows.Count + 1).ToString();
+               
                 chkHieuLuc.Checked = false;
                 chkDaXuLy.Checked = false;
                 radioGio.Checked = false;
@@ -68,8 +68,9 @@ namespace DoAnQLKhachSan
                     else if(radioNgay.Checked==true)
                     {
                         HinhThucThue = false;
-                    }    
-                    bpdp.PDP_Them(txtID.Text, cboTenKH.SelectedValue.ToString(), dtNgayDen.Text, dtNgayDi.Text, HinhThucThue, txtSoKH.Text, rtxtGhiChu.Text, DaXuLy, HieuLuc);
+                    }
+                    string TangID = (bpdp.PDP_Select().Rows.Count + 1).ToString();
+                    bpdp.PDP_Them(TangID, cboTenKH.SelectedValue.ToString(), dtNgayDen.Text, dtNgayDi.Text, HinhThucThue, txtSoKH.Text, rtxtGhiChu.Text, DaXuLy, HieuLuc);
                     MessageBox.Show("thêm thành công rồi nè");
                     flag = false;
                     dgvPhieuDatPhong.DataSource = bpdp.PDP_Select();
@@ -112,7 +113,7 @@ namespace DoAnQLKhachSan
                 {
                     HinhThucThue = false;
                 }
-                bpdp.PDP_CapNhat(txtID.Text, cboTenKH.SelectedValue.ToString(), dtNgayDen.Text, dtNgayDi.Text, HinhThucThue, txtSoKH.Text, rtxtGhiChu.Text, DaXuLy, HieuLuc);
+                bpdp.PDP_CapNhat(ID.ToString(), cboTenKH.SelectedValue.ToString(), dtNgayDen.Text, dtNgayDi.Text, HinhThucThue, txtSoKH.Text, rtxtGhiChu.Text, DaXuLy, HieuLuc);
                 MessageBox.Show("thêm thành công rồi nè");
                 flag = false;
                 dgvPhieuDatPhong.DataSource = bpdp.PDP_Select();
@@ -121,7 +122,12 @@ namespace DoAnQLKhachSan
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-
+            if (MessageBox.Show("Bạn có muốn xóa phiếu đặt phòng này không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                bool HL = false;
+                bpdp.phieudatphong_xoa(ID, HL);
+                dgvPhieuDatPhong.DataSource = bpdp.PDP_Select();
+            }
         }
 
       
@@ -134,7 +140,7 @@ namespace DoAnQLKhachSan
 
         void hienthi_textbox(int numrow)
         {
-            txtID.Text = dgvPhieuDatPhong.Rows[numrow].Cells[0].Value.ToString();
+           
             cboTenKH.Text = dgvPhieuDatPhong.Rows[numrow].Cells[1].Value.ToString();
             dtNgayDen.Text = dgvPhieuDatPhong.Rows[numrow].Cells[2].Value.ToString();
             dtNgayDi.Text = dgvPhieuDatPhong.Rows[numrow].Cells[3].Value.ToString();
@@ -171,26 +177,26 @@ namespace DoAnQLKhachSan
 
         }
 
-        void Tang_ID()
-        {
-            int count = 0;
-            count = dgvPhieuDatPhong.Rows.Count;
-            string chuoi = "";
-            int chuoi2 = 0;
-            if (count <= 1)
-            {
-                txtID.Text = "0";
-            }
-            else
-            {
-                chuoi = Convert.ToString(dgvPhieuDatPhong.Rows[count - 2].Cells[0].Value);
-                chuoi2 = Convert.ToInt32((chuoi.Remove(0, 0)));
-                if (chuoi2 + 1 < 10)
-                    txtID.Text = "" + (chuoi2 + 1).ToString();
-                else if (chuoi2 + 1 < 100)
-                    txtID.Text = "" + (chuoi2 + 1).ToString();
-            }
-        }
+        //void Tang_ID()
+        //{
+        //    int count = 0;
+        //    count = dgvPhieuDatPhong.Rows.Count;
+        //    string chuoi = "";
+        //    int chuoi2 = 0;
+        //    if (count <= 1)
+        //    {
+        //        txtID.Text = "0";
+        //    }
+        //    else
+        //    {
+        //        chuoi = Convert.ToString(dgvPhieuDatPhong.Rows[count - 2].Cells[0].Value);
+        //        chuoi2 = Convert.ToInt32((chuoi.Remove(0, 0)));
+        //        if (chuoi2 + 1 < 10)
+        //            txtID.Text = "" + (chuoi2 + 1).ToString();
+        //        else if (chuoi2 + 1 < 100)
+        //            txtID.Text = "" + (chuoi2 + 1).ToString();
+        //    }
+        //}
         void clear_textbox()
         {
             cboTenKH.Text = "";
@@ -200,12 +206,15 @@ namespace DoAnQLKhachSan
             rtxtGhiChu.Text = "";
         }
 
+        int ID;
         private void dgvPhieuDatPhong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 int vt = dgvPhieuDatPhong.CurrentCell.RowIndex;
                 hienthi_textbox(vt);
+                ID=Int32.Parse(dgvPhieuDatPhong.Rows[vt].Cells[0].Value.ToString());
+
             }
             catch (Exception ex)
             {

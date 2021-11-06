@@ -15,17 +15,26 @@ namespace DAO
         string[] name;
         object[] value;
         // phương thức lấy dữ liệu khi đăng nhập
-        public DataTable DangNhap_Select(string MaNV, string MatKhau)//rồi, đã xem xong 1 loạt thủ tục ở dal
+        public DataTable DangNhap_Select(string CMND, string MatKhau)//rồi, đã xem xong 1 loạt thủ tục ở dal
                                                                                    //đây là thủ tục sẽ dùng ở form đăng nhập, với điều kiện là trùng mã tài khoản và mật khẩu. ok?
         {
             name = new string[2];
             value = new object[2];
 
-            name[0] = "@MaNV"; value[0] = MaNV;
+            name[0] = "@CMND"; value[0] = CMND;
             name[1] = "@MatKhau"; value[1] = MatKhau;
 
             return db.LayDuLieuCoDK("DangNhap_Select", name, value, 2);
         }
+        public void HienSDT(ComboBox cboSDT)
+        {
+            DataSet dsSDT = new DataSet();
+            dsSDT = db.LayDanhSach("select ID,CMND from NhanVien where HieuLuc=1");// truy vấn lên sql
+            cboSDT.DataSource = dsSDT.Tables[0];
+            cboSDT.DisplayMember = "CMND";
+            cboSDT.ValueMember = "ID";
+        }
+
 
         public DataTable ThongTinDangNhap(string MaNV)
         {

@@ -59,7 +59,6 @@
             this.txtDVT = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtSLTon = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtGiaTien = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtID = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtTenDV = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
@@ -69,7 +68,6 @@
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             btnXoa = new ePOSOne.btnProduct.Button_WOC();
             btnSua = new ePOSOne.btnProduct.Button_WOC();
@@ -349,7 +347,6 @@
             this.groupBox2.Controls.Add(this.txtDVT);
             this.groupBox2.Controls.Add(this.txtSLTon);
             this.groupBox2.Controls.Add(this.txtGiaTien);
-            this.groupBox2.Controls.Add(this.txtID);
             this.groupBox2.Controls.Add(this.txtTenDV);
             this.groupBox2.Controls.Add(this.labelX9);
             this.groupBox2.Controls.Add(this.labelX8);
@@ -359,7 +356,6 @@
             this.groupBox2.Controls.Add(this.labelX4);
             this.groupBox2.Controls.Add(this.labelX3);
             this.groupBox2.Controls.Add(this.labelX2);
-            this.groupBox2.Controls.Add(this.labelX10);
             this.groupBox2.Controls.Add(this.labelX1);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -432,7 +428,7 @@
             this.cboLoaiDV.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboLoaiDV.FormattingEnabled = true;
             this.cboLoaiDV.ItemHeight = 30;
-            this.cboLoaiDV.Location = new System.Drawing.Point(126, 194);
+            this.cboLoaiDV.Location = new System.Drawing.Point(126, 120);
             this.cboLoaiDV.Name = "cboLoaiDV";
             this.cboLoaiDV.Size = new System.Drawing.Size(260, 36);
             this.cboLoaiDV.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -487,7 +483,7 @@
             // 
             this.txtGiaTien.Border.Class = "TextBoxBorder";
             this.txtGiaTien.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtGiaTien.Location = new System.Drawing.Point(126, 279);
+            this.txtGiaTien.Location = new System.Drawing.Point(126, 205);
             this.txtGiaTien.Margin = new System.Windows.Forms.Padding(4);
             this.txtGiaTien.Multiline = true;
             this.txtGiaTien.Name = "txtGiaTien";
@@ -496,21 +492,6 @@
             this.txtGiaTien.TabIndex = 156;
             this.txtGiaTien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGiaTien_KeyPress);
             // 
-            // txtID
-            // 
-            // 
-            // 
-            // 
-            this.txtID.Border.Class = "TextBoxBorder";
-            this.txtID.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtID.Location = new System.Drawing.Point(126, 43);
-            this.txtID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtID.Multiline = true;
-            this.txtID.Name = "txtID";
-            this.txtID.PreventEnterBeep = true;
-            this.txtID.Size = new System.Drawing.Size(260, 36);
-            this.txtID.TabIndex = 155;
-            // 
             // txtTenDV
             // 
             // 
@@ -518,7 +499,7 @@
             // 
             this.txtTenDV.Border.Class = "TextBoxBorder";
             this.txtTenDV.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtTenDV.Location = new System.Drawing.Point(126, 118);
+            this.txtTenDV.Location = new System.Drawing.Point(126, 44);
             this.txtTenDV.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenDV.Multiline = true;
             this.txtTenDV.Name = "txtTenDV";
@@ -564,7 +545,7 @@
             this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX7.ForeColor = System.Drawing.Color.DarkBlue;
-            this.labelX7.Location = new System.Drawing.Point(13, 205);
+            this.labelX7.Location = new System.Drawing.Point(13, 131);
             this.labelX7.Margin = new System.Windows.Forms.Padding(4);
             this.labelX7.Name = "labelX7";
             this.labelX7.Size = new System.Drawing.Size(105, 24);
@@ -624,7 +605,7 @@
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX3.ForeColor = System.Drawing.Color.DarkBlue;
-            this.labelX3.Location = new System.Drawing.Point(13, 286);
+            this.labelX3.Location = new System.Drawing.Point(13, 212);
             this.labelX3.Margin = new System.Windows.Forms.Padding(4);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(105, 24);
@@ -646,21 +627,6 @@
             this.labelX2.TabIndex = 146;
             this.labelX2.Text = "Mô tả:";
             // 
-            // labelX10
-            // 
-            // 
-            // 
-            // 
-            this.labelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX10.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX10.ForeColor = System.Drawing.Color.DarkBlue;
-            this.labelX10.Location = new System.Drawing.Point(13, 51);
-            this.labelX10.Margin = new System.Windows.Forms.Padding(4);
-            this.labelX10.Name = "labelX10";
-            this.labelX10.Size = new System.Drawing.Size(105, 24);
-            this.labelX10.TabIndex = 153;
-            this.labelX10.Text = "ID:";
-            // 
             // labelX1
             // 
             // 
@@ -669,7 +635,7 @@
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX1.ForeColor = System.Drawing.Color.DarkBlue;
-            this.labelX1.Location = new System.Drawing.Point(13, 126);
+            this.labelX1.Location = new System.Drawing.Point(13, 52);
             this.labelX1.Margin = new System.Windows.Forms.Padding(4);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(105, 24);
@@ -709,7 +675,6 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txtDVT;
         private DevComponents.DotNetBar.Controls.TextBoxX txtSLTon;
         private DevComponents.DotNetBar.Controls.TextBoxX txtGiaTien;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtID;
         private DevComponents.DotNetBar.Controls.TextBoxX txtTenDV;
         private DevComponents.DotNetBar.LabelX labelX9;
         private DevComponents.DotNetBar.LabelX labelX8;
@@ -719,7 +684,6 @@
         private DevComponents.DotNetBar.LabelX labelX4;
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.LabelX labelX2;
-        private DevComponents.DotNetBar.LabelX labelX10;
         private DevComponents.DotNetBar.LabelX labelX1;
         private JTextBox.JTextBox txtTim;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
