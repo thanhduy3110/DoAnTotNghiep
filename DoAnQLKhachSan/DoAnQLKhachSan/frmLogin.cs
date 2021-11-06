@@ -64,7 +64,8 @@ namespace DoAnQLKhachSan
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            bLG.HienSDT(cboSDT);
+            txtMaNV.ReadOnly = true;
+            bLG.HienSDT(cboSDT,txtMaNV);
         }
         //public string Encrypt(string toEncrypt, bool useHashing)
         //{
@@ -102,30 +103,30 @@ namespace DoAnQLKhachSan
         {
             if (txtMatKhau.TextName=="")//nếu trống thì cho lable hiển thị là chưa nhập
             {
-                MessageBox.Show("Bạn chưa nhập tài khoản hoặc mật khẩu","Thông báo");
+                MessageBox.Show("Bạn chưa nhập mật khẩu","Thông báo");
             }
             else
             {
                 //string s = txtMatKhau.TextName;
                 //string mahoa = Encrypt(s, true);
                 //đếm số phần tử trùng mã và mật khẩu nhé, tất nhiên sẽ ko thể có 2 tài khoản cùng mã và mật khẩu đc
-                int count = bLG.DangNhap_Select(cboSDT.Text, GetMD5(txtMatKhau.TextName)).Rows.Count;
+                int count = bLG.DangNhap_Select(txtMaNV.Text, GetMD5(txtMatKhau.TextName)).Rows.Count;
                 //vì vậy nếu đếm là 0 thì ko có tài khoản nào phù hợp nhé
                 //tại chưa xử lý nếu form đăng nhập close giữa chừng nên nó sẽ vô form main nếu close form dăng nhập
                 //tuy nhiên vô thì nó sẽ ko có quyền gì hết trừ quyền đăng xuất và mua hàng :))))))))))))
                 //sẽ xử lý chuyện đó sau :v
                 if (count == 0)
                 {
-                    MessageBox.Show("Tài khoản hoặc mật khẩu không đúng");
+                    MessageBox.Show("Bạn vui lòng nhập đúng mật khẩu và chọn đúng số điện thoại");
                 }
                 else
                 {
                     MessageBox.Show("Đăng nhập thành công");
                     this.Hide();
-                    int ID =Int32.Parse(bLG.DangNhap_Select(cboSDT.Text, GetMD5(txtMatKhau.TextName)).Rows[0][0].ToString());
-                    string LoaiNV = bLG.DangNhap_Select(cboSDT.Text, GetMD5(txtMatKhau.TextName)).Rows[0][1].ToString();
-                    string MaNV = bLG.DangNhap_Select(cboSDT.Text, GetMD5(txtMatKhau.TextName)).Rows[0][2].ToString();
-                    string TenNV = bLG.DangNhap_Select(cboSDT.Text, GetMD5(txtMatKhau.TextName)).Rows[0][5].ToString();
+                    int ID =Int32.Parse(bLG.DangNhap_Select(txtMaNV.Text, GetMD5(txtMatKhau.TextName)).Rows[0][0].ToString());
+                    string LoaiNV = bLG.DangNhap_Select(txtMaNV.Text, GetMD5(txtMatKhau.TextName)).Rows[0][1].ToString();
+                    string MaNV = bLG.DangNhap_Select(txtMaNV.Text, GetMD5(txtMatKhau.TextName)).Rows[0][2].ToString();
+                    string TenNV = bLG.DangNhap_Select(txtMaNV.Text, GetMD5(txtMatKhau.TextName)).Rows[0][4].ToString();
                     frmMenu Menu = new frmMenu(MaNV,LoaiNV,ID,TenNV);
                     Menu.Show();
                 }
