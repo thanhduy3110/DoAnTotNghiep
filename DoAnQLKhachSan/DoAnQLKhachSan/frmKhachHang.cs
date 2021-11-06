@@ -166,7 +166,7 @@ namespace DoAnQLKhachSan
                 {
                     HieuLuc = false;
                 }
-                bkh.KH_CapNhat(ID.ToString(), txtHoTen.Text, Convert.ToDateTime(dtNgaySinh.Text).ToString("yyyy-MM-dd"), txtSDT.Text, txtEmail.Text, txtCMND.Text, GT, txtQT.Text, HieuLuc);
+                bkh.KH_CapNhat(ID, txtHoTen.Text, Convert.ToDateTime(dtNgaySinh.Text).ToString("yyyy-MM-dd"), txtSDT.Text, txtEmail.Text, txtCMND.Text, GT, txtQT.Text, HieuLuc);
                 MessageBox.Show("Sữa thành công");
                 flag = false;
                 xulytextbox(true);

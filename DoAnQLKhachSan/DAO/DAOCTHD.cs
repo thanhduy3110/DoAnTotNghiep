@@ -32,11 +32,16 @@ namespace DAO
             dgvDSCTHD.DataSource = dsCTHD.Tables[0];
         }
 
-        public void TongID(TextBox txtID)
+        //public void TongID(TextBox txtID)
+        //{
+        //    dsCTHD = db.LayDanhSach("select count(ID) as TongID from CTHD ");// truy vấn lên sql
+        //    txtID.DataBindings.Clear();
+        //    txtID.DataBindings.Add("Text", dsCTHD.Tables[0], "TongID");
+        //}
+
+        public DataTable CTHD_Select()
         {
-            dsCTHD = db.LayDanhSach("select count(ID) as TongID from CTHD ");// truy vấn lên sql
-            txtID.DataBindings.Clear();
-            txtID.DataBindings.Add("Text", dsCTHD.Tables[0], "TongID");
+            return db.Laydulieu("CTHD_Select");
         }
 
         //khai báo 2 mảng để truyền tên tham số và giá trị tham số vào stored procedures

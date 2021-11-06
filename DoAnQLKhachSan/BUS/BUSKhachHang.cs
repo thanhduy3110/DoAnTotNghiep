@@ -27,7 +27,7 @@ namespace BUS
             return kh.khachhang_them(ID, HoTen, NgaySinh, SDT, Email, CMND, GioiTinh, QuocTich, HieuLuc);
         }
 
-        public int KH_CapNhat(string ID, string HoTen, string NgaySinh, string SDT, string Email, string CMND, bool GioiTinh, string QuocTich, bool HieuLuc)
+        public int KH_CapNhat(int ID, string HoTen, string NgaySinh, string SDT, string Email, string CMND, bool GioiTinh, string QuocTich, bool HieuLuc)
         {
             return kh.khachang_capnhat(ID, HoTen, NgaySinh, SDT, Email, CMND, GioiTinh, QuocTich, HieuLuc);
         }

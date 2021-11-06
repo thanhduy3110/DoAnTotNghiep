@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,9 +24,13 @@ namespace BUS
             CTHD.HienThiDSCTHD(dgvDSCTHD, ID_HD);
         }
 
-        public void TongID(TextBox txtID)
+        //public void TongID(TextBox txtID)
+        //{
+        //    CTHD.TongID(txtID);
+        //}
+        public DataTable CTHD_Select()
         {
-            CTHD.TongID(txtID);
+            return CTHD.CTHD_Select();
         }
         public int CTHD_Them(int ID, int ID_HD, string ID_DV, string SoLuong, string DonGia)
         {

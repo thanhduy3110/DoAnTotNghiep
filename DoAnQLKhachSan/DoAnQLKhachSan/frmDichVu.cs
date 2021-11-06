@@ -85,7 +85,7 @@ namespace DoAnQLKhachSan
                 else
                 {
                     
-                    clear_textbox();
+                    
                     bool HieuLuc;
                     if (chkHieuLuc.Checked == true)
                     {
@@ -199,7 +199,7 @@ namespace DoAnQLKhachSan
         {
 
             //txtHinhAnh.Text = dgvDichVu.Rows[numrow].Cells[4].Value.ToString();
-            cboLoaiDV.SelectedValue = dgvDichVu.Rows[numrow].Cells[1].Value.ToString();
+            cboLoaiDV.Text = dgvDichVu.Rows[numrow].Cells[1].Value.ToString();
             txtTenDV.Text = dgvDichVu.Rows[numrow].Cells[2].Value.ToString();
             rtxtMoTa.Text = dgvDichVu.Rows[numrow].Cells[3].Value.ToString();
             txtGiaTien.Text = dgvDichVu.Rows[numrow].Cells[5].Value.ToString();
@@ -220,19 +220,7 @@ namespace DoAnQLKhachSan
             pictureBox.Image = a;
         }
         int ID;
-        private void dgvDichVu_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                int vt = dgvDichVu.CurrentCell.RowIndex;
-                hienthi_textbox(vt);
-                ID = Int32.Parse(dgvDichVu.Rows[vt].Cells[0].Value.ToString());
-            }
-            catch (Exception ex)
-            {
-               
-            }
-        }
+        
 
         string DuoiAnh = "";
         private void pictureBox_Click(object sender, EventArgs e)
@@ -259,6 +247,31 @@ namespace DoAnQLKhachSan
         {
             if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
                 e.Handled = true;
+        }
+
+        private void txtTim_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTim_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) == true && char.IsControl(e.KeyChar) == false)
+                e.Handled = true;
+        }
+
+        private void dgvDichVu_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int vt = dgvDichVu.CurrentCell.RowIndex;
+                hienthi_textbox(vt);
+                ID = Int32.Parse(dgvDichVu.Rows[vt].Cells[0].Value.ToString());
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
     }
 }

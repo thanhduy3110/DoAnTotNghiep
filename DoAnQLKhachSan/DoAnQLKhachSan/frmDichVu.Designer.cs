@@ -394,6 +394,8 @@
             this.txtTim.TabIndex = 184;
             this.txtTim.TextValue = "";
             this.txtTim.TextChangeEvent += new System.EventHandler(this.txtTim_TextChangeEvent);
+            this.txtTim.Load += new System.EventHandler(this.txtTim_Load);
+            this.txtTim.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTim_KeyPress);
             // 
             // rtxtGhiChu
             // 

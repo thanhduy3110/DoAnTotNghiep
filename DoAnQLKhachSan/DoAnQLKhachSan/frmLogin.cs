@@ -125,7 +125,8 @@ namespace DoAnQLKhachSan
                     int ID =Int32.Parse(bLG.DangNhap_Select(cboSDT.Text, GetMD5(txtMatKhau.TextName)).Rows[0][0].ToString());
                     string LoaiNV = bLG.DangNhap_Select(cboSDT.Text, GetMD5(txtMatKhau.TextName)).Rows[0][1].ToString();
                     string MaNV = bLG.DangNhap_Select(cboSDT.Text, GetMD5(txtMatKhau.TextName)).Rows[0][2].ToString();
-                    frmMenu Menu = new frmMenu(MaNV,LoaiNV,ID);
+                    string TenNV = bLG.DangNhap_Select(cboSDT.Text, GetMD5(txtMatKhau.TextName)).Rows[0][5].ToString();
+                    frmMenu Menu = new frmMenu(MaNV,LoaiNV,ID,TenNV);
                     Menu.Show();
                 }
             }

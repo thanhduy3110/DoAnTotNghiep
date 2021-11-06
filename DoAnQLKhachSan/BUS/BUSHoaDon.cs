@@ -43,8 +43,13 @@ namespace BUS
             HD.HienThiTienPhong(cboMaPhong, cboHTT, lblTTPhong,i);
         }
 
+        public DataTable TienPhong(int SoPhong)
+        {
+            return HD.TienPhong(SoPhong);
+        }
 
-            public DataTable HoaDon_Select()
+
+        public DataTable HoaDon_Select()
         {
             return HD.HoaDon_Select();
         }
@@ -59,9 +64,9 @@ namespace BUS
             return HD.HoaDon_CapNhat(ID, MaHD, ID_NV, ID_KH, ID_Phong, NgayLap, NgayDen, NgayDi, HinhThucThue, TTPhong, TTDV, TT, GhiChu, TToan, HieuLuc);
         }
 
-        public int HoaDon_CapNhatChuyenPhong(int ID,string sophong,int TTP)
+        public int HoaDon_CapNhatChuyenPhong(int ID,string sophong,int TTP,int TongTien)
         {
-            return HD.HoaDon_CapNhatChuyenPhong(ID, sophong,TTP);
+            return HD.HoaDon_CapNhatChuyenPhong(ID, sophong,TTP,TongTien);
         }
 
         public int HoaDon_Xoa(int ID, bool HieuLuc)

@@ -12,7 +12,7 @@ namespace DoAnQLKhachSan
 {
     public partial class frmChuyenPhong : Form
     {
-        private int iID_HD, iHinhThucThue,iTGThue;
+        private int iID_HD, iHinhThucThue,iTGThue,iTienDV;
 
         private void frmChuyenPhong_Load(object sender, EventArgs e)
         {
@@ -40,11 +40,12 @@ namespace DoAnQLKhachSan
             InitializeComponent();
         }
 
-        public frmChuyenPhong(int ID_HD,int TGThue,int HTT)
+        public frmChuyenPhong(int ID_HD,int TGThue,int HTT,int TienDV)
         {
             this.iID_HD = ID_HD;
             this.iTGThue = TGThue;
             this.iHinhThucThue = HTT;
+            this.iTienDV = TienDV;
             InitializeComponent();
         }
         private void btn_Thoat_Click(object sender, EventArgs e)
@@ -60,7 +61,7 @@ namespace DoAnQLKhachSan
         
         private void btnChuyenPhong_Click(object sender, EventArgs e)
         {
-            int TienPhong;
+            int TienPhong,TongTien;
             if (ID_LoaiPhong != "")
             {
                 if(iHinhThucThue==1)
@@ -71,8 +72,9 @@ namespace DoAnQLKhachSan
                 {
                     TienPhong = Int32.Parse(TTG) * iTGThue;
                 }
+                TongTien = this.iTienDV + TienPhong;
                 //MessageBox.Show("Tien " + TTN+" "+TTG);
-                bHD.HoaDon_CapNhatChuyenPhong(iID_HD, ID_LoaiPhong, TienPhong);
+                bHD.HoaDon_CapNhatChuyenPhong(iID_HD, ID_LoaiPhong, TienPhong,TongTien);
                 MessageBox.Show("Chuyển phòng thành công");
                 this.Close();
 

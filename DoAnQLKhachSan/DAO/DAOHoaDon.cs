@@ -76,7 +76,19 @@ namespace DAO
            
             
         }
-           
+
+        public DataTable TienPhong(int SoPhong)//rồi, đã xem xong 1 loạt thủ tục ở dal
+                                                                     //đây là thủ tục sẽ dùng ở form đăng nhập, với điều kiện là trùng mã tài khoản và mật khẩu. ok?
+        {
+            name = new string[1];
+            value = new object[1];
+
+            name[0] = "@SoPhong"; value[0] = SoPhong;
+          
+
+            return db.LayDuLieuCoDK("TienPhong", name, value, 1);
+        }
+
 
 
         //khai báo 2 mảng để truyền tên tham số và giá trị tham số vào stored procedures
@@ -135,14 +147,15 @@ namespace DAO
             return db.ThucHien("HoaDon_CapNhat", name, value, 15);
         }
 
-        public int HoaDon_CapNhatChuyenPhong(int ID,string sophong,int TTP)
+        public int HoaDon_CapNhatChuyenPhong(int ID,string sophong,int TTP,int TongTien)
         {
-            name = new string[3];
-            value = new object[3];
+            name = new string[4];
+            value = new object[4];
             name[0] = "@ID"; value[0] = ID;
             name[1] = "@ID_Phong"; value[1] = sophong;
             name[2] = "@TongTienPhong";value[2] = TTP;
-            return db.ThucHien("HoaDon_CapNhatChuyenPhong", name, value, 3);
+            name[3] = "@TongTien"; value[3] = TongTien;
+            return db.ThucHien("HoaDon_CapNhatChuyenPhong", name, value, 4);
         }
 
         public int HoaDon_Xoa(int ID, bool HieuLuc)

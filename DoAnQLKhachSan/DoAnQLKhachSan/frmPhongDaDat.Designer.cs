@@ -82,6 +82,7 @@
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.btnXacNhanDatPhong = new ePOSOne.btnProduct.Button_WOC();
             btnXoaTatCa = new ePOSOne.btnProduct.Button_WOC();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -605,6 +606,7 @@
             this.groupBox2.Controls.Add(this.labelX7);
             this.groupBox2.Controls.Add(this.labelX6);
             this.groupBox2.Controls.Add(this.labelX3);
+            this.groupBox2.Controls.Add(this.btnXacNhanDatPhong);
             this.groupBox2.Controls.Add(this.btnXoa);
             this.groupBox2.Controls.Add(this.btnSua);
             this.groupBox2.Controls.Add(this.btnThem);
@@ -836,6 +838,33 @@
             this.labelX3.TabIndex = 174;
             this.labelX3.Text = "Mã phòng:";
             // 
+            // btnXacNhanDatPhong
+            // 
+            this.btnXacNhanDatPhong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnXacNhanDatPhong.BorderColor = System.Drawing.Color.Black;
+            this.btnXacNhanDatPhong.ButtonColor = System.Drawing.Color.Lime;
+            this.btnXacNhanDatPhong.CausesValidation = false;
+            this.btnXacNhanDatPhong.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnXacNhanDatPhong.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnXacNhanDatPhong.FlatAppearance.BorderSize = 0;
+            this.btnXacNhanDatPhong.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btnXacNhanDatPhong.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnXacNhanDatPhong.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnXacNhanDatPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXacNhanDatPhong.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXacNhanDatPhong.ForeColor = System.Drawing.Color.White;
+            this.btnXacNhanDatPhong.Location = new System.Drawing.Point(831, 345);
+            this.btnXacNhanDatPhong.Name = "btnXacNhanDatPhong";
+            this.btnXacNhanDatPhong.OnHoverBorderColor = System.Drawing.Color.Red;
+            this.btnXacNhanDatPhong.OnHoverButtonColor = System.Drawing.Color.Yellow;
+            this.btnXacNhanDatPhong.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btnXacNhanDatPhong.Size = new System.Drawing.Size(249, 48);
+            this.btnXacNhanDatPhong.TabIndex = 168;
+            this.btnXacNhanDatPhong.Text = "XÁC NHẬN ĐẶT PHÒNG";
+            this.btnXacNhanDatPhong.TextColor = System.Drawing.Color.Black;
+            this.btnXacNhanDatPhong.UseVisualStyleBackColor = true;
+            this.btnXacNhanDatPhong.Click += new System.EventHandler(this.btnXacNhanDatPhong_Click);
+            // 
             // frmPhongDaDat
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -927,5 +956,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private ePOSOne.btnProduct.Button_WOC btnXacNhanDatPhong;
     }
 }

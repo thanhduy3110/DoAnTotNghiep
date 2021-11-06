@@ -171,5 +171,10 @@ namespace DoAnQLKhachSan
         {
             bPDD.HienThiDanhSach(txtTim.TextValue, dgvPhongDaDat);
         }
+
+        private void btnXacNhanDatPhong_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

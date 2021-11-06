@@ -27,7 +27,7 @@ namespace DoAnQLKhachSan
       
         private void frmPhong_Load(object sender, EventArgs e)
         {
-            txtID.ReadOnly = true;
+           
             Bphong.HienThiLP(cboTenLP);
             dgvDSPhong.DataSource = Bphong.Phong_Select();
             xulytextbox(true);
@@ -36,26 +36,26 @@ namespace DoAnQLKhachSan
        
        
         bool flag=false;
-        void Tang_ID()
-        {
-            int count = 0;
-            count = dgvDSPhong.Rows.Count;
-            string chuoi = "";
-            int chuoi2 = 0;
-            if (count <= 1)
-            {
-                txtID.Text = "0";
-            }
-            else
-            {
-                chuoi = Convert.ToString(dgvDSPhong.Rows[count - 2].Cells[0].Value);
-                chuoi2 = Convert.ToInt32((chuoi.Remove(0, 0)));
-                if (chuoi2 + 1 < 10)
-                    txtID.Text = "" + (chuoi2 + 1).ToString();
-                else if (chuoi2 + 1 < 100)
-                    txtID.Text = "" + (chuoi2 + 1).ToString();
-            }
-        }
+        //void Tang_ID()
+        //{
+        //    int count = 0;
+        //    count = dgvDSPhong.Rows.Count;
+        //    string chuoi = "";
+        //    int chuoi2 = 0;
+        //    if (count <= 1)
+        //    {
+        //        txtID.Text = "0";
+        //    }
+        //    else
+        //    {
+        //        chuoi = Convert.ToString(dgvDSPhong.Rows[count - 2].Cells[0].Value);
+        //        chuoi2 = Convert.ToInt32((chuoi.Remove(0, 0)));
+        //        if (chuoi2 + 1 < 10)
+        //            txtID.Text = "" + (chuoi2 + 1).ToString();
+        //        else if (chuoi2 + 1 < 100)
+        //            txtID.Text = "" + (chuoi2 + 1).ToString();
+        //    }
+        //}
         void clear_textbox()
         {
             cboTenLP.Text = "";
@@ -89,7 +89,7 @@ namespace DoAnQLKhachSan
             {
                 clear_textbox();
                 xulytextbox(false);
-                txtID.Text = (Bphong.Phong_Select().Rows.Count + 1).ToString();
+               
                 chkBonTam.Checked = false;
                 chkGocNhin.Checked = false;
                 chkHieuLuc.Checked = false;
@@ -130,7 +130,8 @@ namespace DoAnQLKhachSan
                     {
                         gocnhin = false;
                     }
-                    Bphong.P_Them(txtID.Text, cboTenLP.SelectedValue.ToString(), txtTang.Text, txtTang.Text, txtGiaThueTheoNgay.Text, txtGiaThueTheoGio.Text, rtxtGhiChu.Text, gocnhin, bontam, cboConTrong.SelectedIndex, hieuluc);
+                    int TangID = Bphong.Phong_Select().Rows.Count + 1;
+                    Bphong.P_Them(TangID.ToString(), cboTenLP.SelectedValue.ToString(), txtTang.Text, txtTang.Text, txtGiaThueTheoNgay.Text, txtGiaThueTheoGio.Text, rtxtGhiChu.Text, gocnhin, bontam, cboConTrong.SelectedIndex, hieuluc);
                     MessageBox.Show("thêm thành công");
                     flag = false;
                     xulytextbox(true);
@@ -174,7 +175,7 @@ namespace DoAnQLKhachSan
                 {
                     gocnhin = false;
                 }
-                Bphong.P_CapNhat(txtID.Text, cboTenLP.SelectedValue.ToString(), txtTang.Text, txtTang.Text, txtGiaThueTheoNgay.Text, txtGiaThueTheoGio.Text, rtxtGhiChu.Text, gocnhin, bontam, cboConTrong.SelectedIndex, hieuluc);
+                Bphong.P_CapNhat(ID.ToString(), cboTenLP.SelectedValue.ToString(), txtTang.Text, txtTang.Text, txtGiaThueTheoNgay.Text, txtGiaThueTheoGio.Text, rtxtGhiChu.Text, gocnhin, bontam, cboConTrong.SelectedIndex, hieuluc);
                 MessageBox.Show("sửa thành công");
                 flag = false;
                 xulytextbox(true);
@@ -192,7 +193,7 @@ namespace DoAnQLKhachSan
 
         void hienthi_textbox(int numrow)
         {
-            txtID.Text = dgvDSPhong.Rows[numrow].Cells[0].Value.ToString();
+           
             cboTenLP.Text= dgvDSPhong.Rows[numrow].Cells[1].Value.ToString();
             txtSoPhong.Text= dgvDSPhong.Rows[numrow].Cells[2].Value.ToString();
             txtTang.Text= dgvDSPhong.Rows[numrow].Cells[3].Value.ToString();

@@ -37,6 +37,7 @@ namespace DoAnQLKhachSan
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvThongTinNhanVien = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnCN = new ePOSOne.btnProduct.Button_WOC();
             this.txtLoaiNV = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.radioNu = new System.Windows.Forms.RadioButton();
             this.radioNam = new System.Windows.Forms.RadioButton();
@@ -59,7 +60,6 @@ namespace DoAnQLKhachSan
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.btnCN = new ePOSOne.btnProduct.Button_WOC();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -195,6 +195,33 @@ namespace DoAnQLKhachSan
             this.groupBox4.TabIndex = 250;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Nhân Viên";
+            // 
+            // btnCN
+            // 
+            this.btnCN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCN.BorderColor = System.Drawing.Color.Black;
+            this.btnCN.ButtonColor = System.Drawing.Color.Lime;
+            this.btnCN.CausesValidation = false;
+            this.btnCN.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnCN.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCN.FlatAppearance.BorderSize = 0;
+            this.btnCN.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btnCN.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnCN.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnCN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCN.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCN.ForeColor = System.Drawing.Color.White;
+            this.btnCN.Location = new System.Drawing.Point(45, 435);
+            this.btnCN.Name = "btnCN";
+            this.btnCN.OnHoverBorderColor = System.Drawing.Color.Red;
+            this.btnCN.OnHoverButtonColor = System.Drawing.Color.Yellow;
+            this.btnCN.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btnCN.Size = new System.Drawing.Size(155, 48);
+            this.btnCN.TabIndex = 291;
+            this.btnCN.Text = "Cập nhật";
+            this.btnCN.TextColor = System.Drawing.Color.Black;
+            this.btnCN.UseVisualStyleBackColor = true;
+            this.btnCN.Click += new System.EventHandler(this.btnCN_Click);
             // 
             // txtLoaiNV
             // 
@@ -540,33 +567,6 @@ namespace DoAnQLKhachSan
             this.labelX2.TabIndex = 269;
             this.labelX2.Text = "Họ và tên:";
             // 
-            // btnCN
-            // 
-            this.btnCN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCN.BorderColor = System.Drawing.Color.Black;
-            this.btnCN.ButtonColor = System.Drawing.Color.Lime;
-            this.btnCN.CausesValidation = false;
-            this.btnCN.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnCN.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnCN.FlatAppearance.BorderSize = 0;
-            this.btnCN.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.btnCN.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnCN.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnCN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCN.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCN.ForeColor = System.Drawing.Color.White;
-            this.btnCN.Location = new System.Drawing.Point(45, 435);
-            this.btnCN.Name = "btnCN";
-            this.btnCN.OnHoverBorderColor = System.Drawing.Color.Red;
-            this.btnCN.OnHoverButtonColor = System.Drawing.Color.Yellow;
-            this.btnCN.OnHoverTextColor = System.Drawing.Color.Black;
-            this.btnCN.Size = new System.Drawing.Size(155, 48);
-            this.btnCN.TabIndex = 291;
-            this.btnCN.Text = "Cập nhật";
-            this.btnCN.TextColor = System.Drawing.Color.Black;
-            this.btnCN.UseVisualStyleBackColor = true;
-            this.btnCN.Click += new System.EventHandler(this.btnCN_Click);
-            // 
             // Column3
             // 
             this.Column3.DataPropertyName = "manv";
@@ -646,6 +646,7 @@ namespace DoAnQLKhachSan
             this.Column4.HeaderText = "MẬT KHẨU";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
+            this.Column4.Visible = false;
             // 
             // Column5
             // 
@@ -654,6 +655,7 @@ namespace DoAnQLKhachSan
             this.Column5.HeaderText = "HÌNH ẢNH";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
+            this.Column5.Visible = false;
             // 
             // frmThongTinDangNhap
             // 
