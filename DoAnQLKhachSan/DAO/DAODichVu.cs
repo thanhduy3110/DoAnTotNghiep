@@ -39,7 +39,7 @@ namespace DAO
             return db.Laydulieu("dichvu_select");
         }
 
-        public int dichvu_them(string ID, string ID_LoaiDV, string TenDV, string MoTa, string HinhAnh, string GiaTien, string SLTon, string DVT, string GhiChu, bool HieuLuc)
+        public int dichvu_them(int ID, int ID_LoaiDV, string TenDV, string MoTa, string HinhAnh, string GiaTien, string SLTon, string DVT, string GhiChu, bool HieuLuc)
         {
             name = new string[10];
             value = new object[10];
@@ -58,7 +58,7 @@ namespace DAO
             return db.ThucHien("dichvu_them", name, value, 10);
         }
 
-        public int dichvu_capnhat(string ID, int ID_LoaiDV, string TenDV, string MoTa, string HinhAnh, string GiaTien, string SLTon, string DVT, string GhiChu, bool HieuLuc)
+        public int dichvu_capnhat(int ID, int ID_LoaiDV, string TenDV, string MoTa, string HinhAnh, string GiaTien, string SLTon, string DVT, string GhiChu, bool HieuLuc)
         {
             name = new string[10];
             value = new object[10];

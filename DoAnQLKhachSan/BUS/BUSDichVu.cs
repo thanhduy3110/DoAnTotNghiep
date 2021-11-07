@@ -31,11 +31,11 @@ namespace BUS
         {
             return ldv.dichvu_select();
         }
-        public int DV_Them(string ID, string ID_LoaiDV, string TenDV, string MoTa, string HinhAnh, string GiaTien, string SLTon, string DVT, string GhiChu, bool HieuLuc)
+        public int DV_Them(int ID, int ID_LoaiDV, string TenDV, string MoTa, string HinhAnh, string GiaTien, string SLTon, string DVT, string GhiChu, bool HieuLuc)
         {
             return ldv.dichvu_them(ID, ID_LoaiDV, TenDV, MoTa, HinhAnh, GiaTien, SLTon, DVT, GhiChu, HieuLuc);
         }
-        public int DV_CapNhat(string ID, int ID_LoaiDV, string TenDV, string MoTa, string HinhAnh, string GiaTien, string SLTon, string DVT, string GhiChu, bool HieuLuc)
+        public int DV_CapNhat(int ID, int ID_LoaiDV, string TenDV, string MoTa, string HinhAnh, string GiaTien, string SLTon, string DVT, string GhiChu, bool HieuLuc)
         {
             return ldv.dichvu_capnhat(ID, ID_LoaiDV, TenDV, MoTa, HinhAnh, GiaTien, SLTon, DVT, GhiChu, HieuLuc);
         }

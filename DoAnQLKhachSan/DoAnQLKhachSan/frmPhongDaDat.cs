@@ -13,12 +13,19 @@ namespace DoAnQLKhachSan
 {
     public partial class frmPhongDaDat : Form
     {
+        private int IDNV;
         public frmPhongDaDat()
         {
             InitializeComponent();
         }
+        public frmPhongDaDat(int IDNV)
+        {
+            this.IDNV = IDNV;
+            InitializeComponent();
+        }
 
         BUSPhongDaDat bPDD = new BUSPhongDaDat();
+        BUSHoaDon bHD = new BUSHoaDon();
         bool flag=false;
         //void Tang_ID()
         //{
@@ -141,7 +148,8 @@ namespace DoAnQLKhachSan
         }
 
 
-        int ID;
+        int ID,IDPHONG;
+        string TenKH, SDT, HTT, GTN, GTG, ID_KH, SoPhong, NgayDen, NgayDi;
         private void dgvPhongDaDat_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -149,6 +157,18 @@ namespace DoAnQLKhachSan
                 int vt = dgvPhongDaDat.CurrentCell.RowIndex;
                 hienthi_textbox(vt);
                 ID = Int32.Parse(dgvPhongDaDat.Rows[vt].Cells[0].Value.ToString());
+                TenKH = dgvPhongDaDat.Rows[vt].Cells[2].Value.ToString();
+                SDT = dgvPhongDaDat.Rows[vt].Cells[3].Value.ToString();
+                HTT = dgvPhongDaDat.Rows[vt].Cells[4].Value.ToString();
+                GTN = dgvPhongDaDat.Rows[vt].Cells[5].Value.ToString();
+                GTG = dgvPhongDaDat.Rows[vt].Cells[6].Value.ToString();
+                ID_KH = dgvPhongDaDat.Rows[vt].Cells[7].Value.ToString();
+                SoPhong = dgvPhongDaDat.Rows[vt].Cells[8].Value.ToString();
+                NgayDen = dgvPhongDaDat.Rows[vt].Cells[9].Value.ToString();
+                NgayDi = dgvPhongDaDat.Rows[vt].Cells[10].Value.ToString();
+                IDPHONG = Int32.Parse(dgvPhongDaDat.Rows[vt].Cells[11].Value.ToString());
+
+
             }
             catch (Exception ex)
             {
@@ -172,9 +192,85 @@ namespace DoAnQLKhachSan
             bPDD.HienThiDanhSach(txtTim.TextValue, dgvPhongDaDat);
         }
 
+        string PhatSinhMaTuDong()
+        {
+            string MaHD = "";
+            int dem = bHD.HoaDon_Select().Rows.Count+1;
+            if (dem < 10)
+            {
+                MaHD = "HD00" + dem.ToString();
+            }
+            else
+            {
+                MaHD = "HD" + dem.ToString();
+            }
+
+            return MaHD;
+        }
+        int TienPhong, TongTienPhong,GioThue,HinhTT;
+        
         private void btnXacNhanDatPhong_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Đồng ý xác nhận đặt phòng?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+
+                if (HTT == "Thuê theo ngày")
+                {
+                    HinhTT = 0;
+                    TienPhong = Int32.Parse(bHD.TienPhong(Int32.Parse(SoPhong)).Rows[0][0].ToString());
+                    TongTienPhong = TienPhong * (ThoiGianThue(GioThue) / 24);
+                }
+                else
+                {
+                    HinhTT = 1;
+                    TienPhong = Int32.Parse(bHD.TienPhong(Int32.Parse(SoPhong)).Rows[0][1].ToString());
+                    TongTienPhong = TienPhong * (ThoiGianThue(GioThue));
+                }
+                int TangID= bHD.HoaDon_Select().Rows.Count + 2;
+
+                bHD.HoaDon_Them(TangID, PhatSinhMaTuDong(), IDNV.ToString(), ID_KH, IDPHONG.ToString(), Convert.ToDateTime(DateTime.Now).ToString("yyyy/MM/dd hh:mm"), Convert.ToDateTime(NgayDen).ToString("yyyy/MM/dd hh:mm"), Convert.ToDateTime(NgayDi).ToString("yyyy/MM/dd hh:mm"), HinhTT, TongTienPhong, "0", TongTienPhong, "Không", false, true);
+                bPDD.PhongDaDat_Xoa(ID.ToString());
+            }
+                
+
+
 
         }
+        private int KTThang(int iThang, int iNam)
+        {
+            int Ngay = 0;
+            if (iThang == 1 || iThang == 3 || iThang == 5 || iThang == 7 || iThang == 8 || iThang == 10 || iThang == 12)
+            {
+                Ngay = 31; ;
+            }
+            else if (iThang == 4 || iThang == 6 || iThang == 9 || iThang == 11)
+            {
+                Ngay = 30;
+            }
+            else if (iThang == 2 && iNam % 4 == 0)
+            {
+                Ngay = 29;
+            }
+            else
+            {
+                Ngay = 28;
+            }
+            return Ngay;
+
+        }
+        private int ThoiGianThue(int iGio)
+        {
+            if (dtpNgayDen.Value.Month == dtpNgayDi.Value.Month && dtpNgayDen.Value.Year == dtpNgayDi.Value.Year)
+            {
+                iGio = (dtpNgayDi.Value.Day - dtpNgayDen.Value.Day) * 24;
+            }
+            else if (dtpNgayDi.Value.Month > dtpNgayDen.Value.Month && dtpNgayDen.Value.Year == dtpNgayDi.Value.Year)
+            {
+                iGio = ((KTThang(dtpNgayDen.Value.Month, dtpNgayDen.Value.Year) - dtpNgayDen.Value.Day) + dtpNgayDi.Value.Day) * 24;
+            }
+
+            return iGio;
+        }
+
     }
 }

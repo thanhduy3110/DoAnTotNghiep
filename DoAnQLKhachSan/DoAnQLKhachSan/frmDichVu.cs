@@ -102,10 +102,11 @@ namespace DoAnQLKhachSan
                     //string path = System.IO.Path.Combine(floder, fname);//lưu tên ảnh xuống csdl
                     //Image a = pictureBox.Image;
                     //a.Save(path);
-                    string TangID = (bdv.DV_Select().Rows.Count + 1).ToString();
-                    bdv.DV_Them(TangID, cboLoaiDV.SelectedValue.ToString(), txtTenDV.Text, rtxtMoTa.Text, fname, txtGiaTien.Text, txtSLTon.Text, txtDVT.Text, rtxtGhiChu.Text, HieuLuc);
+                    int TangID = bdv.DV_Select().Rows.Count + 1;
+                    bdv.DV_Them(TangID, cboLoaiDV.SelectedIndex+1, txtTenDV.Text, rtxtMoTa.Text, fname, txtGiaTien.Text, txtSLTon.Text, txtDVT.Text, rtxtGhiChu.Text, HieuLuc);
                     MessageBox.Show("thêm thành công");
                     flag = false;
+                    xulytextbox(true);
                     dgvDichVu.DataSource = bdv.DV_Select();
                 }
             }
@@ -150,7 +151,7 @@ namespace DoAnQLKhachSan
                         string b = dgvDichVu.Rows[r].Cells[4].Value.ToString();
 
 
-                        FileInfo info = new FileInfo(@"D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\ImageNhanVien\" + DuoiAnh);
+                        FileInfo info = new FileInfo(@"D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\ImageDichVu\" + DuoiAnh);
                         //Get file infromation from info object
 
 
@@ -164,7 +165,7 @@ namespace DoAnQLKhachSan
                             //MessageBox.Show("Có vô so sánh if 1");
 
 
-                            bdv.DV_CapNhat(ID.ToString(), cboLoaiDV.SelectedIndex + 1, txtTenDV.Text, rtxtMoTa.Text, result, txtGiaTien.Text, txtSLTon.Text, txtDVT.Text, rtxtGhiChu.Text, HieuLuc);
+                            bdv.DV_CapNhat(ID, cboLoaiDV.SelectedIndex + 1, txtTenDV.Text, rtxtMoTa.Text, result, txtGiaTien.Text, txtSLTon.Text, txtDVT.Text, rtxtGhiChu.Text, HieuLuc);
 
                             MessageBox.Show("Cập nhật thành công");
                             dgvDichVu.DataSource = bdv.DV_Select();
@@ -183,7 +184,7 @@ namespace DoAnQLKhachSan
 
                             Image a1 = pictureBox.Image;
                             a1.Save(path1); //lưu ảnh mới vào đường dẫn 
-                            bdv.DV_CapNhat(ID.ToString(), cboLoaiDV.SelectedIndex + 1, txtTenDV.Text, rtxtMoTa.Text, result, txtGiaTien.Text, txtSLTon.Text, txtDVT.Text, rtxtGhiChu.Text, HieuLuc);
+                            bdv.DV_CapNhat(ID, cboLoaiDV.SelectedIndex + 1, txtTenDV.Text, rtxtMoTa.Text, result, txtGiaTien.Text, txtSLTon.Text, txtDVT.Text, rtxtGhiChu.Text, HieuLuc);
                             MessageBox.Show("Cập nhật thành công");
                             dgvDichVu.DataSource = bdv.DV_Select();
                             flag = false;

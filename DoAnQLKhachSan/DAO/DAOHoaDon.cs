@@ -124,6 +124,26 @@ namespace DAO
             return db.ThucHien("HoaDon_Them", name, value, 15);
         }
 
+        public int HoaDon_XacNhanDatPhong(int ID, string MaHD, string ID_NV, string ID_KH, string ID_Phong, string NgayLap, string NgayDen, string NgayDi, int HinhThucThue, int TTPhong, int TT,bool ThanhToan, bool HieuLuc)
+        {
+            name = new string[13];
+            value = new object[13];
+            name[0] = "@ID"; value[0] = ID;
+            name[1] = "@MaHD"; value[1] = MaHD;
+            name[2] = "@ID_NV"; value[2] = ID_NV;
+            name[3] = "@ID_KH"; value[3] = ID_KH;
+            name[4] = "@ID_Phong"; value[4] = ID_Phong;
+            name[5] = "@NgayLap"; value[5] = NgayLap;
+            name[6] = "@NgayDen"; value[6] = NgayDen;
+            name[7] = "@NgayDi"; value[7] = NgayDi;
+            name[8] = "@HinhThucThue"; value[8] = HinhThucThue;
+            name[9] = "@TongTienPhong"; value[9] = TTPhong;
+            name[10] = "@TongTien"; value[10] = TT;
+            name[11] = "@ThanhToan"; value[11] = ThanhToan;
+            name[12] = "@HieuLuc"; value[12] = HieuLuc;
+            return db.ThucHien("HoaDon_Them", name, value, 13);
+        }
+
         //update
         public int HoaDon_CapNhat(int ID, string MaHD, string ID_NV, string ID_KH, string ID_Phong, string NgayLap, string NgayDen, string NgayDi, int HinhThucThue, string TTPhong, string TTDV, string TT, string GhiChu, bool TToan, bool HieuLuc)
         {

@@ -153,7 +153,7 @@ namespace DoAnQLKhachSan
 
         private void btnPhongDaDat_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmPhongDaDat());
+            openChildForm(new frmPhongDaDat(ID));
         }
 
         private void btnThongKe_Click(object sender, EventArgs e)
