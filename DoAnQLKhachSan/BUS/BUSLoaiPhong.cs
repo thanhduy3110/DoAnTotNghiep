@@ -31,9 +31,9 @@ namespace BUS
         {
             return lpd.loaiphong_capnhat(id, TenLoaiPhong, SoGiuongDoi, SoGiuongDon, SoKhach, HieuLuc);
         }
-        public int LP_Xoa(string ID)
+        public int LP_Xoa(int ID,bool HieuLuc)
         {
-            return lpd.loaiphong_xoa(ID);
+            return lpd.loaiphong_xoa(ID,HieuLuc);
         }
         public DataTable ID_MAX_SELECT()
         {

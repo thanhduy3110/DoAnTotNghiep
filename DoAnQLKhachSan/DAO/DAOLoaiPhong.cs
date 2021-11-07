@@ -58,12 +58,15 @@ namespace DAO
             return dtks.ThucHien("loaiphong_capnhat", name, value, 6);
         }
         //delete
-        public int loaiphong_xoa(string ID)
+        public int loaiphong_xoa(int ID,bool HieuLuc)
         {
-            name = new string[1];
-            value = new object[1];
-            name[0] = "@ID"; value[0] = ID;
-            return dtks.ThucHien("loaiphong_xoa", name, value, 1);
+           
+                name = new string[2];
+                value = new object[2];
+                name[0] = "@ID"; value[0] = ID;
+                name[1] = "@HieuLuc"; value[1] = HieuLuc;
+                return dtks.ThucHien("loaiphong_xoa", name, value, 2);
+
         }
         public DataTable id_max_select()
         {

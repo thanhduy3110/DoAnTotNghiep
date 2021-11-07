@@ -23,29 +23,14 @@ namespace DoAnQLKhachSan
         }
 
         BUSLoaiDV ldv = new BUSLoaiDV();
-        void Tang_ID()
-        {
-            int count = 0;
-            count = dgvLoaiDV.Rows.Count;
-            string chuoi = "";
-            int chuoi2 = 0;
-            if (count <= 1)
-            {
-                txtID.Text = "0";
-            }
-            else
-            {
-                chuoi = Convert.ToString(dgvLoaiDV.Rows[count - 2].Cells[0].Value);
-                chuoi2 = Convert.ToInt32((chuoi.Remove(0, 0)));
-                if (chuoi2 + 1 < 10)
-                    txtID.Text = "" + (chuoi2 + 1).ToString();
-                else if (chuoi2 + 1 < 100)
-                    txtID.Text = "" + (chuoi2 + 1).ToString();
-            }
-        }
+       
         void clear_textbox()
         {
             txtTenLoaiDV.Text = "";
+        }
+        void xulytextbox(bool t)
+        {
+            txtTenLoaiDV.ReadOnly = t;
         }
         bool flag=false;
 
@@ -54,8 +39,8 @@ namespace DoAnQLKhachSan
             if(flag==false)
             {
                 clear_textbox();
-                txtID.Text = (ldv.LDV_Select().Rows.Count+1).ToString();
-                chkHieuLuc.Checked = false;
+                xulytextbox(false);
+                chkHieuLuc.Checked = true;
                 flag = true;
             }    
             
@@ -76,9 +61,11 @@ namespace DoAnQLKhachSan
                     {
                         HieuLuc = false;
                     }
-                    ldv.LDV_Them(txtID.Text, txtTenLoaiDV.Text, HieuLuc);
-                    MessageBox.Show("thêm thành công rồi nè");
+                    string TangID= (ldv.LDV_Select().Rows.Count + 1).ToString();
+                    ldv.LDV_Them(TangID, txtTenLoaiDV.Text, HieuLuc);
+                    MessageBox.Show("Thêm thành công");
                     flag = false;
+                    xulytextbox(true);
                     dgvLoaiDV.DataSource = ldv.LDV_Select();
                 }
             }
@@ -87,16 +74,22 @@ namespace DoAnQLKhachSan
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-
+            if (MessageBox.Show("Bạn có muốn xóa loại dịch vụ này không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                bool HL = false;
+                ldv.loaidv_xoa(ID, HL);
+                dgvLoaiDV.DataSource =ldv.LDV_Select();
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
             if(flag==false)
             {
+                xulytextbox(false);
                 flag = true;
             }    
-            if (flag == true)
+            else if (flag == true)
             {
                 bool HieuLuc;
                 if (chkHieuLuc.Checked == true)
@@ -107,9 +100,10 @@ namespace DoAnQLKhachSan
                 {
                     HieuLuc = false;
                 }
-                ldv.LDV_CapNhat(txtID.Text, txtTenLoaiDV.Text, HieuLuc);
-                MessageBox.Show("sửa thành công rồi nè");
+                ldv.LDV_CapNhat(ID.ToString(), txtTenLoaiDV.Text, HieuLuc);
+                MessageBox.Show("sửa thành công");
                 flag = false;
+                xulytextbox(true);
                 dgvLoaiDV.DataSource = ldv.LDV_Select();
             }
         }
@@ -118,7 +112,7 @@ namespace DoAnQLKhachSan
 
         void hienthi_textbox(int numrow)
         {
-            txtID.Text = dgvLoaiDV.Rows[numrow].Cells[0].Value.ToString();
+           
             txtTenLoaiDV.Text = dgvLoaiDV.Rows[numrow].Cells[1].Value.ToString();
            string HL = dgvLoaiDV.Rows[numrow].Cells[2].Value.ToString();
             if(HL=="Còn")
@@ -130,22 +124,24 @@ namespace DoAnQLKhachSan
                 chkHieuLuc.Checked = false;
             }    
         }
-
+        int ID;
         private void dgvLoaiDV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 int vt = dgvLoaiDV.CurrentCell.RowIndex;
                 hienthi_textbox(vt);
+                ID = Int32.Parse(dgvLoaiDV.Rows[vt].Cells[0].Value.ToString());
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Không có dữ liệu");
+                
             }
         }
 
         private void frmLoaiDichVu_Load(object sender, EventArgs e)
         {
+            xulytextbox(true);
             dgvLoaiDV.DataSource = ldv.LDV_Select();
         }
 
@@ -153,5 +149,7 @@ namespace DoAnQLKhachSan
         {
             ldv.HienThiDanhSach(txtTim.TextValue, dgvLoaiDV);
         }
+
+       
     }
 }

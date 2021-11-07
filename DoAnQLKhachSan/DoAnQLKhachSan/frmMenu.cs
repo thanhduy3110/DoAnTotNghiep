@@ -161,6 +161,11 @@ namespace DoAnQLKhachSan
             openChildForm(new frmThongKe());
         }
 
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnDoiMatKhau_Click(object sender, EventArgs e)
         {
             openChildForm(new frmThongTinDangNhap(MaNV,ID,LoaiNV));

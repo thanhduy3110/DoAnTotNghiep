@@ -31,7 +31,10 @@ namespace BUS
             return ldv.loaidv_capnhat(ID, TenLoaiDV, HieuLuc);
         }
 
-
+        public int loaidv_xoa(int ID, bool HieuLuc)
+        {
+            return ldv.loaidv_xoa(ID, HieuLuc);
+        }
 
 
     }

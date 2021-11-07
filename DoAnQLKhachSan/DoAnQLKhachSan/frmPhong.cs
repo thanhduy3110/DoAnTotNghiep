@@ -64,6 +64,7 @@ namespace DoAnQLKhachSan
             txtGiaThueTheoGio.Text = "";
             txtGiaThueTheoNgay.Text = "";
             rtxtGhiChu.Text = "";
+            txtSoPhong.Text = "";
            
         }
 
@@ -92,7 +93,7 @@ namespace DoAnQLKhachSan
                
                 chkBonTam.Checked = false;
                 chkGocNhin.Checked = false;
-                chkHieuLuc.Checked = false;
+                chkHieuLuc.Checked = true;
                 flag = true;
             }
 
@@ -185,10 +186,13 @@ namespace DoAnQLKhachSan
 
         private void btnXoa_Click_1(object sender, EventArgs e)
         {
-            bool HL = false;
-            Bphong.Phong_Xoa(ID, HL);
-            MessageBox.Show("Xóa thành công");
-            dgvDSPhong.DataSource = Bphong.Phong_Select();
+            if (MessageBox.Show("Bạn có muốn xóa loại phòng này không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                bool HL = false;
+                Bphong.Phong_Xoa(ID, HL);
+                dgvDSPhong.DataSource = Bphong.Phong_Select();
+            }
+               
         }
 
         void hienthi_textbox(int numrow)

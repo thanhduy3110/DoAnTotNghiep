@@ -214,12 +214,14 @@ namespace DoAnQLKhachSan
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+
             if (flag == false)
             {
                 txtMatKhau.Text = "";
                 xulytextbox(false);
                 flag = true;
-            }else if(flag==true)
+            }
+            else if (flag == true)
             {
                 string fname1 = DuoiAnh; // tên ảnh
                 string floder1 = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan\\ImageNhanVien\\";//đường dẫn lưu ảnh
@@ -257,7 +259,7 @@ namespace DoAnQLKhachSan
                         string result;
                         result = Path.GetFileName(address);
                         string b = dgvDSNhanVien.Rows[r].Cells[11].Value.ToString();
-                       
+
 
                         FileInfo info = new FileInfo(@"D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\ImageNhanVien\" + DuoiAnh);
                         //Get file infromation from info object
@@ -310,7 +312,7 @@ namespace DoAnQLKhachSan
 
                     }
                 }
-            }    
+            }
 
         }
 

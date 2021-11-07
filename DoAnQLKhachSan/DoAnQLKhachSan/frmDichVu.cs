@@ -67,14 +67,15 @@ namespace DoAnQLKhachSan
             if(flag==false)
             {
                 
-                chkHieuLuc.Checked = false;
+                chkHieuLuc.Checked = true;
                 flag = true;
                 xulytextbox(false);
+                clear_textbox();
             }
             else if (flag == true)
             {
                 string fname = DuoiAnh; // tên ảnh
-                string floder = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan\\ImageNhanVien\\";//đường dẫn lưu ảnh
+                string floder = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan\\ImageDichVu\\";//đường dẫn lưu ảnh
                 string path = System.IO.Path.Combine(floder, fname);
                 Image a = pictureBox.Image;
                 a.Save(path); //lưu ảnh vào đường dẫn   
@@ -114,67 +115,143 @@ namespace DoAnQLKhachSan
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if(flag==false)
+
+            if (flag == false)
             {
                 flag = true;
                 xulytextbox(false);
             }
             else if (flag == true)
             {
-                bool HieuLuc;
-                if (chkHieuLuc.Checked == true)
-                {
-                    HieuLuc = true;
-                }
-                else
-                {
-                    HieuLuc = false;
-                }
                 string fname1 = DuoiAnh; // tên ảnh
-                string floder1 = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan\\ImageNhanVien\\";//đường dẫn lưu ảnh
+                string floder1 = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan\\ImageDichVu\\";//đường dẫn lưu ảnh
                 string path1 = System.IO.Path.Combine(floder1, fname1);
 
-                int r = this.dgvDichVu.CurrentCell.RowIndex;
-                string address = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan\\ImageNhanVien\\" + dgvDichVu.Rows[r].Cells[4].Value.ToString();
-                string result;
-                result = Path.GetFileName(address);
-                string b = dgvDichVu.Rows[r].Cells[4].Value.ToString();
-                FileInfo info = new FileInfo(@"D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\ImageNhanVien\" + DuoiAnh);
-                string FileNames = info.Name;
-                if (FileNames == "")  //picturebox bằng null là ảnh giống ảnh cũ
                 {
-                    //MessageBox.Show("Có vô so sánh if 1");
-
-                    bdv.DV_CapNhat(ID.ToString(), cboLoaiDV.SelectedValue.ToString(), txtTenDV.Text, rtxtMoTa.Text, result, txtGiaTien.Text, txtSLTon.Text, txtDVT.Text, rtxtGhiChu.Text, HieuLuc);
-                    MessageBox.Show("Cập nhật thành công");
-                    flag = false;
-                    xulytextbox(true);
-                    dgvDichVu.DataSource = bdv.DV_Select();
-                    //MessageBox.Show("Có lưu if 1");
-
-
-                }
-
-                else //khác
-                {
+                    if (cboLoaiDV.Text == "" || txtTenDV.Text == "" || pictureBox.Image == null || txtGiaTien.Text == "" || txtSLTon.Text == "" || txtDVT.Text == "")
                     {
-                        //MessageBox.Show("có vô so sánh if 2 " + path1);
+                        MessageBox.Show("Lỗi");
                     }
-                   
-                    Image a1 = pictureBox.Image;
-                    a1.Save(path1); //lưu ảnh mới vào đường dẫn 
-                    bdv.DV_CapNhat(ID.ToString(), cboLoaiDV.SelectedValue.ToString(), txtTenDV.Text, rtxtMoTa.Text, DuoiAnh, txtGiaTien.Text, txtSLTon.Text, txtDVT.Text, rtxtGhiChu.Text, HieuLuc);
-                    MessageBox.Show("Cập nhật thành công");
-                    flag = false;
-                    xulytextbox(true);
-                    dgvDichVu.DataSource = bdv.DV_Select();
-                    //MessageBox.Show("có lưu ảnh  if 2 ");
+                    else
+                    {
+                        bool HieuLuc;
+                        if (chkHieuLuc.Checked == true)
+                        {
+                            HieuLuc = true;
+                        }
+                        else
+                        {
+                            HieuLuc = false;
+                        }
+                        int r = this.dgvDichVu.CurrentCell.RowIndex;
+                        string address = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan\\ImageDichVu\\" + dgvDichVu.Rows[r].Cells[4].Value.ToString();
+                        string result;
+                        result = Path.GetFileName(address);
+                        string b = dgvDichVu.Rows[r].Cells[4].Value.ToString();
 
 
+                        FileInfo info = new FileInfo(@"D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\ImageNhanVien\" + DuoiAnh);
+                        //Get file infromation from info object
+
+
+                        string FileNames = info.Name;
+                        //{
+                        //    MessageBox.Show("info " + FileNames);
+                        //}
+
+                        if (FileNames == "")  //picturebox bằng null là ảnh giống ảnh cũ
+                        {
+                            //MessageBox.Show("Có vô so sánh if 1");
+
+
+                            bdv.DV_CapNhat(ID.ToString(), cboLoaiDV.SelectedIndex + 1, txtTenDV.Text, rtxtMoTa.Text, result, txtGiaTien.Text, txtSLTon.Text, txtDVT.Text, rtxtGhiChu.Text, HieuLuc);
+
+                            MessageBox.Show("Cập nhật thành công");
+                            dgvDichVu.DataSource = bdv.DV_Select();
+                            flag = false;
+                            xulytextbox(true);
+                            //MessageBox.Show("Có lưu if 1");
+
+
+                        }
+
+                        else //khác
+                        {
+                            {
+                                //MessageBox.Show("có vô so sánh if 2 " + path1);
+                            }
+
+                            Image a1 = pictureBox.Image;
+                            a1.Save(path1); //lưu ảnh mới vào đường dẫn 
+                            bdv.DV_CapNhat(ID.ToString(), cboLoaiDV.SelectedIndex + 1, txtTenDV.Text, rtxtMoTa.Text, result, txtGiaTien.Text, txtSLTon.Text, txtDVT.Text, rtxtGhiChu.Text, HieuLuc);
+                            MessageBox.Show("Cập nhật thành công");
+                            dgvDichVu.DataSource = bdv.DV_Select();
+                            flag = false;
+                            xulytextbox(true);
+                            //MessageBox.Show("có lưu ảnh  if 2 ");
+
+
+                        }
+
+                    }
                 }
-                
-                
             }
+            //else if (flag == true)
+            //{
+            //    bool HieuLuc;
+            //    if (chkHieuLuc.Checked == true)
+            //    {
+            //        HieuLuc = true;
+            //    }
+            //    else
+            //    {
+            //        HieuLuc = false;
+            //    }
+            //    string fname1 = DuoiAnh; // tên ảnh
+            //    string floder1 = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan\\ImageDichVu\\";//đường dẫn lưu ảnh
+            //    string path1 = System.IO.Path.Combine(floder1, fname1);
+
+            //    int r = this.dgvDichVu.CurrentCell.RowIndex;
+            //    string address = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan\\ImageDichVu\\" + dgvDichVu.Rows[r].Cells[4].Value.ToString();
+            //    string result;
+            //    result = Path.GetFileName(address);
+            //    string b = dgvDichVu.Rows[r].Cells[4].Value.ToString();
+            //    FileInfo info = new FileInfo(@"D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\ImageDichVu\" + DuoiAnh);
+            //    string FileNames = info.Name;
+            //    if (FileNames == "")  //picturebox bằng null là ảnh giống ảnh cũ
+            //    {
+            //        //MessageBox.Show("Có vô so sánh if 1");
+
+            //        bdv.DV_CapNhat(ID.ToString(), cboLoaiDV.SelectedIndex+1, txtTenDV.Text, rtxtMoTa.Text, result, txtGiaTien.Text, txtSLTon.Text, txtDVT.Text, rtxtGhiChu.Text, HieuLuc);
+            //        MessageBox.Show("Cập nhật thành công");
+            //        flag = false;
+            //        xulytextbox(true);
+            //        dgvDichVu.DataSource = bdv.DV_Select();
+            //        //MessageBox.Show("Có lưu if 1");
+
+
+            //    }
+
+            //    else //khác
+            //    {
+            //        {
+            //            //MessageBox.Show("có vô so sánh if 2 " + path1);
+            //        }
+
+            //        Image a1 = pictureBox.Image;
+            //        a1.Save(path1); //lưu ảnh mới vào đường dẫn 
+            //        bdv.DV_CapNhat(ID.ToString(), cboLoaiDV.SelectedIndex+1, txtTenDV.Text, rtxtMoTa.Text, DuoiAnh, txtGiaTien.Text, txtSLTon.Text, txtDVT.Text, rtxtGhiChu.Text, HieuLuc);
+            //        MessageBox.Show("Cập nhật thành công");
+            //        flag = false;
+            //        xulytextbox(true);
+            //        dgvDichVu.DataSource = bdv.DV_Select();
+            //        //MessageBox.Show("có lưu ảnh  if 2 ");
+
+
+            //    }
+
+
+            //}
 
         }
 
@@ -215,7 +292,7 @@ namespace DoAnQLKhachSan
             {
                 chkHieuLuc.Checked = false;
             }    
-            string floder = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan\\DoAnQLKhachSan\\Images\\" + dgvDichVu.Rows[numrow].Cells[4].Value.ToString();
+            string floder = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan\\ImageDichVu\\" + dgvDichVu.Rows[numrow].Cells[4].Value.ToString();
             Bitmap a = new Bitmap(floder);
             pictureBox.Image = a;
         }

@@ -19,7 +19,7 @@ namespace DAO
         //Lấy danh sách ID và TenLoaiPhong gán vào combobox cbTenLP
         public void HienThiLoaiPhong(ComboBox cboTenLP)
         {
-            dsLoaiPhong = db.LayDanhSach("select ID, TenLoaiPhong from LoaiPhong");// truy vấn lên sql
+            dsLoaiPhong = db.LayDanhSach("select ID, TenLoaiPhong from LoaiPhong where HieuLuc=1");// truy vấn lên sql
             cboTenLP.DataSource = dsLoaiPhong.Tables[0];
             cboTenLP.DisplayMember = "tenloaiphong";
             cboTenLP.ValueMember = "id";

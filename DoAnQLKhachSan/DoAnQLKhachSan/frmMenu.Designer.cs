@@ -59,7 +59,7 @@
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.Location = new System.Drawing.Point(0, 746);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(76, 54);
+            this.btnThoat.Size = new System.Drawing.Size(69, 54);
             this.btnThoat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btnThoat.TabIndex = 0;
             this.btnThoat.TabStop = false;
@@ -71,7 +71,7 @@
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(76, 76);
+            this.pictureBox2.Size = new System.Drawing.Size(69, 76);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
@@ -82,7 +82,7 @@
             this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
             this.btnHome.Location = new System.Drawing.Point(0, 667);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(76, 79);
+            this.btnHome.Size = new System.Drawing.Size(69, 79);
             this.btnHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnHome.TabIndex = 5;
             this.btnHome.TabStop = false;
@@ -96,9 +96,9 @@
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.btnThoat);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(1488, 0);
+            this.panel1.Location = new System.Drawing.Point(1495, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(76, 800);
+            this.panel1.Size = new System.Drawing.Size(69, 800);
             this.panel1.TabIndex = 0;
             // 
             // btnKhachHang
@@ -337,7 +337,7 @@
             this.panelMenu.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(1488, 800);
+            this.panelMenu.Size = new System.Drawing.Size(1495, 800);
             this.panelMenu.TabIndex = 2;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
@@ -356,6 +356,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMenu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnThoat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();

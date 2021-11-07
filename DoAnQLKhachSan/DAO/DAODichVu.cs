@@ -20,10 +20,10 @@ namespace DAO
 
         public void HienThiLoaiDV(ComboBox cboTenLoaiDV)
         {
-            dsLoaiDV = db.LayDanhSach("select ID, TenLoaiDV from LoaiDV");// truy vấn lên sql
+            dsLoaiDV = db.LayDanhSach("select ID, TenLoaiDV from LoaiDV where HieuLuc=1");// truy vấn lên sql
             cboTenLoaiDV.DataSource = dsLoaiDV.Tables[0];
-            cboTenLoaiDV.DisplayMember = "tenloaidv";
-            cboTenLoaiDV.ValueMember = "id";
+            cboTenLoaiDV.DisplayMember = "TenLoaiDV";
+            cboTenLoaiDV.ValueMember = "ID";
         }
         public void HienThiDanhSach(string sTimKiem, DataGridView d)
         {
@@ -58,7 +58,7 @@ namespace DAO
             return db.ThucHien("dichvu_them", name, value, 10);
         }
 
-        public int dichvu_capnhat(string ID, string ID_LoaiDV, string TenDV, string MoTa, string HinhAnh, string GiaTien, string SLTon, string DVT, string GhiChu, bool HieuLuc)
+        public int dichvu_capnhat(string ID, int ID_LoaiDV, string TenDV, string MoTa, string HinhAnh, string GiaTien, string SLTon, string DVT, string GhiChu, bool HieuLuc)
         {
             name = new string[10];
             value = new object[10];

@@ -19,26 +19,7 @@ namespace DoAnQLKhachSan
         }
         BUSLoaiPhong blp = new BUSLoaiPhong();
 
-        void Tang_ID()
-        {
-            int count = 0;
-            count = dgvDSLoaiPhong.Rows.Count;
-            string chuoi = "";
-            int chuoi2 = 0;
-            if (count <= 1)
-            {
-                txtID.Text = "0";
-            }
-            else
-            {
-                chuoi = Convert.ToString(dgvDSLoaiPhong.Rows[count - 2].Cells[0].Value);
-                chuoi2 = Convert.ToInt32((chuoi.Remove(0, 0)));
-                if (chuoi2 + 1 < 10)
-                    txtID.Text = "" + (chuoi2 + 1).ToString();
-                else if (chuoi2 + 1 < 100)
-                    txtID.Text = "" + (chuoi2 + 1).ToString();
-            }
-        }
+        
         void clear_textbox()
         {
             txtTenLoaiPhong.Text = "";
@@ -46,9 +27,17 @@ namespace DoAnQLKhachSan
             txtSoGiuongDon.Text = "";
             txtSoKhach.Text = "";
         }
+        void xulytextbox(bool t)
+        {
+            txtTenLoaiPhong.ReadOnly = t;
+            txtSoGiuongDoi.ReadOnly = t;
+            txtSoGiuongDon.ReadOnly = t;
+            txtSoKhach.ReadOnly = t;
+            
+        }
         void hienthi_textbox(int numrow)
         {
-            txtID.Text = dgvDSLoaiPhong.Rows[numrow].Cells[0].Value.ToString();
+            
             txtTenLoaiPhong.Text = dgvDSLoaiPhong.Rows[numrow].Cells[1].Value.ToString();
             txtSoGiuongDoi.Text = dgvDSLoaiPhong.Rows[numrow].Cells[2].Value.ToString();
             txtSoGiuongDon.Text = dgvDSLoaiPhong.Rows[numrow].Cells[3].Value.ToString();
@@ -66,6 +55,7 @@ namespace DoAnQLKhachSan
         bool flag=false;
         private void frmLoaiPhong_Load(object sender, EventArgs e)
         {
+            xulytextbox(true);
             dgvDSLoaiPhong.DataSource = blp.LP_Select();
         }
 
@@ -74,8 +64,8 @@ namespace DoAnQLKhachSan
             if(flag==false)
             {
                 clear_textbox();
-                txtID.Text = (blp.LP_Select().Rows.Count+1).ToString();
-                chkHieuLuc.Checked = false;
+                xulytextbox(false);
+                chkHieuLuc.Checked = true;
                 flag = true;
             }    
             else if (flag == true)
@@ -95,9 +85,11 @@ namespace DoAnQLKhachSan
                     {
                         HieuLuc = false;
                     }
-                    blp.LP_Them(txtID.Text, txtTenLoaiPhong.Text, txtSoGiuongDoi.Text, txtSoGiuongDon.Text, txtSoKhach.Text, HieuLuc);
+                   string TangID = (blp.LP_Select().Rows.Count + 1).ToString();
+                    blp.LP_Them(TangID.ToString(), txtTenLoaiPhong.Text, txtSoGiuongDoi.Text, txtSoGiuongDon.Text, txtSoKhach.Text, HieuLuc);
                     MessageBox.Show("Thêm thành công ");
                     flag = false;
+                    xulytextbox(true);
                     dgvDSLoaiPhong.DataSource = blp.LP_Select();
                 }
             }
@@ -106,15 +98,20 @@ namespace DoAnQLKhachSan
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            blp.LP_Xoa(txtID.Text);
-            MessageBox.Show("Xóa thành công ");
-            dgvDSLoaiPhong.DataSource = blp.LP_Select();
+            if (MessageBox.Show("Bạn có muốn xóa loại phòng này không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                bool HL = false;
+                blp.LP_Xoa(ID,HL);
+                dgvDSLoaiPhong.DataSource = blp.LP_Select();
+            }
+                
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
             if(flag==false)
             {
+                xulytextbox(false);
                 flag = true;
             }    
             else if (flag == true)
@@ -128,25 +125,27 @@ namespace DoAnQLKhachSan
                 {
                     HieuLuc = false;
                 }
-                blp.LP_CapNhat(txtID.Text, txtTenLoaiPhong.Text, txtSoGiuongDoi.Text, txtSoGiuongDon.Text, txtSoKhach.Text, HieuLuc);
+                blp.LP_CapNhat(ID.ToString(), txtTenLoaiPhong.Text, txtSoGiuongDoi.Text, txtSoGiuongDon.Text, txtSoKhach.Text, HieuLuc);
                 MessageBox.Show("Sữa thành công ");
                 flag = false;
+                xulytextbox(true);
                 dgvDSLoaiPhong.DataSource = blp.LP_Select();
             }
         }
 
-       
 
+        int ID;
         private void dgvDSLoaiPhong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 int vt = dgvDSLoaiPhong.CurrentCell.RowIndex;
                 hienthi_textbox(vt);
+                ID = Int32.Parse(dgvDSLoaiPhong.Rows[vt].Cells[0].Value.ToString());
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Không có dữ liệu");
+                
             }
         }
 

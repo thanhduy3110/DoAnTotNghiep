@@ -35,7 +35,7 @@ namespace BUS
         {
             return ldv.dichvu_them(ID, ID_LoaiDV, TenDV, MoTa, HinhAnh, GiaTien, SLTon, DVT, GhiChu, HieuLuc);
         }
-        public int DV_CapNhat(string ID, string ID_LoaiDV, string TenDV, string MoTa, string HinhAnh, string GiaTien, string SLTon, string DVT, string GhiChu, bool HieuLuc)
+        public int DV_CapNhat(string ID, int ID_LoaiDV, string TenDV, string MoTa, string HinhAnh, string GiaTien, string SLTon, string DVT, string GhiChu, bool HieuLuc)
         {
             return ldv.dichvu_capnhat(ID, ID_LoaiDV, TenDV, MoTa, HinhAnh, GiaTien, SLTon, DVT, GhiChu, HieuLuc);
         }
