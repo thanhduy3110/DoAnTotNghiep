@@ -184,7 +184,7 @@ namespace DoAnQLKhachSan
 
                             Image a1 = pictureBox.Image;
                             a1.Save(path1); //lưu ảnh mới vào đường dẫn 
-                            bdv.DV_CapNhat(ID, cboLoaiDV.SelectedIndex + 1, txtTenDV.Text, rtxtMoTa.Text, result, txtGiaTien.Text, txtSLTon.Text, txtDVT.Text, rtxtGhiChu.Text, HieuLuc);
+                            bdv.DV_CapNhat(ID, cboLoaiDV.SelectedIndex + 1, txtTenDV.Text, rtxtMoTa.Text, DuoiAnh, txtGiaTien.Text, txtSLTon.Text, txtDVT.Text, rtxtGhiChu.Text, HieuLuc);
                             MessageBox.Show("Cập nhật thành công");
                             dgvDichVu.DataSource = bdv.DV_Select();
                             flag = false;
