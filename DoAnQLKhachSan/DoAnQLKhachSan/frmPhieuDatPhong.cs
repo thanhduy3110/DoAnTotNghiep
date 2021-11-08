@@ -70,7 +70,7 @@ namespace DoAnQLKhachSan
                         HinhThucThue = false;
                     }
                     string TangID = (bpdp.PDP_Select().Rows.Count + 1).ToString();
-                    bpdp.PDP_Them(TangID, cboTenKH.SelectedValue.ToString(), dtNgayDen.Text, dtNgayDi.Text, HinhThucThue, txtSoKH.Text, rtxtGhiChu.Text, DaXuLy, HieuLuc);
+                    bpdp.PDP_Them(TangID, cboTenKH.SelectedValue.ToString(), Convert.ToDateTime(dtNgayDen.Text).ToString("yyyy-MM-dd") , Convert.ToDateTime(dtNgayDi.Text).ToString("yyyy-MM-dd"), HinhThucThue, txtSoKH.Text, rtxtGhiChu.Text, DaXuLy, HieuLuc);
                     MessageBox.Show("thêm thành công");
                     flag = false;
                     dgvPhieuDatPhong.DataSource = bpdp.PDP_Select();

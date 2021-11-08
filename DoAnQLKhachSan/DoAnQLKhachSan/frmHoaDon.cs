@@ -579,6 +579,8 @@ namespace DoAnQLKhachSan
             {
                 bHD.HoaDon_ThanhToan(ID_HD, true);
                 dgvDSHD.DataSource = bHD.HoaDon_Select();
+                frmReport rHD = new frmReport(iIdInHD);
+                rHD.Show();
             }
         }
 

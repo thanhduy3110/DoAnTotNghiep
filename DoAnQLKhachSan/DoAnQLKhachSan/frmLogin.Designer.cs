@@ -127,9 +127,9 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(22, 180);
+            this.pictureBox4.Location = new System.Drawing.Point(16, 180);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(94, 68);
+            this.pictureBox4.Size = new System.Drawing.Size(100, 68);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox4.TabIndex = 8;
             this.pictureBox4.TabStop = false;

@@ -173,7 +173,7 @@ namespace DoAnQLKhachSan
 
         private void frmMenu_Load(object sender, EventArgs e)
         {
-            if(this.ID==1)
+            if(Int32.Parse(this.LoaiNV)==1)
             {
                 btnNhanVien.Enabled = false;
                 btnLoaiNV.Enabled = false;
@@ -181,7 +181,7 @@ namespace DoAnQLKhachSan
                 btnLoaiDV.Enabled = false;
                 btnLoaiPhong.Enabled = false;
                 btnThongKe.Enabled = false;
-            }else if(this.ID==2)
+            }else if(Int32.Parse(this.LoaiNV) == 2)
             {
                 btnNhanVien.Enabled = false;
                 btnDichVu.Enabled = false;
@@ -193,7 +193,36 @@ namespace DoAnQLKhachSan
                 btnPhongDaDat.Enabled = false;
                 btnLoaiNV.Enabled = false;
                 btnKhachHang.Enabled = false;
+
+            }else if(Int32.Parse(this.LoaiNV)==4)
+            {
+                btnNhanVien.Enabled = true;
+                btnDichVu.Enabled = true;
+                btnLoaiDV.Enabled = true;
+                btnLoaiPhong.Enabled = true;
+                btnThongKe.Enabled = true;
+                btnPhong.Enabled = true;
+                btnPhieuDatPhong.Enabled = true;
+                btnPhongDaDat.Enabled = true;
+                btnLoaiNV.Enabled = true;
+                btnKhachHang.Enabled = true;
+                btnHoaDon.Enabled = true;
             }    
+            else if(Int32.Parse(this.LoaiNV) != 1|| Int32.Parse(this.LoaiNV) != 2|| Int32.Parse(this.LoaiNV) != 4)
+            {
+                btnNhanVien.Enabled = false;
+                btnDichVu.Enabled = false;
+                btnLoaiDV.Enabled = false;
+                btnLoaiPhong.Enabled = false;
+                btnThongKe.Enabled = false;
+                btnPhong.Enabled = false;
+                btnPhieuDatPhong.Enabled = false;
+                btnPhongDaDat.Enabled = false;
+                btnLoaiNV.Enabled = false;
+                btnKhachHang.Enabled = false;
+                btnHoaDon.Enabled = false;
+            }    
+           
         }
 
         private void btnDoiMatKhau_Click(object sender, EventArgs e)
