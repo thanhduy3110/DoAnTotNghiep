@@ -61,7 +61,7 @@ namespace DoAnQLKhachSan
         string PhatSinhMaTuDong()
         {
             string MaHD = "";
-            int dem = dgvDSHD.Rows.Count;
+            int dem = bHD.HoaDon_PhatSinhMa().Rows.Count+1;
             if (dem < 10)
             {
                 MaHD = "HD00" + dem.ToString();
@@ -90,6 +90,21 @@ namespace DoAnQLKhachSan
             lblTongTien.Text = "0";
            
         }
+
+        void clear_textboxThemPhong()
+        {
+
+            cboMaPhong.Text = "";
+            cboHinhThucThue.Text = "";
+            dtpNgayDen.Text = "";
+            dtpNgayDi.Text = "";
+            rtxtGhiChu.Text = "";
+            lblTongTienPhong.Text = "0";
+            lblTongTienDV.Text = "0";
+            lblTongTien.Text = "0";
+
+        }
+
         void xulychucnang(Boolean t)
         {
             btnThem.Enabled = t;
@@ -160,6 +175,7 @@ namespace DoAnQLKhachSan
                 clear_textbox();
                 xulytextbox(false);
                 chkHL.Checked = true;
+                chkThanhToan.Checked = false;
                 flag = true;
             }
             else if (flag == true)
@@ -526,6 +542,82 @@ namespace DoAnQLKhachSan
         private void txtTim_TextChangeEvent(object sender, EventArgs e)
         {
             bHD.HienThiDanhSach(txtTim.TextValue, dgvDSHD);
+        }
+
+        private void btnDatThemPhong_Click(object sender, EventArgs e)
+        {
+            panel1.Enabled = false;
+
+            if (flag == false)
+            {
+                clear_textboxThemPhong();
+                xulytextbox(false);
+                chkHL.Checked = true;
+                chkThanhToan.Checked = false;
+                flag = true;
+            }
+            else if (flag == true)
+            {
+
+               if (dtpNgayDen.Value.Month > dtpNgayDi.Value.Month || dtpNgayDen.Value.Year > dtpNgayDi.Value.Year)
+                {
+                    MessageBox.Show("Lỗi nhập ngày");
+
+                }
+                else if (dtpNgayDen.Value.Day > dtpNgayDi.Value.Day)
+                {
+                    MessageBox.Show("Lỗi ngày");
+                }
+                else
+                {
+
+
+                    bool HieuLuc, ThanhToan;
+                    if (chkHL.Checked == true)
+                    {
+                        HieuLuc = true;
+                    }
+                    else
+                    {
+                        HieuLuc = false;
+                    }
+
+                    if (chkThanhToan.Checked == true)
+                    {
+                        ThanhToan = true;
+                    }
+                    else
+                    {
+                        ThanhToan = false;
+                    }
+                    int ID = dgvDSHD.Rows.Count + 1;
+
+
+                    if (cboHinhThucThue.Text == "Thuê theo ngày")
+                    {
+                        TienPhong = Int32.Parse(bHD.TienPhong(Int32.Parse(cboMaPhong.Text)).Rows[0][0].ToString());
+                        TongTienPhong = TienPhong * (ThoiGianThue(GioThue) / 24);
+                    }
+                    else
+                    {
+                        TienPhong = Int32.Parse(bHD.TienPhong(Int32.Parse(cboMaPhong.Text)).Rows[0][1].ToString());
+                        TongTienPhong = TienPhong * (ThoiGianThue(GioThue));
+                    }
+                    //bPhong.phong_CNConTrong(Int32.Parse(cboMaPhong.SelectedValue.ToString()), 1);
+                    bHD.HoaDon_Them(ID, txtMaHD.Text, IDNV.ToString(), ID_KH.ToString(), cboMaPhong.SelectedValue.ToString(), Convert.ToDateTime(DateTime.Now).ToString("yyyy/MM/dd hh:mm"), Convert.ToDateTime(dtpNgayDen.Text).ToString("yyyy/MM/dd hh:mm"), Convert.ToDateTime(dtpNgayDi.Text).ToString("yyyy/MM/dd hh:mm"), cboHinhThucThue.SelectedIndex, TongTienPhong, lblTongTienDV.Text, TongTienPhong, rtxtGhiChu.Text, ThanhToan, HieuLuc);
+                    MessageBox.Show("Thêm thành công ");
+
+                    flag = false;
+                    dgvDSHD.DataSource = bHD.HoaDon_Select();
+
+
+
+
+                }
+
+
+            }
+
         }
 
         int Gio;

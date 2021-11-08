@@ -102,6 +102,11 @@ namespace DAO
         object[] value = { };
 
         //phương thức này gọi đến phương thức LayduLieu ở dbConnectionData để lấy dữ liệu
+
+        public DataTable HoaDon_PhatSinhMa()
+        {
+            return db.Laydulieu("HoaDon_PhatSinhMa");
+        }
         public DataTable HoaDon_Select()
         {
             return db.Laydulieu("HoaDon_Select");

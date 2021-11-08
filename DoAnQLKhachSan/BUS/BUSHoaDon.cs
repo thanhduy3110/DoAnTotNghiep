@@ -52,6 +52,11 @@ namespace BUS
         {
             HD.HienThiDanhSach(sTimKiem, d);
         }
+
+         public DataTable HoaDon_PhatSinhMa()
+        {
+            return HD.HoaDon_PhatSinhMa();
+        }
         public DataTable HoaDon_Select()
         {
             return HD.HoaDon_Select();
