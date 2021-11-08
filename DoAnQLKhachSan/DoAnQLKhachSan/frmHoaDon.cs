@@ -500,7 +500,7 @@ namespace DoAnQLKhachSan
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn xóa hóa đươn này không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn có muốn xóa hóa đơn này không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 bool HL = false;
                 bHD.HoaDon_Xoa(ID_HD, HL);
@@ -570,7 +570,11 @@ namespace DoAnQLKhachSan
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-
+            if (MessageBox.Show("Bạn có muốn xóa thanh toán hóa đơn này không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                bHD.HoaDon_ThanhToan(ID_HD, true);
+                dgvDSHD.DataSource = bHD.HoaDon_Select();
+            }
         }
 
         private int ThoiGianThue(int iGio)

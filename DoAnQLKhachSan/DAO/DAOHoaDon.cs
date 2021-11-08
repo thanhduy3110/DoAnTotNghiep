@@ -186,5 +186,14 @@ namespace DAO
             name[1] = "@HieuLuc"; value[1] = HieuLuc;
             return db.ThucHien("HoaDon_Xoa", name, value, 2);
         }
+
+        public int HoaDon_ThanhToan(int ID, bool ThanhToan)
+        {
+            name = new string[2];
+            value = new object[2];
+            name[0] = "@ID"; value[0] = ID;
+            name[1] = "@ThanhToan"; value[1] = ThanhToan;
+            return db.ThucHien("HoaDon_ThanhToan", name, value, 2);
+        }
     }
 }

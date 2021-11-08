@@ -27,7 +27,7 @@ namespace DAO
         }
         public void HienThiDanhSach(string sTimKiem, DataGridView d)
         {
-            dsDichVu = db.LayDanhSach("select * from DichVu where TenDV like '%" + sTimKiem + "%'");
+            dsDichVu = db.LayDanhSach("select DichVu.ID,TenLoaiDV,TenDV,MoTa,HinhAnh,GiaTien,SLTon,DVT,GhiChu,dbo.DV_HieuLuc(DichVu.HieuLuc) as HieuLuc from DichVu,LoaiDV where DichVu.ID_LoaiDV=LoaiDV.ID and DichVu.HieuLuc=1 and TenLoaiDV like '%" + sTimKiem + "%' and TenDV like '%" + sTimKiem + "%'");
             d.DataSource = dsDichVu.Tables[0];
         }
         public void HienThiAnh(PictureBox pic)

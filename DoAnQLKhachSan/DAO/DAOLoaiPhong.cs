@@ -15,7 +15,7 @@ namespace DAO
 
         public void HienThiDanhSach(string sTimKiem, DataGridView d)
         {
-            dsLoaiP = dtks.LayDanhSach("select * from LoaiPhong where TenLoaiPhong like N'%" + sTimKiem + "%'");
+            dsLoaiP = dtks.LayDanhSach("select ID,TenLoaiPhong,SoGiuongDoi,SoGiuongDon,SoKhach,dbo.LPhong_HieuLuc(HieuLuc)as HieuLuc from LoaiPhong where HieuLuc=1 and TenLoaiPhong like N'%" + sTimKiem + "%'");
             d.DataSource = dsLoaiP.Tables[0];
         }
         //khai báo 2 mảng để truyền tên tham số và giá trị tham số vào stored procedures

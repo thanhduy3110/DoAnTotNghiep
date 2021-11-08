@@ -77,6 +77,11 @@ namespace BUS
         {
             return HD.HoaDon_Xoa(ID, HieuLuc);
         }
+
+        public int HoaDon_ThanhToan(int ID, bool ThanhToan)
+        {
+            return HD.HoaDon_ThanhToan(ID, ThanhToan);
+        }
     }
 }
 

@@ -15,7 +15,7 @@ namespace DAO
 
         public void HienThiDanhSach(string sTimKiem, DataGridView d)
         {
-            dsLoaiDV = db.LayDanhSach("select * from LoaiDV where TenLoaiDV like N'%" + sTimKiem + "%'");
+            dsLoaiDV = db.LayDanhSach("select ID,TenLoaiDV,dbo.LDV_HieuLuc(HieuLuc) as HieuLuc from LoaiDV where HieuLuc=1 and TenLoaiDV like N'%" + sTimKiem + "%'");
             d.DataSource = dsLoaiDV.Tables[0];
         }
 

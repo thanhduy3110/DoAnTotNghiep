@@ -27,7 +27,7 @@ namespace DAO
 
         public void HienThiDanhSach(string sTimKiem, DataGridView d)
         {
-            dsPhong = db.LayDanhSach("select * from Phong where SoPhong like N'%" + sTimKiem + "%'");
+            dsPhong = db.LayDanhSach("select Phong.ID,TenLoaiPhong,SoPhong,Tang,GiaThueNgay,GiaThueGio,GhiChu,dbo.Phong_GocNhin(GocNhin)as GocNhin,dbo.Phong_BonTam(BonTam)as BonTam,dbo.Phong_ConTrong(ConTrong)as ConTrong,dbo.Phong_HieuLuc(Phong.HieuLuc)as HieuLuc  from Phong,LoaiPhong where Phong.ID_LoaiPhong=LoaiPhong.ID and Phong.HieuLuc=1 and SoPhong like N'%" + sTimKiem + "%'");
             d.DataSource = dsPhong.Tables[0];
         }
         public DataTable phong_select()
