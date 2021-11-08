@@ -22,16 +22,17 @@ namespace DoAnQLKhachSan
 
         BUSPhong Bphong = new BUSPhong();
         BUSHoaDon bHD = new BUSHoaDon();
-        string ID, ID_LoaiPhong;
-        string TTN, TTG;
+        
+        string ConTrong;
+        int TTN, TTG, ID,ID_LoaiPhong;
         private void dgv_Phong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int vt = dgv_Phong.CurrentCell.RowIndex;
-            
-            ID_LoaiPhong = dgv_Phong.Rows[vt].Cells[1].Value.ToString();
-            TTN = dgv_Phong.Rows[vt].Cells[5].Value.ToString();
-            TTG = dgv_Phong.Rows[vt].Cells[6].Value.ToString();
-
+            ID = Int32.Parse(dgv_Phong.Rows[vt].Cells[0].Value.ToString());
+            //ID_LoaiPhong = Int32.Parse(dgv_Phong.Rows[vt].Cells[2].Value.ToString());
+            TTN = Int32.Parse(dgv_Phong.Rows[vt].Cells[4].Value.ToString());
+            TTG = Int32.Parse(dgv_Phong.Rows[vt].Cells[5].Value.ToString());
+            ConTrong = dgv_Phong.Rows[vt].Cells[9].Value.ToString();
 
         }
 
@@ -61,26 +62,34 @@ namespace DoAnQLKhachSan
         
         private void btnChuyenPhong_Click(object sender, EventArgs e)
         {
-            int TienPhong,TongTien;
-            if (ID_LoaiPhong != "")
+
+
+
+            int TienPhong, TongTien;
+            if (ConTrong == "Không còn trống")
             {
-                if(iHinhThucThue==1)
+                MessageBox.Show("Phòng này đã có người dử dụng");
+            }
+            else 
+            {
+                if (iHinhThucThue == 1)
                 {
-                    TienPhong =Int32.Parse(TTN) * (iTGThue / 24);
-                }    
+                    TienPhong = TTN * (iTGThue / 24);
+                }
                 else
                 {
-                    TienPhong = Int32.Parse(TTG) * iTGThue;
+                    TienPhong = TTG * iTGThue;
                 }
                 TongTien = this.iTienDV + TienPhong;
                 //MessageBox.Show("Tien " + TTN+" "+TTG);
-                bHD.HoaDon_CapNhatChuyenPhong(iID_HD, ID_LoaiPhong, TienPhong,TongTien);
+                //Bphong.phong_CNConTrong(ID, 1);
+                bHD.HoaDon_CapNhatChuyenPhong(iID_HD, ID, TienPhong, TongTien);
                 MessageBox.Show("Chuyển phòng thành công");
                 this.Close();
 
             }
 
-           
+
 
         }
     }

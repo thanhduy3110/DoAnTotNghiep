@@ -84,5 +84,25 @@ namespace DAO
             name[0] = "@ID"; value[0] = ID;
             return db.ThucHien("dichvu_xoa", name, value, 1);
         }
+
+        public int dichvu_capnhatSLTon(string ID,int SL)
+        {
+            name = new string[2];
+            value = new object[2];
+            name[0] = "@ID"; value[0] = ID;
+            name[1] = "@SLTon"; value[1] = SL;
+            return db.ThucHien("dichvu_capnhatSLTon", name, value, 2);
+        }
+
+        public DataTable DV_Select(int ID)//rồi, đã xem xong 1 loạt thủ tục ở dal
+                                                                     //đây là thủ tục sẽ dùng ở form đăng nhập, với điều kiện là trùng mã tài khoản và mật khẩu. ok?
+        {
+            name = new string[1];
+            value = new object[1];
+
+            name[0] = "@ID"; value[0] = ID;
+
+            return db.LayDuLieuCoDK("DV_Select", name, value, 1);
+        }
     }
 }

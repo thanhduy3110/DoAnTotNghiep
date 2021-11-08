@@ -40,5 +40,10 @@ namespace BUS
         {
             return p.Phong_Xoa(ID, HieuLuc);
         }
+
+        public int phong_CNConTrong(int ID, int ConTrong)
+        {
+            return p.phong_CNConTrong(ID, ConTrong);
+        }
     }
 }

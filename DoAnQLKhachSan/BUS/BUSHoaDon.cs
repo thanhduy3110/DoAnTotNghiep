@@ -68,7 +68,7 @@ namespace BUS
             return HD.HoaDon_CapNhat(ID, MaHD, ID_NV, ID_KH, ID_Phong, NgayLap, NgayDen, NgayDi, HinhThucThue, TTPhong, TTDV, TT, GhiChu, TToan, HieuLuc);
         }
 
-        public int HoaDon_CapNhatChuyenPhong(int ID,string sophong,int TTP,int TongTien)
+        public int HoaDon_CapNhatChuyenPhong(int ID,int sophong,int TTP,int TongTien)
         {
             return HD.HoaDon_CapNhatChuyenPhong(ID, sophong,TTP,TongTien);
         }

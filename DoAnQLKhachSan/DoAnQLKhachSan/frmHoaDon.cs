@@ -27,6 +27,8 @@ namespace DoAnQLKhachSan
         }
         BUSHoaDon bHD = new BUSHoaDon();
         BUSCTHD bCTHD = new BUSCTHD();
+        BUSDichVu bDV = new BUSDichVu();
+        BUSPhong bPhong = new BUSPhong();
         DataSet DsHD = new DataSet();
         bool flag = false;
 
@@ -167,7 +169,15 @@ namespace DoAnQLKhachSan
                 {
                     MessageBox.Show("Lỗi");
                 }
-              
+                else if(dtpNgayDen.Value.Month>dtpNgayDi.Value.Month|| dtpNgayDen.Value.Year > dtpNgayDi.Value.Year)
+                {
+                    MessageBox.Show("Lỗi nhập ngày");
+                    
+                } 
+                else if (dtpNgayDen.Value.Day > dtpNgayDi.Value.Day)
+                {
+                    MessageBox.Show("Lỗi ngày");
+                }
                 else
                 {
                    
@@ -202,9 +212,11 @@ namespace DoAnQLKhachSan
                     {
                         TienPhong = Int32.Parse(bHD.TienPhong(Int32.Parse(cboMaPhong.Text)).Rows[0][1].ToString());
                         TongTienPhong = TienPhong * (ThoiGianThue(GioThue));
-                    }    
+                    }
+                        bPhong.phong_CNConTrong(Int32.Parse(cboMaPhong.SelectedValue.ToString()), 1);
                         bHD.HoaDon_Them(ID, txtMaHD.Text, IDNV.ToString(),cboSDT.SelectedValue.ToString(), cboMaPhong.SelectedValue.ToString(), Convert.ToDateTime(DateTime.Now).ToString("yyyy/MM/dd hh:mm"), Convert.ToDateTime(dtpNgayDen.Text).ToString("yyyy/MM/dd hh:mm"), Convert.ToDateTime(dtpNgayDi.Text).ToString("yyyy/MM/dd hh:mm"), cboHinhThucThue.SelectedIndex, TongTienPhong, lblTongTienDV.Text, TongTienPhong, rtxtGhiChu.Text, ThanhToan, HieuLuc);
                         MessageBox.Show("Thêm thành công ");
+                        
                         flag = false;
                         dgvDSHD.DataSource = bHD.HoaDon_Select();
                        
@@ -324,7 +336,9 @@ namespace DoAnQLKhachSan
                 }
                 if (flagg == 1)
                 {
-                    
+
+                    int SLT = (Int32.Parse(bDV.DV_Select(Int32.Parse(cboTenDV.SelectedValue.ToString())).Rows[0][1].ToString()) - int.Parse(txtSoLuong.Text));
+                    bDV.dichvu_capnhatSLTon(cboTenDV.SelectedValue.ToString(), SLT);
                     //Tăng số lượng dịch vụ cùng tên lên
                     int soluong = int.Parse(txtSoLuong.Text) + int.Parse(dgvDSCTHD.Rows[vitri].Cells[3].Value.ToString());
                     bCTHD.CTHD_CongDonSL(gangID, soluong.ToString());
@@ -343,6 +357,8 @@ namespace DoAnQLKhachSan
                 }    
                 else
                 {
+                    int SLT = (Int32.Parse(bDV.DV_Select(Int32.Parse(cboTenDV.SelectedValue.ToString())).Rows[0][1].ToString()) - int.Parse(txtSoLuong.Text));
+                    bDV.dichvu_capnhatSLTon(cboTenDV.SelectedValue.ToString(), SLT);
                     bCTHD.CTHD_Them(TongID, ID_HD, cboTenDV.SelectedValue.ToString(), txtSoLuong.Text, lblDonGia.Text);
                     MessageBox.Show("Thêm dịch vụ thành công ");
                     bCTHD.HienThiDSCTHD(dgvDSCTHD, ID_HD);
@@ -405,6 +421,7 @@ namespace DoAnQLKhachSan
         {
             txtTenNV.Text = this.HoTen;
             txtTenNV.ReadOnly = true;
+            txtTenKH.ReadOnly = true;
             btnChuyenPhong.Enabled = false;
             xulychucnang(true);
             xulytextbox(true);
@@ -454,13 +471,15 @@ namespace DoAnQLKhachSan
             lblDonGia.Text = dgvDSCTHD.Rows[numrow].Cells[4].Value.ToString();
         }
 
-        int ID_CTHD_CellClick;
+        int ID_CTHD_CellClick,SoLuongTon,ID_DichVu;
         private void dgvDSCTHD_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 int vt = dgvDSCTHD.CurrentCell.RowIndex;
                 ID_CTHD_CellClick =Int32.Parse(dgvDSCTHD.Rows[vt].Cells[0].Value.ToString());
+                SoLuongTon= Int32.Parse(dgvDSCTHD.Rows[vt].Cells[3].Value.ToString());
+                ID_DichVu = Int32.Parse(dgvDSCTHD.Rows[vt].Cells[5].Value.ToString());
                 hienthitextbox(vt);
             }
             catch (Exception ex)
@@ -494,9 +513,14 @@ namespace DoAnQLKhachSan
 
         private void btnXoaCTHD_Click(object sender, EventArgs e)
         {
-            bCTHD.CTHD_Xoa(ID_CTHD_CellClick.ToString());
-            MessageBox.Show("Xóa thành công ");
-            bCTHD.HienThiDSCTHD(dgvDSCTHD, ID_HD);
+            if (MessageBox.Show("Bạn có muốn xóa dịch vụ này không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                int SLT = (Int32.Parse(bDV.DV_Select(ID_DichVu).Rows[0][1].ToString()) + SoLuongTon);
+                bDV.dichvu_capnhatSLTon(ID_DichVu.ToString(), SLT);
+                bCTHD.CTHD_Xoa(ID_CTHD_CellClick.ToString());
+                bCTHD.HienThiDSCTHD(dgvDSCTHD, ID_HD);
+            }
+                
         }
 
         int Gio;

@@ -167,7 +167,7 @@ namespace DAO
             return db.ThucHien("HoaDon_CapNhat", name, value, 15);
         }
 
-        public int HoaDon_CapNhatChuyenPhong(int ID,string sophong,int TTP,int TongTien)
+        public int HoaDon_CapNhatChuyenPhong(int ID,int sophong,int TTP,int TongTien)
         {
             name = new string[4];
             value = new object[4];

@@ -13,19 +13,16 @@ namespace BUS
     {
         DAOThongKe TK = new DAOThongKe();
 
-        public DataSet ThongKeTheoNgay(string NgayBD, string NgayKT)
-        {
-             return TK.ThongKeTheoNgay(NgayBD, NgayKT);
-        }
-
-        public DataSet ThongKeDV(string NgayBD, string NgayKT)
-        {
-            return TK.ThongKeDV(NgayBD, NgayKT);
-        }
+       
 
         public DataSet ThongKeSLT()
         {
             return TK.ThongKeSLT();
+        }
+
+        public DataSet ThongKeHD()
+        {
+            return TK.ThongKeHD();
         }
         public DataTable bieudo_select()
         {

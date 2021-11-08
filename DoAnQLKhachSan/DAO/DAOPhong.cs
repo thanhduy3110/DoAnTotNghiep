@@ -81,5 +81,14 @@ namespace DAO
             return db.ThucHien("Phong_Xoa", name, value, 2);
         }
 
+
+        public int phong_CNConTrong(int ID, int ConTrong)
+        {
+            name = new string[2];
+            value = new object[2];
+            name[0] = "@ID"; value[0] = ID;
+            name[1] = "@ConTrong"; value[1] = ConTrong;
+            return db.ThucHien("phong_CNConTrong", name, value, 2);
+        }
     }
 }

@@ -17,7 +17,7 @@ namespace DAO
 
         public void HienThiTenDV(ComboBox cboTenDV, Label lblDonGia)
         {
-            dsCTHD = db.LayDanhSach("select * from DichVu where HieuLuc=1");// truy vấn lên sql
+            dsCTHD = db.LayDanhSach("select * from DichVu where HieuLuc=1 and SLTon > 0");// truy vấn lên sql
             cboTenDV.DataSource = dsCTHD.Tables[0];
             cboTenDV.DisplayMember = "TenDV";
             cboTenDV.ValueMember = "ID";
@@ -27,7 +27,7 @@ namespace DAO
 
         public void HienThiDSCTHD(DataGridView dgvDSCTHD, int ID_HD)
         {
-            string sql = "select CTHD.ID,ID_HD,TenDV,SoLuong,DonGia from CTHD,DichVu where DichVu.ID=CTHD.ID_DV and ID_HD = " + ID_HD;
+            string sql = "select CTHD.ID,ID_HD,TenDV,SoLuong,DonGia,CTHD.ID_DV as ID_DV from CTHD,DichVu where DichVu.ID=CTHD.ID_DV and ID_HD = " + ID_HD;
             dsCTHD = db.LayDanhSach(sql);
             dgvDSCTHD.DataSource = dsCTHD.Tables[0];
         }

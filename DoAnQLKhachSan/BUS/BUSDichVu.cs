@@ -43,5 +43,15 @@ namespace BUS
         {
             return ldv.dichvu_xoa(ID);
         }
+
+        public int dichvu_capnhatSLTon(string ID, int SL)
+        {
+            return ldv.dichvu_capnhatSLTon(ID, SL);
+        }
+        public DataTable DV_Select(int ID)
+        {
+            return ldv.DV_Select(ID);
+        }
+    
+        }
     }
-}
