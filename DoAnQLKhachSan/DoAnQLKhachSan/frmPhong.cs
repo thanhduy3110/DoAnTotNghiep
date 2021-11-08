@@ -263,5 +263,10 @@ namespace DoAnQLKhachSan
             if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
                 e.Handled = true;
         }
+
+        private void txtTim_TextChangeEvent_1(object sender, EventArgs e)
+        {
+            Bphong.HienThiDanhSach(txtTim.TextValue, dgvDSPhong);
+        }
     }
 }

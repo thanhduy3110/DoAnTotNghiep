@@ -77,6 +77,12 @@ namespace DAO
             
         }
 
+        public void HienThiDanhSach(string sTimKiem, DataGridView d)
+        {
+            //dsHoaDon = db.LayDanhSach("select HoaDon.ID,MaHD,NhanVien.HoTen as TenNV,KhachHang.HoTen as TenKH,Phong.SoPhong as SoPhong,NgayLap,NgayDen,NgayDi,dbo.HD_HinhThucThue(HoaDon.HinhThucThue) as HinhThucThue,TongTienPhong,TongTienDV,TongTien,HoaDon.GhiChu,dbo.HD_ThanhToan(HoaDon.ThanhToan) as ThanhToan,dbo.HD_HieuLuc(HoaDon.HieuLuc) as HieuLuc,NhanVien.ID as IDNV,KhachHang.ID as ID_KH from HoaDon,NhanVien,KhachHang,Phong where HoaDon.ID_NV=NhanVien.ID and HoaDon.ID_KH=KhachHang.ID and HoaDon.ID_Phong=Phong.ID and HoaDon.HieuLuc=1 and  NhanVien.HoTen like N'%" + sTimKiem + "%' or KhachHang.HoTen like N'%" + sTimKiem + "%' or SoPhong Phong.SoPhong '%" + sTimKiem + "%'");
+            //d.DataSource = dsHoaDon.Tables[0];
+        }
+
         public DataTable TienPhong(int SoPhong)//rồi, đã xem xong 1 loạt thủ tục ở dal
                                                                      //đây là thủ tục sẽ dùng ở form đăng nhập, với điều kiện là trùng mã tài khoản và mật khẩu. ok?
         {

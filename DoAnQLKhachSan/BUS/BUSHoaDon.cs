@@ -48,11 +48,15 @@ namespace BUS
             return HD.TienPhong(SoPhong);
         }
 
-
+        public void HienThiDanhSach(string sTimKiem, DataGridView d)
+        {
+            HD.HienThiDanhSach(sTimKiem, d);
+        }
         public DataTable HoaDon_Select()
         {
             return HD.HoaDon_Select();
         }
+
 
         public int HoaDon_Them(int ID, string MaHD, string ID_NV, string ID_KH, string ID_Phong, string NgayLap, string NgayDen, string NgayDi, int HinhThucThue, int TTPhong, string TTDV, int TT, string GhiChu, bool TToan, bool HieuLuc)
         {

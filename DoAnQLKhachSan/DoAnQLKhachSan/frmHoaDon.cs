@@ -523,6 +523,11 @@ namespace DoAnQLKhachSan
                 
         }
 
+        private void txtTim_TextChangeEvent(object sender, EventArgs e)
+        {
+            bHD.HienThiDanhSach(txtTim.TextValue, dgvDSHD);
+        }
+
         int Gio;
         int HTT;
         int TienDV;

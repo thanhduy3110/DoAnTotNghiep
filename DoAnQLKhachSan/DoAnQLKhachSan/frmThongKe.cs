@@ -19,9 +19,12 @@ namespace DoAnQLKhachSan
             InitializeComponent();
         }
         BUSThongKe bTK = new BUSThongKe();
+        BUSKhachHang bKH = new BUSKhachHang();
+        BUSNhanVien bNV = new BUSNhanVien();
         private void frmThongKe_Load(object sender, EventArgs e)
         {
             LoadBieuDo();
+            
         }
 
        
@@ -51,16 +54,24 @@ namespace DoAnQLKhachSan
         private void btnThongKe_Click(object sender, EventArgs e)
         {
 
+
+
             if (radioDoanhThuHD.Checked == true)
             {
+                
                 dgvDSThongKe.Columns.Clear();
                 dgvDSThongKe.DataSource = bTK.ThongKeHD();
             }
             else if (radioSLDVTonKho.Checked == true)
             {
+              
                 dgvDSThongKe.Columns.Clear();
                 dgvDSThongKe.DataSource = bTK.ThongKeSLT();
-            }
+            }else if(radioDVPThuongDat.Checked==true)
+            {
+                dgvDSThongKe.Columns.Clear();
+                dgvDSThongKe.DataSource = bTK.ThongKeDV();
+            }    
         }
     }
 }

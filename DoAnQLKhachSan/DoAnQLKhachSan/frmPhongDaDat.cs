@@ -26,6 +26,7 @@ namespace DoAnQLKhachSan
 
         BUSPhongDaDat bPDD = new BUSPhongDaDat();
         BUSHoaDon bHD = new BUSHoaDon();
+        BUSPhieuDatPhong bPhieuDP = new BUSPhieuDatPhong();
         bool flag=false;
         //void Tang_ID()
         //{
@@ -148,7 +149,7 @@ namespace DoAnQLKhachSan
         }
 
 
-        int ID,IDPHONG;
+        int ID,IDPHONG,ID_PhieuDat;
         string TenKH, SDT, HTT, GTN, GTG, ID_KH, SoPhong, NgayDen, NgayDi;
         private void dgvPhongDaDat_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -157,6 +158,7 @@ namespace DoAnQLKhachSan
                 int vt = dgvPhongDaDat.CurrentCell.RowIndex;
                 hienthi_textbox(vt);
                 ID = Int32.Parse(dgvPhongDaDat.Rows[vt].Cells[0].Value.ToString());
+                ID_PhieuDat = Int32.Parse(dgvPhongDaDat.Rows[vt].Cells[1].Value.ToString());
                 TenKH = dgvPhongDaDat.Rows[vt].Cells[2].Value.ToString();
                 SDT = dgvPhongDaDat.Rows[vt].Cells[3].Value.ToString();
                 HTT = dgvPhongDaDat.Rows[vt].Cells[4].Value.ToString();
@@ -218,7 +220,7 @@ namespace DoAnQLKhachSan
                 {
                     HinhTT = 0;
                     TienPhong = Int32.Parse(bHD.TienPhong(Int32.Parse(SoPhong)).Rows[0][0].ToString());
-                    TongTienPhong = TienPhong * (ThoiGianThue(GioThue) / 24);
+                    TongTienPhong = TienPhong * ((ThoiGianThue(GioThue) / 24));
                 }
                 else
                 {
@@ -226,10 +228,14 @@ namespace DoAnQLKhachSan
                     TienPhong = Int32.Parse(bHD.TienPhong(Int32.Parse(SoPhong)).Rows[0][1].ToString());
                     TongTienPhong = TienPhong * (ThoiGianThue(GioThue));
                 }
-                int TangID= bHD.HoaDon_Select().Rows.Count + 2;
+                int TangID = bHD.HoaDon_Select().Rows.Count + 1;
 
                 bHD.HoaDon_Them(TangID, PhatSinhMaTuDong(), IDNV.ToString(), ID_KH, IDPHONG.ToString(), Convert.ToDateTime(DateTime.Now).ToString("yyyy/MM/dd hh:mm"), Convert.ToDateTime(NgayDen).ToString("yyyy/MM/dd hh:mm"), Convert.ToDateTime(NgayDi).ToString("yyyy/MM/dd hh:mm"), HinhTT, TongTienPhong, "0", TongTienPhong, "Không", false, true);
                 bPDD.PhongDaDat_Xoa(ID.ToString());
+                MessageBox.Show("Xác nhận hoàn tất");
+                bPhieuDP.phieudatphong_XuLy(ID_PhieuDat, true);
+                dgvPhongDaDat.DataSource = bPDD.PhongDaDat_Select();
+
             }
                 
 

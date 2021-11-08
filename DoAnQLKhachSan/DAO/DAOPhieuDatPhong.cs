@@ -24,7 +24,7 @@ namespace DAO
         }
         public void HienThiDanhSach(string sTimKiem, DataGridView d)
         {
-            dsPDP = db.LayDanhSach("select PhieuDatPhong.ID,KhachHang.HoTen,NgayDen,NgayDi,dbo.PDD_HinhThucThue(HinhThucThue)as HinhThucThue,SoKhach,GhiChu,dbo.PDD_DaXuLy(DaXuLy)as DaXuLy,dbo.PDD_HieuLuc(PhieuDatPhong.HieuLuc )as HieuLuc  from PhieuDatPhong,KhachHang where PhieuDatPhong.ID_KH=KhachHang.ID and PhieuDatPhong.HieuLuc=1 and HoTen like '%" + sTimKiem + "%'");
+            dsPDP = db.LayDanhSach("select PhieuDatPhong.ID,KhachHang.HoTen,NgayDen,NgayDi,dbo.PDD_HinhThucThue(HinhThucThue)as HinhThucThue,SoKhach,GhiChu,dbo.PDD_DaXuLy(DaXuLy)as DaXuLy,dbo.PDD_HieuLuc(PhieuDatPhong.HieuLuc )as HieuLuc  from PhieuDatPhong,KhachHang where PhieuDatPhong.ID_KH=KhachHang.ID and PhieuDatPhong.HieuLuc=1 and KhachHang.HoTen like '%" + sTimKiem + "%'");
             d.DataSource = dsPDP.Tables[0];
         }
         public DataTable phieudatphong_select()
@@ -76,6 +76,15 @@ namespace DAO
             name[0] = "@ID"; value[0] = ID;
             name[1] = "@HieuLuc"; value[1] = HieuLuc;
             return db.ThucHien("PDP_Xoa", name, value, 2);
+        }
+
+        public int phieudatphong_XuLy(int ID, bool DaXuLy)
+        {
+            name = new string[2];
+            value = new object[2];
+            name[0] = "@ID"; value[0] = ID;
+            name[1] = "@DaXuLy"; value[1] = DaXuLy;
+            return db.ThucHien("phieudatphong_XuLy", name, value, 2);
         }
 
     }

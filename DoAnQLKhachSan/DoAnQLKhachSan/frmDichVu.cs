@@ -61,6 +61,8 @@ namespace DoAnQLKhachSan
             txtSLTon.ReadOnly = t;
             rtxtGhiChu.ReadOnly = t;
         }
+
+       
         private void btnThem_Click_1(object sender, EventArgs e)
         {
            

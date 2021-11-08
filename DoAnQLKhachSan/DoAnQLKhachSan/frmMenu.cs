@@ -54,12 +54,22 @@ namespace DoAnQLKhachSan
         }
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Bạn có muốn thoát không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+                frmLogin fLG = new frmLogin();
+                fLG.Show();
+            }
+                
         }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            closefrom(new frmMenu());
+            if (MessageBox.Show("Bạn có muốn trở về menu chính không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                closefrom(new frmMenu());
+            }
+            
         }
 
         private void btnLoaiNV_Click(object sender, EventArgs e)
@@ -163,7 +173,27 @@ namespace DoAnQLKhachSan
 
         private void frmMenu_Load(object sender, EventArgs e)
         {
-
+            if(this.ID==1)
+            {
+                btnNhanVien.Enabled = false;
+                btnLoaiNV.Enabled = false;
+                btnDichVu.Enabled = false;
+                btnLoaiDV.Enabled = false;
+                btnLoaiPhong.Enabled = false;
+                btnThongKe.Enabled = false;
+            }else if(this.ID==2)
+            {
+                btnNhanVien.Enabled = false;
+                btnDichVu.Enabled = false;
+                btnLoaiDV.Enabled = false;
+                btnLoaiPhong.Enabled = false;
+                btnThongKe.Enabled = false;
+                btnPhong.Enabled = false;
+                btnPhieuDatPhong.Enabled = false;
+                btnPhongDaDat.Enabled = false;
+                btnLoaiNV.Enabled = false;
+                btnKhachHang.Enabled = false;
+            }    
         }
 
         private void btnDoiMatKhau_Click(object sender, EventArgs e)

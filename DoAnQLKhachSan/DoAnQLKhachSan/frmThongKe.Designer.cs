@@ -29,19 +29,18 @@ namespace DoAnQLKhachSan
         /// </summary>
         private void InitializeComponent()
         {
+            ePOSOne.btnProduct.Button_WOC btnThongKe;
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            ePOSOne.btnProduct.Button_WOC btnThongKe;
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioDoanhThuHD = new System.Windows.Forms.RadioButton();
-            this.radioDVPThuongDat = new System.Windows.Forms.RadioButton();
-            this.dgvDSThongKe = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.radioSLDVTonKho = new System.Windows.Forms.RadioButton();
+            this.radioDVPThuongDat = new System.Windows.Forms.RadioButton();
+            this.radioDoanhThuHD = new System.Windows.Forms.RadioButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dgvDSThongKe = new System.Windows.Forms.DataGridView();
             btnThongKe = new ePOSOne.btnProduct.Button_WOC();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -49,6 +48,33 @@ namespace DoAnQLKhachSan
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSThongKe)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btnThongKe
+            // 
+            btnThongKe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            btnThongKe.BorderColor = System.Drawing.Color.Black;
+            btnThongKe.ButtonColor = System.Drawing.Color.Lime;
+            btnThongKe.CausesValidation = false;
+            btnThongKe.Cursor = System.Windows.Forms.Cursors.Default;
+            btnThongKe.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            btnThongKe.FlatAppearance.BorderSize = 0;
+            btnThongKe.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            btnThongKe.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            btnThongKe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnThongKe.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnThongKe.ForeColor = System.Drawing.Color.White;
+            btnThongKe.Location = new System.Drawing.Point(36, 368);
+            btnThongKe.Name = "btnThongKe";
+            btnThongKe.OnHoverBorderColor = System.Drawing.Color.Red;
+            btnThongKe.OnHoverButtonColor = System.Drawing.Color.Yellow;
+            btnThongKe.OnHoverTextColor = System.Drawing.Color.Black;
+            btnThongKe.Size = new System.Drawing.Size(194, 48);
+            btnThongKe.TabIndex = 176;
+            btnThongKe.Text = "Xác nhận thống kê";
+            btnThongKe.TextColor = System.Drawing.Color.Black;
+            btnThongKe.UseVisualStyleBackColor = true;
+            btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
             // groupBox4
             // 
@@ -92,27 +118,16 @@ namespace DoAnQLKhachSan
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thống kê";
             // 
-            // groupBox2
+            // radioSLDVTonKho
             // 
-            this.groupBox2.Controls.Add(this.dgvDSThongKe);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(0, 438);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(768, 344);
-            this.groupBox2.TabIndex = 8;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Danh sách thống kê";
-            // 
-            // radioDoanhThuHD
-            // 
-            this.radioDoanhThuHD.AutoSize = true;
-            this.radioDoanhThuHD.Location = new System.Drawing.Point(36, 73);
-            this.radioDoanhThuHD.Name = "radioDoanhThuHD";
-            this.radioDoanhThuHD.Size = new System.Drawing.Size(223, 28);
-            this.radioDoanhThuHD.TabIndex = 0;
-            this.radioDoanhThuHD.TabStop = true;
-            this.radioDoanhThuHD.Text = "Doanh thu hóa đơn";
-            this.radioDoanhThuHD.UseVisualStyleBackColor = true;
+            this.radioSLDVTonKho.AutoSize = true;
+            this.radioSLDVTonKho.Location = new System.Drawing.Point(36, 200);
+            this.radioSLDVTonKho.Name = "radioSLDVTonKho";
+            this.radioSLDVTonKho.Size = new System.Drawing.Size(282, 28);
+            this.radioSLDVTonKho.TabIndex = 0;
+            this.radioSLDVTonKho.TabStop = true;
+            this.radioSLDVTonKho.Text = "Số lượng dịch vụ tồn kho";
+            this.radioSLDVTonKho.UseVisualStyleBackColor = true;
             // 
             // radioDVPThuongDat
             // 
@@ -125,63 +140,38 @@ namespace DoAnQLKhachSan
             this.radioDVPThuongDat.Text = "Dịch vụ phòng thường đặt";
             this.radioDVPThuongDat.UseVisualStyleBackColor = true;
             // 
+            // radioDoanhThuHD
+            // 
+            this.radioDoanhThuHD.AutoSize = true;
+            this.radioDoanhThuHD.Location = new System.Drawing.Point(36, 73);
+            this.radioDoanhThuHD.Name = "radioDoanhThuHD";
+            this.radioDoanhThuHD.Size = new System.Drawing.Size(223, 28);
+            this.radioDoanhThuHD.TabIndex = 0;
+            this.radioDoanhThuHD.TabStop = true;
+            this.radioDoanhThuHD.Text = "Doanh thu hóa đơn";
+            this.radioDoanhThuHD.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dgvDSThongKe);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(0, 438);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(768, 344);
+            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Danh sách thống kê";
+            // 
             // dgvDSThongKe
             // 
             this.dgvDSThongKe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDSThongKe.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDSThongKe.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDSThongKe.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgvDSThongKe.Location = new System.Drawing.Point(3, 28);
             this.dgvDSThongKe.Name = "dgvDSThongKe";
             this.dgvDSThongKe.RowHeadersWidth = 51;
             this.dgvDSThongKe.RowTemplate.Height = 24;
             this.dgvDSThongKe.Size = new System.Drawing.Size(762, 313);
             this.dgvDSThongKe.TabIndex = 0;
-            // 
-            // radioSLDVTonKho
-            // 
-            this.radioSLDVTonKho.AutoSize = true;
-            this.radioSLDVTonKho.Location = new System.Drawing.Point(36, 200);
-            this.radioSLDVTonKho.Name = "radioSLDVTonKho";
-            this.radioSLDVTonKho.Size = new System.Drawing.Size(282, 28);
-            this.radioSLDVTonKho.TabIndex = 0;
-            this.radioSLDVTonKho.TabStop = true;
-            this.radioSLDVTonKho.Text = "Số lượng dịch vụ tồn kho";
-            this.radioSLDVTonKho.UseVisualStyleBackColor = true;
-            // 
-            // btnThongKe
-            // 
-            btnThongKe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            btnThongKe.BorderColor = System.Drawing.Color.Black;
-            btnThongKe.ButtonColor = System.Drawing.Color.Lime;
-            btnThongKe.CausesValidation = false;
-            btnThongKe.Cursor = System.Windows.Forms.Cursors.Default;
-            btnThongKe.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            btnThongKe.FlatAppearance.BorderSize = 0;
-            btnThongKe.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            btnThongKe.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            btnThongKe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnThongKe.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            btnThongKe.ForeColor = System.Drawing.Color.White;
-            btnThongKe.Location = new System.Drawing.Point(36, 368);
-            btnThongKe.Name = "btnThongKe";
-            btnThongKe.OnHoverBorderColor = System.Drawing.Color.Red;
-            btnThongKe.OnHoverButtonColor = System.Drawing.Color.Yellow;
-            btnThongKe.OnHoverTextColor = System.Drawing.Color.Black;
-            btnThongKe.Size = new System.Drawing.Size(194, 48);
-            btnThongKe.TabIndex = 176;
-            btnThongKe.Text = "Xác nhận thống kê";
-            btnThongKe.TextColor = System.Drawing.Color.Black;
-            btnThongKe.UseVisualStyleBackColor = true;
-            btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
             // frmThongKe
             // 
@@ -216,6 +206,6 @@ namespace DoAnQLKhachSan
         private System.Windows.Forms.RadioButton radioSLDVTonKho;
         private System.Windows.Forms.RadioButton radioDVPThuongDat;
         private System.Windows.Forms.RadioButton radioDoanhThuHD;
-        private DevComponents.DotNetBar.Controls.DataGridViewX dgvDSThongKe;
+        private System.Windows.Forms.DataGridView dgvDSThongKe;
     }
 }

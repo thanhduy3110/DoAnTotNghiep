@@ -36,7 +36,7 @@ namespace DoAnQLKhachSan
       
             else if (flag == true)
             {
-                if (cboTenKH.Text == "" || dtNgayDen.Text == "" || dtNgayDi.Text == ""  || txtSoKH.Text == "" || rtxtGhiChu.Text == "" )
+                if (cboTenKH.Text == "" || dtNgayDen.Text == "" || dtNgayDi.Text == ""  || txtSoKH.Text == ""  )
                 {
                     MessageBox.Show("Lỗi");
                 }
@@ -71,7 +71,7 @@ namespace DoAnQLKhachSan
                     }
                     string TangID = (bpdp.PDP_Select().Rows.Count + 1).ToString();
                     bpdp.PDP_Them(TangID, cboTenKH.SelectedValue.ToString(), dtNgayDen.Text, dtNgayDi.Text, HinhThucThue, txtSoKH.Text, rtxtGhiChu.Text, DaXuLy, HieuLuc);
-                    MessageBox.Show("thêm thành công rồi nè");
+                    MessageBox.Show("thêm thành công");
                     flag = false;
                     dgvPhieuDatPhong.DataSource = bpdp.PDP_Select();
                 }
@@ -114,7 +114,7 @@ namespace DoAnQLKhachSan
                     HinhThucThue = false;
                 }
                 bpdp.PDP_CapNhat(ID.ToString(), cboTenKH.SelectedValue.ToString(), dtNgayDen.Text, dtNgayDi.Text, HinhThucThue, txtSoKH.Text, rtxtGhiChu.Text, DaXuLy, HieuLuc);
-                MessageBox.Show("thêm thành công rồi nè");
+                MessageBox.Show("Sửa thêm thành công");
                 flag = false;
                 dgvPhieuDatPhong.DataSource = bpdp.PDP_Select();
             }
@@ -227,6 +227,9 @@ namespace DoAnQLKhachSan
             bpdp.HienThiDanhSach(txtTim.TextValue, dgvPhieuDatPhong);
         }
 
-       
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

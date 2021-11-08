@@ -24,7 +24,7 @@ namespace DAO
 
         public void HienThiDanhSach(string sTimKiem,DataGridView d)
         {
-            dsNhanVien = db.LayDanhSach("select NhanVien.ID,TenLoaiNV,MaNV,MatKhau,HoTen,NgaySinh,SDT,DiaChi,Email,CMND,dbo.NV_GioiTinh(GioiTinh) as GioiTinh,HinhAnh,dbo.NV_HieuLuc(NhanVien.HieuLuc) as HieuLuc from NhanVien,LoaiNV where NhanVien.ID_LoaiNV=LoaiNV.ID and NhanVien.HieuLuc = 1 and MaNV like '%" + sTimKiem + "%' or HoTen like N'%" + sTimKiem + "%' or SDT like '%" + sTimKiem + "%' or CMND like '%"+sTimKiem+"%'");
+            dsNhanVien = db.LayDanhSach("select NhanVien.ID,TenLoaiNV,MaNV,MatKhau,HoTen,NgaySinh,SDT,DiaChi,Email,CMND,dbo.NV_GioiTinh(GioiTinh) as GioiTinh,HinhAnh,dbo.NV_HieuLuc(NhanVien.HieuLuc) as HieuLuc from NhanVien,LoaiNV where NhanVien.ID_LoaiNV=LoaiNV.ID and NhanVien.HieuLuc = 1 and MaNV like '%" + sTimKiem + "%' or HoTen like N'%" + sTimKiem + "%'  or CMND like '%"+sTimKiem+"%'");
             d.DataSource = dsNhanVien.Tables[0];
         }
         //khai báo 2 mảng để truyền tên tham số và giá trị tham số vào stored procedures

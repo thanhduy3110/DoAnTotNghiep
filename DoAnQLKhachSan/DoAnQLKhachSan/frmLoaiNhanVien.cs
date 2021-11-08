@@ -44,6 +44,19 @@ namespace DoAnQLKhachSan
             btnXoa.Enabled = t;
             btnSua.Enabled = t;
         }
+        void xulychucnangThem(Boolean t)
+        {
+            btnThem.Enabled = t;
+            btnXoa.Enabled = !t;
+            btnSua.Enabled = !t;
+        }
+
+        void xulychucnangSua(Boolean t)
+        {
+            btnThem.Enabled = !t;
+            btnXoa.Enabled = !t;
+            btnSua.Enabled = t;
+        }
 
         void xulytextbox(Boolean t)
         {
@@ -73,7 +86,7 @@ namespace DoAnQLKhachSan
             if (flag == false)
             {
                 clear_textbox();
-                xulytextbox(false);
+                xulychucnangThem(true);
                 chkHieuLuc.Checked = true;
                 flag = true;
             }
@@ -99,6 +112,7 @@ namespace DoAnQLKhachSan
                     MessageBox.Show("Thêm thành công ");
                     flag = false;
                     xulytextbox(true);
+                    xulychucnang(true);
                     dgvDSLoaiNV.DataSource = bLNV.LoaiNV_selecl();
                     
                 }
@@ -125,6 +139,7 @@ namespace DoAnQLKhachSan
             //xulytextbox(false);
             if (flag==false)
             {
+                xulychucnangSua(true);
                 xulytextbox(false);
                 flag = true;
             }
@@ -144,6 +159,7 @@ namespace DoAnQLKhachSan
                 MessageBox.Show("Sữa thành công ");
                 flag = false;
                 xulytextbox(true);
+                xulychucnang(true);
                 dgvDSLoaiNV.DataSource = bLNV.LoaiNV_selecl();
             }
         }
@@ -154,7 +170,7 @@ namespace DoAnQLKhachSan
         {
             dgvDSLoaiNV.DataSource = bLNV.LoaiNV_selecl();
             xulychucnang(true);
-            xulytextbox(true);
+           
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)

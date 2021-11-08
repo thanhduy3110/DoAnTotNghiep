@@ -15,19 +15,25 @@ namespace BUS
 
        
 
-        public DataSet ThongKeSLT()
+        public DataTable ThongKeSLT()
         {
             return TK.ThongKeSLT();
         }
 
-        public DataSet ThongKeHD()
+        public DataTable ThongKeHD()
         {
             return TK.ThongKeHD();
+        }
+        public DataTable ThongKeDV()
+        {
+            return TK.ThongKeDV();
         }
         public DataTable bieudo_select()
         {
             return TK.bieudo_select();
         }
+
+
 
     }
 }

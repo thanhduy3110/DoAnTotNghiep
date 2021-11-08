@@ -42,5 +42,10 @@ namespace BUS
         {
             return pdp.phieudatphong_xoa(ID, HieuLuc);
         }
+
+        public int phieudatphong_XuLy(int ID, bool DaXyLy)
+        {
+            return pdp.phieudatphong_XuLy(ID, DaXyLy);
         }
+    }
 }

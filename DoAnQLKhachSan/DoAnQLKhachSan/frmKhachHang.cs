@@ -86,7 +86,10 @@ namespace DoAnQLKhachSan
             txtSDT.ReadOnly = t;
             txtEmail.ReadOnly = t;
             txtQT.ReadOnly = t;
+            
         }
+
+      
         private void btnThem_Click_1(object sender, EventArgs e)
         {
             if(flag==false)
