@@ -52,7 +52,7 @@ namespace DAO
         public void HienThiMaPhong(ComboBox cboMaPhong)
         {
 
-            dsHoaDon = db.LayDanhSach("select ID,SoPhong from Phong");// truy vấn lên sql
+            dsHoaDon = db.LayDanhSach("select ID,SoPhong from Phong where ConTrong=0");// truy vấn lên sql
             cboMaPhong.DataSource = dsHoaDon.Tables[0];
             cboMaPhong.DisplayMember = "SoPhong";
             cboMaPhong.ValueMember = "ID";

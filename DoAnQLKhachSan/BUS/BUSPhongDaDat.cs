@@ -19,9 +19,9 @@ namespace BUS
         {
             PDD.HienThiDanhSach(sTimKiem, d);
         }
-        public void HienThiMaPhong(ComboBox cboMaPhong)
+        public void HienThiMaPhong(ComboBox cboMaPhong, TextBox txtSoKhach)
         {
-            PDD.HienThiMaPhong(cboMaPhong);
+            PDD.HienThiMaPhong(cboMaPhong, txtSoKhach);
         }
 
         public void HienThiID_PDD(ComboBox cboID_PDD, DateTimeInput dtpNgayDen, DateTimeInput dtpNgayDi)
@@ -39,9 +39,9 @@ namespace BUS
             return PDD.PhongDaDat_Select();
         }
 
-        public int PhongDaDat_Them(string ID, string ID_PhieuDP, string ID_Phong, string NgayDen, string NgayDi)
+        public int PhongDaDat_Them( string ID_PhieuDP, string ID_Phong, string NgayDen, string NgayDi)
         {
-            return PDD.PhongDaDat_Them(ID, ID_PhieuDP, ID_Phong, NgayDen, NgayDi);
+            return PDD.PhongDaDat_Them( ID_PhieuDP, ID_Phong, NgayDen, NgayDi);
         }
 
         public int PhongDaDat_CapNhat(string ID, string ID_PhieuDP, string ID_Phong, string NgayDen, string NgayDi)

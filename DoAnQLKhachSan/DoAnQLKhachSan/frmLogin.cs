@@ -142,5 +142,13 @@ namespace DoAnQLKhachSan
         {
             this.Close();
         }
+
+        private void cboSDT_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+            {
+                bLG.HienSDT(cboSDT, txtMaNV);
+            }    
+        }
     }
 }

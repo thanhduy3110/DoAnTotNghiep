@@ -216,7 +216,7 @@ namespace DoAnQLKhachSan
                         {
                             ThanhToan = false;
                         }
-                        int ID = dgvDSHD.Rows.Count + 1;
+                        int ID = bHD.HoaDon_Select().Rows.Count+1;
 
                      
                     if(cboHinhThucThue.Text=="Thuê theo ngày")

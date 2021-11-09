@@ -27,7 +27,7 @@ namespace DoAnQLKhachSan
             {
                 clear_textbox();
                
-                chkHieuLuc.Checked = false;
+                chkHieuLuc.Checked = true;
                 chkDaXuLy.Checked = false;
                 radioGio.Checked = false;
                 radioNgay.Checked = false;
@@ -36,14 +36,15 @@ namespace DoAnQLKhachSan
       
             else if (flag == true)
             {
-                if (cboTenKH.Text == "" || dtNgayDen.Text == "" || dtNgayDi.Text == ""  || txtSoKH.Text == ""  )
+                if ( dtNgayDen.Text == "" || dtNgayDi.Text == ""  || txtSoKH.Text == ""  )
                 {
                     MessageBox.Show("Lỗi");
                 }
                 else
                 {
 
-                    bool HinhThucThue=false, DaXuLy, HieuLuc;
+                    bool  DaXuLy, HieuLuc;
+                    bool HinhThucThue=false;
                     if(chkDaXuLy.Checked==true)
                     {
                         DaXuLy = true;
@@ -70,7 +71,7 @@ namespace DoAnQLKhachSan
                         HinhThucThue = false;
                     }
                     string TangID = (bpdp.PDP_Select().Rows.Count + 1).ToString();
-                    bpdp.PDP_Them(TangID, cboTenKH.SelectedValue.ToString(), Convert.ToDateTime(dtNgayDen.Text).ToString("yyyy-MM-dd") , Convert.ToDateTime(dtNgayDi.Text).ToString("yyyy-MM-dd"), HinhThucThue, txtSoKH.Text, rtxtGhiChu.Text, DaXuLy, HieuLuc);
+                    bpdp.PDP_Them(TangID, cboSODTKH.SelectedValue.ToString(), Convert.ToDateTime(dtNgayDen.Text).ToString("yyyy-MM-dd") , Convert.ToDateTime(dtNgayDi.Text).ToString("yyyy-MM-dd"), HinhThucThue, txtSoKH.Text, rtxtGhiChu.Text, DaXuLy, HieuLuc);
                     MessageBox.Show("thêm thành công");
                     flag = false;
                     dgvPhieuDatPhong.DataSource = bpdp.PDP_Select();
@@ -113,7 +114,7 @@ namespace DoAnQLKhachSan
                 {
                     HinhThucThue = false;
                 }
-                bpdp.PDP_CapNhat(ID.ToString(), cboTenKH.SelectedValue.ToString(), dtNgayDen.Text, dtNgayDi.Text, HinhThucThue, txtSoKH.Text, rtxtGhiChu.Text, DaXuLy, HieuLuc);
+                bpdp.PDP_CapNhat(ID.ToString(), cboSODTKH.SelectedValue.ToString(), Convert.ToDateTime(dtNgayDen.Text).ToString("yyyy-MM-dd"), Convert.ToDateTime(dtNgayDi.Text).ToString("yyyy-MM-dd"), HinhThucThue, txtSoKH.Text, rtxtGhiChu.Text, DaXuLy, HieuLuc);
                 MessageBox.Show("Sửa thêm thành công");
                 flag = false;
                 dgvPhieuDatPhong.DataSource = bpdp.PDP_Select();
@@ -134,14 +135,16 @@ namespace DoAnQLKhachSan
 
         private void frmPhieuDatPhong_Load(object sender, EventArgs e)
         {
-            bpdp.HienThiID_KH(cboTenKH);
+            //bpdp.HienThiID_KH(cboTenKH);
+            txtTenKH.ReadOnly = true;
+            bpdp.HienThiSDT(cboSODTKH, txtTenKH);
             dgvPhieuDatPhong.DataSource = bpdp.PDP_Select();
         }
 
         void hienthi_textbox(int numrow)
         {
            
-            cboTenKH.Text = dgvPhieuDatPhong.Rows[numrow].Cells[1].Value.ToString();
+            //cboTenKH.Text = dgvPhieuDatPhong.Rows[numrow].Cells[1].Value.ToString();
             dtNgayDen.Text = dgvPhieuDatPhong.Rows[numrow].Cells[2].Value.ToString();
             dtNgayDi.Text = dgvPhieuDatPhong.Rows[numrow].Cells[3].Value.ToString();
             string HTT = dgvPhieuDatPhong.Rows[numrow].Cells[4].Value.ToString();
@@ -199,7 +202,7 @@ namespace DoAnQLKhachSan
         //}
         void clear_textbox()
         {
-            cboTenKH.Text = "";
+            
             dtNgayDen.Text = "";
             dtNgayDi.Text = "";            
             txtSoKH.Text = "";

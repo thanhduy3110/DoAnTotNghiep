@@ -666,11 +666,7 @@ C:\Users\USER\source\repos\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug
 C:\Users\USER\source\repos\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\USER\source\repos\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\obj\Debug\DoAnQLKhachSan.frmReport.resources
 C:\Users\USER\source\repos\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\obj\Debug\DoAnQLKhachSan.frmThongKe.resources
-D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\Bunifu.UI.WinForms.BunifuCheckBox.xml
-D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\Bunifu.UI.WinForms.BunifuCircleProgress.xml
-D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\Bunifu.UI.WinForms.BunifuFormDock.xml
-D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\Bunifu.UI.WinForms.BunifuSlider.xml
-D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\DevExpress.Pdf.v19.2.Core.xml
+D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\SqlServerTypes\x64\msvcr120.dll
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\SqlServerTypes\x86\msvcr120.dll
@@ -777,10 +773,13 @@ D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\Bunifu.Ch
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\Bunifu.Dataviz.WinForms.xml
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\Bunifu.UI.WinForms.1.5.3.xml
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\Bunifu.UI.WinForms.BunifuButton.xml
+D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\Bunifu.UI.WinForms.BunifuCheckBox.xml
+D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\Bunifu.UI.WinForms.BunifuCircleProgress.xml
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\Bunifu.UI.WinForms.BunifuColorTransition.xml
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\Bunifu.UI.WinForms.BunifuDataGridView.xml
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\Bunifu.UI.WinForms.BunifuDatePicker.xml
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\Bunifu.UI.WinForms.BunifuDropdown.xml
+D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\Bunifu.UI.WinForms.BunifuFormDock.xml
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\Bunifu.UI.WinForms.BunifuGauge.xml
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\Bunifu.UI.WinForms.BunifuGradientPanel.xml
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\Bunifu.UI.WinForms.BunifuGroupBox.xml
@@ -796,6 +795,7 @@ D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\Bunifu.UI
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\Bunifu.UI.WinForms.BunifuSeparator.xml
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\Bunifu.UI.WinForms.BunifuShadowPanel.xml
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\Bunifu.UI.WinForms.BunifuShapes.xml
+D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\Bunifu.UI.WinForms.BunifuSlider.xml
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\Bunifu.UI.WinForms.BunifuSnackbar.xml
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\Bunifu.UI.WinForms.BunifuTextBox.xml
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\Bunifu.UI.WinForms.BunifuToggleSwitch.xml
@@ -838,6 +838,7 @@ D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\System.Ru
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\DAO.pdb
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\DAO.exe.config
+D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\DevExpress.Pdf.v19.2.Core.xml
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\de\DevExpress.Data.v19.2.resources.dll
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\es\DevExpress.Data.v19.2.resources.dll
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\ja\DevExpress.Data.v19.2.resources.dll
@@ -888,7 +889,6 @@ D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\de\Micros
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
-D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
 D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll

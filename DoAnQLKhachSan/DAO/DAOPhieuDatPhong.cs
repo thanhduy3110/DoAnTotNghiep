@@ -17,10 +17,21 @@ namespace DAO
         object[] value = { };
         public void HienThiID_KH(ComboBox cboID_KH)
         {
-            dsID_KH = db.LayDanhSach("select ID,HoTen from KhachHang");// truy vấn lên sql
+            dsID_KH = db.LayDanhSach("select ID,HoTen from KhachHang where HieuLuc=1");// truy vấn lên sql
             cboID_KH.DataSource = dsID_KH.Tables[0];
             cboID_KH.DisplayMember = "hoten";
             cboID_KH.ValueMember = "id";
+        }
+
+        public void HienThiSDT(ComboBox cboSDT,TextBox txtTenKH)
+        {
+            DataSet dsSDT = new DataSet();
+            dsSDT = db.LayDanhSach("select ID,SDT,HoTen from KhachHang where HieuLuc=1");// truy vấn lên sql
+            cboSDT.DataSource = dsSDT.Tables[0];
+            cboSDT.DisplayMember = "SDT";
+            cboSDT.ValueMember = "id";
+            txtTenKH.DataBindings.Add("Text", cboSDT.DataSource, "HoTen");
+
         }
         public void HienThiDanhSach(string sTimKiem, DataGridView d)
         {

@@ -16,12 +16,13 @@ namespace DAO
         DataSet dsPDD = new DataSet();
         string[] name = { };
         object[] value = { };
-        public void HienThiMaPhong(ComboBox cboMaPhong)
+        public void HienThiMaPhong(ComboBox cboMaPhong,TextBox txtSoKhach)
         {
-            ds = db.LayDanhSach("select ID, SoPhong from Phong");// truy vấn lên sql
+            ds = db.LayDanhSach("select Phong.ID as ID , SoPhong , SoKhach from Phong, LoaiPhong where Phong.ID_LoaiPhong = LoaiPhong.ID and Phong.ConTrong=0");// truy vấn lên sql
             cboMaPhong.DataSource = ds.Tables[0];
             cboMaPhong.DisplayMember = "sophong";
             cboMaPhong.ValueMember = "id";
+            txtSoKhach.DataBindings.Add("Text", cboMaPhong.DataSource, "sokhach");
         }
 
         public void HienThiID_PDD(ComboBox cboID_PDD, DateTimeInput dtpNgayDen, DateTimeInput dtpNgayDi)
@@ -53,7 +54,7 @@ namespace DAO
         public void HienThiSDT(ComboBox cboSDT, DateTimeInput dtpNgayDen, DateTimeInput dtpNgayDi, TextBox txtHoTen)
         {
             DataSet dsKH = new DataSet();
-            dsKH = db.LayDanhSach("select PDD.ID as ID,SDT,KH.HoTen as HoTenKH,PDP.NgayDen as NgayDen,PDP.NgayDi as NgayDi,PDP.HinhThucThue as HTT,Phong.GiaThueGio as GTG,Phong.GiaThueNgay as GTN,Phong.SoPhong,PDP.ID as ID_PhieuDP,ID_KH  from KhachHang KH, PhieuDatPhong PDP, PhongDaDat PDD, Phong where KH.ID = PDP.ID_KH and PDD.ID_PhieuDP = PDP.ID and Phong.ID = PDD.ID_Phong");// truy vấn lên sql
+            dsKH = db.LayDanhSach("select PDP.ID as ID_PhieuDP,PDP.HinhThucThue as HTT,KH.HoTen as HoTenKH,SDT, PDP.NgayDen as NgayDen, PDP.NgayDi as NgayDi from PhieuDatPhong PDP, KhachHang KH where KH.ID = PDP.ID_KH");// truy vấn lên sql
             cboSDT.DataSource = dsKH.Tables[0];
             cboSDT.DisplayMember = "SDT";
             cboSDT.ValueMember = "ID_PhieuDP";
@@ -63,22 +64,23 @@ namespace DAO
         }
 
 
+       
         public DataTable PhongDaDat_Select()
         {
             return db.Laydulieu("PhongDaDat_Select");
         }
 
-        public int PhongDaDat_Them(string ID, string ID_PhieuDP, string ID_Phong, string NgayDen, string NgayDi)
+        public int PhongDaDat_Them( string ID_PhieuDP, string ID_Phong, string NgayDen, string NgayDi)
         {
-            name = new string[5];
-            value = new object[5];
+            name = new string[4];
+            value = new object[4];
 
-            name[0] = "@ID"; value[0] = ID;
-            name[1] = "@ID_PhieuDP"; value[1] = ID_PhieuDP;
-            name[2] = "@ID_Phong"; value[2] = ID_Phong;
-            name[3] = "@NgayDen"; value[3] = NgayDen;
-            name[4] = "@NgayDi"; value[4] = NgayDi;
-            return db.ThucHien("PhongDaDat_Them", name, value, 5);
+            //name[0] = "@ID"; value[0] = ID;
+            name[0] = "@ID_PhieuDP"; value[0] = ID_PhieuDP;
+            name[1] = "@ID_Phong"; value[1] = ID_Phong;
+            name[2] = "@NgayDen"; value[2] = NgayDen;
+            name[3] = "@NgayDi"; value[3] = NgayDi;
+            return db.ThucHien("PhongDaDat_Them", name, value, 4);
         }
         public int PhongDaDat_CapNhat(string ID, string ID_PhieuDP, string ID_Phong, string NgayDen, string NgayDi)
         {

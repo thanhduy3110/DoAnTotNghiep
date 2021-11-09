@@ -18,7 +18,11 @@ namespace BUS
         {
             pdp.HienThiDanhSach(sTimKiem, d);
         }
-        public void HienThiID_KH(ComboBox cboID_KH)
+        public void HienThiSDT(ComboBox cboSDT, TextBox txtTenKH)
+        {
+            pdp.HienThiSDT(cboSDT, txtTenKH);
+        }
+            public void HienThiID_KH(ComboBox cboID_KH)
         {
             pdp.HienThiID_KH(cboID_KH);
         }

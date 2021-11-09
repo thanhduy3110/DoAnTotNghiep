@@ -114,7 +114,6 @@
             // 
             this.cboSDT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.cboSDT.DisplayMember = "MaNV";
-            this.cboSDT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSDT.ForeColor = System.Drawing.Color.White;
             this.cboSDT.FormattingEnabled = true;
@@ -123,6 +122,7 @@
             this.cboSDT.Size = new System.Drawing.Size(409, 39);
             this.cboSDT.TabIndex = 6;
             this.cboSDT.ValueMember = "MaNV";
+            this.cboSDT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboSDT_KeyDown);
             // 
             // pictureBox4
             // 
