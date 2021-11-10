@@ -223,7 +223,7 @@ namespace DoAnQLKhachSan
                         }
                         int ID = bHD.HoaDon_Select().Rows.Count+1;
 
-                     
+                    
                     if(cboHinhThucThue.Text=="Thuê theo ngày")
                     {
                         TienPhong = Int32.Parse(bHD.TienPhong(Int32.Parse(cboMaPhong.Text)).Rows[0][0].ToString());
@@ -234,7 +234,28 @@ namespace DoAnQLKhachSan
                         TienPhong = Int32.Parse(bHD.TienPhong(Int32.Parse(cboMaPhong.Text)).Rows[0][1].ToString());
                         TongTienPhong = TienPhong * (ThoiGianThue(GioThue));
                     }
-                        bPhong.phong_CNConTrong(Int32.Parse(cboMaPhong.SelectedValue.ToString()), 1);
+                    int r = dgvDSHD.CurrentCell.RowIndex;
+                    if (dgvDSHD.Rows.Count > 0)
+                    {
+                        if (cboMaPhong.Text == dgvDSHD.Rows[r].Cells[4].Value.ToString())//so sánh txtSDT với SDT dòng numrow ở dgv
+                        {
+                            //nêu bằng thì bỏ qua bước này
+                            //nêu không bằng nhau thì xuống else
+                        }
+                        else
+                        {
+                            for (int i = 0; i < dgvDSHD.Rows.Count - 1; i++)//vòng lặp
+                            {
+                                if (cboMaPhong.Text == dgvDSHD.Rows[i].Cells[4].Value.ToString())//so sánh txtSDT với từng dòng trong dgv
+                                {
+                                    //nêu txtSDT bằng với một hàng thì đã tồn tại
+                                    MessageBox.Show("Phòng này đã có khách thuê rồi");
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                    bPhong.phong_CNConTrong(Int32.Parse(cboMaPhong.SelectedValue.ToString()), 1);
                         bHD.HoaDon_Them(ID, txtMaHD.Text, IDNV.ToString(),cboSDT.SelectedValue.ToString(), cboMaPhong.SelectedValue.ToString(), Convert.ToDateTime(DateTime.Now).ToString("yyyy/MM/dd hh:mm"), Convert.ToDateTime(dtpNgayDen.Text).ToString("yyyy/MM/dd hh:mm"), Convert.ToDateTime(dtpNgayDi.Text).ToString("yyyy/MM/dd hh:mm"), cboHinhThucThue.SelectedIndex, TongTienPhong, lblTongTienDV.Text, TongTienPhong, rtxtGhiChu.Text, ThanhToan, HieuLuc);
                         bPhong.phong_CNConTrong(Int32.Parse(cboMaPhong.SelectedValue.ToString()), 1);
                         MessageBox.Show("Thêm thành công ");
@@ -295,7 +316,7 @@ namespace DoAnQLKhachSan
                 }
                 lblTongTienPhong.Text = TongTienPhong.ToString();
                 lblTongTien.Text = (TongTienPhong + Int32.Parse(lblTongTienDV.Text)).ToString();
-                   
+
                 bHD.HoaDon_CapNhat(ID_HD, txtMaHD.Text, ID_NV.ToString(), ID_KH.ToString(), cboMaPhong.SelectedValue.ToString(),ngaylap , Convert.ToDateTime(dtpNgayDen.Text).ToString("yyyy/MM/dd hh:mm"), Convert.ToDateTime(dtpNgayDi.Text).ToString("yyyy/MM/dd hh:mm"), cboHinhThucThue.SelectedIndex, lblTongTienPhong.Text, lblTongTienDV.Text,lblTongTien.Text , rtxtGhiChu.Text, ThanhToan, HieuLuc);
                 MessageBox.Show("Sữa thành công ");
                 flag = false;
@@ -624,6 +645,28 @@ namespace DoAnQLKhachSan
                         TienPhong = Int32.Parse(bHD.TienPhong(Int32.Parse(cboMaPhong.Text)).Rows[0][1].ToString());
                         TongTienPhong = TienPhong * (ThoiGianThue(GioThue));
                     }
+                    int r = dgvDSHD.CurrentCell.RowIndex;
+                    if (dgvDSHD.Rows.Count > 0)
+                    {
+                        if (cboMaPhong.Text == dgvDSHD.Rows[r].Cells[4].Value.ToString())//so sánh txtSDT với SDT dòng numrow ở dgv
+                        {
+                            //nêu bằng thì bỏ qua bước này
+                            //nêu không bằng nhau thì xuống else
+                        }
+                        else
+                        {
+                            for (int i = 0; i < dgvDSHD.Rows.Count - 1; i++)//vòng lặp
+                            {
+                                if (cboMaPhong.Text == dgvDSHD.Rows[i].Cells[4].Value.ToString())//so sánh txtSDT với từng dòng trong dgv
+                                {
+                                    //nêu txtSDT bằng với một hàng thì đã tồn tại
+                                    MessageBox.Show("Phòng này đã có khách thuê rồi");
+                                    return;
+                                }
+                            }
+                        }
+                    }
+
                     //bPhong.phong_CNConTrong(Int32.Parse(cboMaPhong.SelectedValue.ToString()), 1);
                     bHD.HoaDon_Them(ID, txtMaHD.Text, IDNV.ToString(), ID_KH.ToString(), cboMaPhong.SelectedValue.ToString(), Convert.ToDateTime(DateTime.Now).ToString("yyyy/MM/dd hh:mm"), Convert.ToDateTime(dtpNgayDen.Text).ToString("yyyy/MM/dd hh:mm"), Convert.ToDateTime(dtpNgayDi.Text).ToString("yyyy/MM/dd hh:mm"), cboHinhThucThue.SelectedIndex, TongTienPhong, lblTongTienDV.Text, TongTienPhong, rtxtGhiChu.Text, ThanhToan, HieuLuc);
                     bPhong.phong_CNConTrong(Int32.Parse(cboMaPhong.SelectedValue.ToString()), 1);

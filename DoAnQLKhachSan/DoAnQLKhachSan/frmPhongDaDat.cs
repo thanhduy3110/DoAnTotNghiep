@@ -104,6 +104,25 @@ namespace DoAnQLKhachSan
                 }
                 else
                 {
+                    int numrow = dgvPhongDaDat.CurrentCell.RowIndex;
+                    if (dgvPhongDaDat.Rows.Count > 0)
+                    {
+                        if (cboMaPhong.Text == dgvPhongDaDat.Rows[numrow].Cells[2].Value.ToString())
+                        {
+
+                        }
+                        else
+                        {
+                            for (int i = 0; i < dgvPhongDaDat.Rows.Count - 1; i++)
+                            {
+                                if (cboMaPhong.Text == dgvPhongDaDat.Rows[i].Cells[2].Value.ToString())
+                                {
+                                    MessageBox.Show("Phòng này đã đặt rồi");
+                                    return;
+                                }
+                            }
+                        }
+                    }
                     string TangID = (bPDD.PhongDaDat_Select().Rows.Count + 1).ToString();
                     xulychucnang(true);
                     bPDD.PhongDaDat_Them( cboSDTKH.SelectedValue.ToString(), cboMaPhong.SelectedValue.ToString(), Convert.ToDateTime(dtpNgayDen.Text).ToString("yyyy-MM-dd"), Convert.ToDateTime(dtpNgayDi.Text).ToString("yyyy-MM-dd"));

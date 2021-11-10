@@ -131,7 +131,28 @@ namespace DoAnQLKhachSan
                     {
                         gocnhin = false;
                     }
-                    int TangID = Bphong.Phong_Select().Rows.Count + 1;
+
+                    //lọc trùng dữ liệu
+                    int numrow = dgvDSPhong.CurrentCell.RowIndex;
+                    if (dgvDSPhong.Rows.Count > 0)
+                    {
+                        if (txtSoPhong.Text == dgvDSPhong.Rows[numrow].Cells[2].Value.ToString())
+                        {
+
+                        }
+                        else
+                        {
+                            for (int i = 0; i < dgvDSPhong.Rows.Count - 1; i++)
+                            {
+                                if (txtSoPhong.Text == dgvDSPhong.Rows[i].Cells[2].Value.ToString())
+                                {
+                                    MessageBox.Show("Số điện thoại đã tồn tại trong hệ thống");
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                        int TangID = Bphong.Phong_Select().Rows.Count + 1;
                     Bphong.P_Them(TangID.ToString(), cboTenLP.SelectedValue.ToString(), txtSoPhong.Text, txtTang.Text, txtGiaThueTheoNgay.Text, txtGiaThueTheoGio.Text, rtxtGhiChu.Text, gocnhin, bontam, cboConTrong.SelectedIndex, hieuluc);
                     MessageBox.Show("thêm thành công");
                     flag = false;
@@ -175,6 +196,25 @@ namespace DoAnQLKhachSan
                 else
                 {
                     gocnhin = false;
+                }
+                int numrow = dgvDSPhong.CurrentCell.RowIndex;
+                if (dgvDSPhong.Rows.Count > 0)
+                {
+                    if (txtSoPhong.Text == dgvDSPhong.Rows[numrow].Cells[2].Value.ToString())
+                    {
+
+                    }
+                    else
+                    {
+                        for (int i = 0; i < dgvDSPhong.Rows.Count - 1; i++)
+                        {
+                            if (txtSoPhong.Text == dgvDSPhong.Rows[i].Cells[2].Value.ToString())
+                            {
+                                MessageBox.Show("Số phòng này đã có trong hệ thống");
+                                return;
+                            }
+                        }
+                    }
                 }
                 Bphong.P_CapNhat(ID.ToString(), cboTenLP.SelectedValue.ToString(), txtTang.Text, txtTang.Text, txtGiaThueTheoNgay.Text, txtGiaThueTheoGio.Text, rtxtGhiChu.Text, gocnhin, bontam, cboConTrong.SelectedIndex, hieuluc);
                 MessageBox.Show("sửa thành công");
