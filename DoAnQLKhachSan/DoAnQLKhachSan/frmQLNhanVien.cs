@@ -197,6 +197,58 @@ namespace DoAnQLKhachSan
                     {
                         HieuLuc = false;
                     }
+
+                    int r = dgvDSNhanVien.CurrentCell.RowIndex;//lấy dữ liệu dòng hiện tại
+                    if (dgvDSNhanVien.Rows.Count > 0)
+                    {
+                        if (txtSDT.Text == dgvDSNhanVien.Rows[r].Cells[6].Value.ToString())//so sánh txtSDT với SDT dòng numrow ở dgv
+                        {
+                            //nêu bằng thì bỏ qua bước này
+                            //nêu không bằng nhau thì xuống else
+                        }
+                        else
+                        {
+                            for (int i = 0; i < dgvDSNhanVien.Rows.Count - 1; i++)//vòng lặp
+                            {
+                                if (txtSDT.Text == dgvDSNhanVien.Rows[i].Cells[6].Value.ToString())//so sánh txtSDT với từng dòng trong dgv
+                                {
+                                    //nêu txtSDT bằng với một hàng thì đã tồn tại
+                                    MessageBox.Show("Số điện thoại đã tồn tại trong hệ thống");
+                                    return;
+                                }
+                            }
+                        }
+                        if (txtCMND.Text == dgvDSNhanVien.Rows[r].Cells[9].Value.ToString())//so sánh txtCMND với số CMND dòng numrow ở dgv
+                        {
+                            //nêu bằng nhau thì bỏ qua bước này
+                            //nêu không bằng nhau thì xuống else
+                        }
+                        else
+                            for (int i = 0; i < dgvDSNhanVien.Rows.Count - 1; i++)
+                            {
+                                if (txtCMND.Text == dgvDSNhanVien.Rows[i].Cells[9].Value.ToString())
+                                {
+                                    //nếu txtCMND bằng với một hàng thì đã tồn tại
+                                    MessageBox.Show("Số chứng minh nhân dân đã tồn tại trong hệ thống");
+                                    return;
+                                }
+                            }
+
+                        if (txtEmail.Text == dgvDSNhanVien.Rows[r].Cells[8].Value.ToString())
+                        {
+
+                        }
+                        else
+                            for (int i = 0; i < dgvDSNhanVien.Rows.Count - 1; i++)
+                            {
+                                if (txtCMND.Text == dgvDSNhanVien.Rows[i].Cells[8].Value.ToString())
+                                {
+                                    //nếu txtCMND bằng với một hàng thì đã tồn tại
+                                    MessageBox.Show("Số chứng minh nhân dân đã tồn tại trong hệ thống");
+                                    return;
+                                }
+                            }
+                    }
                     int TangID  = bNV.NhanVien_Select().Rows.Count + 1;
                     bNV.NhanVien_Them(TangID, cboLoaiNV.SelectedIndex + 1, txtMaNV.Text,GetMD5(txtMatKhau.Text), txtHoTen.Text, Convert.ToDateTime(dtpNgaySinh.Text).ToString("yyyy-MM-dd"), txtSDT.Text, rtxtDiaChi.Text, txtEmail.Text, Int32.Parse(txtCMND.Text), GT, fname, HieuLuc);
                     MessageBox.Show("Thêm thành công ");
@@ -277,6 +329,57 @@ namespace DoAnQLKhachSan
                             {
                                 txtMatKhau.Text = dgvDSNhanVien.Rows[r].Cells[3].Value.ToString();
                             }
+
+                            if (dgvDSNhanVien.Rows.Count > 0)
+                            {
+                                if (txtSDT.Text == dgvDSNhanVien.Rows[r].Cells[6].Value.ToString())//so sánh txtSDT với SDT dòng numrow ở dgv
+                                {
+                                    //nêu bằng thì bỏ qua bước này
+                                    //nêu không bằng nhau thì xuống else
+                                }
+                                else
+                                {
+                                    for (int i = 0; i < dgvDSNhanVien.Rows.Count - 1; i++)//vòng lặp
+                                    {
+                                        if (txtSDT.Text == dgvDSNhanVien.Rows[i].Cells[6].Value.ToString())//so sánh txtSDT với từng dòng trong dgv
+                                        {
+                                            //nêu txtSDT bằng với một hàng thì đã tồn tại
+                                            MessageBox.Show("Số điện thoại đã tồn tại trong hệ thống");
+                                            return;
+                                        }
+                                    }
+                                }
+                                if (txtCMND.Text == dgvDSNhanVien.Rows[r].Cells[9].Value.ToString())//so sánh txtCMND với số CMND dòng numrow ở dgv
+                                {
+                                    //nêu bằng nhau thì bỏ qua bước này
+                                    //nêu không bằng nhau thì xuống else
+                                }
+                                else
+                                    for (int i = 0; i < dgvDSNhanVien.Rows.Count - 1; i++)
+                                    {
+                                        if (txtCMND.Text == dgvDSNhanVien.Rows[i].Cells[9].Value.ToString())
+                                        {
+                                            //nếu txtCMND bằng với một hàng thì đã tồn tại
+                                            MessageBox.Show("Số chứng minh nhân dân đã tồn tại trong hệ thống");
+                                            return;
+                                        }
+                                    }
+
+                                if (txtEmail.Text == dgvDSNhanVien.Rows[r].Cells[8].Value.ToString())
+                                {
+
+                                }
+                                else
+                                    for (int i = 0; i < dgvDSNhanVien.Rows.Count - 1; i++)
+                                    {
+                                        if (txtCMND.Text == dgvDSNhanVien.Rows[i].Cells[8].Value.ToString())
+                                        {
+                                            //nếu txtCMND bằng với một hàng thì đã tồn tại
+                                            MessageBox.Show("Số chứng minh nhân dân đã tồn tại trong hệ thống");
+                                            return;
+                                        }
+                                    }
+                            }
                             bNV.NhanVien_CapNhat(ID, cboLoaiNV.SelectedIndex + 1, txtMaNV.Text, txtMatKhau.Text, txtHoTen.Text, Convert.ToDateTime(dtpNgaySinh.Text).ToString("yyyy-MM-dd"), txtSDT.Text, rtxtDiaChi.Text, txtEmail.Text, Int32.Parse(txtCMND.Text), GT, result, HieuLuc);
                             txtMatKhau.Text = "";
                             MessageBox.Show("Cập nhật thành công");
@@ -296,6 +399,56 @@ namespace DoAnQLKhachSan
                             if (txtMatKhau.Text == "")
                             {
                                 txtMatKhau.Text = dgvDSNhanVien.Rows[r].Cells[3].Value.ToString();
+                            }
+                            if (dgvDSNhanVien.Rows.Count > 0)
+                            {
+                                if (txtSDT.Text == dgvDSNhanVien.Rows[r].Cells[6].Value.ToString())//so sánh txtSDT với SDT dòng numrow ở dgv
+                                {
+                                    //nêu bằng thì bỏ qua bước này
+                                    //nêu không bằng nhau thì xuống else
+                                }
+                                else
+                                {
+                                    for (int i = 0; i < dgvDSNhanVien.Rows.Count - 1; i++)//vòng lặp
+                                    {
+                                        if (txtSDT.Text == dgvDSNhanVien.Rows[i].Cells[6].Value.ToString())//so sánh txtSDT với từng dòng trong dgv
+                                        {
+                                            //nêu txtSDT bằng với một hàng thì đã tồn tại
+                                            MessageBox.Show("Số điện thoại đã tồn tại trong hệ thống");
+                                            return;
+                                        }
+                                    }
+                                }
+                                if (txtCMND.Text == dgvDSNhanVien.Rows[r].Cells[9].Value.ToString())//so sánh txtCMND với số CMND dòng numrow ở dgv
+                                {
+                                    //nêu bằng nhau thì bỏ qua bước này
+                                    //nêu không bằng nhau thì xuống else
+                                }
+                                else
+                                    for (int i = 0; i < dgvDSNhanVien.Rows.Count - 1; i++)
+                                    {
+                                        if (txtCMND.Text == dgvDSNhanVien.Rows[i].Cells[9].Value.ToString())
+                                        {
+                                            //nếu txtCMND bằng với một hàng thì đã tồn tại
+                                            MessageBox.Show("Số chứng minh nhân dân đã tồn tại trong hệ thống");
+                                            return;
+                                        }
+                                    }
+
+                                if (txtEmail.Text == dgvDSNhanVien.Rows[r].Cells[8].Value.ToString())
+                                {
+
+                                }
+                                else
+                                    for (int i = 0; i < dgvDSNhanVien.Rows.Count - 1; i++)
+                                    {
+                                        if (txtCMND.Text == dgvDSNhanVien.Rows[i].Cells[8].Value.ToString())
+                                        {
+                                            //nếu txtCMND bằng với một hàng thì đã tồn tại
+                                            MessageBox.Show("Số chứng minh nhân dân đã tồn tại trong hệ thống");
+                                            return;
+                                        }
+                                    }
                             }
                             Image a1 = pichHinh.Image;
                             a1.Save(path1); //lưu ảnh mới vào đường dẫn 

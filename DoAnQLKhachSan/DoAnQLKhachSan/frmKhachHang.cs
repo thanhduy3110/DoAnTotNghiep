@@ -129,6 +129,40 @@ namespace DoAnQLKhachSan
                     {
                         HieuLuc = false;
                     }
+
+                    //lọc trùng dữ liệu
+                    int numrow = dgvKhachHang.CurrentCell.RowIndex;
+                    if (dgvKhachHang.Rows.Count > 0)
+                    {
+                        if (txtSDT.Text == dgvKhachHang.Rows[numrow].Cells[3].Value.ToString())
+                        {
+
+                        }
+                        else
+                        {
+                            for (int i = 0; i < dgvKhachHang.Rows.Count - 1; i++)
+                            {
+                                if (txtSDT.Text == dgvKhachHang.Rows[i].Cells[3].Value.ToString())
+                                {
+                                    MessageBox.Show("Số điện thoại đã tồn tại trong hệ thống");
+                                    return;
+                                }
+                            }
+                        }
+                        if (txtCMND.Text == dgvKhachHang.Rows[numrow].Cells[5].Value.ToString())
+                        {
+
+                        }
+                        else for (int i = 0; i < dgvKhachHang.Rows.Count - 1; i++)
+                            {
+                                if (txtCMND.Text == dgvKhachHang.Rows[i].Cells[5].Value.ToString())
+                                {
+                                    MessageBox.Show("Số chứng minh nhân dân đã tồn tại trong hệ thống");
+                                    return;
+                                }
+
+                            }
+                    }
                     string TangID = (bkh.KH_Select().Rows.Count + 1).ToString();
                     bkh.KH_Them(TangID, txtHoTen.Text, Convert.ToDateTime(dtNgaySinh.Text).ToString("yyyy-MM-dd"), txtSDT.Text, txtEmail.Text, txtCMND.Text, GT, txtQT.Text, HieuLuc);
                     MessageBox.Show("thêm thành công");
@@ -169,6 +203,45 @@ namespace DoAnQLKhachSan
                 {
                     HieuLuc = false;
                 }
+
+                //lọc trùng dữ liệu
+                int numrow = dgvKhachHang.CurrentCell.RowIndex;//lấy dữ liệu dòng hiện tại
+                if (dgvKhachHang.Rows.Count > 0)
+                {
+                    if (txtSDT.Text == dgvKhachHang.Rows[numrow].Cells[3].Value.ToString())//so sánh txtSDT với SDT dòng numrow ở dgv
+                    {
+                        //nêu bằng thì bỏ qua bước này
+                        //nêu không bằng nhau thì xuống else
+                    }
+                    else
+                    {
+                        for (int i = 0; i < dgvKhachHang.Rows.Count - 1; i++)//vòng lặp
+                        {
+                            if (txtSDT.Text == dgvKhachHang.Rows[i].Cells[3].Value.ToString())//so sánh txtSDT với từng dòng trong dgv
+                            {
+                                //nêu txtSDT bằng với một hàng thì đã tồn tại
+                                MessageBox.Show("Số điện thoại đã tồn tại trong hệ thống");
+                                return;
+                            }
+                        }
+                    }
+                    if (txtCMND.Text == dgvKhachHang.Rows[numrow].Cells[5].Value.ToString())//so sánh txtCMND với số CMND dòng numrow ở dgv
+                    {
+                        //nêu bằng nhau thì bỏ qua bước này
+                        //nêu không bằng nhau thì xuống else
+                    }
+                    else
+                        for (int i = 0; i < dgvKhachHang.Rows.Count - 1; i++)
+                        {
+                            if (txtCMND.Text == dgvKhachHang.Rows[i].Cells[5].Value.ToString())
+                            {
+                                //nếu txtCMND bằng với một hàng thì đã tồn tại
+                                MessageBox.Show("Số chứng minh nhân dân đã tồn tại trong hệ thống");
+                                return;
+                            }
+                        }
+                }
+
                 bkh.KH_CapNhat(ID, txtHoTen.Text, Convert.ToDateTime(dtNgaySinh.Text).ToString("yyyy-MM-dd"), txtSDT.Text, txtEmail.Text, txtCMND.Text, GT, txtQT.Text, HieuLuc);
                 MessageBox.Show("Sữa thành công");
                 flag = false;

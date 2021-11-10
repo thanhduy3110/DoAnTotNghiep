@@ -104,6 +104,28 @@ namespace DoAnQLKhachSan
                     //string path = System.IO.Path.Combine(floder, fname);//lưu tên ảnh xuống csdl
                     //Image a = pictureBox.Image;
                     //a.Save(path);
+                    int r = dgvDichVu.CurrentCell.RowIndex;
+                    if (dgvDichVu.Rows.Count > 0)
+                    {
+                        if (txtTenDV.Text == dgvDichVu.Rows[r].Cells[6].Value.ToString())//so sánh txtSDT với SDT dòng numrow ở dgv
+                        {
+                            //nêu bằng thì bỏ qua bước này
+                            //nêu không bằng nhau thì xuống else
+                        }
+                        else
+                        {
+                            for (int i = 0; i < dgvDichVu.Rows.Count - 1; i++)//vòng lặp
+                            {
+                                if (txtTenDV.Text == dgvDichVu.Rows[i].Cells[2].Value.ToString())//so sánh txtSDT với từng dòng trong dgv
+                                {
+                                    //nêu txtSDT bằng với một hàng thì đã tồn tại
+                                    MessageBox.Show("Dịch vụ này đã tồn tại");
+                                    return;
+                                }
+                            }
+                        }
+                    }
+
                     int TangID = bdv.DV_Select().Rows.Count + 1;
                     bdv.DV_Them(TangID, cboLoaiDV.SelectedIndex+1, txtTenDV.Text, rtxtMoTa.Text, fname, txtGiaTien.Text, txtSLTon.Text, txtDVT.Text, rtxtGhiChu.Text, HieuLuc);
                     MessageBox.Show("thêm thành công");
@@ -157,6 +179,7 @@ namespace DoAnQLKhachSan
                         //Get file infromation from info object
 
 
+
                         string FileNames = info.Name;
                         //{
                         //    MessageBox.Show("info " + FileNames);
@@ -164,6 +187,26 @@ namespace DoAnQLKhachSan
 
                         if (FileNames == "")  //picturebox bằng null là ảnh giống ảnh cũ
                         {
+                            if (dgvDichVu.Rows.Count > 0)
+                            {
+                                if (txtTenDV.Text == dgvDichVu.Rows[r].Cells[6].Value.ToString())//so sánh txtSDT với SDT dòng numrow ở dgv
+                                {
+                                    //nêu bằng thì bỏ qua bước này
+                                    //nêu không bằng nhau thì xuống else
+                                }
+                                else
+                                {
+                                    for (int i = 0; i < dgvDichVu.Rows.Count - 1; i++)//vòng lặp
+                                    {
+                                        if (txtTenDV.Text == dgvDichVu.Rows[i].Cells[2].Value.ToString())//so sánh txtSDT với từng dòng trong dgv
+                                        {
+                                            //nêu txtSDT bằng với một hàng thì đã tồn tại
+                                            MessageBox.Show("Dịch vụ này đã tồn tại");
+                                            return;
+                                        }
+                                    }
+                                }
+                            }
                             //MessageBox.Show("Có vô so sánh if 1");
 
 
