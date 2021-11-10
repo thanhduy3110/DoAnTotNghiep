@@ -35,9 +35,9 @@ namespace DoAnQLKhachSan.dbContext
 
         public bool? BonTam { get; set; }
 
-        public bool? ConTrong { get; set; }
+        public int? ConTrong { get; set; }
 
-        public int? HieuLuc { get; set; }
+        public bool? HieuLuc { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HoaDon> HoaDons { get; set; }

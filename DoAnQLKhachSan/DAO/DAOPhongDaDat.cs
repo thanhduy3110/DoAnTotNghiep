@@ -18,7 +18,7 @@ namespace DAO
         object[] value = { };
         public void HienThiMaPhong(ComboBox cboMaPhong,TextBox txtSoKhach)
         {
-            ds = db.LayDanhSach("select Phong.ID as ID , SoPhong , SoKhach from Phong, LoaiPhong where Phong.ID_LoaiPhong = LoaiPhong.ID and Phong.ConTrong=0");// truy vấn lên sql
+            ds = db.LayDanhSach("select Phong.ID as ID , SoPhong , SoKhach from Phong, LoaiPhong where Phong.ID_LoaiPhong = LoaiPhong.ID");// truy vấn lên sql
             cboMaPhong.DataSource = ds.Tables[0];
             cboMaPhong.DisplayMember = "sophong";
             cboMaPhong.ValueMember = "id";

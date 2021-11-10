@@ -5,10 +5,10 @@ using System.Linq;
 
 namespace DoAnQLKhachSan.dbContext
 {
-    public partial class ConnectReportHD : DbContext
+    public partial class QLKhachSanConText : DbContext
     {
-        public ConnectReportHD()
-            : base("name=ConnectReportHD")
+        public QLKhachSanConText()
+            : base("name=QLKhachSanConText")
         {
         }
 
@@ -23,7 +23,6 @@ namespace DoAnQLKhachSan.dbContext
         public virtual DbSet<PhieuDatPhong> PhieuDatPhongs { get; set; }
         public virtual DbSet<Phong> Phongs { get; set; }
         public virtual DbSet<PhongDaDat> PhongDaDats { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -49,8 +48,9 @@ namespace DoAnQLKhachSan.dbContext
 
             modelBuilder.Entity<LoaiDV>()
                 .HasMany(e => e.DichVus)
-                .WithOptional(e => e.LoaiDV)
-                .HasForeignKey(e => e.ID_LoaiDV);
+                .WithRequired(e => e.LoaiDV)
+                .HasForeignKey(e => e.ID_LoaiDV)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<LoaiNV>()
                 .HasMany(e => e.NhanViens)

@@ -18,10 +18,10 @@ namespace DoAnQLKhachSan.dbContext
 
         public int? SoLuong { get; set; }
 
-        public double? DonGia { get; set; }
-
-        public virtual HoaDon HoaDon { get; set; }
+        public int? DonGia { get; set; }
 
         public virtual DichVu DichVu { get; set; }
+
+        public virtual HoaDon HoaDon { get; set; }
     }
 }

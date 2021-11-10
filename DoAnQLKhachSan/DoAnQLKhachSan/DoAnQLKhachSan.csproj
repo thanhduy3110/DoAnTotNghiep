@@ -311,7 +311,6 @@
     <Compile Include="Button_WOC.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="dbContext\ConnectReportHD.cs" />
     <Compile Include="dbContext\CTHD.cs" />
     <Compile Include="dbContext\DichVu.cs" />
     <Compile Include="dbContext\HoaDon.cs" />
@@ -323,7 +322,7 @@
     <Compile Include="dbContext\PhieuDatPhong.cs" />
     <Compile Include="dbContext\Phong.cs" />
     <Compile Include="dbContext\PhongDaDat.cs" />
-    <Compile Include="dbContext\sysdiagram.cs" />
+    <Compile Include="dbContext\QLKhachSanConText.cs" />
     <Compile Include="frmChuyenPhong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -441,6 +440,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportTing\ReportHD.cs" />
+    <Compile Include="ReportTing\ReportHD1.cs" />
+    <Compile Include="ReportTing\ReportHD2.cs" />
+    <Compile Include="ReportTing\ReportHD3.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="frmChuyenPhong.resx">
       <DependentUpon>frmChuyenPhong.cs</DependentUpon>
@@ -514,6 +516,11 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\DoAnQLKhachSan.ReportTing.ReportHD.datasource" />
     <None Include="Properties\DataSources\DoAnQLKhachSan.ReportTing.ReportHD1.datasource" />
+    <None Include="Properties\DataSources\DoAnQLKhachSan.ReportTing.ReportHD11.datasource" />
+    <None Include="Properties\DataSources\DoAnQLKhachSan.ReportTing.ReportHD2.datasource" />
+    <None Include="Properties\DataSources\DoAnQLKhachSan.ReportTing.ReportHD21.datasource" />
+    <None Include="Properties\DataSources\DoAnQLKhachSan.ReportTing.ReportHD3.datasource" />
+    <None Include="Properties\DataSources\DoAnQLKhachSan.ReportTing.ReportHD31.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

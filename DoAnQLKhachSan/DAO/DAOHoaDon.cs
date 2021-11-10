@@ -52,7 +52,7 @@ namespace DAO
         public void HienThiMaPhong(ComboBox cboMaPhong)
         {
 
-            dsHoaDon = db.LayDanhSach("select ID,SoPhong from Phong where ConTrong=0");// truy vấn lên sql
+            dsHoaDon = db.LayDanhSach("select ID,SoPhong from Phong");// truy vấn lên sql
             cboMaPhong.DataSource = dsHoaDon.Tables[0];
             cboMaPhong.DisplayMember = "SoPhong";
             cboMaPhong.ValueMember = "ID";
@@ -100,6 +100,19 @@ namespace DAO
         //khai báo 2 mảng để truyền tên tham số và giá trị tham số vào stored procedures
         string[] name = { };
         object[] value = { };
+
+
+        public DataTable HoaDon_TimPhongCu(int ID_Phong)//rồi, đã xem xong 1 loạt thủ tục ở dal
+                                                                     //đây là thủ tục sẽ dùng ở form đăng nhập, với điều kiện là trùng mã tài khoản và mật khẩu. ok?
+        {
+            name = new string[1];
+            value = new object[1];
+
+            name[0] = "@ID_Phong"; value[0] = ID_Phong;
+           
+
+            return db.LayDuLieuCoDK("HoaDon_TimPhongCu", name, value, 1);
+        }
 
         //phương thức này gọi đến phương thức LayduLieu ở dbConnectionData để lấy dữ liệu
 
@@ -178,15 +191,16 @@ namespace DAO
             return db.ThucHien("HoaDon_CapNhat", name, value, 15);
         }
 
-        public int HoaDon_CapNhatChuyenPhong(int ID,int sophong,int TTP,int TongTien)
+        public int HoaDon_CapNhatChuyenPhong(int ID,int sophong,string NgayDi,int TTP,int TongTien)
         {
-            name = new string[4];
-            value = new object[4];
+            name = new string[5];
+            value = new object[5];
             name[0] = "@ID"; value[0] = ID;
             name[1] = "@ID_Phong"; value[1] = sophong;
-            name[2] = "@TongTienPhong";value[2] = TTP;
-            name[3] = "@TongTien"; value[3] = TongTien;
-            return db.ThucHien("HoaDon_CapNhatChuyenPhong", name, value, 4);
+            name[2] = "@NgayDi"; value[2] = NgayDi;
+            name[3] = "@TongTienPhong";value[3] = TTP;
+            name[4] = "@TongTien"; value[4] = TongTien;
+            return db.ThucHien("HoaDon_CapNhatChuyenPhong", name, value, 5);
         }
 
         public int HoaDon_Xoa(int ID, bool HieuLuc)

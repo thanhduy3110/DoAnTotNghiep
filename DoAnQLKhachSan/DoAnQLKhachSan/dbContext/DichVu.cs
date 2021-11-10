@@ -18,23 +18,25 @@ namespace DoAnQLKhachSan.dbContext
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ID { get; set; }
 
-        public int? ID_LoaiDV { get; set; }
+        public int ID_LoaiDV { get; set; }
 
+        [Required]
         public string TenDV { get; set; }
 
         public string MoTa { get; set; }
 
         public string HinhAnh { get; set; }
 
-        public double? GiaTien { get; set; }
+        public double GiaTien { get; set; }
 
-        public int? SLTon { get; set; }
+        public int SLTon { get; set; }
 
+        [Required]
         public string DVT { get; set; }
 
         public string GhiChu { get; set; }
 
-        public bool? HieuLuc { get; set; }
+        public bool HieuLuc { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTHD> CTHDs { get; set; }

@@ -73,6 +73,7 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboItem4 = new DevComponents.Editors.ComboItem();
             btnXoa = new ePOSOne.btnProduct.Button_WOC();
             btnSua = new ePOSOne.btnProduct.Button_WOC();
             btnThem = new ePOSOne.btnProduct.Button_WOC();
@@ -297,7 +298,8 @@
             this.cboConTrong.Items.AddRange(new object[] {
             this.comboItem1,
             this.comboItem2,
-            this.comboItem3});
+            this.comboItem3,
+            this.comboItem4});
             this.cboConTrong.Location = new System.Drawing.Point(648, 252);
             this.cboConTrong.Name = "cboConTrong";
             this.cboConTrong.Size = new System.Drawing.Size(310, 36);
@@ -314,7 +316,7 @@
             // 
             // comboItem3
             // 
-            this.comboItem3.Text = "Đang sữa chữa";
+            this.comboItem3.Text = "Đã đặt trước";
             // 
             // cboTenLP
             // 
@@ -688,6 +690,10 @@
             this.Column10.Name = "Column10";
             this.Column10.Width = 120;
             // 
+            // comboItem4
+            // 
+            this.comboItem4.Text = "Đang sửa chữa";
+            // 
             // frmPhong
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -749,5 +755,6 @@
         private DevComponents.Editors.ComboItem comboItem1;
         private DevComponents.Editors.ComboItem comboItem2;
         private DevComponents.Editors.ComboItem comboItem3;
+        private DevComponents.Editors.ComboItem comboItem4;
     }
 }

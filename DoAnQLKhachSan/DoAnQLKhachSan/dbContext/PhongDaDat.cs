@@ -9,7 +9,6 @@ namespace DoAnQLKhachSan.dbContext
     [Table("PhongDaDat")]
     public partial class PhongDaDat
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ID { get; set; }
 
         public int? ID_PhieuDP { get; set; }

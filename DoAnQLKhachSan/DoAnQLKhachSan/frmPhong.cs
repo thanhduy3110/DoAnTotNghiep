@@ -132,7 +132,7 @@ namespace DoAnQLKhachSan
                         gocnhin = false;
                     }
                     int TangID = Bphong.Phong_Select().Rows.Count + 1;
-                    Bphong.P_Them(TangID.ToString(), cboTenLP.SelectedValue.ToString(), txtTang.Text, txtTang.Text, txtGiaThueTheoNgay.Text, txtGiaThueTheoGio.Text, rtxtGhiChu.Text, gocnhin, bontam, cboConTrong.SelectedIndex, hieuluc);
+                    Bphong.P_Them(TangID.ToString(), cboTenLP.SelectedValue.ToString(), txtSoPhong.Text, txtTang.Text, txtGiaThueTheoNgay.Text, txtGiaThueTheoGio.Text, rtxtGhiChu.Text, gocnhin, bontam, cboConTrong.SelectedIndex, hieuluc);
                     MessageBox.Show("thêm thành công");
                     flag = false;
                     xulytextbox(true);
