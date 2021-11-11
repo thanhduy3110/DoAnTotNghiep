@@ -64,8 +64,7 @@ namespace DoAnQLKhachSan
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            txtMaNV.ReadOnly = true;
-            bLG.HienSDT(cboSDT,txtMaNV);
+            
         }
         //public string Encrypt(string toEncrypt, bool useHashing)
         //{
@@ -110,7 +109,7 @@ namespace DoAnQLKhachSan
                 //string s = txtMatKhau.TextName;
                 //string mahoa = Encrypt(s, true);
                 //đếm số phần tử trùng mã và mật khẩu nhé, tất nhiên sẽ ko thể có 2 tài khoản cùng mã và mật khẩu đc
-                int count = bLG.DangNhap_Select(txtMaNV.Text, GetMD5(txtMatKhau.TextName)).Rows.Count;
+                int count = bLG.DangNhap_Select(txtTaiKhoan.TextName, GetMD5(txtMatKhau.TextName)).Rows.Count;
                 //vì vậy nếu đếm là 0 thì ko có tài khoản nào phù hợp nhé
                 //tại chưa xử lý nếu form đăng nhập close giữa chừng nên nó sẽ vô form main nếu close form dăng nhập
                 //tuy nhiên vô thì nó sẽ ko có quyền gì hết trừ quyền đăng xuất và mua hàng :))))))))))))
@@ -123,10 +122,10 @@ namespace DoAnQLKhachSan
                 {
                     MessageBox.Show("Đăng nhập thành công");
                     this.Hide();
-                    int ID =Int32.Parse(bLG.DangNhap_Select(txtMaNV.Text, GetMD5(txtMatKhau.TextName)).Rows[0][0].ToString());
-                    string LoaiNV = bLG.DangNhap_Select(txtMaNV.Text, GetMD5(txtMatKhau.TextName)).Rows[0][1].ToString();
-                    string MaNV = bLG.DangNhap_Select(txtMaNV.Text, GetMD5(txtMatKhau.TextName)).Rows[0][2].ToString();
-                    string TenNV = bLG.DangNhap_Select(txtMaNV.Text, GetMD5(txtMatKhau.TextName)).Rows[0][4].ToString();
+                    int ID =Int32.Parse(bLG.DangNhap_Select(txtTaiKhoan.TextName, GetMD5(txtMatKhau.TextName)).Rows[0][0].ToString());
+                    string LoaiNV = bLG.DangNhap_Select(txtTaiKhoan.TextName, GetMD5(txtMatKhau.TextName)).Rows[0][1].ToString();
+                    string MaNV = bLG.DangNhap_Select(txtTaiKhoan.TextName, GetMD5(txtMatKhau.TextName)).Rows[0][2].ToString();
+                    string TenNV = bLG.DangNhap_Select(txtTaiKhoan.TextName, GetMD5(txtMatKhau.TextName)).Rows[0][4].ToString();
                     frmMenu Menu = new frmMenu(MaNV,LoaiNV,ID,TenNV);
                     Menu.Show();
                 }
@@ -143,12 +142,6 @@ namespace DoAnQLKhachSan
             this.Close();
         }
 
-        private void cboSDT_KeyDown(object sender, KeyEventArgs e)
-        {
-            if(e.KeyCode==Keys.Enter)
-            {
-                bLG.HienSDT(cboSDT, txtMaNV);
-            }    
-        }
+       
     }
 }

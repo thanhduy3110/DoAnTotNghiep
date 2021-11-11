@@ -162,6 +162,7 @@ namespace DoAnQLKhachSan
                 clear_textbox();
                 xulytextbox(false);
                 radioNam.Checked = true;
+                chkHieuLuc.Checked=true;
                 flag = true;
             }else if(flag==true)
             {

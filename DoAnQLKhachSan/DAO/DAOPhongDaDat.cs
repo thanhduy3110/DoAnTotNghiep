@@ -37,7 +37,7 @@ namespace DAO
 
         public void HienThiDanhSach(string sTimKiem, DataGridView d)
         {
-            dsPDD = db.LayDanhSach("select PDD.ID as ID,PDP.ID as ID_PhieuDP,KH.HoTen as HoTenKH,SDT,PDP.HinhThucThue as HTT,Phong.GiaThueGio as GTG,Phong.GiaThueNgay as GTN,ID_KH,Phong.SoPhong as SoPhong,PDP.NgayDen as NgayDen,PDP.NgayDi as NgayDi,Phong.ID as IDPHONG from KhachHang KH,PhieuDatPhong PDP,PhongDaDat PDD,Phong  where KH.ID=PDP.ID_KH and PDD.ID_PhieuDP=PDP.ID and Phong.ID=PDD.ID_Phong and HoTenKH like '%" + sTimKiem + "%' and SDT like '%" + sTimKiem + "%' SoPhong like '%" + sTimKiem + "%'");
+            dsPDD = db.LayDanhSach("select PDD.ID as ID,PDP.ID as ID_PhieuDP,KH.HoTen as HoTenKH,SDT,PDP.HinhThucThue as HTT,Phong.GiaThueGio as GTG,Phong.GiaThueNgay as GTN,ID_KH,Phong.SoPhong as SoPhong,PDP.NgayDen as NgayDen,PDP.NgayDi as NgayDi,Phong.ID as IDPHONG from KhachHang KH,PhieuDatPhong PDP,PhongDaDat PDD,Phong  where KH.ID=PDP.ID_KH and PDD.ID_PhieuDP=PDP.ID and Phong.ID=PDD.ID_Phong and (KH.HoTen like '%" + sTimKiem + "%' or SDT like '%" + sTimKiem + "%' or SoPhong like '%" + sTimKiem + "%')");
             d.DataSource = dsPDD.Tables[0];
         }
 

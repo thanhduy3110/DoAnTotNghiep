@@ -22,11 +22,26 @@ namespace DAO
             cboTenLoaiNV.ValueMember = "id";
         }
 
-        public void HienThiDanhSach(string sTimKiem,DataGridView d)
+        public void HienThiDanhSach(string sTimKiem, DataGridView d)
         {
-            dsNhanVien = db.LayDanhSach("select NhanVien.ID,TenLoaiNV,MaNV,MatKhau,HoTen,NgaySinh,SDT,DiaChi,Email,CMND,dbo.NV_GioiTinh(GioiTinh) as GioiTinh,HinhAnh,dbo.NV_HieuLuc(NhanVien.HieuLuc) as HieuLuc from NhanVien,LoaiNV where NhanVien.ID_LoaiNV=LoaiNV.ID and NhanVien.HieuLuc = 1 and MaNV like '%" + sTimKiem + "%' or HoTen like N'%" + sTimKiem + "%'  or CMND like '%"+sTimKiem+"%'");
-            d.DataSource = dsNhanVien.Tables[0];
+            DataSet DSTimKiem = new DataSet();
+            DSTimKiem = db.LayDanhSach("select NhanVien.ID,TenLoaiNV,MaNV,MatKhau,HoTen,NgaySinh,SDT,DiaChi,Email,CMND,dbo.NV_GioiTinh(GioiTinh) as GioiTinh,HinhAnh,dbo.NV_HieuLuc(NhanVien.HieuLuc) as HieuLuc from NhanVien,LoaiNV where NhanVien.ID_LoaiNV=LoaiNV.ID and NhanVien.HieuLuc = 1 and (MaNV like N'%" + sTimKiem + "%' or CMND like '%"+sTimKiem+ "%' or SDT like '%" + sTimKiem + "%')");
+            d.DataSource = DSTimKiem.Tables[0];
         }
+
+        //public DataTable TimKiemNV(string MaNV)//rồi, đã xem xong 1 loạt thủ tục ở dal
+        //                                                             //đây là thủ tục sẽ dùng ở form đăng nhập, với điều kiện là trùng mã tài khoản và mật khẩu. ok?
+        //{
+        //    name = new string[1];
+        //    value = new object[1];
+
+        //    name[0] = "@MaNV"; value[0] = MaNV;
+        //    //name[1] = "@Hoten"; value[1] = Hoten;
+        //    //name[2] = "@SDT"; value[2] = SDT;
+        //    //name[3] = "@CMND"; value[3] = CMND;
+
+        //    return db.LayDuLieuCoDK("TimKiemNV", name, value, 1);
+        //}
         //khai báo 2 mảng để truyền tên tham số và giá trị tham số vào stored procedures
         string[] name = { };
         object[] value = { };

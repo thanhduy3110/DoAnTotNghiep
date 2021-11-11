@@ -20,13 +20,18 @@ namespace BUS
             return TK.ThongKeSLT();
         }
 
-        public DataTable ThongKeHD()
+        public DataTable ThongKePhongSuaChua()
         {
-            return TK.ThongKeHD();
+            return TK.ThongKePhongSuaChua();
         }
-        public DataTable ThongKeDV()
+
+        public void ThongKeHD(DataGridView dgv, string dtp1, string dtp2)
         {
-            return TK.ThongKeDV();
+            TK.ThongKeHD(dgv, dtp1, dtp2);
+        }
+        public void ThongKeDV(DataGridView dgv, string dtp1, string dtp2)
+        {
+           TK.ThongKeDV(dgv, dtp1, dtp2);
         }
         public DataTable bieudo_select()
         {

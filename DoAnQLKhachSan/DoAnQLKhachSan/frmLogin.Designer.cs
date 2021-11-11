@@ -34,15 +34,12 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.txtMatKhau = new JMaterialTextbox.JMaterialTextbox();
-            this.cboSDT = new System.Windows.Forms.ComboBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.txtMaNV = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.btnThoat = new ePOSOne.btnProduct.Button_WOC();
             this.btnDangNhap = new ePOSOne.btnProduct.Button_WOC();
+            this.txtTaiKhoan = new JMaterialTextbox.JMaterialTextbox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -60,7 +57,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(16, 279);
+            this.pictureBox1.Location = new System.Drawing.Point(25, 211);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 59);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -70,7 +67,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(12, 370);
+            this.pictureBox2.Location = new System.Drawing.Point(21, 302);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(100, 59);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -98,7 +95,7 @@
             this.txtMatKhau.IsPassword = true;
             this.txtMatKhau.LineBackColor = System.Drawing.Color.White;
             this.txtMatKhau.LineThickness = 3;
-            this.txtMatKhau.Location = new System.Drawing.Point(121, 393);
+            this.txtMatKhau.Location = new System.Drawing.Point(130, 325);
             this.txtMatKhau.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtMatKhau.MaxLength = 32767;
             this.txtMatKhau.Name = "txtMatKhau";
@@ -110,51 +107,13 @@
             this.txtMatKhau.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtMatKhau.TextName = "Mật khẩu";
             // 
-            // cboSDT
-            // 
-            this.cboSDT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.cboSDT.DisplayMember = "MaNV";
-            this.cboSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSDT.ForeColor = System.Drawing.Color.White;
-            this.cboSDT.FormattingEnabled = true;
-            this.cboSDT.Location = new System.Drawing.Point(121, 209);
-            this.cboSDT.Name = "cboSDT";
-            this.cboSDT.Size = new System.Drawing.Size(409, 39);
-            this.cboSDT.TabIndex = 6;
-            this.cboSDT.ValueMember = "MaNV";
-            this.cboSDT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboSDT_KeyDown);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(16, 180);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(100, 68);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox4.TabIndex = 8;
-            this.pictureBox4.TabStop = false;
-            // 
-            // txtMaNV
-            // 
-            // 
-            // 
-            // 
-            this.txtMaNV.Border.Class = "TextBoxBorder";
-            this.txtMaNV.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtMaNV.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaNV.Location = new System.Drawing.Point(122, 303);
-            this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.PreventEnterBeep = true;
-            this.txtMaNV.Size = new System.Drawing.Size(409, 35);
-            this.txtMaNV.TabIndex = 158;
-            // 
             // btnThoat
             // 
             this.btnThoat.BorderColor = System.Drawing.Color.Silver;
             this.btnThoat.ButtonColor = System.Drawing.Color.Red;
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThoat.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Location = new System.Drawing.Point(329, 457);
+            this.btnThoat.Location = new System.Drawing.Point(293, 454);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.OnHoverBorderColor = System.Drawing.Color.Gray;
             this.btnThoat.OnHoverButtonColor = System.Drawing.Color.Yellow;
@@ -172,7 +131,7 @@
             this.btnDangNhap.ButtonColor = System.Drawing.Color.Red;
             this.btnDangNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangNhap.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangNhap.Location = new System.Drawing.Point(121, 457);
+            this.btnDangNhap.Location = new System.Drawing.Point(85, 454);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.OnHoverBorderColor = System.Drawing.Color.Gray;
             this.btnDangNhap.OnHoverButtonColor = System.Drawing.Color.Yellow;
@@ -184,15 +143,35 @@
             this.btnDangNhap.UseVisualStyleBackColor = true;
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
+            // txtTaiKhoan
+            // 
+            this.txtTaiKhoan.BackColor = System.Drawing.Color.Transparent;
+            this.txtTaiKhoan.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTaiKhoan.Font_Size = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTaiKhoan.ForeColors = System.Drawing.Color.White;
+            this.txtTaiKhoan.HintText = "Tài khoản";
+            this.txtTaiKhoan.IsPassword = false;
+            this.txtTaiKhoan.LineBackColor = System.Drawing.Color.White;
+            this.txtTaiKhoan.LineThickness = 3;
+            this.txtTaiKhoan.Location = new System.Drawing.Point(130, 234);
+            this.txtTaiKhoan.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtTaiKhoan.MaxLength = 32767;
+            this.txtTaiKhoan.Name = "txtTaiKhoan";
+            this.txtTaiKhoan.OnFocusedColor = System.Drawing.Color.Black;
+            this.txtTaiKhoan.OnFocusedTextColor = System.Drawing.Color.Black;
+            this.txtTaiKhoan.ReadOnly = false;
+            this.txtTaiKhoan.Size = new System.Drawing.Size(409, 36);
+            this.txtTaiKhoan.TabIndex = 0;
+            this.txtTaiKhoan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtTaiKhoan.TextName = "Tài khoản";
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkBlue;
             this.ClientSize = new System.Drawing.Size(560, 622);
-            this.Controls.Add(this.txtMaNV);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.cboSDT);
+            this.Controls.Add(this.txtTaiKhoan);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnDangNhap);
@@ -209,7 +188,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -222,8 +200,6 @@
         private ePOSOne.btnProduct.Button_WOC btnThoat;
         private System.Windows.Forms.PictureBox pictureBox3;
         private JMaterialTextbox.JMaterialTextbox txtMatKhau;
-        private System.Windows.Forms.ComboBox cboSDT;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtMaNV;
+        private JMaterialTextbox.JMaterialTextbox txtTaiKhoan;
     }
 }

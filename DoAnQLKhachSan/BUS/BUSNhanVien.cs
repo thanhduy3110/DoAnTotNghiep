@@ -21,7 +21,12 @@ namespace BUS
         {
             NV.HienThiDanhSach(sTimKiem, d);
         }
-            public DataTable NhanVien_Select()
+
+        //public DataTable TimKiemNV(string MaNV)
+        //{
+        //    return NV.TimKiemNV(MaNV);
+        //}
+        public DataTable NhanVien_Select()
         {
             return NV.NhanVien_Select();
         }

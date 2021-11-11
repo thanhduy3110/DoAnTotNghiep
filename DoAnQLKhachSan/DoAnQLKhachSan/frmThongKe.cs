@@ -25,6 +25,7 @@ namespace DoAnQLKhachSan
         {
             LoadBieuDo();
             
+            
         }
 
        
@@ -60,7 +61,7 @@ namespace DoAnQLKhachSan
             {
                 
                 dgvDSThongKe.Columns.Clear();
-                dgvDSThongKe.DataSource = bTK.ThongKeHD();
+                bTK.ThongKeHD(dgvDSThongKe, Convert.ToDateTime(dtpNgayBD.Text).ToString("yyyy-MM-dd"), Convert.ToDateTime(dtpNgayKT.Text).ToString("yyyy-MM-dd"));
             }
             else if (radioSLDVTonKho.Checked == true)
             {
@@ -70,7 +71,11 @@ namespace DoAnQLKhachSan
             }else if(radioDVPThuongDat.Checked==true)
             {
                 dgvDSThongKe.Columns.Clear();
-                dgvDSThongKe.DataSource = bTK.ThongKeDV();
+                bTK.ThongKeDV(dgvDSThongKe, Convert.ToDateTime(dtpNgayBD.Text).ToString("yyyy-MM-dd"), Convert.ToDateTime(dtpNgayKT.Text).ToString("yyyy-MM-dd"));
+            }else if(radioPhongSuaChua.Checked==true)
+            {
+                dgvDSThongKe.Columns.Clear();
+                dgvDSThongKe.DataSource = bTK.ThongKePhongSuaChua();
             }    
         }
     }
