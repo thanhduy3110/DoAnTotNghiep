@@ -107,7 +107,7 @@ namespace DoAnQLKhachSan
                     int r = dgvDichVu.CurrentCell.RowIndex;
                     if (dgvDichVu.Rows.Count > 0)
                     {
-                        if (txtTenDV.Text == dgvDichVu.Rows[r].Cells[6].Value.ToString())//so sánh txtSDT với SDT dòng numrow ở dgv
+                        if (txtTenDV.Text.ToLower() == dgvDichVu.Rows[r].Cells[6].Value.ToString().ToLower())//so sánh txtSDT với SDT dòng numrow ở dgv
                         {
                             //nêu bằng thì bỏ qua bước này
                             //nêu không bằng nhau thì xuống else
@@ -198,7 +198,7 @@ namespace DoAnQLKhachSan
                                 {
                                     for (int i = 0; i < dgvDichVu.Rows.Count - 1; i++)//vòng lặp
                                     {
-                                        if (txtTenDV.Text == dgvDichVu.Rows[i].Cells[2].Value.ToString())//so sánh txtSDT với từng dòng trong dgv
+                                        if (txtTenDV.Text.ToLower() == dgvDichVu.Rows[i].Cells[2].Value.ToString().ToLower())//so sánh txtSDT với từng dòng trong dgv
                                         {
                                             //nêu txtSDT bằng với một hàng thì đã tồn tại
                                             MessageBox.Show("Dịch vụ này đã tồn tại");

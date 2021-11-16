@@ -29,23 +29,24 @@ namespace DoAnQLKhachSan
         /// </summary>
         private void InitializeComponent()
         {
+            ePOSOne.btnProduct.Button_WOC btnThongKe;
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            ePOSOne.btnProduct.Button_WOC btnThongKe;
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioPhongSuaChua = new System.Windows.Forms.RadioButton();
+            this.dtpNgayKT = new System.Windows.Forms.DateTimePicker();
+            this.dtpNgayBD = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.radioSLDVTonKho = new System.Windows.Forms.RadioButton();
             this.radioDVPThuongDat = new System.Windows.Forms.RadioButton();
             this.radioDoanhThuHD = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvDSThongKe = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dtpNgayBD = new System.Windows.Forms.DateTimePicker();
-            this.dtpNgayKT = new System.Windows.Forms.DateTimePicker();
-            this.radioPhongSuaChua = new System.Windows.Forms.RadioButton();
+            this.radioPhongChoKhach = new System.Windows.Forms.RadioButton();
             btnThongKe = new ePOSOne.btnProduct.Button_WOC();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -53,6 +54,33 @@ namespace DoAnQLKhachSan
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSThongKe)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btnThongKe
+            // 
+            btnThongKe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            btnThongKe.BorderColor = System.Drawing.Color.Black;
+            btnThongKe.ButtonColor = System.Drawing.Color.Lime;
+            btnThongKe.CausesValidation = false;
+            btnThongKe.Cursor = System.Windows.Forms.Cursors.Default;
+            btnThongKe.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            btnThongKe.FlatAppearance.BorderSize = 0;
+            btnThongKe.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            btnThongKe.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            btnThongKe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnThongKe.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnThongKe.ForeColor = System.Drawing.Color.White;
+            btnThongKe.Location = new System.Drawing.Point(36, 368);
+            btnThongKe.Name = "btnThongKe";
+            btnThongKe.OnHoverBorderColor = System.Drawing.Color.Red;
+            btnThongKe.OnHoverButtonColor = System.Drawing.Color.Yellow;
+            btnThongKe.OnHoverTextColor = System.Drawing.Color.Black;
+            btnThongKe.Size = new System.Drawing.Size(194, 48);
+            btnThongKe.TabIndex = 176;
+            btnThongKe.Text = "Xác nhận thống kê";
+            btnThongKe.TextColor = System.Drawing.Color.Black;
+            btnThongKe.UseVisualStyleBackColor = true;
+            btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
             // groupBox4
             // 
@@ -84,6 +112,7 @@ namespace DoAnQLKhachSan
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.radioPhongChoKhach);
             this.groupBox1.Controls.Add(this.radioPhongSuaChua);
             this.groupBox1.Controls.Add(this.dtpNgayKT);
             this.groupBox1.Controls.Add(this.dtpNgayBD);
@@ -100,6 +129,51 @@ namespace DoAnQLKhachSan
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thống kê";
+            // 
+            // radioPhongSuaChua
+            // 
+            this.radioPhongSuaChua.AutoSize = true;
+            this.radioPhongSuaChua.Location = new System.Drawing.Point(509, 128);
+            this.radioPhongSuaChua.Name = "radioPhongSuaChua";
+            this.radioPhongSuaChua.Size = new System.Drawing.Size(194, 28);
+            this.radioPhongSuaChua.TabIndex = 181;
+            this.radioPhongSuaChua.TabStop = true;
+            this.radioPhongSuaChua.Text = "Phòng đang sửa";
+            this.radioPhongSuaChua.UseVisualStyleBackColor = true;
+            // 
+            // dtpNgayKT
+            // 
+            this.dtpNgayKT.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayKT.Location = new System.Drawing.Point(690, 51);
+            this.dtpNgayKT.Name = "dtpNgayKT";
+            this.dtpNgayKT.Size = new System.Drawing.Size(200, 32);
+            this.dtpNgayKT.TabIndex = 180;
+            // 
+            // dtpNgayBD
+            // 
+            this.dtpNgayBD.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayBD.Location = new System.Drawing.Point(223, 51);
+            this.dtpNgayBD.Name = "dtpNgayBD";
+            this.dtpNgayBD.Size = new System.Drawing.Size(200, 32);
+            this.dtpNgayBD.TabIndex = 179;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(505, 59);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(151, 24);
+            this.label2.TabIndex = 178;
+            this.label2.Text = "Ngày kết thúc";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(41, 59);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(145, 24);
+            this.label1.TabIndex = 178;
+            this.label1.Text = "Ngày bắt đầu";
             // 
             // radioSLDVTonKho
             // 
@@ -157,77 +231,16 @@ namespace DoAnQLKhachSan
             this.dgvDSThongKe.Size = new System.Drawing.Size(940, 313);
             this.dgvDSThongKe.TabIndex = 0;
             // 
-            // label1
+            // radioPhongChoKhach
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 59);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 24);
-            this.label1.TabIndex = 178;
-            this.label1.Text = "Ngày bắt đầu";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(505, 59);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 24);
-            this.label2.TabIndex = 178;
-            this.label2.Text = "Ngày kết thúc";
-            // 
-            // dtpNgayBD
-            // 
-            this.dtpNgayBD.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayBD.Location = new System.Drawing.Point(223, 51);
-            this.dtpNgayBD.Name = "dtpNgayBD";
-            this.dtpNgayBD.Size = new System.Drawing.Size(200, 32);
-            this.dtpNgayBD.TabIndex = 179;
-            // 
-            // dtpNgayKT
-            // 
-            this.dtpNgayKT.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayKT.Location = new System.Drawing.Point(690, 51);
-            this.dtpNgayKT.Name = "dtpNgayKT";
-            this.dtpNgayKT.Size = new System.Drawing.Size(200, 32);
-            this.dtpNgayKT.TabIndex = 180;
-            // 
-            // radioPhongSuaChua
-            // 
-            this.radioPhongSuaChua.AutoSize = true;
-            this.radioPhongSuaChua.Location = new System.Drawing.Point(509, 128);
-            this.radioPhongSuaChua.Name = "radioPhongSuaChua";
-            this.radioPhongSuaChua.Size = new System.Drawing.Size(194, 28);
-            this.radioPhongSuaChua.TabIndex = 181;
-            this.radioPhongSuaChua.TabStop = true;
-            this.radioPhongSuaChua.Text = "Phòng đang sửa";
-            this.radioPhongSuaChua.UseVisualStyleBackColor = true;
-            // 
-            // btnThongKe
-            // 
-            btnThongKe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            btnThongKe.BorderColor = System.Drawing.Color.Black;
-            btnThongKe.ButtonColor = System.Drawing.Color.Lime;
-            btnThongKe.CausesValidation = false;
-            btnThongKe.Cursor = System.Windows.Forms.Cursors.Default;
-            btnThongKe.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            btnThongKe.FlatAppearance.BorderSize = 0;
-            btnThongKe.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            btnThongKe.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            btnThongKe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnThongKe.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            btnThongKe.ForeColor = System.Drawing.Color.White;
-            btnThongKe.Location = new System.Drawing.Point(36, 368);
-            btnThongKe.Name = "btnThongKe";
-            btnThongKe.OnHoverBorderColor = System.Drawing.Color.Red;
-            btnThongKe.OnHoverButtonColor = System.Drawing.Color.Yellow;
-            btnThongKe.OnHoverTextColor = System.Drawing.Color.Black;
-            btnThongKe.Size = new System.Drawing.Size(194, 48);
-            btnThongKe.TabIndex = 176;
-            btnThongKe.Text = "Xác nhận thống kê";
-            btnThongKe.TextColor = System.Drawing.Color.Black;
-            btnThongKe.UseVisualStyleBackColor = true;
-            btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
+            this.radioPhongChoKhach.AutoSize = true;
+            this.radioPhongChoKhach.Location = new System.Drawing.Point(509, 188);
+            this.radioPhongChoKhach.Name = "radioPhongChoKhach";
+            this.radioPhongChoKhach.Size = new System.Drawing.Size(318, 28);
+            this.radioPhongChoKhach.TabIndex = 182;
+            this.radioPhongChoKhach.TabStop = true;
+            this.radioPhongChoKhach.Text = "Phòng đang chờ khách nhận";
+            this.radioPhongChoKhach.UseVisualStyleBackColor = true;
             // 
             // frmThongKe
             // 
@@ -268,5 +281,6 @@ namespace DoAnQLKhachSan
         private System.Windows.Forms.DateTimePicker dtpNgayKT;
         private System.Windows.Forms.DateTimePicker dtpNgayBD;
         private System.Windows.Forms.RadioButton radioPhongSuaChua;
+        private System.Windows.Forms.RadioButton radioPhongChoKhach;
     }
 }

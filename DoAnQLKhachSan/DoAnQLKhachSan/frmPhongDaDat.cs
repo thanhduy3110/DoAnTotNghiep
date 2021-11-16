@@ -58,6 +58,7 @@ namespace DoAnQLKhachSan
         void clear_textbox()
         {
             cboMaPhong.Text = "";
+            txtSDT.Text = "";
             
         }
         void xulychucnang(Boolean t)
@@ -73,9 +74,9 @@ namespace DoAnQLKhachSan
             try
             {
 
-                txtTenKH.Text = dgvPhongDaDat.Rows[numrow].Cells[2].Value.ToString();
-                cboSDTKH.Text = dgvPhongDaDat.Rows[numrow].Cells[3].Value.ToString();
-                cboMaPhong.Text = dgvPhongDaDat.Rows[numrow].Cells[8].Value.ToString();
+                txtSDT.Text = dgvPhongDaDat.Rows[numrow].Cells[3].Value.ToString();
+                cboTenKH.Text = dgvPhongDaDat.Rows[numrow].Cells[2].Value.ToString();
+                cboMaPhong.Text = dgvPhongDaDat.Rows[numrow].Cells[7].Value.ToString();
                 dtpNgayDen.Text = dgvPhongDaDat.Rows[numrow].Cells[9].Value.ToString();
                 dtpNgayDi.Text = dgvPhongDaDat.Rows[numrow].Cells[10].Value.ToString();
             }
@@ -91,7 +92,7 @@ namespace DoAnQLKhachSan
             if (flag == false)
             {
                 clear_textbox();
-
+                txtSDT.ReadOnly = false;
                 flag = true;
             }
 
@@ -104,45 +105,149 @@ namespace DoAnQLKhachSan
                 }
                 else
                 {
-                    int numrow = dgvPhongDaDat.CurrentCell.RowIndex;
-                    if (dgvPhongDaDat.Rows.Count > 0)
-                    {
-                        if (cboMaPhong.Text == dgvPhongDaDat.Rows[numrow].Cells[2].Value.ToString())
-                        {
+                    //int numrow = dgvPhongDaDat.CurrentCell.RowIndex;
 
-                        }
-                        else
+                    if(dgvPhongDaDat.Rows.Count ==1)
+                    {
+                        if(Int32.Parse(bPDD.Phong_HienTTPhong(cboMaPhong.Text).Rows[0][1].ToString()) == 2)
+                        {
+                            MessageBox.Show("Phòng này đã đặt rồi");
+                            return;
+                        }    
+                    } 
+                        
+                       
+                       
+                   else if (dgvPhongDaDat.Rows.Count > 0)
+                    {
+                        //if (cboMaPhong.Text == MaPhong)
+                        //{
+
+                        //}
+                        //else
                         {
                             for (int i = 0; i < dgvPhongDaDat.Rows.Count - 1; i++)
                             {
-                                if (cboMaPhong.Text == dgvPhongDaDat.Rows[i].Cells[2].Value.ToString())
+                                if (cboMaPhong.Text == dgvPhongDaDat.Rows[i].Cells[8].Value.ToString())
                                 {
-                                    MessageBox.Show("Phòng này đã đặt rồi");
-                                    return;
+
+                                    string ngden = dgvPhongDaDat.Rows[i].Cells[10].Value.ToString();
+                                    int ngayden = Int32.Parse(string.Format("{0:dd}", Convert.ToDateTime(ngden)));
+                                    int thangden = Int32.Parse(string.Format("{0:MM}", Convert.ToDateTime(ngden)));
+                                    int namden = Int32.Parse(string.Format("{0:yyyy}", Convert.ToDateTime(ngden)));
+
+                                    string ngdi = dgvPhongDaDat.Rows[i].Cells[11].Value.ToString();
+                                    int ngaydi = Int32.Parse(string.Format("{0:dd}", Convert.ToDateTime(ngdi)));
+                                    int thangdi = Int32.Parse(string.Format("{0:MM}", Convert.ToDateTime(ngdi)));
+                                    int namdi = Int32.Parse(string.Format("{0:yyyy}", Convert.ToDateTime(ngdi)));
+
+                                    if (KTNgayDen(ngayden, thangden, namden, dtpNgayDen.Value.Day, dtpNgayDen.Value.Month, dtpNgayDen.Value.Year) == true)
+                                    {
+                                        
+                                        if (KTNgayDen(ngayden, thangden, namden, dtpNgayDi.Value.Day, dtpNgayDi.Value.Month, dtpNgayDi.Value.Year) == false )
+                                        {
+                                            MessageBox.Show("Phòng này đã đặt rồi ");
+                                            return;
+                                        }    
+                                        
+                                    }
+                                    else if (KTNgayDi(ngaydi, thangdi, namdi, dtpNgayDen.Value.Day, dtpNgayDen.Value.Month, dtpNgayDen.Value.Year) == true)
+                                    {
+                                        
+                                        if (KTNgayDi(ngaydi, thangdi, namdi, dtpNgayDi.Value.Day, dtpNgayDi.Value.Month, dtpNgayDi.Value.Year) == false )
+                                        {
+                                            MessageBox.Show("Phòng này đã đặt rồi ");
+                                            return;
+                                        }
+                                    }    
+                                    else if(KTNgayDen(ngayden, thangden, namden, dtpNgayDen.Value.Day, dtpNgayDen.Value.Month, dtpNgayDen.Value.Year) == false)
+                                    {
+                                        if (KTNgayDen(ngayden, thangden, namden, dtpNgayDi.Value.Day, dtpNgayDi.Value.Month, dtpNgayDi.Value.Year) == false)
+                                        {
+                                            MessageBox.Show("Phòng này đã đặt rồi ");
+                                            return;
+                                        }
+
+                                    }    
+                                    
+
                                 }
                             }
                         }
                     }
+                    
                     string TangID = (bPDD.PhongDaDat_Select().Rows.Count + 1).ToString();
                     xulychucnang(true);
-                    bPDD.PhongDaDat_Them( cboSDTKH.SelectedValue.ToString(), cboMaPhong.SelectedValue.ToString(), Convert.ToDateTime(dtpNgayDen.Text).ToString("yyyy-MM-dd"), Convert.ToDateTime(dtpNgayDi.Text).ToString("yyyy-MM-dd"));
+                    bPDD.PhongDaDat_Them( cboTenKH.SelectedValue.ToString(), cboMaPhong.SelectedValue.ToString(), Convert.ToDateTime(dtpNgayDen.Text).ToString("yyyy-MM-dd"), Convert.ToDateTime(dtpNgayDi.Text).ToString("yyyy-MM-dd"));
                     bPhong.phong_CNConTrong(Int32.Parse(cboMaPhong.SelectedValue.ToString()), 2);
                     MessageBox.Show("Thêm thành công ");
                     flag = false;
+                    txtSDT.ReadOnly = true;
                     dgvPhongDaDat.DataSource = bPDD.PhongDaDat_Select();
+                    dgvDSPhong.Columns.Clear();
+                    
                 }
             }
 
 
         }
 
+
+        public bool KTNgayDen(int ngay, int thang, int nam, int ngay1, int thang1, int nam1)
+        {
+            if (thang1 == thang && nam1 == nam && ngay > ngay1)
+            {
+                //MessageBox.Show("KT Đúng Ngay đi  vs ngay đến trong data");
+                return true;
+            }
+            //else if (dtpNgayDi.Value.Month < thang && dtpNgayDi.Value.Year == nam)
+            //{
+            //    return true;
+            //}
+            else
+            {
+                //MessageBox.Show("KT Sai Ngay đi  vs ngay đến trong data");
+                return false;
+            }    
+               
+        }
+
+        public bool KTNgayDi(int ngay, int thang, int nam ,int ngay1,int thang1,int nam1)
+        {
+            if (thang1 == thang && nam1 == nam && ngay < ngay1)
+            {
+                //MessageBox.Show("KT Đúng Ngay đến  vs ngay đi trong data");
+                return true;
+            }
+            //else if (dtpNgayDen.Value.Month > thang && dtpNgayDen.Value.Year == nam)
+            //{
+            //    return true;
+            //}
+            else
+            {
+                //MessageBox.Show("KT Sai Ngay đến  vs ngay đi trong data");
+                return false;
+            }    
+        }
         private void btnXoa_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có muốn xóa phiếu đặt phòng này không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 bool HL = false;
+                int dem = 0;
                 bPDD.PhongDaDat_Xoa(ID.ToString());
-                bPhong.phong_CNConTrong(ID_Phong, 0);
+                for (int i = 0; i < dgvPhongDaDat.Rows.Count - 1; i++)
+                {
+                    if(cboMaPhong.Text== dgvPhongDaDat.Rows[i].Cells[8].Value.ToString())
+                    {
+                        dem++;
+                    }    
+                } 
+                if(dem==1)
+                {
+                    bPhong.phong_CNConTrong(ID_Phong, 0);
+                }    
+                    
                 dgvPhongDaDat.DataSource = bPDD.PhongDaDat_Select();
             }
             }
@@ -162,7 +267,7 @@ namespace DoAnQLKhachSan
                 else
                 {
                     xulychucnang(true);
-                    bPDD.PhongDaDat_CapNhat(ID.ToString(), cboSDTKH.SelectedValue.ToString(), cboMaPhong.SelectedValue.ToString(), Convert.ToDateTime(dtpNgayDen.Text).ToString("yyyy-MM-dd"), Convert.ToDateTime(dtpNgayDi.Text).ToString("yyyy-MM-dd"));
+                    bPDD.PhongDaDat_CapNhat(ID.ToString(), cboTenKH.SelectedValue.ToString(), cboMaPhong.SelectedValue.ToString(), Convert.ToDateTime(dtpNgayDen.Text).ToString("yyyy-MM-dd"), Convert.ToDateTime(dtpNgayDi.Text).ToString("yyyy-MM-dd"));
                     bPhong.phong_CNConTrong(ID_Phong, 0);
                     bPhong.phong_CNConTrong(Int32.Parse(cboMaPhong.SelectedValue.ToString()), 2);
                     MessageBox.Show("Sữa thành công ");
@@ -174,14 +279,112 @@ namespace DoAnQLKhachSan
 
 
         int ID,IDPHONG,ID_PhieuDat,ID_Phong;
-        string TenKH, SDT, HTT, GTN, GTG, ID_KH, SoPhong, NgayDen, NgayDi;
+        string TenKH, SDT, HTT, GTN, GTG, ID_KH, SoPhong, NgayDen, NgayDi,MaPhong;
 
-       
+        private void dgvDSPhong_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int vt = dgvDSPhong.CurrentCell.RowIndex;
+            HienThiDS(vt);
+        }
+
+        //private void cboMaPhong_KeyDown(object sender, KeyEventArgs e)
+        //{
+        //    if(e.KeyCode==Keys.Enter)
+        //    {
+        //       txtTenLP.Text= bPDD.Phong_HienTMaPhong(cboMaPhong.Text).Rows[0][1].ToString();
+        //        txtSoKhach.Text= bPDD.Phong_HienTMaPhong(cboMaPhong.Text).Rows[0][3].ToString();
+        //        txtTenLP.Text= bPDD.Phong_HienTMaPhong(cboMaPhong.Text).Rows[0][3].ToString();
+        //    }    
+        //}
+
+        public void HienThiDS(int vt)
+        {
+            try
+            {
+                cboMaPhong.Text = dgvDSPhong.Rows[vt].Cells[0].Value.ToString();
+            }
+            catch(Exception ex)
+            {
+
+            }
+        }
+
+        private void txtSDT_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+            {
+                if(bPDD.PhongDaDat_HTTenKH(txtSDT.Text).Rows.Count==0)
+                {
+                    MessageBox.Show("Thông tin khách hàng chưa có");
+                }    
+                else
+                {
+                    cboTenKH.Text = bPDD.PhongDaDat_HTTenKH(txtSDT.Text).Rows[0][0].ToString();
+                    dtpNgayDen.Text = bPDD.PhongDaDat_HTTenKH(txtSDT.Text).Rows[0][1].ToString();
+                    dtpNgayDi.Text = bPDD.PhongDaDat_HTTenKH(txtSDT.Text).Rows[0][2].ToString();
+                    rtxtGhiChu.Text = bPDD.PhongDaDat_HTTenKH(txtSDT.Text).Rows[0][3].ToString();
+                }    
+               
+            }    
+        }
+
+        private void btnXem_Click(object sender, EventArgs e)
+        {
+            if(radioPhongCD.Checked==true)
+            {
+                if (cboGocNhin.Text == "")
+                {
+                    MessageBox.Show("Bạn phải nhập đầy đủ thông tin");
+                }
+                else
+                {
+                    bool BonTam1;
+                    if (chkBonTam.Checked == true)
+                    {
+                        BonTam1 = true;
+                    }
+                    else
+                    {
+                        BonTam1 = false;
+                    }
+                    dgvDSPhong.Columns.Clear();
+                    dgvDSPhong.DataSource = bPDD.PhongDaDat_TimDSPhongCD(cboGocNhin.SelectedIndex, BonTam1);
+                }
+
+
+            }
+            else if(radioPhongDDT.Checked==true)
+            {
+                if (dtpNgayBD.Text == "" || dtpNgayKT.Text == "" || cboGocNhin.Text == "")
+                {
+                    MessageBox.Show("Bạn phải nhập đầy đủ thông tin");
+                }
+                else
+                {
+                    bool BonTam;
+                    if (chkBonTam.Checked == true)
+                    {
+                        BonTam = true;
+                    }
+                    else
+                    {
+                        BonTam = false;
+                    }
+
+                    dgvDSPhong.Columns.Clear();
+                    dgvDSPhong.DataSource = bPDD.PhongDaDat_TimDSPhongDD(Convert.ToDateTime(dtpNgayBD.Text).ToString("yyyy-MM-dd"), Convert.ToDateTime(dtpNgayKT.Text).ToString("yyyy-MM-dd"), cboGocNhin.SelectedIndex, BonTam);
+                }    
+           
+            }
+        }
+
+      
 
         private void dgvPhongDaDat_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
+
                 int vt = dgvPhongDaDat.CurrentCell.RowIndex;
                 hienthi_textbox(vt);
                 ID = Int32.Parse(dgvPhongDaDat.Rows[vt].Cells[0].Value.ToString());
@@ -190,13 +393,13 @@ namespace DoAnQLKhachSan
                 SDT = dgvPhongDaDat.Rows[vt].Cells[3].Value.ToString();
                
                 GTN = dgvPhongDaDat.Rows[vt].Cells[5].Value.ToString();
-                GTG = dgvPhongDaDat.Rows[vt].Cells[6].Value.ToString();
-                ID_KH = dgvPhongDaDat.Rows[vt].Cells[7].Value.ToString();
+                ID_KH = dgvPhongDaDat.Rows[vt].Cells[6].Value.ToString();
                 ID_Phong= Int32.Parse(dgvPhongDaDat.Rows[vt].Cells[11].Value.ToString());
-                //HTT = dgvPhongDaDat.Rows[vt].Cells[4].Value.ToString();
-                //SoPhong = dgvPhongDaDat.Rows[vt].Cells[8].Value.ToString();
-                //NgayDen = dgvPhongDaDat.Rows[vt].Cells[9].Value.ToString();
-                //NgayDi = dgvPhongDaDat.Rows[vt].Cells[10].Value.ToString();
+                MaPhong = dgvPhongDaDat.Rows[vt].Cells[7].Value.ToString();
+                HTT = dgvPhongDaDat.Rows[vt].Cells[4].Value.ToString();
+                SoPhong = dgvPhongDaDat.Rows[vt].Cells[7].Value.ToString();
+                NgayDen = dgvPhongDaDat.Rows[vt].Cells[9].Value.ToString();
+                NgayDi = dgvPhongDaDat.Rows[vt].Cells[10].Value.ToString();
             }
             catch (Exception ex)
             {
@@ -207,13 +410,18 @@ namespace DoAnQLKhachSan
         private void frmPhongDaDat_Load(object sender, EventArgs e)
         {
 
-            txtTenKH.ReadOnly = true;
+            txtSDT.ReadOnly = true;
             txtSoKhach.ReadOnly = true;
+            rtxtGhiChu.ReadOnly = true;
             xulychucnang(true);
+            bPDD.HienThiSDT(cboTenKH);
             //bPDD.HienThiID_PDD(cboID_PDP, dtpNgayDen, dtpNgayDi);
-            bPDD.HienThiMaPhong(cboMaPhong,txtSoKhach);
-            bPDD.HienThiSDT(cboSDTKH,dtpNgayDen,dtpNgayDi,txtTenKH);
+            bPDD.HienThiMaPhong(cboMaPhong,txtSoKhach,txtTenLP);
             dgvPhongDaDat.DataSource = bPDD.PhongDaDat_Select();
+            dgvPhongDaDat.ReadOnly = true;
+            dgvDSPhong.ReadOnly = true;
+            dtpNgayBD.Text = DateTime.Now.ToString();
+            dtpNgayKT.Text = DateTime.Now.ToString();
         }
 
         private void txtTim_TextChangeEvent(object sender, EventArgs e)
@@ -252,38 +460,34 @@ namespace DoAnQLKhachSan
 
 
                 TangMaHD = PhatSinhMaTuDong();
-                for (int i = 0; i < dgvPhongDaDat.Rows.Count - 1; i++)
-                {
+                //for (int i = 0; i < dgvPhongDaDat.Rows.Count - 1; i++)
+                //{
 
-                    if (ID_KH == dgvPhongDaDat.Rows[i].Cells[7].Value.ToString())
-                    {
-                        int IDD = Int32.Parse(dgvPhongDaDat.Rows[i].Cells[0].Value.ToString());
-                        HTT = dgvPhongDaDat.Rows[i].Cells[4].Value.ToString();
-                        SoPhong = dgvPhongDaDat.Rows[i].Cells[8].Value.ToString();
-                        NgayDen = dgvPhongDaDat.Rows[i].Cells[9].Value.ToString();
-                        NgayDi = dgvPhongDaDat.Rows[i].Cells[10].Value.ToString();
-                        IDPHONG = Int32.Parse(dgvPhongDaDat.Rows[i].Cells[11].Value.ToString());
+                    //if (ID_KH == dgvPhongDaDat.Rows[i].Cells[7].Value.ToString())
+                    //{
+
+                        //int IDD = Int32.Parse(dgvPhongDaDat.Rows[i].Cells[0].Value.ToString());
+                        //HTT = dgvPhongDaDat.Rows[i].Cells[4].Value.ToString();
+                        //SoPhong = dgvPhongDaDat.Rows[i].Cells[8].Value.ToString();
+                        //NgayDen = dgvPhongDaDat.Rows[i].Cells[10].Value.ToString();
+                        //NgayDi = dgvPhongDaDat.Rows[i].Cells[11].Value.ToString();
+                        //IDPHONG = Int32.Parse(dgvPhongDaDat.Rows[i].Cells[12].Value.ToString());
                         if (HTT == "False")
                         {
                             HinhTT = 0;
                             TienPhong = Int32.Parse(bHD.TienPhong(Int32.Parse(SoPhong)).Rows[0][0].ToString());
                             TongTienPhong = TienPhong * ((ThoiGianThue(NgayDen,NgayDi,GioThue) / 24));
                         }
-                        else
-                        {
-                            HinhTT = 1;
-                            TienPhong = Int32.Parse(bHD.TienPhong(Int32.Parse(SoPhong)).Rows[0][1].ToString());
-                            TongTienPhong = TienPhong * (ThoiGianThue(NgayDen, NgayDi, GioThue));
-                        }
+                       
 
                         int TangID = bHD.HoaDon_Select().Rows.Count + 1;
                         
-                        bHD.HoaDon_Them(TangID, TangMaHD, IDNV.ToString(), ID_KH, IDPHONG.ToString(), Convert.ToDateTime(DateTime.Now).ToString("yyyy/MM/dd hh:mm"), Convert.ToDateTime(NgayDen).ToString("yyyy/MM/dd hh:mm"), Convert.ToDateTime(NgayDi).ToString("yyyy/MM/dd hh:mm"), HinhTT, TongTienPhong, "0", TongTienPhong, "Không", false, true);
+                        bHD.HoaDon_Them(TangID, TangMaHD, IDNV.ToString(), ID_KH, ID_Phong.ToString(), Convert.ToDateTime(DateTime.Now).ToString("yyyy/MM/dd hh:mm"), Convert.ToDateTime(NgayDen).ToString("yyyy/MM/dd hh:mm"), Convert.ToDateTime(NgayDi).ToString("yyyy/MM/dd hh:mm"), true, TongTienPhong, "0", TongTienPhong, "Không", false, true);
                         bPhong.phong_CNConTrong(IDPHONG, 1);
-                        bPDD.PhongDaDat_Xoa(IDD.ToString());
-                    }
+                        bPDD.PhongDaDat_Xoa(ID.ToString());
+                    //}
 
-                }
+                //}
 
                 MessageBox.Show("Xác nhận hoàn tất");
                 bPhieuDP.phieudatphong_XuLy(ID_PhieuDat, true);

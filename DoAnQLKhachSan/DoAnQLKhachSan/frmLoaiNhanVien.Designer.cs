@@ -226,7 +226,7 @@
             this.btnSua.OnHoverTextColor = System.Drawing.Color.Black;
             this.btnSua.Size = new System.Drawing.Size(117, 48);
             this.btnSua.TabIndex = 194;
-            this.btnSua.Text = "SỮA";
+            this.btnSua.Text = "SỬA";
             this.btnSua.TextColor = System.Drawing.Color.Black;
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.ttnSua_Click);

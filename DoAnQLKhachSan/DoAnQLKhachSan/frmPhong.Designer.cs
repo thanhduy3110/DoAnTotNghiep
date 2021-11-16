@@ -38,23 +38,25 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.chkHieuLuc = new System.Windows.Forms.CheckBox();
             this.chkBonTam = new System.Windows.Forms.CheckBox();
-            this.chkGocNhin = new System.Windows.Forms.CheckBox();
             this.txtTim = new JTextBox.JTextBox();
             this.rtxtGhiChu = new DevComponents.DotNetBar.Controls.RichTextBoxEx();
             this.cboConTrong = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.comboItem1 = new DevComponents.Editors.ComboItem();
             this.comboItem2 = new DevComponents.Editors.ComboItem();
             this.comboItem3 = new DevComponents.Editors.ComboItem();
+            this.comboItem4 = new DevComponents.Editors.ComboItem();
+            this.cboGocNhin = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.comboItem5 = new DevComponents.Editors.ComboItem();
+            this.comboItem6 = new DevComponents.Editors.ComboItem();
+            this.comboItem7 = new DevComponents.Editors.ComboItem();
             this.cboTenLP = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.txtSoPhong = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtGiaThueTheoNgay = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtTang = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtGiaThueTheoGio = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.labelX11 = new DevComponents.DotNetBar.LabelX();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
@@ -67,13 +69,11 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboItem4 = new DevComponents.Editors.ComboItem();
             btnXoa = new ePOSOne.btnProduct.Button_WOC();
             btnSua = new ePOSOne.btnProduct.Button_WOC();
             btnThem = new ePOSOne.btnProduct.Button_WOC();
@@ -132,7 +132,7 @@
             btnSua.OnHoverTextColor = System.Drawing.Color.Black;
             btnSua.Size = new System.Drawing.Size(117, 48);
             btnSua.TabIndex = 175;
-            btnSua.Text = "SỮA";
+            btnSua.Text = "SỬA";
             btnSua.TextColor = System.Drawing.Color.Black;
             btnSua.UseVisualStyleBackColor = true;
             btnSua.Click += new System.EventHandler(this.btnSua_Click_1);
@@ -193,23 +193,21 @@
             // 
             this.groupBox2.Controls.Add(this.chkHieuLuc);
             this.groupBox2.Controls.Add(this.chkBonTam);
-            this.groupBox2.Controls.Add(this.chkGocNhin);
             this.groupBox2.Controls.Add(this.txtTim);
             this.groupBox2.Controls.Add(this.rtxtGhiChu);
             this.groupBox2.Controls.Add(btnXoa);
             this.groupBox2.Controls.Add(btnSua);
             this.groupBox2.Controls.Add(btnThem);
             this.groupBox2.Controls.Add(this.cboConTrong);
+            this.groupBox2.Controls.Add(this.cboGocNhin);
             this.groupBox2.Controls.Add(this.cboTenLP);
             this.groupBox2.Controls.Add(this.txtSoPhong);
             this.groupBox2.Controls.Add(this.txtGiaThueTheoNgay);
             this.groupBox2.Controls.Add(this.txtTang);
-            this.groupBox2.Controls.Add(this.txtGiaThueTheoGio);
             this.groupBox2.Controls.Add(this.labelX5);
             this.groupBox2.Controls.Add(this.labelX4);
             this.groupBox2.Controls.Add(this.labelX3);
             this.groupBox2.Controls.Add(this.labelX2);
-            this.groupBox2.Controls.Add(this.labelX11);
             this.groupBox2.Controls.Add(this.labelX10);
             this.groupBox2.Controls.Add(this.labelX9);
             this.groupBox2.Controls.Add(this.labelX8);
@@ -237,20 +235,11 @@
             // chkBonTam
             // 
             this.chkBonTam.AutoSize = true;
-            this.chkBonTam.Location = new System.Drawing.Point(1117, 126);
+            this.chkBonTam.Location = new System.Drawing.Point(1117, 197);
             this.chkBonTam.Name = "chkBonTam";
             this.chkBonTam.Size = new System.Drawing.Size(18, 17);
             this.chkBonTam.TabIndex = 182;
             this.chkBonTam.UseVisualStyleBackColor = true;
-            // 
-            // chkGocNhin
-            // 
-            this.chkGocNhin.AutoSize = true;
-            this.chkGocNhin.Location = new System.Drawing.Point(1117, 194);
-            this.chkGocNhin.Name = "chkGocNhin";
-            this.chkGocNhin.Size = new System.Drawing.Size(18, 17);
-            this.chkGocNhin.TabIndex = 182;
-            this.chkGocNhin.UseVisualStyleBackColor = true;
             // 
             // txtTim
             // 
@@ -300,7 +289,7 @@
             this.comboItem2,
             this.comboItem3,
             this.comboItem4});
-            this.cboConTrong.Location = new System.Drawing.Point(648, 252);
+            this.cboConTrong.Location = new System.Drawing.Point(648, 184);
             this.cboConTrong.Name = "cboConTrong";
             this.cboConTrong.Size = new System.Drawing.Size(310, 36);
             this.cboConTrong.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -317,6 +306,41 @@
             // comboItem3
             // 
             this.comboItem3.Text = "Đã đặt trước";
+            // 
+            // comboItem4
+            // 
+            this.comboItem4.Text = "Đang sửa chữa";
+            // 
+            // cboGocNhin
+            // 
+            this.cboGocNhin.DisplayMember = "Text";
+            this.cboGocNhin.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboGocNhin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboGocNhin.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboGocNhin.ForeColor = System.Drawing.Color.Black;
+            this.cboGocNhin.FormattingEnabled = true;
+            this.cboGocNhin.ItemHeight = 30;
+            this.cboGocNhin.Items.AddRange(new object[] {
+            this.comboItem5,
+            this.comboItem6,
+            this.comboItem7});
+            this.cboGocNhin.Location = new System.Drawing.Point(1117, 115);
+            this.cboGocNhin.Name = "cboGocNhin";
+            this.cboGocNhin.Size = new System.Drawing.Size(310, 36);
+            this.cboGocNhin.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cboGocNhin.TabIndex = 170;
+            // 
+            // comboItem5
+            // 
+            this.comboItem5.Text = "View Hồ bơi";
+            // 
+            // comboItem6
+            // 
+            this.comboItem6.Text = "View Bãi biển";
+            // 
+            // comboItem7
+            // 
+            this.comboItem7.Text = "View Thành phố";
             // 
             // cboTenLP
             // 
@@ -341,7 +365,7 @@
             this.txtSoPhong.Border.Class = "TextBoxBorder";
             this.txtSoPhong.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtSoPhong.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoPhong.Location = new System.Drawing.Point(1117, 33);
+            this.txtSoPhong.Location = new System.Drawing.Point(1117, 29);
             this.txtSoPhong.Name = "txtSoPhong";
             this.txtSoPhong.PreventEnterBeep = true;
             this.txtSoPhong.Size = new System.Drawing.Size(310, 35);
@@ -375,20 +399,6 @@
             this.txtTang.PreventEnterBeep = true;
             this.txtTang.Size = new System.Drawing.Size(310, 35);
             this.txtTang.TabIndex = 165;
-            // 
-            // txtGiaThueTheoGio
-            // 
-            // 
-            // 
-            // 
-            this.txtGiaThueTheoGio.Border.Class = "TextBoxBorder";
-            this.txtGiaThueTheoGio.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtGiaThueTheoGio.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGiaThueTheoGio.Location = new System.Drawing.Point(648, 181);
-            this.txtGiaThueTheoGio.Name = "txtGiaThueTheoGio";
-            this.txtGiaThueTheoGio.PreventEnterBeep = true;
-            this.txtGiaThueTheoGio.Size = new System.Drawing.Size(310, 35);
-            this.txtGiaThueTheoGio.TabIndex = 164;
             // 
             // labelX5
             // 
@@ -428,7 +438,7 @@
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX3.ForeColor = System.Drawing.Color.DarkBlue;
-            this.labelX3.Location = new System.Drawing.Point(986, 40);
+            this.labelX3.Location = new System.Drawing.Point(986, 36);
             this.labelX3.Margin = new System.Windows.Forms.Padding(4);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(124, 24);
@@ -449,21 +459,6 @@
             this.labelX2.Size = new System.Drawing.Size(124, 24);
             this.labelX2.TabIndex = 158;
             this.labelX2.Text = "Loại phòng:";
-            // 
-            // labelX11
-            // 
-            // 
-            // 
-            // 
-            this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX11.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX11.ForeColor = System.Drawing.Color.DarkBlue;
-            this.labelX11.Location = new System.Drawing.Point(444, 185);
-            this.labelX11.Margin = new System.Windows.Forms.Padding(4);
-            this.labelX11.Name = "labelX11";
-            this.labelX11.Size = new System.Drawing.Size(213, 24);
-            this.labelX11.TabIndex = 157;
-            this.labelX11.Text = "Giá thuê theo giờ:";
             // 
             // labelX10
             // 
@@ -488,7 +483,7 @@
             this.labelX9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX9.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX9.ForeColor = System.Drawing.Color.DarkBlue;
-            this.labelX9.Location = new System.Drawing.Point(444, 258);
+            this.labelX9.Location = new System.Drawing.Point(444, 190);
             this.labelX9.Margin = new System.Windows.Forms.Padding(4);
             this.labelX9.Name = "labelX9";
             this.labelX9.Size = new System.Drawing.Size(124, 24);
@@ -503,7 +498,7 @@
             this.labelX8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX8.ForeColor = System.Drawing.Color.DarkBlue;
-            this.labelX8.Location = new System.Drawing.Point(986, 121);
+            this.labelX8.Location = new System.Drawing.Point(986, 192);
             this.labelX8.Margin = new System.Windows.Forms.Padding(4);
             this.labelX8.Name = "labelX8";
             this.labelX8.Size = new System.Drawing.Size(124, 24);
@@ -518,7 +513,7 @@
             this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX7.ForeColor = System.Drawing.Color.DarkBlue;
-            this.labelX7.Location = new System.Drawing.Point(986, 187);
+            this.labelX7.Location = new System.Drawing.Point(986, 120);
             this.labelX7.Margin = new System.Windows.Forms.Padding(4);
             this.labelX7.Name = "labelX7";
             this.labelX7.Size = new System.Drawing.Size(103, 24);
@@ -570,7 +565,6 @@
             this.Column3,
             this.Column4,
             this.Column5,
-            this.Column6,
             this.Column11,
             this.Column7,
             this.Column8,
@@ -642,14 +636,6 @@
             this.Column5.Name = "Column5";
             this.Column5.Width = 200;
             // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "giathuegio";
-            this.Column6.HeaderText = "Giá thuê theo giờ";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 190;
-            // 
             // Column11
             // 
             this.Column11.DataPropertyName = "ghichu";
@@ -690,10 +676,6 @@
             this.Column10.Name = "Column10";
             this.Column10.Width = 120;
             // 
-            // comboItem4
-            // 
-            this.comboItem4.Text = "Đang sửa chữa";
-            // 
             // frmPhong
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -720,7 +702,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.CheckBox chkHieuLuc;
         private System.Windows.Forms.CheckBox chkBonTam;
-        private System.Windows.Forms.CheckBox chkGocNhin;
         private JTextBox.JTextBox txtTim;
         private DevComponents.DotNetBar.Controls.RichTextBoxEx rtxtGhiChu;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cboConTrong;
@@ -728,12 +709,10 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txtSoPhong;
         private DevComponents.DotNetBar.Controls.TextBoxX txtGiaThueTheoNgay;
         private DevComponents.DotNetBar.Controls.TextBoxX txtTang;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtGiaThueTheoGio;
         private DevComponents.DotNetBar.LabelX labelX5;
         private DevComponents.DotNetBar.LabelX labelX4;
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.LabelX labelX2;
-        private DevComponents.DotNetBar.LabelX labelX11;
         private DevComponents.DotNetBar.LabelX labelX10;
         private DevComponents.DotNetBar.LabelX labelX9;
         private DevComponents.DotNetBar.LabelX labelX8;
@@ -741,20 +720,23 @@
         private DevComponents.DotNetBar.LabelX labelX6;
         private System.Windows.Forms.GroupBox groupBox3;
         private DevComponents.DotNetBar.Controls.DataGridViewX dgvDSPhong;
+        private DevComponents.Editors.ComboItem comboItem1;
+        private DevComponents.Editors.ComboItem comboItem2;
+        private DevComponents.Editors.ComboItem comboItem3;
+        private DevComponents.Editors.ComboItem comboItem4;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cboGocNhin;
+        private DevComponents.Editors.ComboItem comboItem5;
+        private DevComponents.Editors.ComboItem comboItem6;
+        private DevComponents.Editors.ComboItem comboItem7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private DevComponents.Editors.ComboItem comboItem1;
-        private DevComponents.Editors.ComboItem comboItem2;
-        private DevComponents.Editors.ComboItem comboItem3;
-        private DevComponents.Editors.ComboItem comboItem4;
     }
 }

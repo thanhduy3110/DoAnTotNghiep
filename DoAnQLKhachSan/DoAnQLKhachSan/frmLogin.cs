@@ -116,7 +116,7 @@ namespace DoAnQLKhachSan
                 //sẽ xử lý chuyện đó sau :v
                 if (count == 0)
                 {
-                    MessageBox.Show("Bạn vui lòng nhập đúng mật khẩu và chọn đúng số điện thoại");
+                    MessageBox.Show("Nhập sai tài khoản hoặc mật khẩu");
                 }
                 else
                 {
@@ -142,6 +142,10 @@ namespace DoAnQLKhachSan
             this.Close();
         }
 
-       
+      
+
+     
+
+     
     }
 }

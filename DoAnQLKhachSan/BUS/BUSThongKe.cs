@@ -20,6 +20,11 @@ namespace BUS
             return TK.ThongKeSLT();
         }
 
+        public DataTable THongKePhongChoKhach()
+        {
+            return TK.THongKePhongChoKhach();
+        }
+
         public DataTable ThongKePhongSuaChua()
         {
             return TK.ThongKePhongSuaChua();

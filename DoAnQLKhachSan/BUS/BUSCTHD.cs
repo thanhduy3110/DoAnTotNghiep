@@ -32,9 +32,9 @@ namespace BUS
         {
             return CTHD.CTHD_Select();
         }
-        public int CTHD_Them(int ID, int ID_HD, string ID_DV, string SoLuong, string DonGia)
+        public int CTHD_Them(int ID, int ID_HD, string ID_DV, string SoLuong, string DonGia,string ThoiGian)
         {
-            return CTHD.CTHD_Them(ID, ID_HD,ID_DV, SoLuong, DonGia);
+            return CTHD.CTHD_Them(ID, ID_HD,ID_DV, SoLuong, DonGia,ThoiGian);
         }
 
         public int CTHD_CongDonSL(string ID, string SoLuong)
@@ -42,9 +42,9 @@ namespace BUS
             return CTHD.CTHD_CongDonSL(ID, SoLuong);
         }
 
-        public int CTHD_CapNhat(int ID, int ID_HD, string ID_DV, string SoLuong, string DonGia)
+        public int CTHD_CapNhat(int ID, int ID_HD, string ID_DV, string SoLuong, string DonGia, string ThoiGian)
         {
-            return CTHD.CTHD_CapNhat(ID, ID_HD, ID_DV, SoLuong, DonGia);
+            return CTHD.CTHD_CapNhat(ID, ID_HD, ID_DV, SoLuong, DonGia, ThoiGian);
         }
 
         public int CTHD_Xoa(string ID)

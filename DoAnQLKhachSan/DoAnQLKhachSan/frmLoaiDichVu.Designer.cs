@@ -130,7 +130,7 @@
             btnSua.OnHoverTextColor = System.Drawing.Color.Black;
             btnSua.Size = new System.Drawing.Size(117, 48);
             btnSua.TabIndex = 200;
-            btnSua.Text = "SỮA";
+            btnSua.Text = "SỬA";
             btnSua.TextColor = System.Drawing.Color.Black;
             btnSua.UseVisualStyleBackColor = true;
             btnSua.Click += new System.EventHandler(this.btnSua_Click);

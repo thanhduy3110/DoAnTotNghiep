@@ -27,49 +27,52 @@ namespace DAO
 
         public void HienThiDanhSach(string sTimKiem, DataGridView d)
         {
-            dsPhong = db.LayDanhSach("select Phong.ID,TenLoaiPhong,SoPhong,Tang,GiaThueNgay,GiaThueGio,GhiChu,dbo.Phong_GocNhin(GocNhin)as GocNhin,dbo.Phong_BonTam(BonTam)as BonTam,dbo.Phong_ConTrong(ConTrong)as ConTrong,dbo.Phong_HieuLuc(Phong.HieuLuc)as HieuLuc  from Phong,LoaiPhong where Phong.ID_LoaiPhong=LoaiPhong.ID and Phong.HieuLuc=1 and SoPhong like N'%" + sTimKiem + "%'");
+            dsPhong = db.LayDanhSach("select Phong.ID,TenLoaiPhong,SoPhong,Tang,GiaThueNgay,GhiChu,dbo.Phong_GocNhin(GocNhin)as GocNhin,dbo.Phong_BonTam(BonTam)as BonTam,dbo.Phong_ConTrong(ConTrong)as ConTrong,dbo.Phong_HieuLuc(Phong.HieuLuc)as HieuLuc  from Phong,LoaiPhong where Phong.ID_LoaiPhong=LoaiPhong.ID and Phong.HieuLuc=1 and SoPhong like N'%" + sTimKiem + "%'");
             d.DataSource = dsPhong.Tables[0];
         }
         public DataTable phong_select()
         {
             return db.Laydulieu("phong_select");
         }
-        public int phong_them(string ID, string ID_LoaiPhong, string SoPhong, string Tang, string GiaThueNgay, string GiaThueGio, string GhiChu, bool GocNhin, bool BonTam, int ConTrong, bool HieuLuc)
+
+        public DataTable phong_ChuyenPhong()
         {
-
-            name = new string[11];
-            value = new object[11];
-            name[0] = "@ID"; value[0] = ID;
-            name[1] = "@ID_LoaiPhong"; value[1] = ID_LoaiPhong;
-            name[2] = "@SoPhong"; value[2] = SoPhong;
-            name[3] = "@Tang"; value[3] = Tang;
-            name[4] = "@GiaThueNgay"; value[4] = GiaThueNgay;
-            name[5] = "@GiaThueGio"; value[5] = GiaThueGio;
-            name[6] = "@GhiChu"; value[6] = GhiChu;
-            name[7] = "@GocNhin"; value[7] = GocNhin;
-            name[8] = "@BonTam"; value[8] = BonTam;
-            name[9] = "@ConTrong"; value[9] = ConTrong;
-            name[10] = "@HieuLuc"; value[10] = HieuLuc;
-
-            return db.ThucHien("phong_them", name, value, 11);
+            return db.Laydulieu("phong_ChuyenPhong");
         }
-        public int phong_capnhat(string ID, string ID_LoaiPhong, string SoPhong, string Tang, string GiaThueNgay, string GiaThueGio, string GhiChu, bool GocNhin, bool BonTam, int ConTrong, bool HieuLuc)
+        public int phong_them(string ID, string ID_LoaiPhong, string SoPhong, string Tang, string GiaThueNgay, string GhiChu, int GocNhin, bool BonTam, int ConTrong, bool HieuLuc)
         {
-            name = new string[11];
-            value = new object[11];
+
+            name = new string[10];
+            value = new object[10];
             name[0] = "@ID"; value[0] = ID;
             name[1] = "@ID_LoaiPhong"; value[1] = ID_LoaiPhong;
             name[2] = "@SoPhong"; value[2] = SoPhong;
             name[3] = "@Tang"; value[3] = Tang;
             name[4] = "@GiaThueNgay"; value[4] = GiaThueNgay;
-            name[5] = "@GiaThueGio"; value[5] = GiaThueGio;
-            name[6] = "@GhiChu"; value[6] = GhiChu;
-            name[7] = "@GocNhin"; value[7] = GocNhin;
-            name[8] = "@BonTam"; value[8] = BonTam;
-            name[9] = "@ConTrong"; value[9] = ConTrong;
-            name[10] = "@HieuLuc"; value[10] = HieuLuc;
+            name[5] = "@GhiChu"; value[5] = GhiChu;
+            name[6] = "@GocNhin"; value[6] = GocNhin;
+            name[7] = "@BonTam"; value[7] = BonTam;
+            name[8] = "@ConTrong"; value[8] = ConTrong;
+            name[9] = "@HieuLuc"; value[9] = HieuLuc;
 
-            return db.ThucHien("phong_capnhat", name, value, 11);
+            return db.ThucHien("phong_them", name, value, 10);
+        }
+        public int phong_capnhat(string ID, string ID_LoaiPhong, string SoPhong, string Tang, string GiaThueNgay,  string GhiChu, int GocNhin, bool BonTam, int ConTrong, bool HieuLuc)
+        {
+            name = new string[10];
+            value = new object[10];
+            name[0] = "@ID"; value[0] = ID;
+            name[1] = "@ID_LoaiPhong"; value[1] = ID_LoaiPhong;
+            name[2] = "@SoPhong"; value[2] = SoPhong;
+            name[3] = "@Tang"; value[3] = Tang;
+            name[4] = "@GiaThueNgay"; value[4] = GiaThueNgay;
+            name[5] = "@GhiChu"; value[5] = GhiChu;
+            name[6] = "@GocNhin"; value[6] = GocNhin;
+            name[7] = "@BonTam"; value[7] = BonTam;
+            name[8] = "@ConTrong"; value[8] = ConTrong;
+            name[9] = "@HieuLuc"; value[9] = HieuLuc;
+
+            return db.ThucHien("phong_capnhat", name, value, 10);
         }
 
         public int Phong_Xoa(int ID, bool HieuLuc)

@@ -15,9 +15,12 @@ namespace DoAnQLKhachSan
         private int iID_HD, iHinhThucThue,iTGThue,iTienDV,ID_NV,ID_KH,ID_Phong;
         private string MaHD, NgayDi,NgayDen;
 
+        public delegate void ChuyenPhong();
+        public ChuyenPhong chuyenphong;
+
         private void frmChuyenPhong_Load(object sender, EventArgs e)
         {
-            dgv_Phong.DataSource = Bphong.Phong_Select();
+            dgv_Phong.DataSource = Bphong.phong_ChuyenPhong();
         }
 
 
@@ -31,8 +34,8 @@ namespace DoAnQLKhachSan
             int vt = dgv_Phong.CurrentCell.RowIndex;
             ID = Int32.Parse(dgv_Phong.Rows[vt].Cells[0].Value.ToString());
             //ID_LoaiPhong = Int32.Parse(dgv_Phong.Rows[vt].Cells[2].Value.ToString());
-            TTN = Int32.Parse(dgv_Phong.Rows[vt].Cells[4].Value.ToString());
-            TTG = Int32.Parse(dgv_Phong.Rows[vt].Cells[5].Value.ToString());
+            TTN = Int32.Parse(dgv_Phong.Rows[vt].Cells[5].Value.ToString());
+           
             ConTrong = dgv_Phong.Rows[vt].Cells[9].Value.ToString();
 
         }
@@ -66,12 +69,13 @@ namespace DoAnQLKhachSan
         }
 
         int GioThue,GioThueCu;
+        int TienPhong , TongTien, TienPhongCu, TongTienCu;
         private void btnChuyenPhong_Click(object sender, EventArgs e)
         {
 
+        
 
-            int TienPhong, TongTien, TienPhongCu, TongTienCu;
-            if (ConTrong == "Không còn trống")
+            if (ConTrong == "Không còn trống" || ConTrong == "Đã đặt trước")
             {
                 MessageBox.Show("Phòng này đã có người dử dụng");
             }
@@ -80,22 +84,27 @@ namespace DoAnQLKhachSan
                 if (iHinhThucThue == 1)
                 {
                     TienPhong = TTN * (ThoiGianThue(GioThue) / 24);
+                    
                     TienPhongCu = Int32.Parse(bHD.HoaDon_TimPhongCu(this.ID_Phong).Rows[0][1].ToString()) * (ThoiGianThueCu(GioThueCu) / 24);
+                   
                 }
-                else
-                {
-                    TienPhong = TTG * (ThoiGianThue(GioThue));
-                    TienPhongCu = Int32.Parse(bHD.HoaDon_TimPhongCu(this.ID_Phong).Rows[0][2].ToString()) * ThoiGianThueCu(GioThueCu);
-                }
+
+                //else
+                //{
+                //    TienPhong = TTG * (ThoiGianThue(GioThue));
+                //    TienPhongCu = Int32.Parse(bHD.HoaDon_TimPhongCu(this.ID_Phong).Rows[0][2].ToString()) * ThoiGianThueCu(GioThueCu);
+                //}
+
                 TongTienCu = TienPhongCu + this.iTienDV;
                 //MessageBox.Show("Tien " + TTN+" "+TTG);
                 //Bphong.phong_CNConTrong(ID, 1);
                 bHD.HoaDon_CapNhatChuyenPhong(iID_HD, this.ID_Phong, Convert.ToDateTime(DateTime.Now).ToString("yyyy/MM/dd hh:mm"), TienPhongCu, TongTienCu);
-                Bphong.phong_CNConTrong(this.ID_Phong,0 );
+                Bphong.phong_CNConTrong(this.ID_Phong, 0);
                 int TangID = bHD.HoaDon_Select().Rows.Count + 1;
-                bHD.HoaDon_Them(TangID, this.MaHD, this.ID_NV.ToString(), this.ID_KH.ToString(), ID.ToString(), Convert.ToDateTime(DateTime.Now).ToString("yyyy/MM/dd hh:mm"), Convert.ToDateTime(DateTime.Now).ToString("yyyy/MM/dd hh:mm"), Convert.ToDateTime(this.NgayDi).ToString("yyyy/MM/dd hh:mm"), this.iHinhThucThue, TienPhong, "0", TienPhong, "Không", false, true);
+                bHD.HoaDon_Them(TangID, PhatSinhMaTuDong(), this.ID_NV.ToString(), this.ID_KH.ToString(), ID.ToString(), Convert.ToDateTime(DateTime.Now).ToString("yyyy/MM/dd hh:mm"), Convert.ToDateTime(DateTime.Now).ToString("yyyy/MM/dd hh:mm"), Convert.ToDateTime(this.NgayDi).ToString("yyyy/MM/dd hh:mm"), true, TienPhong, "0", TienPhong, "Không", false, true);
                 Bphong.phong_CNConTrong(this.ID, 1);
                 MessageBox.Show("Chuyển phòng thành công");
+                chuyenphong();
                 this.Close();
             }
 
@@ -103,12 +112,37 @@ namespace DoAnQLKhachSan
 
         }
 
+        string PhatSinhMaTuDong()
+        {
+            string MaHD = "";
+            int dem = bHD.HoaDon_Select().Rows.Count + 1;
+            if (dem < 10)
+            {
+                MaHD = "HD00" + dem.ToString();
+            }
+            else
+            {
+                MaHD = "HD0" + dem.ToString();
+            }
+
+            return MaHD;
+        }
 
         private int ThoiGianThueCu(int iGio)
         {
             if (DateTime.Now.Month == Int32.Parse(string.Format("{0:MM}", Convert.ToDateTime(NgayDen))) && DateTime.Now.Year == Int32.Parse(string.Format("{0:yyyy}", Convert.ToDateTime(NgayDen))))
             {
-                iGio = (DateTime.Now.Day -Int32.Parse(string.Format("{0:dd}", Convert.ToDateTime(NgayDen)))) * 24;
+                if((DateTime.Now.Day - Int32.Parse(string.Format("{0:dd}", Convert.ToDateTime(NgayDen))))==0)
+                {
+                    iGio = 1 * 24;
+                }    
+                else
+                {
+                    iGio = (DateTime.Now.Day - Int32.Parse(string.Format("{0:dd}", Convert.ToDateTime(NgayDen))))*24;
+                }
+
+               
+               
             }
             else if (DateTime.Now.Month > Int32.Parse(string.Format("{0:MM}", Convert.ToDateTime(NgayDen)))  && DateTime.Now.Year == Int32.Parse(string.Format("{0:yyyy}", Convert.ToDateTime(NgayDen))))
             {
@@ -122,7 +156,16 @@ namespace DoAnQLKhachSan
         {
             if (DateTime.Now.Month == Int32.Parse(string.Format("{0:MM}", Convert.ToDateTime(NgayDi))) && DateTime.Now.Year == Int32.Parse(string.Format("{0:yyyy}", Convert.ToDateTime(NgayDi))))
             {
-                iGio = (Int32.Parse(string.Format("{0:dd}", Convert.ToDateTime(NgayDi))) - DateTime.Now.Day) * 24;
+                if((Int32.Parse(string.Format("{0:dd}", Convert.ToDateTime(NgayDi))) - DateTime.Now.Day)==0)
+                {
+                    iGio = 1 * 24;
+                }
+                else
+                {
+                    iGio = (Int32.Parse(string.Format("{0:dd}", Convert.ToDateTime(NgayDi))) - DateTime.Now.Day) * 24;
+                }    
+           
+                
             }
             else if (Int32.Parse(string.Format("{0:MM}", Convert.ToDateTime(NgayDi))) > DateTime.Now.Month && DateTime.Now.Year == Int32.Parse(string.Format("{0:yyyy}", Convert.ToDateTime(NgayDi))))
             {

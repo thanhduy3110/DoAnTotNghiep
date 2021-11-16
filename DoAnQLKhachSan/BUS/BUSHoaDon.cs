@@ -18,20 +18,20 @@ namespace BUS
             HD.HienThiTenNV(cboTenNV);
         }
 
-        //public void HienThiTenKH(ComboBox cboTenKH)
-        //{
-        //    HD.HienThiTenKH(cboTenKH);
-        //}
+        public void HienThiTenKH(ComboBox cboTenKH)
+        {
+            HD.HienThiTenKH(cboTenKH);
+        }
 
         public void HienThiSDT(ComboBox cboSDT)
         {
             HD.HienThiSDT(cboSDT);
         }
 
-        public void HienThiTenKH(ComboBox cboSDT, TextBox txtTenKH)
-        {
-            HD.HienThiTenKH(cboSDT,txtTenKH);
-        }
+        //public void HienThiTenKH(ComboBox cboSDT, TextBox txtTenKH)
+        //{
+        //    HD.HienThiTenKH(cboSDT,txtTenKH);
+        //}
 
 
         public void HienThiMaPhong(ComboBox cboMaPhong)
@@ -46,6 +46,11 @@ namespace BUS
         public DataTable TienPhong(int SoPhong)
         {
             return HD.TienPhong(SoPhong);
+        }
+
+        public DataTable HoaDon_HTTenKH(string SDT)
+        {
+            return HD.HoaDon_HTTenKH(SDT);
         }
 
         public void HienThiDanhSach(string sTimKiem, DataGridView d)
@@ -68,7 +73,7 @@ namespace BUS
         }
 
 
-        public int HoaDon_Them(int ID, string MaHD, string ID_NV, string ID_KH, string ID_Phong, string NgayLap, string NgayDen, string NgayDi, int HinhThucThue, int TTPhong, string TTDV, int TT, string GhiChu, bool TToan, bool HieuLuc)
+        public int HoaDon_Them(int ID, string MaHD, string ID_NV, string ID_KH, string ID_Phong, string NgayLap, string NgayDen, string NgayDi, bool HinhThucThue, int TTPhong, string TTDV, int TT, string GhiChu, bool TToan, bool HieuLuc)
         {
             return HD.HoaDon_Them(ID, MaHD, ID_NV, ID_KH, ID_Phong, NgayLap, NgayDen, NgayDi, HinhThucThue, TTPhong, TTDV, TT, GhiChu, TToan, HieuLuc);
         }
@@ -77,7 +82,7 @@ namespace BUS
         {
             return HD.HoaDon_XacNhanDatPhong(ID, MaHD, ID_NV, ID_KH, ID_Phong, NgayLap, NgayDen, NgayDi, HinhThucThue, TTPhong, TT, ThanhToan, HieuLuc);
         }
-            public int HoaDon_CapNhat(int ID, string MaHD, string ID_NV, string ID_KH, string ID_Phong, string NgayLap, string NgayDen, string NgayDi, int HinhThucThue, string TTPhong, string TTDV, string TT, string GhiChu, bool TToan, bool HieuLuc)
+            public int HoaDon_CapNhat(int ID, string MaHD, string ID_NV, string ID_KH, string ID_Phong, string NgayLap, string NgayDen, string NgayDi, bool HinhThucThue, string TTPhong, string TTDV, string TT, string GhiChu, bool TToan, bool HieuLuc)
         {
             return HD.HoaDon_CapNhat(ID, MaHD, ID_NV, ID_KH, ID_Phong, NgayLap, NgayDen, NgayDi, HinhThucThue, TTPhong, TTDV, TT, GhiChu, TToan, HieuLuc);
         }

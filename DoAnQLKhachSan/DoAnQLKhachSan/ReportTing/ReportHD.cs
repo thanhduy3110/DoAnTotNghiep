@@ -10,6 +10,7 @@ namespace DoAnQLKhachSan.ReportTing
     {
         public string MaHD { get; set; }
 
+        public string TenKH { get; set; }
         public DateTime NgayDen { get; set; }
         public DateTime NgayDi { get; set; }
         public int SoPhong { get; set; }

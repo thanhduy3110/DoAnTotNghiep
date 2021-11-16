@@ -61,7 +61,6 @@ namespace DoAnQLKhachSan
             cboTenLP.Text = "";
             txtTang.Text = "";
             txtTang.Text = "";
-            txtGiaThueTheoGio.Text = "";
             txtGiaThueTheoNgay.Text = "";
             rtxtGhiChu.Text = "";
             txtSoPhong.Text = "";
@@ -72,7 +71,6 @@ namespace DoAnQLKhachSan
         {
             txtTang.ReadOnly = t;
             rtxtGhiChu.ReadOnly = t;
-            txtGiaThueTheoGio.ReadOnly = t;
             txtGiaThueTheoNgay.ReadOnly = t;
             txtSoPhong.ReadOnly = t;
         }
@@ -92,20 +90,19 @@ namespace DoAnQLKhachSan
                 xulytextbox(false);
                
                 chkBonTam.Checked = false;
-                chkGocNhin.Checked = false;
                 chkHieuLuc.Checked = true;
                 flag = true;
             }
 
             else if (flag == true)
             {
-                if (cboTenLP.Text == "" || txtTang.Text == "" || txtTang.Text == "" || txtGiaThueTheoNgay.Text == "" || txtGiaThueTheoGio.Text == "" )
+                if (cboTenLP.Text == "" || txtTang.Text == "" || txtTang.Text == "" || txtGiaThueTheoNgay.Text == "" )
                 {
                     MessageBox.Show("Lỗi");
                 }
                 else
                 {
-                    bool hieuluc, bontam, gocnhin;
+                    bool hieuluc, bontam;
 
                     if (chkBonTam.Checked == true)
                     {
@@ -123,14 +120,7 @@ namespace DoAnQLKhachSan
                     {
                         hieuluc = false;
                     }
-                    if (chkGocNhin.Checked == true)
-                    {
-                        gocnhin = true;
-                    }
-                    else
-                    {
-                        gocnhin = false;
-                    }
+                 
 
                     //lọc trùng dữ liệu
                     int numrow = dgvDSPhong.CurrentCell.RowIndex;
@@ -146,14 +136,14 @@ namespace DoAnQLKhachSan
                             {
                                 if (txtSoPhong.Text == dgvDSPhong.Rows[i].Cells[2].Value.ToString())
                                 {
-                                    MessageBox.Show("Số điện thoại đã tồn tại trong hệ thống");
+                                    MessageBox.Show("Số phòng đã tồn tại trong hệ thống");
                                     return;
                                 }
                             }
                         }
                     }
                         int TangID = Bphong.Phong_Select().Rows.Count + 1;
-                    Bphong.P_Them(TangID.ToString(), cboTenLP.SelectedValue.ToString(), txtSoPhong.Text, txtTang.Text, txtGiaThueTheoNgay.Text, txtGiaThueTheoGio.Text, rtxtGhiChu.Text, gocnhin, bontam, cboConTrong.SelectedIndex, hieuluc);
+                    Bphong.P_Them(TangID.ToString(), cboTenLP.SelectedValue.ToString(), txtSoPhong.Text, txtTang.Text, txtGiaThueTheoNgay.Text, rtxtGhiChu.Text, cboGocNhin.SelectedIndex, bontam, cboConTrong.SelectedIndex, hieuluc);
                     MessageBox.Show("thêm thành công");
                     flag = false;
                     xulytextbox(true);
@@ -171,7 +161,8 @@ namespace DoAnQLKhachSan
             }
             else if (flag == true)
             {
-                bool hieuluc, bontam, gocnhin;
+
+                bool hieuluc, bontam;
 
                 if (chkBonTam.Checked == true)
                 {
@@ -189,14 +180,7 @@ namespace DoAnQLKhachSan
                 {
                     hieuluc = false;
                 }
-                if (chkGocNhin.Checked == true)
-                {
-                    gocnhin = true;
-                }
-                else
-                {
-                    gocnhin = false;
-                }
+
                 int numrow = dgvDSPhong.CurrentCell.RowIndex;
                 if (dgvDSPhong.Rows.Count > 0)
                 {
@@ -216,7 +200,7 @@ namespace DoAnQLKhachSan
                         }
                     }
                 }
-                Bphong.P_CapNhat(ID.ToString(), cboTenLP.SelectedValue.ToString(), txtTang.Text, txtTang.Text, txtGiaThueTheoNgay.Text, txtGiaThueTheoGio.Text, rtxtGhiChu.Text, gocnhin, bontam, cboConTrong.SelectedIndex, hieuluc);
+                Bphong.P_CapNhat(ID.ToString(), cboTenLP.SelectedValue.ToString(), txtSoPhong.Text, txtTang.Text, txtGiaThueTheoNgay.Text, rtxtGhiChu.Text, cboGocNhin.SelectedIndex, bontam, cboConTrong.SelectedIndex, hieuluc);
                 MessageBox.Show("sửa thành công");
                 flag = false;
                 xulytextbox(true);
@@ -242,21 +226,15 @@ namespace DoAnQLKhachSan
             txtSoPhong.Text= dgvDSPhong.Rows[numrow].Cells[2].Value.ToString();
             txtTang.Text= dgvDSPhong.Rows[numrow].Cells[3].Value.ToString();
             txtGiaThueTheoNgay.Text= dgvDSPhong.Rows[numrow].Cells[4].Value.ToString();
-            txtGiaThueTheoGio.Text= dgvDSPhong.Rows[numrow].Cells[5].Value.ToString();
-            rtxtGhiChu.Text= dgvDSPhong.Rows[numrow].Cells[6].Value.ToString();
+          
+            rtxtGhiChu.Text= dgvDSPhong.Rows[numrow].Cells[5].Value.ToString();
+            cboGocNhin.Text= dgvDSPhong.Rows[numrow].Cells[6].Value.ToString();
             cboConTrong.Text= dgvDSPhong.Rows[numrow].Cells[9].Value.ToString();
 
-            string GocNhin= dgvDSPhong.Rows[numrow].Cells[7].Value.ToString();
-            string BonTam= dgvDSPhong.Rows[numrow].Cells[8].Value.ToString();
-            string HieuLuc= dgvDSPhong.Rows[numrow].Cells[10].Value.ToString();
-            if (GocNhin== "Có ban công")
-            {
-                chkGocNhin.Checked = true;
-            }    
-            else
-            {
-                chkGocNhin.Checked = false;
-            }
+            
+            string BonTam= dgvDSPhong.Rows[numrow].Cells[7].Value.ToString();
+            string HieuLuc= dgvDSPhong.Rows[numrow].Cells[8].Value.ToString();
+           
 
             if (BonTam == "Có bồn tắm")
             {

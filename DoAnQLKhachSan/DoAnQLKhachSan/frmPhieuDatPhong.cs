@@ -21,15 +21,35 @@ namespace DoAnQLKhachSan
         BUSPhieuDatPhong bpdp = new BUSPhieuDatPhong();
         bool flag=false;
 
+        public void XulyTextBox(bool t)
+        {
+            txtSDT.ReadOnly = !t;
+            txtSoKH.ReadOnly = !t;
+            rtxtGhiChu.ReadOnly = !t;
+            dtNgayDen.Enabled = t;
+            dtNgayDi.Enabled = t;
+            radioNgay.Enabled = t;
+            
+            
+
+        }
+
+        public void ClearTextBox()
+        {
+            txtSDT.Text = "";
+            cboTenKH.Text = "";
+            rtxtGhiChu.Text = "";
+            
+        }
+
         private void btnThem_Click_1(object sender, EventArgs e)
         {
             if(flag==false)
             {
                 clear_textbox();
-               
+                XulyTextBox(true);
                 chkHieuLuc.Checked = true;
                 chkDaXuLy.Checked = false;
-                radioGio.Checked = false;
                 radioNgay.Checked = false;
                 flag = true;
             }    
@@ -62,18 +82,15 @@ namespace DoAnQLKhachSan
                     {
                         HieuLuc = false;
                     }   
-                    if(radioGio.Checked==true)
-                    {
-                        HinhThucThue = true;
-                    }    
-                    else if(radioNgay.Checked==true)
+                    if(radioNgay.Checked==true)
                     {
                         HinhThucThue = false;
                     }
                     string TangID = (bpdp.PDP_Select().Rows.Count + 1).ToString();
-                    bpdp.PDP_Them(TangID, cboSODTKH.SelectedValue.ToString(), Convert.ToDateTime(dtNgayDen.Text).ToString("yyyy-MM-dd") , Convert.ToDateTime(dtNgayDi.Text).ToString("yyyy-MM-dd"), HinhThucThue, txtSoKH.Text, rtxtGhiChu.Text, DaXuLy, HieuLuc);
+                    bpdp.PDP_Them(TangID, cboTenKH.SelectedValue.ToString(), Convert.ToDateTime(dtNgayDen.Text).ToString("yyyy-MM-dd") , Convert.ToDateTime(dtNgayDi.Text).ToString("yyyy-MM-dd"), HinhThucThue, txtSoKH.Text, rtxtGhiChu.Text, DaXuLy, HieuLuc);
                     MessageBox.Show("thêm thành công");
                     flag = false;
+                    XulyTextBox(false);
                     dgvPhieuDatPhong.DataSource = bpdp.PDP_Select();
                 }
             }
@@ -84,6 +101,7 @@ namespace DoAnQLKhachSan
         {
             if(flag == false)
             {
+                XulyTextBox(true);
                 flag = true;
             }    
             else if (flag == true)
@@ -108,15 +126,13 @@ namespace DoAnQLKhachSan
                 }
                 if (radioNgay.Checked == true)
                 {
-                    HinhThucThue = true;
-                }
-                else if (radioGio.Checked == true)
-                {
                     HinhThucThue = false;
                 }
-                bpdp.PDP_CapNhat(ID.ToString(), cboSODTKH.SelectedValue.ToString(), Convert.ToDateTime(dtNgayDen.Text).ToString("yyyy-MM-dd"), Convert.ToDateTime(dtNgayDi.Text).ToString("yyyy-MM-dd"), HinhThucThue, txtSoKH.Text, rtxtGhiChu.Text, DaXuLy, HieuLuc);
-                MessageBox.Show("Sửa thêm thành công");
+               
+                bpdp.PDP_CapNhat(ID.ToString(), cboTenKH.SelectedValue.ToString(), Convert.ToDateTime(dtNgayDen.Text).ToString("yyyy-MM-dd"), Convert.ToDateTime(dtNgayDi.Text).ToString("yyyy-MM-dd"), HinhThucThue, txtSoKH.Text, rtxtGhiChu.Text, DaXuLy, HieuLuc);
+                MessageBox.Show("Sửa thành công");
                 flag = false;
+                XulyTextBox(false);
                 dgvPhieuDatPhong.DataSource = bpdp.PDP_Select();
             }
         }
@@ -136,15 +152,15 @@ namespace DoAnQLKhachSan
         private void frmPhieuDatPhong_Load(object sender, EventArgs e)
         {
             //bpdp.HienThiID_KH(cboTenKH);
-            txtTenKH.ReadOnly = true;
-            bpdp.HienThiSDT(cboSODTKH, txtTenKH);
+            XulyTextBox(false);
+            bpdp.HienThiID_KH(cboTenKH);
             dgvPhieuDatPhong.DataSource = bpdp.PDP_Select();
         }
 
         void hienthi_textbox(int numrow)
         {
-           
-            //cboTenKH.Text = dgvPhieuDatPhong.Rows[numrow].Cells[1].Value.ToString();
+
+            cboTenKH.Text = dgvPhieuDatPhong.Rows[numrow].Cells[1].Value.ToString();
             dtNgayDen.Text = dgvPhieuDatPhong.Rows[numrow].Cells[2].Value.ToString();
             dtNgayDi.Text = dgvPhieuDatPhong.Rows[numrow].Cells[3].Value.ToString();
             string HTT = dgvPhieuDatPhong.Rows[numrow].Cells[4].Value.ToString();
@@ -152,14 +168,12 @@ namespace DoAnQLKhachSan
             rtxtGhiChu.Text = dgvPhieuDatPhong.Rows[numrow].Cells[6].Value.ToString();
             string DXL = dgvPhieuDatPhong.Rows[numrow].Cells[7].Value.ToString();
             string HL = dgvPhieuDatPhong.Rows[numrow].Cells[8].Value.ToString();
-            if(HTT== "Thuê theo ngày")
+            txtSDT.Text= dgvPhieuDatPhong.Rows[numrow].Cells[9].Value.ToString();
+            if (HTT== "Thuê theo ngày")
             {
                 radioNgay.Checked = true;
             }    
-            else
-            {
-                radioGio.Checked = true;
-            }   
+         
             
             if(DXL== "Xử lý rồi")
             {
@@ -233,6 +247,19 @@ namespace DoAnQLKhachSan
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtSDT_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+            {
+                if (bpdp.phieudatphong_HienThiTenKH(txtSDT.Text).Rows.Count == 0)
+                    MessageBox.Show("Tên khách hàng chưa có trong danh sách");
+                else
+                {
+                    cboTenKH.Text = bpdp.phieudatphong_HienThiTenKH(txtSDT.Text).Rows[0][0].ToString();
+                }    
+            }    
         }
     }
 }

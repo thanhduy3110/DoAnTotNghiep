@@ -22,23 +22,23 @@ namespace DAO
             cboTenNV.ValueMember = "ID";
         }
 
-        //public void HienThiTenKH(ComboBox cboTenKH)
-        //{
-        //    dsHoaDon = db.LayDanhSach("select ID, HoTen from KhachHang where HieuLuc=1");// truy vấn lên sql
-        //    cboTenKH.DataSource = dsHoaDon.Tables[0];
-        //    cboTenKH.DisplayMember = "HoTen";
-        //    cboTenKH.ValueMember = "ID";
-        //}
-
-        public void HienThiTenKH(ComboBox cboSDT,TextBox txtTenKH)
+        public void HienThiTenKH(ComboBox cboTenKH)
         {
-            DataSet dsKH = new DataSet();
-            dsKH = db.LayDanhSach("select * from KhachHang");
-            cboSDT.DataSource = dsKH.Tables[0];
-            txtTenKH.DataBindings.Clear();
-            txtTenKH.DataBindings.Add("Text", cboSDT.DataSource, "HoTen");
-
+            dsHoaDon = db.LayDanhSach("select ID, HoTen from KhachHang where HieuLuc=1");// truy vấn lên sql
+            cboTenKH.DataSource = dsHoaDon.Tables[0];
+            cboTenKH.DisplayMember = "HoTen";
+            cboTenKH.ValueMember = "ID";
         }
+
+        //public void HienThiTenKH(ComboBox cboSDT,TextBox txtTenKH)
+        //{
+        //    DataSet dsKH = new DataSet();
+        //    dsKH = db.LayDanhSach("select * from KhachHang");
+        //    cboSDT.DataSource = dsKH.Tables[0];
+        //    txtTenKH.DataBindings.Clear();
+        //    txtTenKH.DataBindings.Add("Text", cboSDT.DataSource, "HoTen");
+
+        //}
 
         public void HienThiSDT(ComboBox cboSDT)
         {
@@ -79,8 +79,8 @@ namespace DAO
 
         public void HienThiDanhSach(string sTimKiem, DataGridView d)
         {
-            //dsHoaDon = db.LayDanhSach("select HoaDon.ID,MaHD,NhanVien.HoTen as TenNV,KhachHang.HoTen as TenKH,Phong.SoPhong as SoPhong,NgayLap,NgayDen,NgayDi,dbo.HD_HinhThucThue(HoaDon.HinhThucThue) as HinhThucThue,TongTienPhong,TongTienDV,TongTien,HoaDon.GhiChu,dbo.HD_ThanhToan(HoaDon.ThanhToan) as ThanhToan,dbo.HD_HieuLuc(HoaDon.HieuLuc) as HieuLuc,NhanVien.ID as IDNV,KhachHang.ID as ID_KH from HoaDon,NhanVien,KhachHang,Phong where HoaDon.ID_NV=NhanVien.ID and HoaDon.ID_KH=KhachHang.ID and HoaDon.ID_Phong=Phong.ID and HoaDon.HieuLuc=1 and  NhanVien.HoTen like N'%" + sTimKiem + "%' or KhachHang.HoTen like N'%" + sTimKiem + "%' or SoPhong Phong.SoPhong '%" + sTimKiem + "%'");
-            //d.DataSource = dsHoaDon.Tables[0];
+            dsHoaDon = db.LayDanhSach("select HoaDon.ID,MaHD,NhanVien.HoTen as TenNV,KhachHang.HoTen as TenKH,Phong.SoPhong as SoPhong,NgayLap,NgayDen,NgayDi,dbo.HD_HinhThucThue(HoaDon.HinhThucThue) as HinhThucThue,TongTienPhong,TongTienDV,TongTien,HoaDon.GhiChu,dbo.HD_ThanhToan(HoaDon.ThanhToan) as ThanhToan,dbo.HD_HieuLuc(HoaDon.HieuLuc) as HieuLuc,NhanVien.ID as IDNV,KhachHang.ID as ID_KH,KhachHang.SDT as SDT,Phong.ID as ID_Phong from HoaDon, NhanVien, KhachHang, Phong where HoaDon.ID_NV = NhanVien.ID and HoaDon.ID_KH = KhachHang.ID and HoaDon.ID_Phong = Phong.ID and HoaDon.HieuLuc = 1 and( NhanVien.HoTen like N'%" + sTimKiem + "%' or KhachHang.HoTen like N'%" + sTimKiem + "%' or Phong.SoPhong like '%" + sTimKiem + "%' or KhachHang.SDT like '%"+sTimKiem+"%')");
+            d.DataSource = dsHoaDon.Tables[0];
         }
 
         public DataTable TienPhong(int SoPhong)//rồi, đã xem xong 1 loạt thủ tục ở dal
@@ -90,9 +90,20 @@ namespace DAO
             value = new object[1];
 
             name[0] = "@SoPhong"; value[0] = SoPhong;
-          
-
             return db.LayDuLieuCoDK("TienPhong", name, value, 1);
+        }
+
+
+        public DataTable HoaDon_HTTenKH(string SDT)//rồi, đã xem xong 1 loạt thủ tục ở dal
+                                               //đây là thủ tục sẽ dùng ở form đăng nhập, với điều kiện là trùng mã tài khoản và mật khẩu. ok?
+        {
+            name = new string[1];
+            value = new object[1];
+
+            name[0] = "@SDT"; value[0] = SDT;
+
+
+            return db.LayDuLieuCoDK("HoaDon_HTTenKH", name, value, 1);
         }
 
 
@@ -126,7 +137,7 @@ namespace DAO
         }
 
         //phương thức này gọi đến phương thức ThucHien ở dbConnectionData để thêm dữ liệu
-        public int HoaDon_Them(int ID, string MaHD, string ID_NV, string ID_KH, string ID_Phong, string NgayLap, string NgayDen, string NgayDi, int HinhThucThue, int TTPhong, string TTDV, int TT, string GhiChu, bool TToan, bool HieuLuc)
+        public int HoaDon_Them(int ID, string MaHD, string ID_NV, string ID_KH, string ID_Phong, string NgayLap, string NgayDen, string NgayDi, bool HinhThucThue, int TTPhong, string TTDV, int TT, string GhiChu, bool TToan, bool HieuLuc)
         {
             name = new string[15];
             value = new object[15];
@@ -169,7 +180,7 @@ namespace DAO
         }
 
         //update
-        public int HoaDon_CapNhat(int ID, string MaHD, string ID_NV, string ID_KH, string ID_Phong, string NgayLap, string NgayDen, string NgayDi, int HinhThucThue, string TTPhong, string TTDV, string TT, string GhiChu, bool TToan, bool HieuLuc)
+        public int HoaDon_CapNhat(int ID, string MaHD, string ID_NV, string ID_KH, string ID_Phong, string NgayLap, string NgayDen, string NgayDi, bool HinhThucThue, string TTPhong, string TTDV, string TT, string GhiChu, bool TToan, bool HieuLuc)
         {
             name = new string[15];
             value = new object[15];

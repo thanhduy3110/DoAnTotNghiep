@@ -8,6 +8,7 @@ namespace DoAnQLKhachSan.ReportTing
 {
     class ReportHD2
     {
-        public string TenKH { get; set; }
+        public string TenNV { get; set; }
+        public DateTime NgayLap { get; set; }
     }
 }

@@ -16,13 +16,14 @@ namespace DAO
         DataSet dsPDD = new DataSet();
         string[] name = { };
         object[] value = { };
-        public void HienThiMaPhong(ComboBox cboMaPhong,TextBox txtSoKhach)
+        public void HienThiMaPhong(ComboBox cboMaPhong,TextBox txtSoKhach,TextBox txtTenLP)
         {
-            ds = db.LayDanhSach("select Phong.ID as ID , SoPhong , SoKhach from Phong, LoaiPhong where Phong.ID_LoaiPhong = LoaiPhong.ID");// truy vấn lên sql
+            ds = db.LayDanhSach("select Phong.ID as ID , SoPhong , SoKhach,TenLoaiPhong from Phong, LoaiPhong where Phong.ID_LoaiPhong = LoaiPhong.ID and( Phong.ConTrong=0 or Phong.ConTrong=2)");// truy vấn lên sql
             cboMaPhong.DataSource = ds.Tables[0];
             cboMaPhong.DisplayMember = "sophong";
             cboMaPhong.ValueMember = "id";
             txtSoKhach.DataBindings.Add("Text", cboMaPhong.DataSource, "sokhach");
+            txtTenLP.DataBindings.Add("Text", cboMaPhong.DataSource, "TenLoaiPhong");
         }
 
         public void HienThiID_PDD(ComboBox cboID_PDD, DateTimeInput dtpNgayDen, DateTimeInput dtpNgayDi)
@@ -51,23 +52,91 @@ namespace DAO
         //}
 
 
-        public void HienThiSDT(ComboBox cboSDT, DateTimeInput dtpNgayDen, DateTimeInput dtpNgayDi, TextBox txtHoTen)
+        public void HienThiSDT(ComboBox cboTenKH)
         {
             DataSet dsKH = new DataSet();
-            dsKH = db.LayDanhSach("select PDP.ID as ID_PhieuDP,PDP.HinhThucThue as HTT,KH.HoTen as HoTenKH,SDT, PDP.NgayDen as NgayDen, PDP.NgayDi as NgayDi from PhieuDatPhong PDP, KhachHang KH where KH.ID = PDP.ID_KH");// truy vấn lên sql
-            cboSDT.DataSource = dsKH.Tables[0];
-            cboSDT.DisplayMember = "SDT";
-            cboSDT.ValueMember = "ID_PhieuDP";
-            dtpNgayDen.DataBindings.Add("Text", cboSDT.DataSource, "ngayden");
-            dtpNgayDi.DataBindings.Add("Text", cboSDT.DataSource, "ngaydi");
-            txtHoTen.DataBindings.Add("Text", cboSDT.DataSource, "HoTenKH");
+            dsKH = db.LayDanhSach("select PDP.ID as ID_PhieuDP,PDP.HinhThucThue as HTT,KH.HoTen as HoTenKH,SDT, PDP.NgayDen as NgayDen, PDP.NgayDi as NgayDi ,PDP.GhiChu as GhiChu from PhieuDatPhong PDP, KhachHang KH where KH.ID = PDP.ID_KH and PDP.DaXuLy=0");// truy vấn lên sql
+            cboTenKH.DataSource = dsKH.Tables[0];
+            cboTenKH.DisplayMember = "HoTenKH";
+            cboTenKH.ValueMember = "ID_PhieuDP";
+            
         }
 
 
        
+        //public DataTable PhongDaDat_HienThiDS()
+        //{
+        //    return db.Laydulieu("PhongDaDat_HienThiDS");
+        //}
+
         public DataTable PhongDaDat_Select()
         {
             return db.Laydulieu("PhongDaDat_Select");
+        }
+
+        public DataTable Phong_HienTTPhong(string SoPhong)//rồi, đã xem xong 1 loạt thủ tục ở dal
+                                                                     //đây là thủ tục sẽ dùng ở form đăng nhập, với điều kiện là trùng mã tài khoản và mật khẩu. ok?
+        {
+            name = new string[1];
+            value = new object[1];
+
+            name[0] = "@SoPhong"; value[0] = SoPhong;
+           
+
+            return db.LayDuLieuCoDK("Phong_HienTTPhong", name, value, 1);
+        }
+
+        public DataTable Phong_HienTMaPhong(string SoPhong)//rồi, đã xem xong 1 loạt thủ tục ở dal
+                                                          //đây là thủ tục sẽ dùng ở form đăng nhập, với điều kiện là trùng mã tài khoản và mật khẩu. ok?
+        {
+            name = new string[1];
+            value = new object[1];
+
+            name[0] = "@SoPhong"; value[0] = SoPhong;
+
+
+            return db.LayDuLieuCoDK("Phong_HienTMaPhong", name, value, 1);
+        }
+
+        public DataTable PhongDaDat_HTTenKH(string SDT)//rồi, đã xem xong 1 loạt thủ tục ở dal
+                                                          //đây là thủ tục sẽ dùng ở form đăng nhập, với điều kiện là trùng mã tài khoản và mật khẩu. ok?
+        {
+            name = new string[1];
+            value = new object[1];
+
+            name[0] = "@SDT"; value[0] = SDT;
+
+
+            return db.LayDuLieuCoDK("PhongDaDat_HTTenKH", name, value, 1);
+        }
+        public DataTable PhongDaDat_TimDSPhongDD(string NgayBD,string NgayKT,int GocNhin,bool BonTam)//rồi, đã xem xong 1 loạt thủ tục ở dal
+                                                          //đây là thủ tục sẽ dùng ở form đăng nhập, với điều kiện là trùng mã tài khoản và mật khẩu. ok?
+        {
+            name = new string[4];
+            value = new object[4];
+
+            name[0] = "@NgayDen"; value[0] = NgayBD;
+            name[1] = "@NgayDi"; value[1] = NgayKT;
+            name[2] = "@GocNhin"; value[2] = GocNhin;
+            name[3] = "@BonTam"; value[3] = BonTam;
+
+
+            return db.LayDuLieuCoDK("PhongDaDat_TimDSPhongDD", name, value, 4);
+        }
+
+
+        public DataTable PhongDaDat_TimDSPhongCD(int GocNhin, bool BonTam)//rồi, đã xem xong 1 loạt thủ tục ở dal
+                                                                                                        //đây là thủ tục sẽ dùng ở form đăng nhập, với điều kiện là trùng mã tài khoản và mật khẩu. ok?
+        {
+            name = new string[2];
+            value = new object[2];
+
+            
+            name[0] = "@GocNhin"; value[0] = GocNhin;
+            name[1] = "@BonTam"; value[1] = BonTam;
+
+
+            return db.LayDuLieuCoDK("PhongDaDat_TimDSPhongCD", name, value, 2);
         }
 
         public int PhongDaDat_Them( string ID_PhieuDP, string ID_Phong, string NgayDen, string NgayDi)

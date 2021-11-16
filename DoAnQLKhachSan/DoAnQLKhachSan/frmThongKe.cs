@@ -76,7 +76,12 @@ namespace DoAnQLKhachSan
             {
                 dgvDSThongKe.Columns.Clear();
                 dgvDSThongKe.DataSource = bTK.ThongKePhongSuaChua();
-            }    
+            }
+            else if (radioPhongChoKhach.Checked == true)
+            {
+                dgvDSThongKe.Columns.Clear();
+                dgvDSThongKe.DataSource = bTK.THongKePhongChoKhach();
+            }
         }
     }
 }

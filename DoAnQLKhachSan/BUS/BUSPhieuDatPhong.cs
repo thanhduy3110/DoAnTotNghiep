@@ -18,10 +18,10 @@ namespace BUS
         {
             pdp.HienThiDanhSach(sTimKiem, d);
         }
-        public void HienThiSDT(ComboBox cboSDT, TextBox txtTenKH)
-        {
-            pdp.HienThiSDT(cboSDT, txtTenKH);
-        }
+        //public void HienThiSDT(ComboBox cboSDT, TextBox txtTenKH)
+        //{
+        //    pdp.HienThiSDT(cboSDT, txtTenKH);
+        //}
             public void HienThiID_KH(ComboBox cboID_KH)
         {
             pdp.HienThiID_KH(cboID_KH);
@@ -50,6 +50,11 @@ namespace BUS
         public int phieudatphong_XuLy(int ID, bool DaXyLy)
         {
             return pdp.phieudatphong_XuLy(ID, DaXyLy);
+        }
+
+        public DataTable phieudatphong_HienThiTenKH(string SDT)
+        {
+            return pdp.phieudatphong_HienThiTenKH(SDT);
         }
     }
 }

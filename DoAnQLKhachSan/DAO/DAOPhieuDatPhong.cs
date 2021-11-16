@@ -23,16 +23,11 @@ namespace DAO
             cboID_KH.ValueMember = "id";
         }
 
-        public void HienThiSDT(ComboBox cboSDT,TextBox txtTenKH)
-        {
-            DataSet dsSDT = new DataSet();
-            dsSDT = db.LayDanhSach("select ID,SDT,HoTen from KhachHang where HieuLuc=1");// truy vấn lên sql
-            cboSDT.DataSource = dsSDT.Tables[0];
-            cboSDT.DisplayMember = "SDT";
-            cboSDT.ValueMember = "id";
-            txtTenKH.DataBindings.Add("Text", cboSDT.DataSource, "HoTen");
-
-        }
+        //public void HienThiTenKH(ComboBox TenKH, string txtSDT)
+        //{
+        //    DataSet dsSDT = new DataSet();
+        //    dsSDT = db.LayDanhSach("select HoTen from KhachHang where HieuLuc=1 and SDT = "+txtSDT);// truy vấn lên sql
+        //}
         public void HienThiDanhSach(string sTimKiem, DataGridView d)
         {
             dsPDP = db.LayDanhSach("select PhieuDatPhong.ID,KhachHang.HoTen,NgayDen,NgayDi,dbo.PDD_HinhThucThue(HinhThucThue)as HinhThucThue,SoKhach,GhiChu,dbo.PDD_DaXuLy(DaXuLy)as DaXuLy,dbo.PDD_HieuLuc(PhieuDatPhong.HieuLuc )as HieuLuc  from PhieuDatPhong,KhachHang where PhieuDatPhong.ID_KH=KhachHang.ID and PhieuDatPhong.HieuLuc=1 and KhachHang.HoTen like '%" + sTimKiem + "%'");
@@ -96,6 +91,18 @@ namespace DAO
             name[0] = "@ID"; value[0] = ID;
             name[1] = "@DaXuLy"; value[1] = DaXuLy;
             return db.ThucHien("phieudatphong_XuLy", name, value, 2);
+        }
+
+        public DataTable phieudatphong_HienThiTenKH(string SDT)//rồi, đã xem xong 1 loạt thủ tục ở dal
+                                                          //đây là thủ tục sẽ dùng ở form đăng nhập, với điều kiện là trùng mã tài khoản và mật khẩu. ok?
+        {
+            name = new string[1];
+            value = new object[1];
+
+            name[0] = "@SDT"; value[0] = SDT;
+
+
+            return db.LayDuLieuCoDK("phieudatphong_HienThiTenKH", name, value, 1);
         }
 
     }

@@ -44,6 +44,11 @@ namespace DAO
             return  db.Laydulieu("ThongKeSLT");
         }
 
+        public DataTable THongKePhongChoKhach()
+        {
+            return db.Laydulieu("THongKePhongChoKhach");
+        }
+
         public void ThongKeDV(DataGridView dgv, string dtp1, string dtp2)
         {
             DataSet dsDV = new DataSet();

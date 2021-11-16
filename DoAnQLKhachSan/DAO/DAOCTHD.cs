@@ -27,7 +27,7 @@ namespace DAO
 
         public void HienThiDSCTHD(DataGridView dgvDSCTHD, int ID_HD)
         {
-            string sql = "select CTHD.ID,ID_HD,TenDV,SoLuong,DonGia,CTHD.ID_DV as ID_DV from CTHD,DichVu where DichVu.ID=CTHD.ID_DV and ID_HD = " + ID_HD;
+            string sql = "select CTHD.ID,ID_HD,TenDV,SoLuong,DonGia,CTHD.ID_DV as ID_DV,THoiGianThemDV from CTHD,DichVu where DichVu.ID=CTHD.ID_DV and ID_HD = " + ID_HD;
             dsCTHD = db.LayDanhSach(sql);
             dgvDSCTHD.DataSource = dsCTHD.Tables[0];
         }
@@ -50,16 +50,17 @@ namespace DAO
 
 
         //phương thức này gọi đến phương thức ThucHien ở dbConnectionData để thêm dữ liệu
-        public int CTHD_Them(int ID, int ID_HD,string ID_DV, string SoLuong, string DonGia)
+        public int CTHD_Them(int ID, int ID_HD,string ID_DV, string SoLuong, string DonGia,string ThoiGian)
         {
-            name = new string[5];
-            value = new object[5];
+            name = new string[6];
+            value = new object[6];
             name[0] = "@ID"; value[0] = ID;
             name[1] = "@ID_HD"; value[1] = ID_HD;
             name[2] = "@ID_DV"; value[2] = ID_DV;
             name[3] = "@SoLuong"; value[3] = SoLuong;
             name[4] = "@DonGia"; value[4] = DonGia;
-            return db.ThucHien("CTHD_Them", name, value, 5);
+            name[5] = "@ThoiGianThemDV"; value[5] = ThoiGian;
+            return db.ThucHien("CTHD_Them", name, value, 6);
         }
 
         public int CTHD_CongDonSL(string ID, string SoLuong)
@@ -73,17 +74,17 @@ namespace DAO
         }
 
         //update
-        public int CTHD_CapNhat(int ID, int ID_HD, string ID_DV, string SoLuong, string DonGia)
+        public int CTHD_CapNhat(int ID, int ID_HD, string ID_DV, string SoLuong, string DonGia, string ThoiGian)
         {
-            name = new string[5];
-            value = new object[5];
+            name = new string[6];
+            value = new object[6];
             name[0] = "@ID"; value[0] = ID;
             name[1] = "@ID_HD"; value[1] = ID_HD;
             name[2] = "@ID_DV"; value[2] = ID_DV;
             name[3] = "@SoLuong"; value[3] = SoLuong;
             name[4] = "@DonGia"; value[4] = DonGia;
-
-            return db.ThucHien("CTHD_CapNhat", name, value, 5);
+            name[5] = "@ThoiGianThemDV"; value[5] = ThoiGian;
+            return db.ThucHien("CTHD_CapNhat", name, value, 6);
         }
 
         public int CTHD_Xoa(string ID)

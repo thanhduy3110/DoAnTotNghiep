@@ -437,12 +437,17 @@
     <Compile Include="frmThongTinPhanMem.Designer.cs">
       <DependentUpon>frmThongTinPhanMem.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTimPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTimPhong.Designer.cs">
+      <DependentUpon>frmTimPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportTing\ReportHD.cs" />
     <Compile Include="ReportTing\ReportHD1.cs" />
     <Compile Include="ReportTing\ReportHD2.cs" />
-    <Compile Include="ReportTing\ReportHD3.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="frmChuyenPhong.resx">
       <DependentUpon>frmChuyenPhong.cs</DependentUpon>
@@ -501,6 +506,9 @@
     <EmbeddedResource Include="frmThongTinPhanMem.resx">
       <DependentUpon>frmThongTinPhanMem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmTimPhong.resx">
+      <DependentUpon>frmTimPhong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -517,10 +525,14 @@
     <None Include="Properties\DataSources\DoAnQLKhachSan.ReportTing.ReportHD.datasource" />
     <None Include="Properties\DataSources\DoAnQLKhachSan.ReportTing.ReportHD1.datasource" />
     <None Include="Properties\DataSources\DoAnQLKhachSan.ReportTing.ReportHD11.datasource" />
+    <None Include="Properties\DataSources\DoAnQLKhachSan.ReportTing.ReportHD12.datasource" />
     <None Include="Properties\DataSources\DoAnQLKhachSan.ReportTing.ReportHD2.datasource" />
     <None Include="Properties\DataSources\DoAnQLKhachSan.ReportTing.ReportHD21.datasource" />
     <None Include="Properties\DataSources\DoAnQLKhachSan.ReportTing.ReportHD3.datasource" />
     <None Include="Properties\DataSources\DoAnQLKhachSan.ReportTing.ReportHD31.datasource" />
+    <None Include="Properties\DataSources\DoAnQLKhachSan.ReportTing.ReportHD4.datasource" />
+    <None Include="Properties\DataSources\DoAnQLKhachSan.ReportTing.ReportHD5.datasource" />
+    <None Include="Properties\DataSources\DoAnQLKhachSan.ReportTing.ReportHD6.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
