@@ -77,7 +77,7 @@ namespace DoAnQLKhachSan
             else if (flag == true)
             {
                 string fname = DuoiAnh; // tên ảnh
-                string floder = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan\\ImageDichVu\\";//đường dẫn lưu ảnh
+                string floder = Application.StartupPath + @"\ImageDichVu\";//đường dẫn lưu ảnh
                 string path = System.IO.Path.Combine(floder, fname);
                 Image a = pictureBox.Image;
                 a.Save(path); //lưu ảnh vào đường dẫn   
@@ -149,7 +149,7 @@ namespace DoAnQLKhachSan
             else if (flag == true)
             {
                 string fname1 = DuoiAnh; // tên ảnh
-                string floder1 = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan\\ImageDichVu\\";//đường dẫn lưu ảnh
+                string floder1 = Application.StartupPath + @"\ImageDichVu\";//đường dẫn lưu ảnh
                 string path1 = System.IO.Path.Combine(floder1, fname1);
 
                 {
@@ -169,13 +169,13 @@ namespace DoAnQLKhachSan
                             HieuLuc = false;
                         }
                         int r = this.dgvDichVu.CurrentCell.RowIndex;
-                        string address = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan\\ImageDichVu\\" + dgvDichVu.Rows[r].Cells[4].Value.ToString();
+                        string address = Application.StartupPath + @"\ImageDichVu\" + dgvDichVu.Rows[r].Cells[4].Value.ToString();
                         string result;
                         result = Path.GetFileName(address);
                         string b = dgvDichVu.Rows[r].Cells[4].Value.ToString();
 
 
-                        FileInfo info = new FileInfo(@"D:\DoAnTotNghiep\DoAnTotNghiep\DoAnQLKhachSan\ImageDichVu\" + DuoiAnh);
+                        FileInfo info = new FileInfo(Application.StartupPath + @"\ImageDichVu\" + DuoiAnh);
                         //Get file infromation from info object
 
 
@@ -223,8 +223,25 @@ namespace DoAnQLKhachSan
 
                         else //khác
                         {
+                            if (dgvDichVu.Rows.Count > 0)
                             {
-                                //MessageBox.Show("có vô so sánh if 2 " + path1);
+                                if (txtTenDV.Text == dgvDichVu.Rows[r].Cells[6].Value.ToString())//so sánh txtSDT với SDT dòng numrow ở dgv
+                                {
+                                    //nêu bằng thì bỏ qua bước này
+                                    //nêu không bằng nhau thì xuống else
+                                }
+                                else
+                                {
+                                    for (int i = 0; i < dgvDichVu.Rows.Count - 1; i++)//vòng lặp
+                                    {
+                                        if (txtTenDV.Text.ToLower() == dgvDichVu.Rows[i].Cells[2].Value.ToString().ToLower())//so sánh txtSDT với từng dòng trong dgv
+                                        {
+                                            //nêu txtSDT bằng với một hàng thì đã tồn tại
+                                            MessageBox.Show("Dịch vụ này đã tồn tại");
+                                            return;
+                                        }
+                                    }
+                                }
                             }
 
                             Image a1 = pictureBox.Image;
@@ -338,7 +355,7 @@ namespace DoAnQLKhachSan
             {
                 chkHieuLuc.Checked = false;
             }    
-            string floder = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan\\ImageDichVu\\" + dgvDichVu.Rows[numrow].Cells[4].Value.ToString();
+            string floder = Application.StartupPath + @"\ImageDichVu\" + dgvDichVu.Rows[numrow].Cells[4].Value.ToString();
             Bitmap a = new Bitmap(floder);
             pictureBox.Image = a;
         }

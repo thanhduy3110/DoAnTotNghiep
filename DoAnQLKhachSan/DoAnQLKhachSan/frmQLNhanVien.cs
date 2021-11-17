@@ -125,7 +125,7 @@ namespace DoAnQLKhachSan
             txtCMND.Text = dgvDSNhanVien.Rows[numrow].Cells[9].Value.ToString();
             try
             {
-                string duongdanhinh = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan\\ImageNhanVien\\" + dgvDSNhanVien.Rows[numrow].Cells[11].Value.ToString();
+                string duongdanhinh = Application.StartupPath + @"\ImageNhanVien\" + dgvDSNhanVien.Rows[numrow].Cells[11].Value.ToString();
                 Bitmap a = new Bitmap(duongdanhinh);
                 pichHinh.Image = a;
             }
@@ -167,7 +167,7 @@ namespace DoAnQLKhachSan
             }else if(flag==true)
             {
                 string fname = DuoiAnh; // tên ảnh
-                string floder = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan\\ImageNhanVien\\";//đường dẫn lưu ảnh
+                string floder = Application.StartupPath + @"\ImageNhanVien\";//đường dẫn lưu ảnh
                 string path = System.IO.Path.Combine(floder, fname);
                 Image a = pichHinh.Image;
                 a.Save(path); //lưu ảnh vào đường dẫn   
@@ -277,7 +277,7 @@ namespace DoAnQLKhachSan
             else if (flag == true)
             {
                 string fname1 = DuoiAnh; // tên ảnh
-                string floder1 = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan\\ImageNhanVien\\";//đường dẫn lưu ảnh
+                string floder1 = Application.StartupPath + @"\ImageNhanVien\";//đường dẫn lưu ảnh
                 string path1 = System.IO.Path.Combine(floder1, fname1);
 
                 {
@@ -308,7 +308,7 @@ namespace DoAnQLKhachSan
                             HieuLuc = false;
                         }
                         int r = this.dgvDSNhanVien.CurrentCell.RowIndex;
-                        string address = "D:\\DoAnTotNghiep\\DoAnTotNghiep\\DoAnQLKhachSan\\ImageNhanVien\\" + dgvDSNhanVien.Rows[r].Cells[11].Value.ToString();
+                        string address = Application.StartupPath + @"\ImageNhanVien\" + dgvDSNhanVien.Rows[r].Cells[11].Value.ToString();
                         string result;
                         result = Path.GetFileName(address);
                         string b = dgvDSNhanVien.Rows[r].Cells[11].Value.ToString();
